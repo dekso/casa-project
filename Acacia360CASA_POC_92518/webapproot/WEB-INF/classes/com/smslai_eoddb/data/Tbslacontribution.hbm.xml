@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbslacontribution" table="TBSLACONTRIBUTION" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="rank" type="integer">
+            <column name="rank"/>
+            <generator class="identity"/>
+        </id>
+        <property name="minCap" type="big_decimal">
+            <column name="minCap" precision="18"/>
+        </property>
+        <property name="minSav" type="big_decimal">
+            <column name="minSav" precision="18"/>
+        </property>
+        <property name="maxCap" type="big_decimal">
+            <column name="maxCap" precision="18"/>
+        </property>
+        <property name="maxSav" type="big_decimal">
+            <column name="maxSav" precision="18"/>
+        </property>
+        <property name="savMaintainingBal" type="big_decimal">
+            <column name="savMaintainingBal" precision="18"/>
+        </property>
+        <property name="widrawDivCap" type="big_decimal">
+            <column name="widrawDivCap" precision="18"/>
+        </property>
+        <property name="widrawDivSav" type="big_decimal">
+            <column name="widrawDivSav" precision="18"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,144 @@
+{
+	"methods": [{
+		"name": "accessRightsMain",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.user.maintenance.form.AccessRights]"
+	}, {
+		"name": "accessRightsSub",
+		"operationType": null,
+		"parameters": [{
+			"name": "role",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.user.maintenance.form.AccessRights]"
+	}, {
+		"name": "addModule",
+		"operationType": null,
+		"parameters": [{
+			"name": "rec",
+			"type": "com.gldb.data.Tbcodetable"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addRole",
+		"operationType": null,
+		"parameters": [{
+			"name": "rec",
+			"type": "com.gldb.data.Tbcodetable"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addRoleAccess",
+		"operationType": null,
+		"parameters": [{
+			"name": "rec",
+			"type": "com.gldb.data.Tbroleaccess"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "createUser",
+		"operationType": null,
+		"parameters": [{
+			"name": "user",
+			"type": "com.gldb.data.Tbuser"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "deleteModule",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "deleteRole",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "deleteRoleAccess",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "editUser",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.user.maintenance.form.UserEditForm"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "initGenericForm",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.etel.util.forms.GenericForm"
+	}, {
+		"name": "mainMod",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbcodetable]"
+	}, {
+		"name": "pageList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[java.lang.String]"
+	}, {
+		"name": "roleAccessList",
+		"operationType": null,
+		"parameters": [{
+			"name": "role",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbroleaccess]"
+	}, {
+		"name": "roleList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbcodetable]"
+	}, {
+		"name": "selectMainSub",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.user.maintenance.form.MainSubSelectModuleForm"
+	}, {
+		"name": "subMod",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbcodetable]"
+	}, {
+		"name": "userInfo",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "com.gldb.data.Tbuser"
+	}, {
+		"name": "userList",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "instcode",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.user.maintenance.form.UserListForm]"
+	}, {
+		"name": "userMainInfo",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.user.maintenance.form.UserInfoForm"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "UserAccountFacade.json"
+}

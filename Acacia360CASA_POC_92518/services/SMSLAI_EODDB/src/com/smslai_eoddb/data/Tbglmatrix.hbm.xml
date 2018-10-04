@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbglmatrix" table="TBGLMATRIX" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="prodcode" type="string">
+            <column name="PRODCODE" length="2" not-null="true"/>
+        </property>
+        <property name="glline1" type="integer">
+            <column name="GLLINE1"/>
+        </property>
+        <property name="glline2" type="integer">
+            <column name="GLLINE2"/>
+        </property>
+        <property name="glparent" type="string">
+            <column name="GLPARENT" length="7"/>
+        </property>
+        <property name="glchild" type="string">
+            <column name="GLCHILD" length="7"/>
+        </property>
+        <property name="glbranchSw" type="string">
+            <column name="GLBRANCH_SW" length="1"/>
+        </property>
+        <property name="glcategory" type="string">
+            <column name="GLCATEGORY" length="25"/>
+        </property>
+        <property name="updatedBy" type="string">
+            <column name="UPDATED_BY" length="25"/>
+        </property>
+        <property name="dateLastUpdated" type="string">
+            <column name="DATE_LAST_UPDATED" length="25"/>
+        </property>
+    </class>
+</hibernate-mapping>

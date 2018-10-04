@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbsegment" table="TBSEGMENT" catalog="GLDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="segno" type="integer">
+            <column name="segno"/>
+        </property>
+        <property name="segcode" type="string">
+            <column name="segcode" length="4"/>
+        </property>
+        <property name="segname" type="string">
+            <column name="segname" length="250" not-null="true"/>
+        </property>
+        <property name="maingl" type="string">
+            <column name="maingl" length="4"/>
+        </property>
+        <property name="parentseg" type="string">
+            <column name="parentseg" length="4"/>
+        </property>
+        <property name="parentsegno" type="integer">
+            <column name="parentsegno"/>
+        </property>
+        <property name="bstype" type="string">
+            <column name="bstype" length="5"/>
+        </property>
+    </class>
+</hibernate-mapping>

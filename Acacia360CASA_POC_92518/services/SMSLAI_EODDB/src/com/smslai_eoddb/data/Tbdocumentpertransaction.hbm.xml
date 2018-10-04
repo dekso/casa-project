@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbdocumentpertransaction" table="TBDOCUMENTPERTRANSACTION" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txCode" type="string">
+            <column name="TxCode" length="3"/>
+        </property>
+        <property name="documentCode" type="string">
+            <column name="DocumentCode" length="5"/>
+        </property>
+        <property name="subTypeCode" type="string">
+            <column name="SubTypeCode" length="5"/>
+        </property>
+        <property name="realEstateCode" type="string">
+            <column name="RealEstateCode" length="5"/>
+        </property>
+        <property name="requirementType" type="string">
+            <column name="RequirementType" length="1"/>
+        </property>
+        <property name="requirementGroup" type="integer">
+            <column name="RequirementGroup"/>
+        </property>
+    </class>
+</hibernate-mapping>

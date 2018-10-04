@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Current Account7" pageWidth="1063" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1023" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3bfc66cb-927d-4dab-91cc-6ebc0ae981a5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="branchcode" class="java.lang.String"/>
+	<parameter name="txdate" class="java.util.Date"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select dep.AccountNo, dep.SLAIdNo, dep.AccountName,
+dep.OldStatus, dep.OldStatusDate, jr.TxAmount, dep.AccountBalance, code.desc1 as Txname, jr.Txcode
+from TBDEPOSIT dep
+left join TBCODETABLE code on dep.Id = code.id
+left join TBDEPTXJRNL jrnl on code.codevalue = jrnl.txcode and code.codename = 'TXCODE'
+left join TBDEPTXJRNL jr on dep.Id = jr.id
+where dep.Oldstatus = 2 and dep.unit = $P{branchcode}]]>
+	</queryString>
+	<field name="AccountNo" class="java.lang.String"/>
+	<field name="SLAIdNo" class="java.lang.String"/>
+	<field name="AccountName" class="java.lang.String"/>
+	<field name="OldStatus" class="java.lang.Integer"/>
+	<field name="OldStatusDate" class="java.sql.Timestamp"/>
+	<field name="TxAmount" class="java.math.BigDecimal"/>
+	<field name="AccountBalance" class="java.math.BigDecimal"/>
+	<field name="Txname" class="java.lang.String"/>
+	<field name="Txcode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="913" y="100" width="110" height="20" uuid="a2e130e8-b4e9-4958-b1f9-762f187a0b29"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="183" y="80" width="642" height="20" uuid="9e11482b-2a34-4da9-b427-ab88def4ec17"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daily List of Activated Dormant Accounts
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="60" width="82" height="20" uuid="09b689cb-2f6a-4a17-98ad-f3bf028ea6dc"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Branch Code: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="83" y="60" width="100" height="20" uuid="4c71856e-0f48-48d8-93b3-2a8dad5d6563"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{branchcode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="825" y="100" width="88" height="20" uuid="5c0d6a2e-27f0-4017-b42b-ff279cd345be"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Report Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="60" width="642" height="20" uuid="d2726e63-8a78-414b-90d5-e26dc7749ad0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Current Accounts
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="825" y="80" width="88" height="20" uuid="59f8f7ae-17f8-42da-9595-f7d206daac8b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Run Time   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="183" y="100" width="642" height="20" uuid="5e9cbe5f-7afa-4d4d-9681-08fb01c4887b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Calibri" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<i>For: </i>"+ "<b>"+ new SimpleDateFormat("MM/dd/YYYY").format($P{txdate})+"</b>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="825" y="60" width="88" height="20" uuid="04190056-668c-46b7-a05a-5b90577ae1d7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Run Date    :]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy" isBlankWhenNull="true">
+				<reportElement x="913" y="60" width="110" height="20" uuid="be9f213c-6cfc-40a8-a3c2-48747cf61a63"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="913" y="80" width="110" height="20" uuid="5486317e-3653-4e39-b77a-9928027f4cb2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("hh:mm a").format(new Date())]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="183" y="25" width="642" height="35" uuid="404108dd-4232-4b9b-8bfb-8194103213b3"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32">
+			<staticText>
+				<reportElement x="0" y="0" width="134" height="32" uuid="9d4a56aa-ee8a-400a-a010-536f57946ad9"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Account Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="0" width="185" height="32" uuid="c169f3ca-e106-429c-ad9e-cd77250a6c41"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Client Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="0" width="134" height="32" uuid="840adfb1-88cb-4aa3-b9ba-10df0b45553e"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CIF Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="900" y="0" width="122" height="32" uuid="5dfa8ff7-2b6a-4212-be71-599d8d04cef3"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Outstanding Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="784" y="0" width="116" height="32" uuid="7db30c27-a6cf-4ce2-a0c9-8e20e6cc5ca1"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="668" y="0" width="116" height="32" uuid="5d1b1425-9425-4f61-84b8-5594be97d939"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="453" y="0" width="120" height="32" uuid="b8438bd5-c8fa-44f4-9d60-ddf744e7e494"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Last Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="573" y="0" width="95" height="32" uuid="a50b1da2-a509-495e-933e-4ef6e23a0234"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction Code]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="900" y="0" width="122" height="20" uuid="962e83df-b498-48d0-8882-7c2ef693fb57"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AccountBalance}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="784" y="0" width="116" height="20" uuid="5b9cbf4b-07f5-498f-85c2-7f49abab04cf"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TxAmount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="668" y="0" width="116" height="20" uuid="e850ecdb-6fad-44c3-b6a8-fc06f96e9bdc"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Txname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="453" y="0" width="120" height="20" uuid="62f86bf2-c352-48f5-ba83-071d96308af7"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OldStatusDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="573" y="0" width="95" height="20" uuid="0747d2c0-65eb-4fa7-8271-468a70bba2ed"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Txcode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="134" height="20" uuid="aa1780a2-8b7e-411a-967a-70a17f43636c"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AccountNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="134" y="0" width="134" height="20" uuid="e41e355a-896c-4c9b-ab1a-1a97e597a7b3"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SLAIdNo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="268" y="0" width="185" height="20" uuid="74bfb70b-2e94-4ea7-b43d-fc45b56e15f4"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AccountName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.8.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:cloud="http://schema.cloudfoundry.org/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <import resource="classpath:AccountFacade.spring.xml"/>
+    <import resource="classpath:AuthenticationFacade.spring.xml"/>
+    <import resource="classpath:CountryFacade.spring.xml"/>
+    <import resource="classpath:EncryptionFacade.spring.xml"/>
+    <import resource="classpath:GLAccountFacade.spring.xml"/>
+    <import resource="classpath:GLDB.spring.xml"/>
+    <import resource="classpath:RateManagementFacade.spring.xml"/>
+    <import resource="classpath:SecurityFacade.spring.xml"/>
+    <import resource="classpath:UserAccountFacade.spring.xml"/>
+    <import resource="classpath:UtilFacade.spring.xml"/>
+    <import resource="classpath:securityService.spring.xml"/>
+    <import resource="classpath:runtimeService.spring.xml"/>
+    <import resource="classpath:waveMakerService.spring.xml"/>
+</beans>

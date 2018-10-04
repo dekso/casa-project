@@ -1,0 +1,21 @@
+{
+	"methods": [{
+		"name": "encryptMd5",
+		"operationType": null,
+		"parameters": [{
+			"name": "password",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "encryptSha1",
+		"operationType": null,
+		"parameters": [{
+			"name": "password",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "EncryptionFacade.json"
+}

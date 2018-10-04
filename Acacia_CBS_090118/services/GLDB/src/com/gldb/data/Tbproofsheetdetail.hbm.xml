@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbproofsheetdetail" table="TBPROOFSHEETDETAIL" catalog="GLDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="trno" type="string">
+            <column name="trno" length="50"/>
+        </property>
+        <property name="acctcode" type="string">
+            <column name="acctcode" length="25"/>
+        </property>
+        <property name="accttitle" type="string">
+            <column name="accttitle" length="200"/>
+        </property>
+        <property name="refdoc" type="string">
+            <column name="refdoc" length="20"/>
+        </property>
+        <property name="refid" type="string">
+            <column name="refid" length="30"/>
+        </property>
+        <property name="respcenter" type="string">
+            <column name="respcenter" length="10"/>
+        </property>
+        <property name="costcenter" type="string">
+            <column name="costcenter" length="10"/>
+        </property>
+        <property name="prjctasgmt" type="string">
+            <column name="prjctasgmt" length="20"/>
+        </property>
+        <property name="drcurramt" type="big_decimal">
+            <column name="drcurramt" precision="16"/>
+        </property>
+        <property name="crcurramt" type="big_decimal">
+            <column name="crcurramt" precision="16"/>
+        </property>
+        <property name="particulars" type="string">
+            <column name="particulars" length="250"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="10"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="brid" type="string">
+            <column name="brid" length="20"/>
+        </property>
+        <property name="psid" type="string">
+            <column name="psid" length="20"/>
+        </property>
+        <property name="psdt" type="timestamp">
+            <column name="psdt" length="23"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,127 @@
+{
+	"methods": [{
+		"name": "AllAcceptedTrans",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "AllRejectedTrans",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "AllSupOverridetx",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "AllTimeOutAcceptedtx",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "CashInCashOut",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "CertTimeDep",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctno",
+			"type": "java.lang.String"
+		}, {
+			"name": "address",
+			"type": "java.lang.String"
+		}, {
+			"name": "issuedt",
+			"type": "java.util.Date"
+		}, {
+			"name": "matdt",
+			"type": "java.util.Date"
+		}, {
+			"name": "name",
+			"type": "java.lang.String"
+		}, {
+			"name": "term",
+			"type": "java.lang.Integer"
+		}, {
+			"name": "interest",
+			"type": "java.math.BigDecimal"
+		}, {
+			"name": "sum",
+			"type": "java.math.BigDecimal"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "EJournalPDF",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "ErrorCorrectionTrans",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "java.lang.String"
+	}, {
+		"name": "SupOverridetx",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "TellersTotal",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "date",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "Report.json"
+}

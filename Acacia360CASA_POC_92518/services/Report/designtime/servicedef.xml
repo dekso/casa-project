@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="Report" class="com.casa.Report.ReportFacade" CRUDService="false" type="JavaService" springFile="Report.spring.xml">
+    <operation name="AllAcceptedTrans">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllRejectedTrans">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllSupOverridetx">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AllTimeOutAcceptedtx">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CashInCashOut">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CertTimeDep">
+        <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="address" typeRef="java.lang.String" isList="false"/>
+        <parameter name="issuedt" typeRef="java.util.Date" isList="false"/>
+        <parameter name="matdt" typeRef="java.util.Date" isList="false"/>
+        <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="term" typeRef="java.lang.Integer" isList="false"/>
+        <parameter name="interest" typeRef="java.math.BigDecimal" isList="false"/>
+        <parameter name="sum" typeRef="java.math.BigDecimal" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="EJournalPDF">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="ErrorCorrectionTrans">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="SupOverridetx">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TellersTotal">
+        <parameter name="username" typeRef="java.lang.String" isList="false"/>
+        <parameter name="date" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="java.util.Date" name="Date" supportsQuickData="false">
+            <element name="calendarDate" typeRef="sun.util.calendar.BaseCalendar.Date" isList="false" allowNull="false"/>
+            <element name="date" typeRef="int" isList="false" allowNull="false"/>
+            <element name="day" typeRef="int" isList="false" allowNull="false"/>
+            <element name="hours" typeRef="int" isList="false" allowNull="false"/>
+            <element name="julianCalendar" typeRef="sun.util.calendar.BaseCalendar" isList="false" allowNull="false"/>
+            <element name="minutes" typeRef="int" isList="false" allowNull="false"/>
+            <element name="month" typeRef="int" isList="false" allowNull="false"/>
+            <element name="seconds" typeRef="int" isList="false" allowNull="false"/>
+            <element name="time" typeRef="long" isList="false" allowNull="false"/>
+            <element name="timeImpl" typeRef="long" isList="false" allowNull="false"/>
+            <element name="timezoneOffset" typeRef="int" isList="false" allowNull="false"/>
+            <element name="year" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

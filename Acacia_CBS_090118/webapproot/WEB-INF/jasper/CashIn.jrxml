@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="810" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="770" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3394a41e-5a36-4252-8ef4-78eb80ac5a0d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="116"/>
+	<property name="ireport.y" value="261"/>
+	<parameter name="username" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select
+
+(select username from TBUNITUSER where userid = $P{username}) as username,
+(select count(*) from TBCASHPOSITION where destination = $P{username} and cast (txvaldt as date) = $P{date}) as cash_in_count,
+(select sum(txamount) from TBCASHPOSITION where destination = $P{username} and cast (txvaldt as date) = $P{date}) as cash_in_sum,
+(select count(*) from TBFINTXJRNL where txby = $P{username} and txcode = '110111' and cast (txvaldt as date) = $P{date}) as dep_count,
+(select sum(txamount) from TBFINTXJRNL where txby = $P{username} and txcode = '110111' and cast (txvaldt as date) = $P{date}) as dep_sum,
+
+(select count(*) from TBCASHPOSITION where origin = $P{username} and cast (txvaldt as date) = $P{date} ) as cash_out_count,
+(select sum(txamount) from TBCASHPOSITION where origin = $P{username} and cast (txvaldt as date) = $P{date}) as cash_out_sum,
+(select count(*) from TBFINTXJRNL where txby = $P{username} and txcode = '120121' and cast (txvaldt as date) = $P{date})	as with_count,
+(select sum(txamount) from TBFINTXJRNL where txby = $P{username} and txcode = '120121' and cast (txvaldt as date) = $P{date}) as with_sum]]>
+	</queryString>
+	<field name="username" class="java.lang.String"/>
+	<field name="cash_in_count" class="java.lang.Integer"/>
+	<field name="cash_in_sum" class="java.math.BigDecimal"/>
+	<field name="dep_count" class="java.lang.Integer"/>
+	<field name="dep_sum" class="java.math.BigDecimal"/>
+	<field name="cash_out_count" class="java.lang.Integer"/>
+	<field name="cash_out_sum" class="java.math.BigDecimal"/>
+	<field name="with_count" class="java.lang.Integer"/>
+	<field name="with_sum" class="java.math.BigDecimal"/>
+	<columnHeader>
+		<band height="139" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="99311e27-5f45-45ce-97bf-0db5c0050906" x="1" y="18" width="235" height="40"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="20" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash In/Cash Out]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c73c143-40af-48d5-8491-d1d6c8306959" x="1" y="73" width="80" height="25"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Username:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e8f904c-e2d4-44bc-9b6b-ae40ca6da84e" x="472" y="114" width="80" height="25"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1e284858-f5d4-4896-9280-802c6f7b7dbc" x="636" y="114" width="80" height="25"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement uuid="a1438895-c113-4444-9106-53ca86d3b416" x="81" y="73" width="143" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="416" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ea6ffd88-ddc9-4428-aa4f-ad4276751c8b" x="0" y="0" width="235" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash In]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e16b848d-8cdd-4b07-a920-91d34c5c6bf7" x="36" y="25" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash In Transfer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c1387505-c795-4238-a592-d59b5ad30811" x="36" y="50" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash Deposit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d15ed8f2-7724-4328-9481-9d3cb9346513" x="36" y="75" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Miscellaneous Cash Receipt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29a5bdd7-d2c8-4934-b84f-866b5537b5bb" x="36" y="100" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Bills Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="182a7ba9-01b4-419c-b348-0cf11e9944df" x="36" y="125" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Service Charge]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82e78897-fbe9-48da-97f0-80c0c4758caf" x="36" y="150" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Total Cash-In]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abd839a6-0b88-4ae6-82e8-f29588e54604" x="-1" y="175" width="235" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash Out]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b62e1c11-276e-461a-a11f-553275e36c04" x="36" y="200" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash Out Transfer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d83b9ea8-c5d9-4f7e-b3b9-693e9cd344e2" x="36" y="225" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cash Withdrawal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1596a103-073e-4cf5-8ec7-5fb429bbf66e" x="36" y="250" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Check Encashment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8e0fb8aa-b322-4dd8-83b4-0012f8147997" x="36" y="275" width="301" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Miscellaneous Cash Disbursement/Payout]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="baff0812-772a-419e-8932-4c35f8f6764e" x="36" y="300" width="301" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Account Closure/Withdrawal - Cash Payment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="16f07043-664e-46ef-b1d8-a12de412ce54" x="36" y="325" width="236" height="25"/>
+				<box>
+					<pen lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.25" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.25" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Total Cash-Out]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="b20a260e-56bd-45cd-868a-3bd099f679da" x="573" y="25" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cash_in_sum}== null ? BigDecimal.ZERO:$F{cash_in_sum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="d8baade2-53db-4eb2-8645-31297180616d" x="409" y="25" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cash_in_count}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="7ee699a6-a9b3-4671-a01f-df0490f9d804" x="409" y="50" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dep_count}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="913134a4-351e-469a-8227-88be27cb4aeb" x="573" y="50" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dep_sum}==null ? BigDecimal.ZERO:$F{dep_sum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="48e6f3d1-aa13-4ee6-bc14-da2c4c1b40a3" x="409" y="75" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="9e3c9366-e867-4890-b525-ac5b456c3c8a" x="573" y="150" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cash_in_sum}==null ? BigDecimal.ZERO:$F{cash_in_sum}).add( $F{dep_sum}==null ? BigDecimal.ZERO:$F{dep_sum} )]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="9c70947a-fd39-4fbd-aa47-55a1a50ffa34" x="573" y="200" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cash_out_sum}==null ? BigDecimal.ZERO:$F{cash_out_sum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="8bc4c6e6-3a41-424f-b8df-e0f0a634448f" x="409" y="200" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cash_out_count}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement uuid="57d07c19-0896-49f9-bd77-436bc8f07f7f" x="409" y="225" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{with_count}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="64ad2d78-bef5-4ac4-a7e7-4c5807ba8b9f" x="573" y="225" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{with_sum}==null ? BigDecimal.ZERO:$F{with_sum}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="d6016012-b289-46ac-8320-3cbe5804379d" x="573" y="325" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{cash_out_sum}==null ? BigDecimal.ZERO:$F{cash_out_sum}).add($F{with_sum}==null ? BigDecimal.ZERO:$F{with_sum} )]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="85def68e-2743-469b-b459-8fdbe74558a3" x="409" y="100" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="7c079644-aa4c-48b6-85de-36000dcd47db" x="409" y="125" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="82c031b7-06f9-4972-ac92-b339540d02a2" x="573" y="75" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="23c1f820-3f28-4944-a60c-69a7f0425796" x="573" y="100" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="e34fef3b-5109-46f8-9ea5-f81ecdfa3394" x="573" y="125" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="8196b82a-51fa-4b5f-9203-9300fb0aebb6" x="409" y="250" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="7e0c3731-0a5a-43c4-beec-9a6d623ca7f6" x="409" y="275" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="31d06842-9d72-473d-8a82-2ad6a998d173" x="409" y="300" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="0d20ef8f-1088-42cc-8a09-8d71fc9cce38" x="573" y="250" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="ba1b9d7e-bc6a-4b68-8ea1-a0aa8912412c" x="573" y="275" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="a5859ba4-431d-46b1-b427-63bc58455b5f" x="573" y="300" width="143" height="25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[BigDecimal.ZERO]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,10 @@
+{
+	"__metaData": {
+		"service_invalid_AuthenticationFacade": false, 
+		"service_invalid_EncryptionFacade": false, 
+		"service_invalid_GLAccountFacade": false, 
+		"service_invalid_SecurityFacade": false, 
+		"service_invalid_UtilFacade": false, 
+		"service_invalid_UserAccountFacade": false
+	}
+}

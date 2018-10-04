@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbunituser" table="TBUNITUSER" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="150"/>
+        </property>
+        <property name="userid" type="string">
+            <column name="userid" length="20"/>
+        </property>
+        <property name="unitBalance" type="big_decimal">
+            <column name="unit_balance" precision="16"/>
+        </property>
+        <property name="limitamount" type="big_decimal">
+            <column name="limitamount" precision="16"/>
+        </property>
+        <property name="unitbrid" type="string">
+            <column name="unitbrid" length="4"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="20"/>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="20"/>
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="20"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

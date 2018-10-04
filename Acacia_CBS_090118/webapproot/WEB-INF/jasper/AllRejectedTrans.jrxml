@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="1215" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1175" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3394a41e-5a36-4252-8ef4-78eb80ac5a0d">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="username" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     TBFINTXJRNL."id" AS TBFINTXJRNL_id,
+     TBFINTXJRNL."txcode" AS TBFINTXJRNL_txcode,
+     TBFINTXJRNL."txdate" AS TBFINTXJRNL_txdate,
+     TBFINTXJRNL."accountno" AS TBFINTXJRNL_accountno,
+     TBFINTXJRNL."txamount" AS TBFINTXJRNL_txamount,
+     TBFINTXJRNL."currency" AS TBFINTXJRNL_currency,
+     TBFINTXJRNL."txstatus" AS TBFINTXJRNL_txstatus,
+     TBUNITUSER."username" AS TBUNITUSER_username,
+     TBUNITUSER."unitbrid" AS TBUNITUSER_unitbrid,
+
+    (select txname from TBTRANSACTIONCODE where TBFINTXJRNL."txcode" = txcode) as transcode,
+    (select desc1 from TBCODETABLE where TBFINTXJRNL."txstatus" = codevalue and codename = 'TXSTAT') as txstat
+
+FROM
+     "dbo"."TBFINTXJRNL" TBFINTXJRNL INNER JOIN "dbo"."TBUNITUSER" TBUNITUSER ON TBFINTXJRNL."txby" = TBUNITUSER."userid" WHERE TBFINTXJRNL."txby" = $P{username} and TBFINTXJRNL."txstatus" = '4' and cast(TBFINTXJRNL."txvaldt" as date) = $P{date}]]>
+	</queryString>
+	<field name="TBFINTXJRNL_id" class="java.lang.Integer"/>
+	<field name="TBFINTXJRNL_txcode" class="java.lang.String"/>
+	<field name="TBFINTXJRNL_txdate" class="java.sql.Timestamp"/>
+	<field name="TBFINTXJRNL_accountno" class="java.lang.String"/>
+	<field name="TBFINTXJRNL_txamount" class="java.math.BigDecimal"/>
+	<field name="TBFINTXJRNL_currency" class="java.lang.String"/>
+	<field name="TBFINTXJRNL_txstatus" class="java.lang.String"/>
+	<field name="TBUNITUSER_username" class="java.lang.String"/>
+	<field name="TBUNITUSER_unitbrid" class="java.lang.String"/>
+	<field name="transcode" class="java.lang.String"/>
+	<field name="txstat" class="java.lang.String"/>
+	<columnHeader>
+		<band height="166" splitType="Stretch">
+			<textField pattern="MM/dd/yyyy">
+				<reportElement uuid="75618d10-b696-4a54-82a2-ce9b416a7e5e" x="80" y="91" width="119" height="20"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date ()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="904cafc4-d773-48e9-ae84-c0b17542fb03" x="1" y="132" width="121" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bcab011b-7244-49bf-a463-d35cb50df05f" x="122" y="132" width="184" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Transaction]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7b59432f-5af7-4b9b-bc00-6e340301881b" x="526" y="132" width="116" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="474a9173-463e-4e8d-9ad6-0de95ccee3ed" x="388" y="132" width="138" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Transaction Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="daabfdb4-7e06-41b0-b542-80dbc943b6c0" x="306" y="132" width="82" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Account No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c5a9d191-9df2-4319-a984-a60212727a05" x="642" y="132" width="73" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Others Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4367fbb3-bbe8-4a70-9803-d8fa84593bd7" x="715" y="132" width="59" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Terminal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf415bd9-de73-4976-bc2a-5ff927746bf3" x="774" y="132" width="90" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="55fafd16-050d-489f-a3ff-246898b050df" x="864" y="132" width="140" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82fdd1c6-b2f2-4a59-a212-def61d543c6c" x="1004" y="132" width="85" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Override]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bdb9d6b5-6401-4ad0-ae07-6f4230cdbf7d" x="1089" y="132" width="82" height="34"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Reversal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99311e27-5f45-45ce-97bf-0db5c0050906" x="1" y="71" width="80" height="20"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<text><![CDATA[Business Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e3d4e96-87d7-4343-95bf-cc797e6c84fd" x="450" y="51" width="235" height="20"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALL REJECTED TRANSACTIONS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="52fcfba3-98ed-4c95-ba71-9c1b05c66e3a" x="1" y="91" width="80" height="20"/>
+				<box leftPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none"/>
+				<text><![CDATA[Date Generated :]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement uuid="5cdaedf1-b436-46d4-97ee-f4ea83336a0e" x="80" y="71" width="119" height="20"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="MM/dd/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="7bee9963-217b-48d3-bc53-85be784a6132" x="1" y="0" width="121" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{TBFINTXJRNL_txdate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="365df4bb-8199-4723-a0c5-896207772a73" x="122" y="0" width="184" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{transcode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="347705ec-d0f7-4ea8-863d-bae44074433e" x="306" y="0" width="82" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{TBFINTXJRNL_accountno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="41ead78c-c165-4d84-8d60-6febdc26f5aa" x="388" y="0" width="138" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TBFINTXJRNL_txamount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="696a4094-bf1f-4b59-b213-321accfa6ced" x="526" y="0" width="116" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{TBFINTXJRNL_currency}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d1fad07a-a9d5-4561-93ea-ae9d795ef2ce" x="642" y="0" width="73" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="da73c40e-f0be-4126-993e-42e7072c0549" x="715" y="0" width="59" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="288e85c9-2c8d-457f-964a-adf24a521fd7" x="774" y="0" width="90" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{TBUNITUSER_username}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c904a74f-fccd-4113-ad2e-5d00314927a3" x="864" y="0" width="140" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{txstat}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9ed78951-5773-4e9a-9845-d4dae5e42633" x="1004" y="0" width="85" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7e4099bd-a9da-4573-88a3-565ae9472562" x="1089" y="0" width="82" height="20"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="64"/>
+	</lastPageFooter>
+</jasperReport>

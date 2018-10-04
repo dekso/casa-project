@@ -1,0 +1,8 @@
+{
+	"__metaData": {
+		"service_invalid_FinTxFacade": false, 
+		"service_invalid_UserInfoFacade": false, 
+		"service_invalid_UtilFacade": false, 
+		"service_invalid_Report": false
+	}
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbcbsfintxjrnl" table="TBCBSFINTXJRNL" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="txref" type="string">
+            <column name="txref" length="20" not-null="true"/>
+        </property>
+        <property name="txrefbr" type="string">
+            <column name="txrefbr" length="20" not-null="true"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="50"/>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="50"/>
+        </property>
+        <property name="accountno" type="string">
+            <column name="accountno" length="50"/>
+        </property>
+        <property name="txamount" type="big_decimal">
+            <column name="txamount" precision="16"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="checkacctno" type="string">
+            <column name="checkacctno" length="50"/>
+        </property>
+        <property name="checkno" type="string">
+            <column name="checkno" length="50"/>
+        </property>
+        <property name="checkdate" type="timestamp">
+            <column name="checkdate" length="23"/>
+        </property>
+        <property name="draweebank" type="string">
+            <column name="draweebank" length="10"/>
+        </property>
+        <property name="brstnno" type="string">
+            <column name="brstnno" length="20"/>
+        </property>
+        <property name="reasoncode" type="string">
+            <column name="reasoncode" length="10"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks"/>
+        </property>
+        <property name="accountnoto" type="string">
+            <column name="accountnoto" length="50"/>
+        </property>
+        <property name="passbook" type="integer">
+            <column name="passbook"/>
+        </property>
+        <property name="ledgerlineno" type="integer">
+            <column name="ledgerlineno"/>
+        </property>
+        <property name="txby" type="string">
+            <column name="txby" length="50"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="txstatus" length="3"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

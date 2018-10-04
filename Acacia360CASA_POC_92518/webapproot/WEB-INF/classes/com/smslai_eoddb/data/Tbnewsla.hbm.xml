@@ -1,0 +1,114 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbnewsla" table="TBNEWSLA" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txBatch" type="string">
+            <column name="TxBatch" length="3"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="Txdate" length="23"/>
+        </property>
+        <property name="txRefNo" type="string">
+            <column name="TxRefNo" length="12" not-null="true"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="Txcode" length="3"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="Txmode" length="1"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="Txvaldt" length="23"/>
+        </property>
+        <property name="slaidNo" type="string">
+            <column name="SLAIdNo" length="12"/>
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="12"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="Lastname" length="50"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="Firstname" length="50"/>
+        </property>
+        <property name="middlename" type="string">
+            <column name="Middlename" length="50"/>
+        </property>
+        <property name="company" type="string">
+            <column name="Company" length="100"/>
+        </property>
+        <property name="branch" type="string">
+            <column name="Branch" length="100"/>
+        </property>
+        <property name="department" type="string">
+            <column name="Department" length="50"/>
+        </property>
+        <property name="position" type="string">
+            <column name="Position" length="50"/>
+        </property>
+        <property name="rank" type="string">
+            <column name="Rank" length="1"/>
+        </property>
+        <property name="satoCode" type="string">
+            <column name="SatoCode" length="3"/>
+        </property>
+        <property name="tin" type="string">
+            <column name="TIN" length="20"/>
+        </property>
+        <property name="telephone1" type="string">
+            <column name="Telephone1" length="20"/>
+        </property>
+        <property name="telephone2" type="string">
+            <column name="Telephone2" length="20"/>
+        </property>
+        <property name="telephone3" type="string">
+            <column name="Telephone3" length="20"/>
+        </property>
+        <property name="emailAddress" type="string">
+            <column name="EmailAddress" length="100"/>
+        </property>
+        <property name="savingsRegContribution" type="big_decimal">
+            <column name="SavingsRegContribution" precision="11"/>
+        </property>
+        <property name="capconRegContribution" type="big_decimal">
+            <column name="CapconRegContribution" precision="11"/>
+        </property>
+        <property name="desiredPassword" type="string">
+            <column name="DesiredPassword" length="50"/>
+        </property>
+        <property name="txstatus" type="string">
+            <column name="Txstatus" length="1"/>
+        </property>
+        <property name="txStatusDate" type="timestamp">
+            <column name="TxStatusDate" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="CreationDate" length="23"/>
+        </property>
+        <property name="approvedBy" type="string">
+            <column name="ApprovedBy" length="50"/>
+        </property>
+        <property name="approvalDate" type="timestamp">
+            <column name="ApprovalDate" length="23"/>
+        </property>
+        <property name="txRemarks" type="string">
+            <column name="TxRemarks" length="50"/>
+        </property>
+        <property name="empfirstname" type="string">
+            <column name="Empfirstname" length="50"/>
+        </property>
+        <property name="empmiddlename" type="string">
+            <column name="Empmiddlename" length="50"/>
+        </property>
+        <property name="emplastname" type="string">
+            <column name="Emplastname" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

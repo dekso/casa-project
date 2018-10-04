@@ -1,0 +1,10 @@
+{
+	"__metaData": {
+		"service_invalid_SigcardFacade": false, 
+		"service_invalid_FinTxFacade": false, 
+		"service_invalid_AccountFacade": false, 
+		"service_invalid_MiscTxFacade": false, 
+		"service_invalid_UtilFacade": false, 
+		"service_invalid_EncryptionFacade": false
+	}
+}

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="GLAccountFacade" class="com.gl.glacct.GLAccountFacade" CRUDService="false" type="JavaService" springFile="GLAccountFacade.spring.xml">
+    <operation name="acctList">
+        <return typeRef="com.etel.util.forms.DescIdForm" isList="true"/>
+    </operation>
+    <operation name="addPS">
+        <parameter name="input" typeRef="com.gldb.data.Tbproofsheet" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="addSeg">
+        <parameter name="record" typeRef="com.gldb.data.Tbsegment" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="aeGlAccount">
+        <parameter name="input" typeRef="com.gldb.data.Tbglaccount" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="aeMainGl">
+        <parameter name="input" typeRef="com.gldb.data.Tbmainglcode" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="aePSDetail">
+        <parameter name="input" typeRef="com.gldb.data.Tbproofsheetdetail" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="authPS">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="branchDetail">
+        <return typeRef="com.gl.glacct.form.BranchSetupForm" isList="false"/>
+    </operation>
+    <operation name="deleteGlAccount">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteRecord">
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="deleteSeg">
+        <parameter name="acctcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="acctlvl" typeRef="int" isList="false"/>
+        <parameter name="id" typeRef="int" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="eodDetail">
+        <return typeRef="com.gl.glacct.form.EODDetailForm" isList="false"/>
+    </operation>
+    <operation name="getGlList">
+        <return typeRef="com.gldb.data.Tbglaccount" isList="true"/>
+    </operation>
+    <operation name="getMainGLList">
+        <return typeRef="com.gldb.data.Tbmainglcode" isList="true"/>
+    </operation>
+    <operation name="getMainGlList">
+        <return typeRef="com.gldb.data.Tbmainglcode" isList="true"/>
+    </operation>
+    <operation name="getTrList">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="psdt" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.gl.glacct.form.ProofsheetTrForm" isList="true"/>
+    </operation>
+    <operation name="getTrnoList">
+        <parameter name="trno" typeRef="java.lang.String" isList="false"/>
+        <parameter name="psdt" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.gldb.data.Tbproofsheetdetail" isList="true"/>
+    </operation>
+    <operation name="getTxrefno">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="psdt" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="listSeg">
+        <parameter name="form" typeRef="com.gl.glacct.form.SegmentParamForm" isList="false"/>
+        <return typeRef="com.gldb.data.Tbsegment" isList="true"/>
+    </operation>
+    <operation name="mainglList">
+        <parameter name="bstype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.etel.util.forms.DescIdForm" isList="true"/>
+    </operation>
+    <operation name="openCloseBranch">
+        <parameter name="value" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="proofsheetList">
+        <parameter name="currency" typeRef="java.lang.String" isList="false"/>
+        <parameter name="psdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.gldb.data.Tbproofsheet" isList="true"/>
+    </operation>
+    <operation name="psDetail">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.gl.glacct.form.ProofsheetDetailForm" isList="false"/>
+    </operation>
+    <operation name="psDetailList">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="psdt" typeRef="java.util.Date" isList="false"/>
+        <return typeRef="com.gldb.data.Tbproofsheetdetail" isList="true"/>
+    </operation>
+    <operation name="psList">
+        <parameter name="currency" typeRef="java.lang.String" isList="false"/>
+        <parameter name="psdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="status" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="com.gldb.data.Tbproofsheet" isList="true"/>
+    </operation>
+    <operation name="psToVerify">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="returnPS">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="runEod">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="segSelectList">
+        <parameter name="form" typeRef="com.gl.glacct.form.SegmentSelectForm" isList="false"/>
+        <return typeRef="com.etel.util.forms.DescIdForm" isList="true"/>
+    </operation>
+    <operation name="updatePSList">
+        <parameter name="data" typeRef="com.gldb.data.Tbproofsheetdetail" isList="true"/>
+        <parameter name="trnostatus" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="updtPS">
+        <parameter name="input" typeRef="com.etel.util.forms.PSStatusChangeForm" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="verifyToAuth">
+        <parameter name="psid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.gldb.data.Tbproofsheet" name="Tbproofsheet" supportsQuickData="false">
+            <element name="authorizedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="batch" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="checkedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="psid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statusdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gldb.data.Tbsegment" name="Tbsegment" supportsQuickData="false">
+            <element name="bstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="maingl" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="parentseg" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="parentsegno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="segcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segno" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gldb.data.Tbglaccount" name="Tbglaccount" supportsQuickData="false">
+            <element name="acctcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctlvl" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="acctname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="acctstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="brcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="bstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="currbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="depcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="groupcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mainglcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prevbal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="seccode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment1str" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment2str" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment3str" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment4" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segment4str" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalcr" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totaldr" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gldb.data.Tbmainglcode" name="Tbmainglcode" supportsQuickData="false">
+            <element name="bstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="glcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="glname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="master" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gldb.data.Tbproofsheetdetail" name="Tbproofsheetdetail" supportsQuickData="false">
+            <element name="acctcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accttitle" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="brid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="costcenter" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="crcurramt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="drcurramt" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="particulars" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="prjctasgmt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="psdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="psid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refdoc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="refid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="respcenter" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="trno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gl.glacct.form.BranchSetupForm" name="BranchSetupForm" supportsQuickData="false">
+            <element name="brbusinessdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="brid" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="brname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="brstatus" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gl.glacct.form.EODDetailForm" name="EODDetailForm" supportsQuickData="false">
+            <element name="currdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="nextdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="openbr" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gl.glacct.form.ProofsheetTrForm" name="ProofsheetTrForm" supportsQuickData="false">
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="totalcredit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="totaldebit" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="trno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="java.util.Date" name="Date" supportsQuickData="false">
+            <element name="calendarDate" typeRef="sun.util.calendar.BaseCalendar.Date" isList="false" allowNull="false"/>
+            <element name="date" typeRef="int" isList="false" allowNull="false"/>
+            <element name="day" typeRef="int" isList="false" allowNull="false"/>
+            <element name="hours" typeRef="int" isList="false" allowNull="false"/>
+            <element name="julianCalendar" typeRef="sun.util.calendar.BaseCalendar" isList="false" allowNull="false"/>
+            <element name="minutes" typeRef="int" isList="false" allowNull="false"/>
+            <element name="month" typeRef="int" isList="false" allowNull="false"/>
+            <element name="seconds" typeRef="int" isList="false" allowNull="false"/>
+            <element name="time" typeRef="long" isList="false" allowNull="false"/>
+            <element name="timeImpl" typeRef="long" isList="false" allowNull="false"/>
+            <element name="timezoneOffset" typeRef="int" isList="false" allowNull="false"/>
+            <element name="year" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gl.glacct.form.SegmentParamForm" name="SegmentParamForm" supportsQuickData="false">
+            <element name="bstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="maingl" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="seg1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="seg2" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="seg3" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gl.glacct.form.ProofsheetDetailForm" name="ProofsheetDetailForm" supportsQuickData="false">
+            <element name="crTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="drTotal" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="psdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.gl.glacct.form.SegmentSelectForm" name="SegmentSelectForm" supportsQuickData="false">
+            <element name="bstype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="mgl" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="seg" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="segno" typeRef="int" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.etel.util.forms.PSStatusChangeForm" name="PSStatusChangeForm" supportsQuickData="false">
+            <element name="id" typeRef="int" isList="false" allowNull="false"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="statusdt" typeRef="java.util.Date" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

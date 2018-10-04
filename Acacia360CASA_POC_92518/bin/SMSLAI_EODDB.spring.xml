@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+
+<!-- Generated 10/01/2018 19:30:48
+
+Configuration for 'SMSLAI_EODDB' database service
+
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+
+    <bean 
+        id="SMSLAI_EODDB"
+        class="com.smslai_eoddb.SMSLAI_EODDB"
+        scope="singleton"
+        lazy-init="true">
+        <property name="dataServiceManager">
+            <ref bean="SMSLAI_EODDBDataService"/>
+        </property>
+        <property name="taskManager">
+            <ref bean="SMSLAI_EODDBTaskMgr"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:SMSLAI_EODDB.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean 
+        id="SMSLAI_EODDBDataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+        lazy-init="true">
+        <property name="driverClassName" value="${SMSLAI_EODDB.driverClassName}"/>
+        <property name="url" value="${SMSLAI_EODDB.connectionUrl}"/>
+        <property name="username" value="${SMSLAI_EODDB.username}"/>
+        <property name="password" value="${SMSLAI_EODDB.password}"/>
+    </bean>
+
+
+    <bean 
+        id="SMSLAI_EODDBTxMgr" 
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        lazy-init="true">
+        <property name="sessionFactory">
+            <ref bean="SMSLAI_EODDBSessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean 
+        id="SMSLAI_EODDBHibernateTemplate"
+        class="org.springframework.orm.hibernate3.HibernateTemplate"
+        lazy-init="true">
+        <property name="sessionFactory"> 
+            <ref bean="SMSLAI_EODDBSessionFactory"/>
+        </property>
+    </bean>  
+
+
+    <bean 
+        id="SMSLAI_EODDBSessionFactory" 
+        class="com.wavemaker.runtime.data.spring.ConfigurationAndSessionFactoryBean"
+        lazy-init="true">
+
+        <!-- A unique name for this SessionFactory's configuration -->
+        <property name="name" value="SMSLAI_EODDB"/>
+        <property name="dataSource" ref="SMSLAI_EODDBDataSource"/>
+
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${SMSLAI_EODDB.dialect}</prop>
+                <prop key="hibernate.transaction.factory_class">
+                    org.hibernate.transaction.JDBCTransactionFactory
+                </prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                
+            </props> 
+        </property>
+
+        <property name="mappingResources">
+            <list>
+
+<value>com/smslai_eoddb/data/Tbmiscellaneous.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcbsfintxjrnl.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbemailparams.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbglmatrix.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdeptxjrnl.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbunit.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcodetable.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbglentries.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbaccessrights.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcasafin.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbuserrights.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbnetamt.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbuser.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbtdcprint.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbfeesandcharges.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbprodmatrix.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcashposition.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbtransactioncode.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbroles.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbroleaccess.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcheckbook.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbsysparam.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbaudittrail.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tboverride.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbemailformats.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdeposit.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbuseraccess.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbfintxchecklist.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbuserroles.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbusermember.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdocdetails.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbauditevents.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbmanagerscheck.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdocuments.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdepositcif.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbfreezeaccount.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbunituser.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbsequence.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbfintxjrnl.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbrole.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcountry.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tboutreturn.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbusermaster.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbmerchant.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdocchecklist.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbsecurityparams.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbpasswordbank.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbproductmatrix.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdocumentpertransaction.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbproperties.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbmctxjrnl.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdepdetail.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcashpositiondenom.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbrates.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbbillspayment.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbholdamtcheck.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbprocessingdate.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbterminal.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbholiday.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbsmtp.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbspecialinst.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbbatchfile.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbchecksforclearing.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbdocsperproduct.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbbrfintxjrnl.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbbulkfin.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbratehistory.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbpassbookissuance.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbforextx.hbm.xml</value>
+
+<value>com/smslai_eoddb/data/Tbmiscellaneous.ql.xml</value>
+<value>com/smslai_eoddb/data/app-queries.ql.xml</value>
+
+            </list>
+        </property>
+
+    </bean>
+
+
+    <!-- the data service bean instance is injected into the service bean -->
+    <bean 
+        id="SMSLAI_EODDBDataService" 
+        class="com.wavemaker.runtime.data.spring.SpringDataServiceManager"
+        lazy-init="true">
+        <constructor-arg>
+            <!-- the value of the "name" property of the SessionFactory -->
+            <value>SMSLAI_EODDB</value>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="SMSLAI_EODDBHibernateTemplate"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="SMSLAI_EODDBTxMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="SMSLAI_EODDBTaskMgr"/>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="useIndividualCRUDOperations" value="false"/>
+                <entry key="refreshEntities" value=""/> 
+            </map>
+        </constructor-arg>
+    </bean>
+
+
+    <bean 
+        id="SMSLAI_EODDBTaskMgr"
+        class="com.wavemaker.runtime.data.DefaultTaskManager"
+        lazy-init="true"/>
+
+    <bean class="com.wavemaker.runtime.service.events.EventWire"
+        lazy-init="false">
+        <property name="serviceWire" ref="SMSLAI_EODDBServiceWire"/>
+        <property name="eventListener">
+            <bean class="com.wavemaker.runtime.data.DataServiceEventListener"/>
+        </property>
+    </bean>
+
+    <bean id="SMSLAI_EODDBServiceWire"
+        class="com.wavemaker.runtime.service.reflect.ReflectServiceWire"
+        lazy-init="false" scope="singleton">
+        <property name="serviceId" value="SMSLAI_EODDB"/>
+        <property name="serviceType" ref="DataService"/>
+    </bean>
+
+</beans>

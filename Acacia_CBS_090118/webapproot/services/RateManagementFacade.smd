@@ -1,0 +1,31 @@
+{
+	"methods": [{
+		"name": "addOrupdateRates",
+		"operationType": null,
+		"parameters": [{
+			"name": "rate",
+			"type": "com.gldb.data.Tbrates"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "deleteRates",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "getListRates",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbrates]"
+	}, {
+		"name": "sampleJavaOperation",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "RateManagementFacade.json"
+}

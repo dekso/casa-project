@@ -1,0 +1,150 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbrestruct" table="TBRESTRUCT" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txBatch" type="string">
+            <column name="TxBatch" length="3"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="Txdate" length="23"/>
+        </property>
+        <property name="txRefNo" type="string">
+            <column name="TxRefNo" length="12"/>
+        </property>
+        <property name="txcode" type="string">
+            <column name="Txcode" length="3"/>
+        </property>
+        <property name="txmode" type="string">
+            <column name="Txmode" length="1"/>
+        </property>
+        <property name="txvaldt" type="timestamp">
+            <column name="Txvaldt" length="23"/>
+        </property>
+        <property name="slaidNo" type="string">
+            <column name="SLAIdNo" length="12"/>
+        </property>
+        <property name="employeeNo" type="string">
+            <column name="EmployeeNo" length="12"/>
+        </property>
+        <property name="lastname" type="string">
+            <column name="Lastname" length="50"/>
+        </property>
+        <property name="firstName" type="string">
+            <column name="FirstName" length="50"/>
+        </property>
+        <property name="middleName" type="string">
+            <column name="MiddleName" length="50"/>
+        </property>
+        <property name="product" type="string">
+            <column name="Product" length="2"/>
+        </property>
+        <property name="subprod1" type="string">
+            <column name="Subprod1" length="2"/>
+        </property>
+        <property name="subprod2" type="string">
+            <column name="Subprod2" length="20"/>
+        </property>
+        <property name="loanPurpose" type="string">
+            <column name="LoanPurpose" length="20"/>
+        </property>
+        <property name="loanAmount" type="big_decimal">
+            <column name="LoanAmount" precision="11"/>
+        </property>
+        <property name="loanTerm" type="big_decimal">
+            <column name="LoanTerm" precision="5"/>
+        </property>
+        <property name="loanCycle" type="string">
+            <column name="LoanCycle" length="1"/>
+        </property>
+        <property name="loanIntRate" type="big_decimal">
+            <column name="LoanIntRate" precision="11"/>
+        </property>
+        <property name="collateralinfo" type="string">
+            <column name="Collateralinfo" length="500"/>
+        </property>
+        <property name="comaker1EmpId" type="string">
+            <column name="Comaker1_EmpId" length="20"/>
+        </property>
+        <property name="comaker1LastName" type="string">
+            <column name="Comaker1_LastName" length="50"/>
+        </property>
+        <property name="comaker1FirstName" type="string">
+            <column name="Comaker1_FirstName" length="50"/>
+        </property>
+        <property name="comaker1MiddleName" type="string">
+            <column name="Comaker1_MiddleName" length="50"/>
+        </property>
+        <property name="comaker2EmpId" type="string">
+            <column name="Comaker2_EmpId" length="20"/>
+        </property>
+        <property name="comaker2LastName" type="string">
+            <column name="Comaker2_LastName" length="50"/>
+        </property>
+        <property name="comaker2FirstName" type="string">
+            <column name="Comaker2_FirstName" length="50"/>
+        </property>
+        <property name="comaker2MiddleName" type="string">
+            <column name="Comaker2_MiddleName" length="50"/>
+        </property>
+        <property name="comaker3EmpId" type="string">
+            <column name="Comaker3_EmpId" length="20"/>
+        </property>
+        <property name="comaker3LastName" type="string">
+            <column name="Comaker3_LastName" length="50"/>
+        </property>
+        <property name="comaker3FirstName" type="string">
+            <column name="Comaker3_FirstName" length="50"/>
+        </property>
+        <property name="comaker3MiddleName" type="string">
+            <column name="Comaker3_MiddleName" length="50"/>
+        </property>
+        <property name="txStatus" type="string">
+            <column name="TxStatus" length="1"/>
+        </property>
+        <property name="txStatusDate" type="timestamp">
+            <column name="TxStatusDate" length="23"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="approvedBy" type="string">
+            <column name="ApprovedBy" length="50"/>
+        </property>
+        <property name="approvalDate" type="timestamp">
+            <column name="ApprovalDate" length="23"/>
+        </property>
+        <property name="txRemarks" type="string">
+            <column name="TxRemarks" length="50"/>
+        </property>
+        <property name="frequency" type="string">
+            <column name="Frequency" length="2"/>
+        </property>
+        <property name="ppynum" type="integer">
+            <column name="Ppynum"/>
+        </property>
+        <property name="interestAmt" type="big_decimal">
+            <column name="InterestAmt" precision="11"/>
+        </property>
+        <property name="eir" type="big_decimal">
+            <column name="EIR" precision="11"/>
+        </property>
+        <property name="amortizationAmt" type="big_decimal">
+            <column name="AmortizationAmt" precision="11"/>
+        </property>
+        <property name="paymentCycle" type="integer">
+            <column name="PaymentCycle"/>
+        </property>
+        <property name="relType" type="integer">
+            <column name="RelType"/>
+        </property>
+        <property name="eyRate" type="big_decimal">
+            <column name="EyRate" precision="11"/>
+        </property>
+        <property name="adverseRemarks" type="string">
+            <column name="AdverseRemarks" length="500"/>
+        </property>
+    </class>
+</hibernate-mapping>

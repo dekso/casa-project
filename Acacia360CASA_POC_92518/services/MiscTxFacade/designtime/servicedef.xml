@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="MiscTxFacade" class="com.casa.misc.MiscTxFacade" CRUDService="false" type="JavaService" springFile="MiscTxFacade.spring.xml">
+    <operation name="addMerchant">
+        <parameter name="merch" typeRef="com.smslai_eoddb.data.Tbmerchant" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="checkbookIssuance">
+        <parameter name="data" typeRef="com.smslai_eoddb.data.Tbcheckbook" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createMiscTx">
+        <parameter name="misc" typeRef="com.smslai_eoddb.data.Tbmiscellaneous" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="createPayment">
+        <parameter name="payment" typeRef="com.smslai_eoddb.data.Tbbillspayment" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getMerchantList">
+        <return typeRef="com.casa.misc.forms.MerchantForm" isList="true"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.casa.misc.forms.MerchantForm" name="MerchantForm" supportsQuickData="false">
+            <element name="merchantacctno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="merchantcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="merchantname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

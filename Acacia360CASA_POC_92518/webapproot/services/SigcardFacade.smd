@@ -1,0 +1,67 @@
+{
+	"methods": [{
+		"name": "bulkAccountCreate",
+		"operationType": null,
+		"parameters": [{
+			"name": "filename",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbdepositcif]"
+	}, {
+		"name": "getBatchList",
+		"operationType": null,
+		"parameters": [{
+			"name": "batchstatus",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbbatchfile]"
+	}, {
+		"name": "print",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "java.lang.String"
+		}, {
+			"name": "type",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": null
+	}, {
+		"name": "readBulk",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "saveBulkFile",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tbbatchfile"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "saveSigcard",
+		"operationType": null,
+		"parameters": [{
+			"name": "filename",
+			"type": "java.lang.String"
+		}, {
+			"name": "acctno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "viewSigcard",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "SigcardFacade.json"
+}

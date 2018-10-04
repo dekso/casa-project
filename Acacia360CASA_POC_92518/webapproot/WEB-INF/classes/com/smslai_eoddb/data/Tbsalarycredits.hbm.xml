@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbsalarycredits" table="TBSALARYCREDITS" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="rank" type="integer">
+            <column name="rank"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="salarycredits" type="big_decimal">
+            <column name="salarycredits" precision="18"/>
+        </property>
+        <property name="tenure1" type="integer">
+            <column name="tenure1"/>
+        </property>
+        <property name="tenure2" type="integer">
+            <column name="tenure2"/>
+        </property>
+        <property name="tenure3" type="integer">
+            <column name="tenure3"/>
+        </property>
+        <property name="tenure4" type="integer">
+            <column name="tenure4"/>
+        </property>
+        <property name="tenure5" type="integer">
+            <column name="tenure5"/>
+        </property>
+        <property name="tenureN" type="integer">
+            <column name="tenureN"/>
+        </property>
+    </class>
+</hibernate-mapping>

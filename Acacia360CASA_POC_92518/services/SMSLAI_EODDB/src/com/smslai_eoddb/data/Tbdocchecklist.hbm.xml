@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbdocchecklist" table="TBDOCCHECKLIST" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txrefno" type="string">
+            <column name="Txrefno" length="12"/>
+        </property>
+        <property name="employeeno" type="string">
+            <column name="Employeeno" length="12"/>
+        </property>
+        <property name="documentCode" type="string">
+            <column name="DocumentCode" length="5"/>
+        </property>
+        <property name="seqNo" type="integer">
+            <column name="SeqNo"/>
+        </property>
+        <property name="isRequired" type="boolean">
+            <column name="isRequired"/>
+        </property>
+        <property name="isSubmitted" type="boolean">
+            <column name="isSubmitted"/>
+        </property>
+        <property name="dateSubmitted" type="timestamp">
+            <column name="dateSubmitted" length="23"/>
+        </property>
+        <property name="isRequestWaiver" type="boolean">
+            <column name="isRequestWaiver"/>
+        </property>
+        <property name="dateApproved" type="timestamp">
+            <column name="dateApproved" length="23"/>
+        </property>
+        <property name="isPoa" type="boolean">
+            <column name="isPOA"/>
+        </property>
+        <property name="requirementType" type="string">
+            <column name="RequirementType" length="1"/>
+        </property>
+        <property name="requirementGroup" type="integer">
+            <column name="RequirementGroup"/>
+        </property>
+    </class>
+</hibernate-mapping>

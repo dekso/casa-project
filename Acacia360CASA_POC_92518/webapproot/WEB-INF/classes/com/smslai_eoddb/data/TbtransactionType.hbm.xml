@@ -1,0 +1,39 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.TbtransactionType" table="TBTRANSACTION_TYPE" catalog="SMSLAI_EOD_8_3" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="dateUpdated" type="timestamp">
+            <column name="date_updated" length="23"/>
+        </property>
+        <property name="docvalMessage" type="string">
+            <column name="docval_message" length="120"/>
+        </property>
+        <property name="eod" type="boolean">
+            <column name="eod"/>
+        </property>
+        <property name="eodPriority" type="integer">
+            <column name="eod_priority"/>
+        </property>
+        <property name="eodInclude" type="boolean">
+            <column name="eod_include"/>
+        </property>
+        <property name="mnemonic" type="string">
+            <column name="mnemonic" length="50"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100"/>
+        </property>
+        <property name="passbookMnemonic" type="string">
+            <column name="passbook_mnemonic" length="10"/>
+        </property>
+        <property name="passbookMessage" type="string">
+            <column name="passbook_message" length="120"/>
+        </property>
+        <property name="updatedBy" type="integer">
+            <column name="updated_by"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbfeesandcharges" table="TBFEESANDCHARGES" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="productcode" type="string">
+            <column name="productcode" length="10"/>
+        </property>
+        <property name="subprodcode" type="string">
+            <column name="subprodcode" length="20"/>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="chargetype" type="string">
+            <column name="chargetype" length="1"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbroleaccess" table="TBROLEACCESS" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="role" type="string">
+            <column name="role" length="50"/>
+        </property>
+        <property name="module" type="string">
+            <column name="module" length="50"/>
+        </property>
+        <property name="submodule" type="string">
+            <column name="submodule" length="50"/>
+        </property>
+        <property name="modulename" type="string">
+            <column name="modulename" length="50"/>
+        </property>
+        <property name="modulelevel" type="integer">
+            <column name="modulelevel"/>
+        </property>
+        <property name="page" type="string">
+            <column name="page" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

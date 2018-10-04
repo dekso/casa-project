@@ -1,0 +1,45 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbproofsheet" table="TBPROOFSHEET" catalog="GLDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="psid" type="string">
+            <column name="psid" length="20"/>
+        </property>
+        <property name="batch" type="string">
+            <column name="batch" length="20"/>
+        </property>
+        <property name="psdate" type="timestamp">
+            <column name="psdate" length="23"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="2"/>
+        </property>
+        <property name="statusdate" type="timestamp">
+            <column name="statusdate" length="23"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="sequence" type="integer">
+            <column name="sequence"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="checkedby" type="string">
+            <column name="checkedby" length="20"/>
+        </property>
+        <property name="authorizedby" type="string">
+            <column name="authorizedby" length="20"/>
+        </property>
+        <property name="reason" type="string">
+            <column name="reason"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

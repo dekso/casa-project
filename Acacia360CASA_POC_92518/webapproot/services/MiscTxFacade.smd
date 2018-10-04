@@ -1,0 +1,42 @@
+{
+	"methods": [{
+		"name": "addMerchant",
+		"operationType": null,
+		"parameters": [{
+			"name": "merch",
+			"type": "com.smslai_eoddb.data.Tbmerchant"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "checkbookIssuance",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tbcheckbook"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "createMiscTx",
+		"operationType": null,
+		"parameters": [{
+			"name": "misc",
+			"type": "com.smslai_eoddb.data.Tbmiscellaneous"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "createPayment",
+		"operationType": null,
+		"parameters": [{
+			"name": "payment",
+			"type": "com.smslai_eoddb.data.Tbbillspayment"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "getMerchantList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.casa.misc.forms.MerchantForm]"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "MiscTxFacade.json"
+}

@@ -1,0 +1,77 @@
+{
+	"methods": [{
+		"name": "checkAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "checkMemberNoName",
+		"operationType": null,
+		"parameters": [{
+			"name": "name",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.InquiryCIFNameList]"
+	}, {
+		"name": "createNewProduct",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.gldb.data.Tbprodmatrix"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "getProdList",
+		"operationType": null,
+		"parameters": [{
+			"name": "prodgroup",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbprodmatrix]"
+	}, {
+		"name": "getProductDetail",
+		"operationType": null,
+		"parameters": [{
+			"name": "prodcode",
+			"type": "java.lang.String"
+		}, {
+			"name": "subprodcode",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.gldb.data.Tbprodmatrix"
+	}, {
+		"name": "getTimeDepAcctDet",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.TimeDepositAccountDetailForm"
+	}, {
+		"name": "getTimeDepAcctList",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.TimeDepositListForm]"
+	}, {
+		"name": "initForm",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.casa.acct.forms.AccountClosureFormDetail"
+	}, {
+		"name": "submitMatAcctAction",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.casa.acct.forms.MaturedAccountActionForm"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "AccountFacade.json"
+}

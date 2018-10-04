@@ -1,0 +1,129 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbproductmatrix" table="TBPRODUCTMATRIX" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="productCode" type="string">
+            <column name="ProductCode" length="2" not-null="true"/>
+        </property>
+        <property name="productName" type="string">
+            <column name="ProductName" length="50"/>
+        </property>
+        <property name="subTypeCode" type="string">
+            <column name="SubTypeCode" length="5"/>
+        </property>
+        <property name="subTypeName" type="string">
+            <column name="SubTypeName" length="50"/>
+        </property>
+        <property name="rankMin" type="integer">
+            <column name="RankMin"/>
+        </property>
+        <property name="rankMax" type="integer">
+            <column name="RankMax"/>
+        </property>
+        <property name="loanAmtMin" type="big_decimal">
+            <column name="LoanAmtMin" precision="16"/>
+        </property>
+        <property name="loanAmtMax" type="big_decimal">
+            <column name="LoanAmtMax" precision="16"/>
+        </property>
+        <property name="loanAmtInd" type="integer">
+            <column name="LoanAmtInd"/>
+        </property>
+        <property name="loanTermMin" type="big_decimal">
+            <column name="LoanTermMin" precision="5"/>
+        </property>
+        <property name="loanTermMax" type="big_decimal">
+            <column name="LoanTermMax" precision="5" not-null="true"/>
+        </property>
+        <property name="indNetPay" type="boolean">
+            <column name="IndNetPay"/>
+        </property>
+        <property name="indCm1" type="string">
+            <column name="IndCM1" length="1"/>
+        </property>
+        <property name="indCm2" type="string">
+            <column name="IndCM2" length="1"/>
+        </property>
+        <property name="minTenureCm" type="integer">
+            <column name="MinTenureCM"/>
+        </property>
+        <property name="indPastDue" type="boolean">
+            <column name="IndPastDue"/>
+        </property>
+        <property name="indManyAvail" type="boolean">
+            <column name="IndManyAvail"/>
+        </property>
+        <property name="indSameLoan" type="boolean">
+            <column name="IndSameLoan"/>
+        </property>
+        <property name="sameLoanPaid" type="integer">
+            <column name="SameLoanPaid"/>
+        </property>
+        <property name="procFee" type="big_decimal">
+            <column name="ProcFee" precision="11"/>
+        </property>
+        <property name="indPfdeduct" type="boolean">
+            <column name="IndPFDeduct"/>
+        </property>
+        <property name="minTenureSla" type="big_decimal">
+            <column name="MinTenureSLA" precision="5"/>
+        </property>
+        <property name="minTenureSm" type="integer">
+            <column name="MinTenureSM"/>
+        </property>
+        <property name="indMinCapcon" type="big_decimal">
+            <column name="IndMinCapcon" precision="11"/>
+        </property>
+        <property name="indMinSavings" type="big_decimal">
+            <column name="IndMinSavings" precision="11"/>
+        </property>
+        <property name="indOffset" type="boolean">
+            <column name="IndOffset"/>
+        </property>
+        <property name="wtaxRate" type="integer">
+            <column name="WTaxRate"/>
+        </property>
+        <property name="paymentCycle" type="integer">
+            <column name="PaymentCycle"/>
+        </property>
+        <property name="intRate1" type="big_decimal">
+            <column name="IntRate1" precision="5"/>
+        </property>
+        <property name="intRate2" type="big_decimal">
+            <column name="IntRate2" precision="5"/>
+        </property>
+        <property name="intRate3" type="big_decimal">
+            <column name="IntRate3" precision="5"/>
+        </property>
+        <property name="denominations" type="big_decimal">
+            <column name="denominations" precision="18"/>
+        </property>
+        <property name="modeofrelease1" type="string">
+            <column name="modeofrelease1" length="2"/>
+        </property>
+        <property name="modeofrelease2" type="string">
+            <column name="modeofrelease2" length="2"/>
+        </property>
+        <property name="amountforrelease2" type="big_decimal">
+            <column name="amountforrelease2" precision="18"/>
+        </property>
+        <property name="cmcoveredcapcon" type="boolean">
+            <column name="cmcoveredcapcon"/>
+        </property>
+        <property name="cmnotcovercapcon" type="boolean">
+            <column name="cmnotcovercapcon"/>
+        </property>
+        <property name="cmtenurerequired" type="integer">
+            <column name="cmtenurerequired"/>
+        </property>
+        <property name="postingpriority" type="integer">
+            <column name="postingpriority"/>
+        </property>
+        <property name="disabled" type="boolean">
+            <column name="disabled"/>
+        </property>
+    </class>
+</hibernate-mapping>

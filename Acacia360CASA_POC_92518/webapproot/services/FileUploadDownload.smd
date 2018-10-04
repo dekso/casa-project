@@ -1,0 +1,53 @@
+{
+	"methods": [{
+		"name": "deleteFile",
+		"operationType": null,
+		"parameters": [{
+			"name": "file",
+			"type": "java.lang.String"
+		}],
+		"returnType": null
+	}, {
+		"name": "deleteFiles",
+		"operationType": null,
+		"parameters": [{
+			"name": "files",
+			"type": "[java.lang.String]"
+		}],
+		"returnType": null
+	}, {
+		"name": "downloadFile",
+		"operationType": null,
+		"parameters": [{
+			"name": "file",
+			"type": "java.lang.String"
+		}, {
+			"name": "returnname",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.wavemaker.runtime.server.DownloadResponse"
+	}, {
+		"name": "listFiles",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[FileUploadDownload.WMFile]"
+	}, {
+		"name": "uploadCsvFile",
+		"operationType": null,
+		"parameters": [{
+			"name": "file",
+			"type": "org.springframework.web.multipart.MultipartFile"
+		}],
+		"returnType": "com.wavemaker.runtime.server.FileUploadResponse"
+	}, {
+		"name": "uploadImageFile",
+		"operationType": null,
+		"parameters": [{
+			"name": "file",
+			"type": "org.springframework.web.multipart.MultipartFile"
+		}],
+		"returnType": "com.wavemaker.runtime.server.FileUploadResponse"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "FileUploadDownload.json"
+}

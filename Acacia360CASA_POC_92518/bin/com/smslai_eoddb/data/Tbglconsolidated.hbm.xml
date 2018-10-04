@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbglconsolidated" table="TBGLCONSOLIDATED" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <composite-id name="id" class="com.smslai_eoddb.data.TbglconsolidatedId">
+            <key-property name="id" type="integer">
+                <column name="id"/>
+            </key-property>
+            <key-property name="txdate" type="timestamp">
+                <column name="txdate" length="23"/>
+            </key-property>
+            <key-property name="gllegveh" type="string">
+                <column name="gllegveh" length="5"/>
+            </key-property>
+            <key-property name="glbranch" type="string">
+                <column name="glbranch" length="5"/>
+            </key-property>
+            <key-property name="glsl" type="string">
+                <column name="glsl" length="15"/>
+            </key-property>
+            <key-property name="txcurr" type="string">
+                <column name="txcurr" length="5"/>
+            </key-property>
+            <key-property name="debit" type="big_decimal">
+                <column name="debit" precision="16"/>
+            </key-property>
+            <key-property name="credit" type="big_decimal">
+                <column name="credit" precision="16"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

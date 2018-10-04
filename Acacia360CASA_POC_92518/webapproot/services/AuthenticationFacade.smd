@@ -1,0 +1,98 @@
+{
+	"methods": [{
+		"name": "autheticateUser",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "password",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "checkUserStatus",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "password",
+			"type": "java.lang.String"
+		}, {
+			"name": "brid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.etel.forms.FormValidation"
+	}, {
+		"name": "computePasswordAge",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "existingSession",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "failedLoginCount",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "removeADLoginToken",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "password",
+			"type": "java.lang.String"
+		}, {
+			"name": "tag",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "requestPassReset",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "emailAdd",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.etel.forms.FormValidation"
+	}, {
+		"name": "status",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "password",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "success",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}],
+		"returnType": null
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "AuthenticationFacade.json"
+}

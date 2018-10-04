@@ -1,0 +1,230 @@
+{
+	"methods": [{
+		"name": "accountInquiry",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.fintx.forms.AccountInquiryMainForm"
+	}, {
+		"name": "accountInquiryName",
+		"operationType": null,
+		"parameters": [{
+			"name": "name",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.fintx.forms.InquiryNameList]"
+	}, {
+		"name": "actinqform",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.casa.fintx.forms.AccountInquiryForm"
+	}, {
+		"name": "actinqhistform",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.casa.fintx.forms.AccountInquiryJournalForm"
+	}, {
+		"name": "cancelOverrideTX",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "cashDepWithDrCrMemo",
+		"operationType": null,
+		"parameters": [{
+			"name": "jrnl",
+			"type": "com.smslai_eoddb.data.Tbfintxjrnl"
+		}, {
+			"name": "checklist",
+			"type": "[com.smslai_eoddb.data.Tbfintxchecklist]"
+		}],
+		"returnType": "com.casa.fintx.forms.FinGenericForm"
+	}, {
+		"name": "cashPos",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.casa.fintx.forms.CashPositionForm"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "cashPosDenom",
+		"operationType": null,
+		"parameters": [{
+			"name": "txref",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.fintx.forms.CashPositionConfirmForm"
+	}, {
+		"name": "checkAcct",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.fintx.forms.AccountCheckForm"
+	}, {
+		"name": "checkAcctFundTrans",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctnoto",
+			"type": "java.lang.String"
+		}, {
+			"name": "acctnofrom",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.fintx.forms.AccountCheckForm"
+	}, {
+		"name": "confirmCashPos",
+		"operationType": null,
+		"parameters": [{
+			"name": "txref",
+			"type": "java.lang.String"
+		}, {
+			"name": "act",
+			"type": "java.lang.String"
+		}, {
+			"name": "remarks",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "depositMc",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tbmctxjrnl"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "errorCorrect",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "getCashInCashOut",
+		"operationType": null,
+		"parameters": [{
+			"name": "userid",
+			"type": "java.lang.String"
+		}, {
+			"name": "currency",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.fintx.forms.CashInCashOutForm"
+	}, {
+		"name": "getTxinfo",
+		"operationType": null,
+		"parameters": [{
+			"name": "txname",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.smslai_eoddb.data.Tbtransactioncode"
+	}, {
+		"name": "initOverride",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tboverride"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "overrideTransaction",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}, {
+			"name": "username",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "printDocSlip",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "requestMc",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tbmanagerscheck"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "requestRemoteOverride",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "requestRemoteOverrideAction",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}, {
+			"name": "val",
+			"type": "java.lang.Integer"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "requestRemoteOverrideCount",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "requestRemoteOverrideList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.casa.fintx.forms.OverrideActionForm]"
+	}, {
+		"name": "requestRemoteOverrideResult",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.fintx.forms.OverrideResultForm"
+	}, {
+		"name": "requestRemoteOverrideWait",
+		"operationType": null,
+		"parameters": [{
+			"name": "txrefno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "saveBuySellFx",
+		"operationType": null,
+		"parameters": [{
+			"name": "brjrnl",
+			"type": "com.smslai_eoddb.data.Tbbrfintxjrnl"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "userCashPos",
+		"operationType": null,
+		"parameters": [{
+			"name": "userid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbnetamt]"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "FinTxFacade.json"
+}

@@ -1,0 +1,29 @@
+{
+	"methods": [{
+		"name": "getUnitBalance",
+		"operationType": null,
+		"parameters": [{
+			"name": "userid",
+			"type": "java.lang.String"
+		}, {
+			"name": "currency",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.math.BigDecimal"
+	}, {
+		"name": "getUnitinfo",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.smslai_eoddb.data.Tbunit"
+	}, {
+		"name": "getUserinfo",
+		"operationType": null,
+		"parameters": [{
+			"name": "userid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.user.forms.UserDetailForm"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "UserInfoFacade.json"
+}

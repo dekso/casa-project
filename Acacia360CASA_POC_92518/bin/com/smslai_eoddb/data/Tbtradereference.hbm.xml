@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbtradereference" table="TBTRADEREFERENCE" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="tradetype" type="string">
+            <column name="tradetype" length="50"/>
+        </property>
+        <property name="companyname" type="string">
+            <column name="companyname" length="100"/>
+        </property>
+        <property name="companyaddress" type="string">
+            <column name="companyaddress" length="100"/>
+        </property>
+        <property name="cifno" type="string">
+            <column name="cifno" length="50"/>
+        </property>
+        <property name="companyphoneno" type="string">
+            <column name="companyphoneno" length="50"/>
+        </property>
+        <property name="contactperson" type="string">
+            <column name="contactperson" length="100"/>
+        </property>
+        <property name="contactposition" type="string">
+            <column name="contactposition" length="50"/>
+        </property>
+        <property name="countrycodephone" type="string">
+            <column name="countrycodephone" length="3"/>
+        </property>
+        <property name="areacodephone" type="string">
+            <column name="areacodephone" length="4"/>
+        </property>
+    </class>
+</hibernate-mapping>

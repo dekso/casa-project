@@ -1,0 +1,59 @@
+{
+	"methods": [{
+		"name": "getAddress",
+		"operationType": null,
+		"parameters": [{
+			"name": "code",
+			"type": "java.lang.String"
+		}, {
+			"name": "stateprovince",
+			"type": "java.lang.String"
+		}, {
+			"name": "city",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.etel.country.forms.AddressForm"
+	}, {
+		"name": "getListOfAreaByRegion",
+		"operationType": null,
+		"parameters": [{
+			"name": "region",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbcountry]"
+	}, {
+		"name": "getListOfCityByState",
+		"operationType": null,
+		"parameters": [{
+			"name": "stateprovince",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbcountry]"
+	}, {
+		"name": "getListOfCountry",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbcountry]"
+	}, {
+		"name": "getListOfPostalCode",
+		"operationType": null,
+		"parameters": [{
+			"name": "stateprovince",
+			"type": "java.lang.String"
+		}, {
+			"name": "city",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbcountry]"
+	}, {
+		"name": "getListOfStateByCountry",
+		"operationType": null,
+		"parameters": [{
+			"name": "code",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbcountry]"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "CountryFacade.json"
+}

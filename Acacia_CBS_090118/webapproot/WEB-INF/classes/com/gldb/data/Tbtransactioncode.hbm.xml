@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbtransactioncode" table="TBTRANSACTIONCODE" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="txcode" type="string">
+            <column name="txcode" length="6"/>
+        </property>
+        <property name="txname" type="string">
+            <column name="txname" length="100"/>
+        </property>
+        <property name="servicecharge" type="big_decimal">
+            <column name="servicecharge" precision="16"/>
+        </property>
+    </class>
+</hibernate-mapping>

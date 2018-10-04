@@ -1,0 +1,171 @@
+dojo.declare("CSHR_LIFTHOLDAMT", wm.Page, {
+start: function() {
+//this.dlgAmtEntry.activate();
+//this.svCashInCashOut.update();
+this.svCurrList.update();
+this.svUserList.update();
+},
+"preferredDevice": "desktop",
+btnCancelClick: function(inSender) {
+this.countPanel.clearData();
+this.dlgAmtEntry.deactivate();
+},
+btnACOClick: function(inSender) {
+this.dlgCashPos.setValue("title", "Cash Out");
+},
+btnACIClick: function(inSender) {
+this.dlgCashPos.setValue("title", "Cash In");
+},
+btnCicoCancelClick: function(inSender) {
+this.cpDestination.clear();
+this.cpCurrency.clear();
+this.cpTxamount.clear();
+this.dlgCashPos.deactivate();
+},
+svCashPositionResult: function(inSender, inDeprecated) {
+if(inSender.getData().dataValue==="1"){
+app.alert("Transaction Successful!");
+this.cpDestination.clear();
+this.cpCurrency.clear();
+this.cpTxamount.clear();
+this.dlgCashPos.deactivate();
+this.svCashInCashOut.update();
+this.svUnitBalance.update();
+}else{
+app.alert("Transaction Failed!");
+}
+},
+cashinGridGridButtonClick: function(inSender, fieldName, rowData, rowIndex) {
+this.cashinGrid.select(rowIndex);
+this.svConfimCpos.input.setValue("txref", this.cashinGrid.selectedItem.getData().txref);
+this.svConfimCpos.update();
+this.dlgAmtDetail.activate();
+},
+notiCposAcceptOk: function(inSender, inResult) {
+this.svActionCpos.input.setValue("txref", this.cashinGrid.selectedItem.getData().txref);
+this.svActionCpos.input.setValue("act", "A");
+this.varCposAction.setValue("dataValue", "A");
+this.svActionCpos.update();
+},
+notiCposDeclineOk: function(inSender, inResult) {
+this.svActionCpos.input.setValue("txref", this.cashinGrid.selectedItem.getData().txref);
+this.svActionCpos.input.setValue("act", "D");
+this.varCposAction.setValue("dataValue", "D");
+this.svActionCpos.update();
+},
+svActionCposResult: function(inSender, inDeprecated) {
+if(inSender.getData().dataValue=="1"){
+if(this.varCposAction.getData().dataValue=="A"){
+app.alert("Transaction Accepted!");
+this.dlgAmtDetail.deactivate();
+this.svUnitBalance.update();
+this.svCashInCashOut.update();
+}else if(this.varCposAction.getData().dataValue=="D"){
+app.alert("Transaction Declined!");
+this.dlgAmtDetail.deactivate();
+this.svCashInCashOut.update();
+}
+}else{
+app.alert("Error in Routine");
+}
+},
+svUnitBalanceResult: function(inSender, inDeprecated) {
+app.varNetCash.setValue("dataValue",inSender.getData().dataValue);
+},
+_end: 0
+});
+
+CSHR_LIFTHOLDAMT.widgets = {
+navCashDep: ["wm.NavigationCall", {"operation":"gotoPageContainerPage"}, {}, {
+input: ["wm.ServiceInput", {"type":"gotoPageContainerPageInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"\"TLR_FX_CASHDEP\"","targetProperty":"pageName"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"pageContainer1","targetProperty":"pageContainer"}, {}]
+}]
+}]
+}],
+navCashWith: ["wm.NavigationCall", {"operation":"gotoPageContainerPage"}, {}, {
+input: ["wm.ServiceInput", {"type":"gotoPageContainerPageInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"\"TLR_FX_CASHWDRW\"","targetProperty":"pageName"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"pageContainer1","targetProperty":"pageContainer"}, {}]
+}]
+}]
+}],
+navAccountInq: ["wm.NavigationCall", {"operation":"gotoPageContainerPage"}, {}, {
+input: ["wm.ServiceInput", {"type":"gotoPageContainerPageInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"\"TLR_ACCTBALINQ\"","targetProperty":"pageName"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"pageContainer1","targetProperty":"pageContainer"}, {}]
+}]
+}]
+}],
+svCurrList: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getCurrency","service":"UtilFacade"}, {}, {
+input: ["wm.ServiceInput", {"type":"getCurrencyInputs"}, {}]
+}],
+svUserList: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getUserListCico","service":"UtilFacade"}, {}, {
+input: ["wm.ServiceInput", {"type":"getUserListCicoInputs"}, {}]
+}],
+notiCposAccept: ["wm.NotificationCall", {"operation":"confirm"}, {"onOk":"notiCposAcceptOk"}, {
+input: ["wm.ServiceInput", {"type":"confirmInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire1: ["wm.Wire", {"expression":"\"Proceed\"","targetProperty":"OKButtonText"}, {}],
+wire: ["wm.Wire", {"expression":"\"Are you sure you want to accept?\"","targetProperty":"text"}, {}]
+}]
+}]
+}],
+svConfimCpos: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"cashPosDenom","service":"FinTxFacade"}, {}, {
+input: ["wm.ServiceInput", {"type":"cashPosDenomInputs"}, {}]
+}],
+varCposAction: ["wm.Variable", {"type":"StringData"}, {}],
+svActionCpos: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"confirmCashPos","service":"FinTxFacade"}, {"onResult":"svActionCposResult"}, {
+input: ["wm.ServiceInput", {"type":"confirmCashPosInputs"}, {}]
+}],
+notiCposDecline: ["wm.NotificationCall", {"operation":"confirm"}, {"onOk":"notiCposDeclineOk"}, {
+input: ["wm.ServiceInput", {"type":"confirmInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"\"Are you sure you want to decline?\"","targetProperty":"text"}, {}],
+wire1: ["wm.Wire", {"expression":"\"Process\"","targetProperty":"OKButtonText"}, {}]
+}]
+}]
+}],
+svUnitBalance: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","loadingDialog":"","operation":"getUnitBalance","service":"UserInfoFacade"}, {"onResult":"svUnitBalanceResult"}, {
+input: ["wm.ServiceInput", {"type":"getUnitBalanceInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"[main].svSecurityUser.dataValue","targetProperty":"userid"}, {}]
+}]
+}]
+}],
+timer1: ["wm.Timer", {"autoStart":true,"delay":1500,"repeating":false}, {"onTimerFire":"svCashInCashOut"}],
+layoutBox1: ["wm.Layout", {"horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
+panel3: ["wm.Panel", {"height":"100%","horizontalAlign":"left","margin":"35,20,10,40","styles":{},"verticalAlign":"top","width":"80%"}, {}, {
+panel10: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
+label3: ["wm.Label", {"caption":"LIFT HOLD AMOUNT","height":"100%","padding":"4","styles":{"fontSize":"14px","fontWeight":"bolder","color":"#535050"},"width":"306px"}, {}]
+}],
+pnlCashin: ["wm.Panel", {"height":"50%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+panel2: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"middle","width":"100%"}, {}, {
+txSearch: ["wm.Text", {"border":"0","caption":"Search by:","dataValue":undefined,"displayValue":"","height":"25px","width":"350px"}, {}],
+label1: ["wm.Label", {"caption":"(Account Number)","padding":"4","styles":{"fontWeight":"bold"},"width":"150px"}, {}]
+}],
+cashinGrid: ["wm.DojoGrid", {"caseSensitiveSort":false,"columnReordering":false,"columns":[
+{"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"txdate","title":"Txdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":true,"field":"unit","title":"Unit","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"origin","title":"Origin","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"destination","title":"Destination","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"currency","title":"Currency","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"txamount","title":"Txamount","width":"80px","align":"right","formatFunc":"wm_number_formatter","formatProps":{"dijits":2},"mobileColumn":false},
+{"show":false,"field":"remarks","title":"Remarks","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"txref","title":"Txref","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"txstatus","title":"Txstatus","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"instcode","title":"Instcode","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Txdate: \" + ${wm.runtimeId}.formatCell(\"txdate\", ${txdate}, ${this}, ${wm.rowId}) +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Unit: \" + ${unit}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Origin: \" + ${origin}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Destination: \" + ${destination}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Currency: \" + ${currency}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Txamount: \" + ${wm.runtimeId}.formatCell(\"txamount\", ${txamount}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Txref: \" + ${txref}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Txstatus: \" + ${txstatus}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Action: \" + ${wm.runtimeId}.formatCell(\"btn\", ${btn}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":true,"field":"btn","title":"Action","width":"100%","align":"left","formatFunc":"wm_button_formatter","expression":"\"View\"","isCustomField":true}
+],"dataSet":"","height":"100%","localizationStructure":{},"minDesktopHeight":60,"singleClickEdit":true,"sortingEnabled":false}, {"onGridButtonClick":"cashinGridGridButtonClick"}]
+}]
+}]
+}]
+};
+
+CSHR_LIFTHOLDAMT.prototype._cssText = '';
+CSHR_LIFTHOLDAMT.prototype._htmlText = '';

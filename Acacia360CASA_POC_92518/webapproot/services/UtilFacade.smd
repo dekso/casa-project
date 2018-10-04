@@ -1,0 +1,190 @@
+{
+	"methods": [{
+		"name": "addOrUpdateTxcode",
+		"operationType": null,
+		"parameters": [{
+			"name": "code",
+			"type": "com.smslai_eoddb.data.Tbtransactioncode"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addOrupdateDoc",
+		"operationType": null,
+		"parameters": [{
+			"name": "doc",
+			"type": "com.smslai_eoddb.data.Tbdocuments"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addOrupdateDocsperProd",
+		"operationType": null,
+		"parameters": [{
+			"name": "docs",
+			"type": "com.smslai_eoddb.data.Tbdocsperproduct"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "aeProduct",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.smslai_eoddb.data.Tbprodmatrix"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "aeTerminal",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tbterminal"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "checkProduct",
+		"operationType": null,
+		"parameters": [{
+			"name": "prodcode",
+			"type": "java.lang.String"
+		}, {
+			"name": "prodgroup",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.util.forms.ProductMatrixForm"
+	}, {
+		"name": "deleteTerminal",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "genCodetable",
+		"operationType": null,
+		"parameters": [{
+			"name": "codename",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.util.forms.DescIdForm]"
+	}, {
+		"name": "getBrInfo",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.casa.util.forms.BranchInfoForm"
+	}, {
+		"name": "getBusinessdt",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "java.util.Date"
+	}, {
+		"name": "getCurrency",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.casa.util.forms.DescIdForm]"
+	}, {
+		"name": "getDocsperProd",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.smslai_eoddb.data.Tbdocsperproduct]"
+	}, {
+		"name": "getListDocument",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.smslai_eoddb.data.Tbdocuments]"
+	}, {
+		"name": "getListTxcode",
+		"operationType": null,
+		"parameters": [{
+			"name": "search",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbtransactioncode]"
+	}, {
+		"name": "getProdtype",
+		"operationType": null,
+		"parameters": [{
+			"name": "prodgroup",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.util.forms.DescIdForm]"
+	}, {
+		"name": "getProductDetail",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "com.smslai_eoddb.data.Tbprodmatrix"
+	}, {
+		"name": "getRates",
+		"operationType": null,
+		"parameters": [{
+			"name": "curr",
+			"type": "java.lang.String"
+		}, {
+			"name": "buysell",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.smslai_eoddb.data.Tbrates"
+	}, {
+		"name": "getUserListCico",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.casa.util.forms.DescIdForm]"
+	}, {
+		"name": "listHolidays",
+		"operationType": null,
+		"parameters": [{
+			"name": "minDate",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbholiday]"
+	}, {
+		"name": "printCTD",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "productList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.casa.util.forms.ProductMatrixForm]"
+	}, {
+		"name": "terminalList",
+		"operationType": null,
+		"parameters": [{
+			"name": "unitid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbterminal]"
+	}, {
+		"name": "terminalNo",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[java.lang.String]"
+	}, {
+		"name": "updateBr",
+		"operationType": null,
+		"parameters": [{
+			"name": "brstat",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "validateUser",
+		"operationType": null,
+		"parameters": [{
+			"name": "username",
+			"type": "java.lang.String"
+		}, {
+			"name": "password",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "UtilFacade.json"
+}

@@ -1,0 +1,15 @@
+{
+	"__metaData": {
+		"service_invalid_AccountFacade": false, 
+		"service_invalid_UtilFacade": false, 
+		"service_invalid_Report": false, 
+		"service_invalid_FinTxFacade": false, 
+		"service_invalid_MiscTxFacade": false, 
+		"service_invalid_ADInquiryFacade": false, 
+		"service_invalid_AuthenticationFacade": false, 
+		"service_invalid_EncryptionFacade": false, 
+		"service_invalid_SecurityFacade": false, 
+		"service_invalid_UserInfoFacade": false, 
+		"service_invalid_UserAccountFacade": false
+	}
+}

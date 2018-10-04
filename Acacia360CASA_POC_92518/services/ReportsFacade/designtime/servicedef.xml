@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="ReportsFacade" class="com.etel.reports.ReportsFacade" CRUDService="false" type="JavaService" springFile="ReportsFacade.spring.xml">
+    <operation name="AverageDailyBalCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="AverageDailyBalSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CASAFullBalCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="CASAFullBalancingSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListAccInsufFundCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListActivatedDormantAccCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListActivatedDormantSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListAutoTransferAccCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListAutoTransferAccSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListCheckbookReqCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListClosedAccCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListClosedAccountSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListDormantAccCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListDormantAccSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListNewAccCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListNewAccountSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListPostedTransCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListPostedTransSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListReturnedItemsCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListTransferAccCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListTransferAccSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyListWaivedChargesCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyTransCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyTransSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyTrialBalCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="DailyTrialBalanceSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="StatChecksIssuedCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="SummaryDailyTransCA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="SummaryDailyTransSA">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListIntPaidPerClientForDay">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListIntPaidPerClientForMonth">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListLargeTimeDepTrans">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListMaturedAcc">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListNewTimeDep">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListPreTermTimeDep">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListRenewedTimeDeposits">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListTimeDepBal">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListUnclaimedMaturedTimeDep">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDListWithdrawnTimeDep">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="TDTrialBal">
+        <parameter name="branchcode" typeRef="java.lang.String" isList="false"/>
+        <parameter name="txdate" typeRef="java.util.Date" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="customerMasterlistStatus">
+        <parameter name="cifstatus" typeRef="java.lang.String" isList="false"/>
+        <parameter name="rpttype" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="getBranchName">
+        <return typeRef="com.smslai_eoddb.data.Tbunit" isList="true"/>
+    </operation>
+    <operation name="getLogo">
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <operation name="setLogo">
+        <parameter name="logo" typeRef="java.lang.String" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

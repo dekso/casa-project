@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbpaysched" table="TBPAYSCHED" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="16" not-null="true"/>
+        </property>
+        <property name="ilno" type="integer">
+            <column name="ilno"/>
+        </property>
+        <property name="ilduedt" type="timestamp">
+            <column name="ilduedt" length="23"/>
+        </property>
+        <property name="ilamt" type="big_decimal">
+            <column name="ilamt" precision="16"/>
+        </property>
+        <property name="ilint" type="big_decimal">
+            <column name="ilint" precision="16"/>
+        </property>
+        <property name="ilprin" type="big_decimal">
+            <column name="ilprin" precision="16"/>
+        </property>
+        <property name="illoanbal" type="big_decimal">
+            <column name="illoanbal" precision="16"/>
+        </property>
+        <property name="ilprinbal" type="big_decimal">
+            <column name="ilprinbal" precision="16"/>
+        </property>
+        <property name="iluidbal" type="big_decimal">
+            <column name="iluidbal" precision="16"/>
+        </property>
+        <property name="ilintrate" type="big_decimal">
+            <column name="ilintrate" precision="16"/>
+        </property>
+        <property name="iltaxrate" type="big_decimal">
+            <column name="iltaxrate" precision="16"/>
+        </property>
+    </class>
+</hibernate-mapping>

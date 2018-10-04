@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbtxhistory" table="TBTXHISTORY" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="16"/>
+        </property>
+        <property name="amount" type="big_decimal">
+            <column name="amount" precision="16"/>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="CreatedBy" length="50"/>
+        </property>
+        <property name="employeeno" type="string">
+            <column name="employeeno" length="12"/>
+        </property>
+        <property name="txdate" type="timestamp">
+            <column name="txdate" length="23"/>
+        </property>
+        <property name="txrefno" type="string">
+            <column name="txrefno" length="12"/>
+        </property>
+        <property name="txstatusafter" type="string">
+            <column name="txstatusafter" length="1"/>
+        </property>
+        <property name="txstatusbefore" type="string">
+            <column name="txstatusbefore" length="1"/>
+        </property>
+        <property name="txtype" type="string">
+            <column name="txtype" length="3"/>
+        </property>
+    </class>
+</hibernate-mapping>

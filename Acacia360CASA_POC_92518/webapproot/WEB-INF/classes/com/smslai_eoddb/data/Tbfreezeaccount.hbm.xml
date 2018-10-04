@@ -1,0 +1,30 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbfreezeaccount" table="TBFREEZEACCOUNT" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="accountno" type="string">
+            <column name="accountno" length="20"/>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="250"/>
+        </property>
+        <property name="freezedate" type="timestamp">
+            <column name="freezedate" length="23"/>
+        </property>
+        <property name="freezeby" type="string">
+            <column name="freezeby" length="20"/>
+        </property>
+        <property name="liftdate" type="timestamp">
+            <column name="liftdate" length="23"/>
+        </property>
+        <property name="liftby" type="string">
+            <column name="liftby" length="20"/>
+        </property>
+        <property name="validitydate" type="timestamp">
+            <column name="validitydate" length="23"/>
+        </property>
+    </class>
+</hibernate-mapping>

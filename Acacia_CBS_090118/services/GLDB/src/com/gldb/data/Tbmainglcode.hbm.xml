@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbmainglcode" table="TBMAINGLCODE" catalog="GLDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="bstype" type="string">
+            <column name="bstype" length="5"/>
+        </property>
+        <property name="glcode" type="string">
+            <column name="glcode" length="20"/>
+        </property>
+        <property name="glname" type="string">
+            <column name="glname" length="150"/>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="3"/>
+        </property>
+        <property name="master" type="string">
+            <column name="master" length="1"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="datecreated" type="timestamp">
+            <column name="datecreated" length="23"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

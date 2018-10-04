@@ -1,0 +1,282 @@
+{
+	"methods": [{
+		"name": "acctAlertOff",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.Integer"
+	}, {
+		"name": "acctClose",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "acctInfo",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.AccountMaintenanceForm"
+	}, {
+		"name": "acctSave",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.casa.acct.forms.AccountMaintenanceForm"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "checkAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "checkDeceased",
+		"operationType": null,
+		"parameters": [{
+			"name": "memberno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.CheckDeceasedForm"
+	}, {
+		"name": "checkMemberNo",
+		"operationType": null,
+		"parameters": [{
+			"name": "memberno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.user.forms.UserInfoForm"
+	}, {
+		"name": "checkMemberNoName",
+		"operationType": null,
+		"parameters": [{
+			"name": "name",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.InquiryCIFNameList]"
+	}, {
+		"name": "checkMishandled",
+		"operationType": null,
+		"parameters": [{
+			"name": "memberno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "int"
+	}, {
+		"name": "createAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "dep",
+			"type": "com.smslai_eoddb.data.Tbdeposit"
+		}, {
+			"name": "ciflist",
+			"type": "[com.smslai_eoddb.data.Tbdepositcif]"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "createNewProduct",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.smslai_eoddb.data.Tbprodmatrix"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "freezeAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "com.smslai_eoddb.data.Tbfreezeaccount"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "getAcctClosure",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.AccountClosureForm"
+	}, {
+		"name": "getControlno",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "getFloatItems",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbchecksforclearing]"
+	}, {
+		"name": "getFreezeInfo",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.smslai_eoddb.data.Tbfreezeaccount"
+	}, {
+		"name": "getHoldAmtList",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}, {
+			"name": "type",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.PlaceHoldForm]"
+	}, {
+		"name": "getProdList",
+		"operationType": null,
+		"parameters": [{
+			"name": "prodgroup",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbprodmatrix]"
+	}, {
+		"name": "getProductDetail",
+		"operationType": null,
+		"parameters": [{
+			"name": "prodcode",
+			"type": "java.lang.String"
+		}, {
+			"name": "subprodcode",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.smslai_eoddb.data.Tbprodmatrix"
+	}, {
+		"name": "getTDCList",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.TimeDepositCertForm]"
+	}, {
+		"name": "getTimeDepAcctDet",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.TimeDepositAccountDetailForm"
+	}, {
+		"name": "getTimeDepAcctList",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.TimeDepositListForm]"
+	}, {
+		"name": "getTimeDepMatAcctList",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.smslai_eoddb.data.Tbdeposit]"
+	}, {
+		"name": "initForm",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.casa.acct.forms.AccountClosureFormDetail"
+	}, {
+		"name": "liftFreeze",
+		"operationType": null,
+		"parameters": [{
+			"name": "accountno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "liftHoldAmt",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}, {
+			"name": "liftreason",
+			"type": "java.lang.String"
+		}, {
+			"name": "businessdt",
+			"type": "java.util.Date"
+		}, {
+			"name": "type",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "liftSPO",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}, {
+			"name": "liftreason",
+			"type": "java.lang.String"
+		}, {
+			"name": "businessdt",
+			"type": "java.util.Date"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "placeHoldAmt",
+		"operationType": null,
+		"parameters": [{
+			"name": "record",
+			"type": "com.smslai_eoddb.data.Tbholdamtcheck"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "placeHoldCheck",
+		"operationType": null,
+		"parameters": [{
+			"name": "record",
+			"type": "com.smslai_eoddb.data.Tbholdamtcheck"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "rolloverTimeDepositAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "dep",
+			"type": "com.smslai_eoddb.data.Tbdeposit"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}, {
+		"name": "spoList",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctno",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.casa.acct.forms.StopPaymentOrderForm]"
+	}, {
+		"name": "submitMatAcctAction",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.casa.acct.forms.MaturedAccountActionForm"
+		}],
+		"returnType": "com.casa.acct.forms.AccountGenericForm"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "AccountFacade.json"
+}

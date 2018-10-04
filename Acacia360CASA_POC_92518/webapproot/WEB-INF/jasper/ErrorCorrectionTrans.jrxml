@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="936" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="896" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3394a41e-5a36-4252-8ef4-78eb80ac5a0d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="TBFINTXJRNL_id" class="java.lang.Integer"/>
+	<field name="TBFINTXJRNL_txcode" class="java.lang.String"/>
+	<field name="TBFINTXJRNL_txdate" class="java.sql.Timestamp"/>
+	<field name="TBFINTXJRNL_accountno" class="java.lang.String"/>
+	<field name="TBFINTXJRNL_txamount" class="java.math.BigDecimal"/>
+	<field name="TBFINTXJRNL_currency" class="java.lang.String"/>
+	<field name="TBFINTXJRNL_txstatus" class="java.lang.String"/>
+	<field name="TBUNITUSER_username" class="java.lang.String"/>
+	<field name="TBUNITUSER_unitbrid" class="java.lang.String"/>
+	<columnHeader>
+		<band height="128" splitType="Stretch">
+			<textField pattern="">
+				<reportElement uuid="75618d10-b696-4a54-82a2-ce9b416a7e5e" x="116" y="39" width="232" height="20"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MM/dd/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="904cafc4-d773-48e9-ae84-c0b17542fb03" mode="Opaque" x="0" y="94" width="89" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bcab011b-7244-49bf-a463-d35cb50df05f" mode="Opaque" x="89" y="94" width="77" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tran Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7b59432f-5af7-4b9b-bc00-6e340301881b" mode="Opaque" x="337" y="94" width="96" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Currency]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="474a9173-463e-4e8d-9ad6-0de95ccee3ed" mode="Opaque" x="248" y="94" width="89" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Transaction
+Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="daabfdb4-7e06-41b0-b542-80dbc943b6c0" mode="Opaque" x="166" y="94" width="82" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Account No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c5a9d191-9df2-4319-a984-a60212727a05" mode="Opaque" x="433" y="94" width="71" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Others
+Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4367fbb3-bbe8-4a70-9803-d8fa84593bd7" mode="Opaque" x="504" y="94" width="59" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terminal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf415bd9-de73-4976-bc2a-5ff927746bf3" mode="Opaque" x="563" y="94" width="90" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="55fafd16-050d-489f-a3ff-246898b050df" mode="Opaque" x="653" y="94" width="72" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="82fdd1c6-b2f2-4a59-a212-def61d543c6c" mode="Opaque" x="725" y="94" width="71" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Override]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bdb9d6b5-6401-4ad0-ae07-6f4230cdbf7d" mode="Opaque" x="796" y="94" width="100" height="34" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="0.75"/>
+					<topPen lineWidth="0.75"/>
+					<leftPen lineWidth="0.75"/>
+					<bottomPen lineWidth="0.75"/>
+					<rightPen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reversal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99311e27-5f45-45ce-97bf-0db5c0050906" x="0" y="0" width="235" height="20"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACACIA 360]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e3d4e96-87d7-4343-95bf-cc797e6c84fd" x="1" y="19" width="234" height="20"/>
+				<box leftPadding="0"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALL ERROR CORRECTION TRANSACTIONS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e7ce8f42-1477-4794-a180-bcbbcc8ffdc8" x="2" y="39" width="114" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Generated:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch"/>
+	</detail>
+	<lastPageFooter>
+		<band height="64"/>
+	</lastPageFooter>
+</jasperReport>

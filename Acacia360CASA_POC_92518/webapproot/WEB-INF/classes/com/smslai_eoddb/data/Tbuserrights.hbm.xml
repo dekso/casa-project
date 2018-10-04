@@ -1,0 +1,60 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.smslai_eoddb.data.Tbuserrights" table="TBUSERRIGHTS" catalog="CASADB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="status" type="string">
+            <column name="status" length="50" not-null="true"/>
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="50" not-null="true"/>
+        </property>
+        <property name="qde" type="integer">
+            <column name="qde" not-null="true"/>
+        </property>
+        <property name="fde" type="integer">
+            <column name="fde" not-null="true"/>
+        </property>
+        <property name="bi" type="integer">
+            <column name="bi" not-null="true"/>
+        </property>
+        <property name="bir" type="integer">
+            <column name="bir" not-null="true"/>
+        </property>
+        <property name="teleci" type="integer">
+            <column name="teleci" not-null="true"/>
+        </property>
+        <property name="fieldci" type="integer">
+            <column name="fieldci" not-null="true"/>
+        </property>
+        <property name="cireview" type="integer">
+            <column name="cireview" not-null="true"/>
+        </property>
+        <property name="appraisal" type="integer">
+            <column name="appraisal" not-null="true"/>
+        </property>
+        <property name="appraisalreview" type="integer">
+            <column name="appraisalreview" not-null="true"/>
+        </property>
+        <property name="evaluation" type="integer">
+            <column name="evaluation" not-null="true"/>
+        </property>
+        <property name="descision" type="integer">
+            <column name="descision" not-null="true"/>
+        </property>
+        <property name="documentation" type="integer">
+            <column name="documentation" not-null="true"/>
+        </property>
+        <property name="booking" type="integer">
+            <column name="booking" not-null="true"/>
+        </property>
+        <property name="workflow" type="integer">
+            <column name="workflow" not-null="true"/>
+        </property>
+        <property name="notes" type="integer">
+            <column name="notes" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

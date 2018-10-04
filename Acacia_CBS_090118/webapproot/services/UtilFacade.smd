@@ -1,0 +1,126 @@
+{
+	"methods": [{
+		"name": "addBranch",
+		"operationType": null,
+		"parameters": [{
+			"name": "unit",
+			"type": "com.gldb.data.Tbunit"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addCodetable",
+		"operationType": null,
+		"parameters": [{
+			"name": "record",
+			"type": "com.gldb.data.Tbcodetable"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addOrUpdateTxcode",
+		"operationType": null,
+		"parameters": [{
+			"name": "code",
+			"type": "com.gldb.data.Tbtransactioncode"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addOrupdateFees",
+		"operationType": null,
+		"parameters": [{
+			"name": "fees",
+			"type": "com.gldb.data.Tbfeesandcharges"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addOrupdateHoliday",
+		"operationType": null,
+		"parameters": [{
+			"name": "hol",
+			"type": "com.gldb.data.Tbholiday"
+		}, {
+			"name": "type",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addOrupdateMerchant",
+		"operationType": null,
+		"parameters": [{
+			"name": "merchant",
+			"type": "com.gldb.data.Tbmerchant"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "genCodetable",
+		"operationType": null,
+		"parameters": [{
+			"name": "codename",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.etel.util.forms.DescIdForm]"
+	}, {
+		"name": "getAllBranch",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbunit]"
+	}, {
+		"name": "getBranchList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbunit]"
+	}, {
+		"name": "getCodename",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[java.lang.String]"
+	}, {
+		"name": "getListFeesandCharges",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbfeesandcharges]"
+	}, {
+		"name": "getListHoliday",
+		"operationType": null,
+		"parameters": [{
+			"name": "search",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbholiday]"
+	}, {
+		"name": "getListMerchant",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbmerchant]"
+	}, {
+		"name": "getListTxcode",
+		"operationType": null,
+		"parameters": [{
+			"name": "search",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbtransactioncode]"
+	}, {
+		"name": "getListofCodesPerCodename",
+		"operationType": null,
+		"parameters": [{
+			"name": "codename",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gl.util.forms.CodetableForm]"
+	}, {
+		"name": "getPsStatSelect",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.etel.util.forms.DescIdForm]"
+	}, {
+		"name": "listCodetable",
+		"operationType": null,
+		"parameters": [{
+			"name": "codename",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbcodetable]"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "UtilFacade.json"
+}

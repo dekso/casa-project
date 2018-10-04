@@ -1,0 +1,273 @@
+{
+	"methods": [{
+		"name": "acctList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.etel.util.forms.DescIdForm]"
+	}, {
+		"name": "addPS",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.gldb.data.Tbproofsheet"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "addSeg",
+		"operationType": null,
+		"parameters": [{
+			"name": "record",
+			"type": "com.gldb.data.Tbsegment"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "aeGlAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.gldb.data.Tbglaccount"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "aeMainGl",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.gldb.data.Tbmainglcode"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "aePSDetail",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.gldb.data.Tbproofsheetdetail"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "authPS",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "branchDetail",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.gl.glacct.form.BranchSetupForm"
+	}, {
+		"name": "deleteGlAccount",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "deleteRecord",
+		"operationType": null,
+		"parameters": [{
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "deleteSeg",
+		"operationType": null,
+		"parameters": [{
+			"name": "acctcode",
+			"type": "java.lang.String"
+		}, {
+			"name": "acctlvl",
+			"type": "int"
+		}, {
+			"name": "id",
+			"type": "int"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "eodDetail",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.gl.glacct.form.EODDetailForm"
+	}, {
+		"name": "getGlList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbglaccount]"
+	}, {
+		"name": "getMainGLList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbmainglcode]"
+	}, {
+		"name": "getMainGlList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.gldb.data.Tbmainglcode]"
+	}, {
+		"name": "getTrList",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}, {
+			"name": "psdt",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.gl.glacct.form.ProofsheetTrForm]"
+	}, {
+		"name": "getTrnoList",
+		"operationType": null,
+		"parameters": [{
+			"name": "trno",
+			"type": "java.lang.String"
+		}, {
+			"name": "psdt",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.gldb.data.Tbproofsheetdetail]"
+	}, {
+		"name": "getTxrefno",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}, {
+			"name": "psdt",
+			"type": "java.util.Date"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "listSeg",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.gl.glacct.form.SegmentParamForm"
+		}],
+		"returnType": "[com.gldb.data.Tbsegment]"
+	}, {
+		"name": "mainglList",
+		"operationType": null,
+		"parameters": [{
+			"name": "bstype",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.etel.util.forms.DescIdForm]"
+	}, {
+		"name": "openCloseBranch",
+		"operationType": null,
+		"parameters": [{
+			"name": "value",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "proofsheetList",
+		"operationType": null,
+		"parameters": [{
+			"name": "currency",
+			"type": "java.lang.String"
+		}, {
+			"name": "psdate",
+			"type": "java.util.Date"
+		}, {
+			"name": "status",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbproofsheet]"
+	}, {
+		"name": "psDetail",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "com.gl.glacct.form.ProofsheetDetailForm"
+	}, {
+		"name": "psDetailList",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}, {
+			"name": "psdt",
+			"type": "java.util.Date"
+		}],
+		"returnType": "[com.gldb.data.Tbproofsheetdetail]"
+	}, {
+		"name": "psList",
+		"operationType": null,
+		"parameters": [{
+			"name": "currency",
+			"type": "java.lang.String"
+		}, {
+			"name": "psdate",
+			"type": "java.util.Date"
+		}, {
+			"name": "status",
+			"type": "java.lang.String"
+		}],
+		"returnType": "[com.gldb.data.Tbproofsheet]"
+	}, {
+		"name": "psToVerify",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "returnPS",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "runEod",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "java.lang.String"
+	}, {
+		"name": "segSelectList",
+		"operationType": null,
+		"parameters": [{
+			"name": "form",
+			"type": "com.gl.glacct.form.SegmentSelectForm"
+		}],
+		"returnType": "[com.etel.util.forms.DescIdForm]"
+	}, {
+		"name": "updatePSList",
+		"operationType": null,
+		"parameters": [{
+			"name": "data",
+			"type": "[com.gldb.data.Tbproofsheetdetail]"
+		}, {
+			"name": "trnostatus",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "updtPS",
+		"operationType": null,
+		"parameters": [{
+			"name": "input",
+			"type": "com.etel.util.forms.PSStatusChangeForm"
+		}],
+		"returnType": "java.lang.String"
+	}, {
+		"name": "verifyToAuth",
+		"operationType": null,
+		"parameters": [{
+			"name": "psid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "GLAccountFacade.json"
+}

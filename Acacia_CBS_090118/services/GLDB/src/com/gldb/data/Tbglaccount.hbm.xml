@@ -1,0 +1,87 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gldb.data.Tbglaccount" table="TBGLACCOUNT" catalog="GLDB" schema="dbo" dynamic-insert="false" dynamic-update="false">
+        <id name="id" type="integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="acctcode" type="string">
+            <column name="acctcode" length="25"/>
+        </property>
+        <property name="acctname" type="string">
+            <column name="acctname" length="250"/>
+        </property>
+        <property name="acctstatus" type="string">
+            <column name="acctstatus" length="3"/>
+        </property>
+        <property name="brcode" type="string">
+            <column name="brcode" length="10"/>
+        </property>
+        <property name="depcode" type="string">
+            <column name="depcode" length="10"/>
+        </property>
+        <property name="seccode" type="string">
+            <column name="seccode" length="10"/>
+        </property>
+        <property name="bstype" type="string">
+            <column name="bstype" length="1"/>
+        </property>
+        <property name="currency" type="string">
+            <column name="currency" length="3"/>
+        </property>
+        <property name="acctlvl" type="integer">
+            <column name="acctlvl"/>
+        </property>
+        <property name="mainglcode" type="string">
+            <column name="mainglcode" length="4"/>
+        </property>
+        <property name="segment1" type="string">
+            <column name="segment1" length="4"/>
+        </property>
+        <property name="segment1str" type="string">
+            <column name="segment1str" length="150"/>
+        </property>
+        <property name="segment2" type="string">
+            <column name="segment2" length="4"/>
+        </property>
+        <property name="segment2str" type="string">
+            <column name="segment2str" length="150"/>
+        </property>
+        <property name="segment3" type="string">
+            <column name="segment3" length="4"/>
+        </property>
+        <property name="segment3str" type="string">
+            <column name="segment3str" length="150"/>
+        </property>
+        <property name="segment4" type="string">
+            <column name="segment4" length="4"/>
+        </property>
+        <property name="segment4str" type="string">
+            <column name="segment4str" length="150"/>
+        </property>
+        <property name="groupcode" type="string">
+            <column name="groupcode" length="10"/>
+        </property>
+        <property name="createdby" type="string">
+            <column name="createdby" length="20"/>
+        </property>
+        <property name="createddate" type="timestamp">
+            <column name="createddate" length="23"/>
+        </property>
+        <property name="prevbal" type="big_decimal">
+            <column name="prevbal" precision="16"/>
+        </property>
+        <property name="currbal" type="big_decimal">
+            <column name="currbal" precision="16"/>
+        </property>
+        <property name="totaldr" type="big_decimal">
+            <column name="totaldr" precision="16"/>
+        </property>
+        <property name="totalcr" type="big_decimal">
+            <column name="totalcr" precision="16"/>
+        </property>
+        <property name="instcode" type="string">
+            <column name="instcode" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>
