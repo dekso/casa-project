@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.8.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:cloud="http://schema.cloudfoundry.org/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean class="com.wavemaker.runtime.service.TypeManager" parent="typeManagerBase" scope="singleton" id="typeManager">
+        <property name="types">
+            <map merge="true">
+                <entry key="AccountFacade">
+                    <list>
+                        <value>com.casa.acct.forms.AccountGenericForm</value>
+                        <value>com.casa.acct.forms.InquiryCIFNameList</value>
+                        <value>com.casa.acct.forms.TimeDepositAccountDetailForm</value>
+                        <value>com.casa.acct.forms.TimeDepositListForm</value>
+                        <value>com.casa.acct.forms.AccountClosureFormDetail</value>
+                        <value>com.casa.acct.forms.MaturedAccountActionForm</value>
+                    </list>
+                </entry>
+                <entry key="AuthenticationFacade">
+                    <list/>
+                </entry>
+                <entry key="CountryFacade">
+                    <list>
+                        <value>com.etel.country.forms.AddressForm</value>
+                    </list>
+                </entry>
+                <entry key="EODFacade">
+                    <list>
+                        <value>com.casa.forms.LogsAndModulesForm</value>
+                    </list>
+                </entry>
+                <entry key="EncryptionFacade">
+                    <list/>
+                </entry>
+                <entry key="GLAccountFacade">
+                    <list>
+                        <value>com.gldb.data.Tbproofsheet</value>
+                        <value>com.gldb.data.Tbsegment</value>
+                        <value>com.gldb.data.Tbglaccount</value>
+                        <value>com.gldb.data.Tbmainglcode</value>
+                        <value>com.gldb.data.Tbproofsheetdetail</value>
+                        <value>com.gl.glacct.form.BranchSetupForm</value>
+                        <value>com.gl.glacct.form.EODDetailForm</value>
+                        <value>com.gl.glacct.form.ProofsheetTrForm</value>
+                        <value>java.util.Date</value>
+                        <value>com.gl.glacct.form.SegmentParamForm</value>
+                        <value>com.gl.glacct.form.ProofsheetDetailForm</value>
+                        <value>com.gl.glacct.form.SegmentSelectForm</value>
+                        <value>com.etel.util.forms.PSStatusChangeForm</value>
+                    </list>
+                </entry>
+                <entry key="GLDB">
+                    <list>
+                        <value>com.gldb.data.Tbaccessrights</value>
+                        <value>com.gldb.data.Tbauditevents</value>
+                        <value>com.gldb.data.Tbaudittrail</value>
+                        <value>com.gldb.data.Tbbatchfile</value>
+                        <value>com.gldb.data.Tbbillspayment</value>
+                        <value>com.gldb.data.Tbbrfintxjrnl</value>
+                        <value>com.gldb.data.Tbbulkfin</value>
+                        <value>com.gldb.data.Tbcasafin</value>
+                        <value>com.gldb.data.Tbcashposition</value>
+                        <value>com.gldb.data.Tbcashpositiondenom</value>
+                        <value>com.gldb.data.Tbcbsfintxjrnl</value>
+                        <value>com.gldb.data.Tbcheckbook</value>
+                        <value>com.gldb.data.Tbchecksforclearing</value>
+                        <value>com.gldb.data.Tbcodetable</value>
+                        <value>com.gldb.data.Tbdepdetail</value>
+                        <value>com.gldb.data.Tbdeposit</value>
+                        <value>com.gldb.data.Tbdepositcif</value>
+                        <value>com.gldb.data.Tbdeptxjrnl</value>
+                        <value>com.gldb.data.Tbdocchecklist</value>
+                        <value>com.gldb.data.Tbdocdetails</value>
+                        <value>com.gldb.data.Tbdocumentpertransaction</value>
+                        <value>com.gldb.data.Tbdocuments</value>
+                        <value>com.gldb.data.Tbemailformats</value>
+                        <value>com.gldb.data.Tbemailparams</value>
+                        <value>com.gldb.data.Tbfeesandcharges</value>
+                        <value>com.gldb.data.Tbfintxchecklist</value>
+                        <value>com.gldb.data.Tbfintxjrnl</value>
+                        <value>com.gldb.data.Tbforextx</value>
+                        <value>com.gldb.data.Tbfreezeaccount</value>
+                        <value>com.gldb.data.Tbglentries</value>
+                        <value>com.gldb.data.Tbglmatrix</value>
+                        <value>com.gldb.data.Tbholdamtcheck</value>
+                        <value>com.gldb.data.Tbholiday</value>
+                        <value>com.gldb.data.Tblogs</value>
+                        <value>com.gldb.data.Tbmanagerscheck</value>
+                        <value>com.gldb.data.Tbmctxjrnl</value>
+                        <value>com.gldb.data.Tbmerchant</value>
+                        <value>com.gldb.data.Tbmiscellaneous</value>
+                        <value>com.gldb.data.Tbnetamt</value>
+                        <value>com.gldb.data.Tboutreturn</value>
+                        <value>com.gldb.data.Tboverride</value>
+                        <value>com.gldb.data.Tbpassbookissuance</value>
+                        <value>com.gldb.data.Tbpasswordbank</value>
+                        <value>com.gldb.data.Tbprocessingdate</value>
+                        <value>com.gldb.data.Tbprodmatrix</value>
+                        <value>com.gldb.data.Tbproductmatrix</value>
+                        <value>com.gldb.data.Tbproperties</value>
+                        <value>com.gldb.data.Tbratehistory</value>
+                        <value>com.gldb.data.Tbrates</value>
+                        <value>com.gldb.data.Tbrole</value>
+                        <value>com.gldb.data.Tbroleaccess</value>
+                        <value>com.gldb.data.Tbroles</value>
+                        <value>com.gldb.data.Tbsecurityparams</value>
+                        <value>com.gldb.data.Tbsequence</value>
+                        <value>com.gldb.data.Tbsmtp</value>
+                        <value>com.gldb.data.Tbspecialinst</value>
+                        <value>com.gldb.data.Tbsysparam</value>
+                        <value>com.gldb.data.Tbtdcprint</value>
+                        <value>com.gldb.data.Tbterminal</value>
+                        <value>com.gldb.data.Tbtransactioncode</value>
+                        <value>com.gldb.data.Tbunit</value>
+                        <value>com.gldb.data.Tbunituser</value>
+                        <value>com.gldb.data.Tbuser</value>
+                        <value>com.gldb.data.Tbuseraccess</value>
+                        <value>com.gldb.data.Tbusermaster</value>
+                        <value>com.gldb.data.Tbusermember</value>
+                        <value>com.gldb.data.Tbuserrights</value>
+                        <value>com.gldb.data.Tbuserroles</value>
+                        <value>com.gldb.data.TbemailparamsId</value>
+                        <value>com.gldb.data.TbroleId</value>
+                        <value>com.gldb.data.TbuseraccessId</value>
+                        <value>com.gldb.data.TbaccessrightsId</value>
+                    </list>
+                </entry>
+                <entry key="RateManagementFacade">
+                    <list/>
+                </entry>
+                <entry key="SecurityFacade">
+                    <list>
+                        <value>com.etel.security.forms.TBRoleForm</value>
+                        <value>com.etel.util.forms.UserForm</value>
+                        <value>com.etel.util.forms.FormValidation</value>
+                    </list>
+                </entry>
+                <entry key="UserAccountFacade">
+                    <list>
+                        <value>com.user.maintenance.form.AccessRights</value>
+                        <value>com.user.maintenance.form.UserEditForm</value>
+                        <value>com.etel.util.forms.GenericForm</value>
+                        <value>com.user.maintenance.form.MainSubSelectModuleForm</value>
+                        <value>com.user.maintenance.form.UserListForm</value>
+                        <value>com.user.maintenance.form.UserInfoForm</value>
+                    </list>
+                </entry>
+                <entry key="UtilFacade">
+                    <list>
+                        <value>com.etel.util.forms.DescIdForm</value>
+                        <value>com.gl.util.forms.CodetableForm</value>
+                    </list>
+                </entry>
+                <entry key="securityService">
+                    <list/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

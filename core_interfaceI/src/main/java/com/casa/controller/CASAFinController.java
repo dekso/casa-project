@@ -104,12 +104,12 @@ public class CASAFinController {
             return new ResponseEntity("Error in Routine", responseHeader, HttpStatus.NOT_ACCEPTABLE);
         }else {
             responseHeader.set("Managers Check Request : ", "Success");
-            return new ResponseEntity("Success", responseHeader, HttpStatus.ACCEPTED);
+            return new ResponseEntity(String.valueOf(result), responseHeader, HttpStatus.ACCEPTED);
         }
     }
 
     @PostMapping("/deposit-mc")
-    public ResponseEntity depositMc(@RequestBody Tbmctxjrnl data) {
+    public ResponseEntity   depositMc(@RequestBody Tbmctxjrnl data) {
         HttpHeaders responseHeader = new HttpHeaders();
         Integer result = finTxService.depositMc(data);
         if (result == null ) {

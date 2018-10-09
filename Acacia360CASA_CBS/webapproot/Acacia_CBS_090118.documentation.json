@@ -1,0 +1,9 @@
+{
+	"__metaData": {
+		"service_invalid_RateManagementFacade": false, 
+		"service_invalid_UtilFacade": false, 
+		"service_invalid_AccountFacade": false, 
+		"service_invalid_CountryFacade": false, 
+		"service_invalid_EODFacade": false
+	}
+}

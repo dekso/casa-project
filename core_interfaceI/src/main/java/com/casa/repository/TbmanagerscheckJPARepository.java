@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface TbmanagerscheckJPARepository extends JpaRepository<Tbmanagerscheck, Integer> {
 
     Tbmanagerscheck save(Tbmanagerscheck tbmanagerscheck);
-    Integer countByMcchecknoAndIssuingbrAndStatus(String mccheckno, String issuingbr, Integer status);
+    Integer countByMccheckno(String mccheckno);
 //    countByMcchecknoAndIssuingbrAnAndStatus
 }

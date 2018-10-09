@@ -15,16 +15,17 @@ public class Tbmanagerscheck {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String payee;
-    private String accountno;
+//    private String accountno;
     private BigDecimal amount;
     private String remarks;
     private Date daterequest;
-    private Integer status;
+    private String status;
     private Date dateapproved;
     private Date datereleased;
     private String issuingbr;
-    private Integer mccheckno;
+    private String mccheckno;
     private Date expiry;
+    private String checktype;
 
     public Integer getId() {
         return id;
@@ -42,13 +43,13 @@ public class Tbmanagerscheck {
         this.payee = payee;
     }
 
-    public String getAccountno() {
-        return accountno;
-    }
-
-    public void setAccountno(String accountno) {
-        this.accountno = accountno;
-    }
+//    public String getAccountno() {
+//        return accountno;
+//    }
+//
+//    public void setAccountno(String accountno) {
+//        this.accountno = accountno;
+//    }
 
     public BigDecimal getAmount() {
         return amount;
@@ -74,11 +75,11 @@ public class Tbmanagerscheck {
         this.daterequest = daterequest;
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -106,11 +107,11 @@ public class Tbmanagerscheck {
         this.issuingbr = issuingbr;
     }
 
-    public Integer getMccheckno() {
+    public String getMccheckno() {
         return mccheckno;
     }
 
-    public void setMccheckno(Integer mccheckno) {
+    public void setMccheckno(String mccheckno) {
         this.mccheckno = mccheckno;
     }
 
@@ -120,5 +121,13 @@ public class Tbmanagerscheck {
 
     public void setExpiry(Date expiry) {
         this.expiry = expiry;
+    }
+
+    public String getChecktype() {
+        return checktype;
+    }
+
+    public void setChecktype(String checktype) {
+        this.checktype = checktype;
     }
 }

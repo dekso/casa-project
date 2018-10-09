@@ -187,7 +187,15 @@ public class FinancialTransactionServiceImpl implements FinancialTransactionServ
 
     @Override
     public Integer requestManagersCheck(Tbmanagerscheck tbmanagerscheck) {
+            /*
+            * 1 = success
+            * 2 = already issued
+            * null = error in routine
+            * */
         try {
+            if(tbmanagerscheckJPARepository.countByMccheckno(tbmanagerscheck.getMccheckno())>0){
+                return 2;
+            }
             tbmanagerscheckJPARepository.save(tbmanagerscheck);
             return 1;
         } catch (Exception e) {
@@ -205,8 +213,8 @@ public class FinancialTransactionServiceImpl implements FinancialTransactionServ
             * 3 = not yet released
             * null = error in routine
             * */
-            if(tbmanagerscheckJPARepository.countByMcchecknoAndIssuingbrAndStatus(tbmctxjrnl.getMccheckno(), tbmctxjrnl.getIssuingbr(),
-                    2) > 0 ) {
+//            if(tbmanagerscheckJPARepository.countByMcchecknoAndIssuingbrAndStatus(tbmctxjrnl.getMccheckno(), tbmctxjrnl.getIssuingbr(),
+//                    2) > 0 ) {
                 if(tbmctxjrnlJPARepository.countByMcchecknoAndIssuingbrAndTxstatus(tbmctxjrnl.getMccheckno(), tbmctxjrnl.getIssuingbr(),
                         2) == 0 ) {
                     tbmctxjrnl.setTxstatus(2);
@@ -215,9 +223,9 @@ public class FinancialTransactionServiceImpl implements FinancialTransactionServ
                 } else {
                     return 2;
                 }
-            } else {
-                return 3;
-            }
+//            } else {
+//                return 3;
+//            }
             return 1;
         } catch (Exception e) {
             e.printStackTrace();

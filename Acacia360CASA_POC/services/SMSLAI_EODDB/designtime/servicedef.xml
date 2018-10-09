@@ -1,0 +1,1946 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="SMSLAI_EODDB" class="com.smslai_eoddb.SMSLAI_EODDB" CRUDService="true" type="DataService" springFile="SMSLAI_EODDB.spring.xml">
+    <operation operationType="hqlquery" name="getTbmiscellaneousById">
+        <parameter name="id" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="com.smslai_eoddb.data.Tbmiscellaneous" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.smslai_eoddb.data.Tbaccessrights" supportsQuickData="true">
+            <element name="id" typeRef="com.smslai_eoddb.data.TbaccessrightsId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accesstype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="submodulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbauditevents" supportsQuickData="true">
+            <element name="eventid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbaudittrail" supportsQuickData="true">
+            <element name="audittrailid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventdescription" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventdatetime" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbbatchfile" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="batchfilename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="batchstatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="batchdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="originatingbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="processedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uploadedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbbillspayment" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="merchantcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="paymentslipno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subsaccountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subsname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="orno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="paymmode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="clearingtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bankcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bankname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="debitaccountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="typepayment" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbbrfintxjrnl" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txref" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txrefmain" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="acctname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cleartype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="draweebank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reasoncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnoto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="passbook" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ledgerlineno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="override" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminalid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checklateind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="pbookprintind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="hostacceptind" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="errorcorrectind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="bpind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeoverride" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeoverrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="chargeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="dateapproved" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datereleased" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="daterequest" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="expiry" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuingbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mccheckno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="payee" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="batchid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txoper" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txmode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnotostatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prevstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbbulkfin" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txref" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txoper" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txrefmain" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="acctname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cleartype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="draweebank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reasoncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnoto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="passbook" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ledgerlineno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="override" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminalid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checklateind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="pbookprintind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="hostacceptind" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="errorcorrectind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="bpind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeoverride" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeoverrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="chargeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="dateapproved" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datereleased" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="daterequest" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="expiry" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuingbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mccheckno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="payee" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="batchid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbcasafin" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txRefNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txmode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="slaidNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeeNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middleName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="txStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txStatusDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="creationDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approvalDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txoper" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="particulars" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checktype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbcashposition" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="origin" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="destination" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txref" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbcashpositiondenom" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="dnm1000" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm500" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm200" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm100" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm50" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm20" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm10" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm5" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm1" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm25cnt" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm10cnt" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm5cnt" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dnm1cnt" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbcbsfintxjrnl" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txref" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txrefbr" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="draweebank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reasoncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnoto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="passbook" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ledgerlineno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbcheckbook" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="checkbkaccountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkbookno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="startchkno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="endchkno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="releasedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="receivedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbchecksforclearing" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="brstn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checktype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="clearingdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="clearingdays" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="islateclearing" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbcodetable" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="codename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="codevalue" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="desc1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="desc2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdepdetail" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="atmcardno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lineavailed" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="craccountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="linemat" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="dateopened" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="indatm" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="indpassbk" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="indchkbk" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="intaccrfreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intcompfreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intpostfreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intpayaccountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intpayfreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intwtax" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intbaltype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intbalbasis" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intbaseyear" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="intminbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intratetype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isjoint" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="lineexpdt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="linestatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="mailtocode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minbalamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="minbalctr" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minbaltype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minbalbasis" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="mincompfreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minpenalty" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="paymode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="payment" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="period" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intplanno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prevstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="laststatusdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="prodgroup" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="relaccount" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lineloanno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="secondname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="shortname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="solcitcode" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="splinst" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="soacyclefreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="spo" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="subprod" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="taxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="tdmatdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="tdplacement" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="tdterm" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="thirdname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="watchlist" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unitid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdeposit" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="productCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subProductCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="accountnoata" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="slaidNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeeNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="floatAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="accountStatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="statusDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="pledgeAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="pledgeSchedule" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accumulatedBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="daysElapsed" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="averageDailyBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="mtdint" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="btdint" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="mtdcredits" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytdcredits" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="btdcredits" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="mtddebits" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytddebits" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="btddebits" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="totalNoCredits" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="totalNoDebits" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="bookDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="intRate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="wtaxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maturityDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="compoundingFreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="maintainingBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="toEarnInterestBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldstatus" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="oldStatusDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="jointAcctType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ownershipType" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="placementAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="lessWtaxAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="matAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="placeholdAmt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="watchlistCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="alertflag" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="alertmessage" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="alertlevel" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dispoflag" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dispofreetext" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tdcno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tdcreleaseind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="jrnlno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="xbelowmin" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="xreturnchk" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="int4credit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="prevmonthadb" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="prevmtdint" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="prevint4credit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="lasttxdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lasttxcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minbalctr" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chk4clr" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="adbavailbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="adbbookbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="eomadbavailbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="eomadbbookbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="eoyadbavailbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="eoyadbbookbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="passbookbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytdadbavailbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytdaddbookbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytdaccumcredit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytdaccumdebit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="ytdintearned" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="mtdintearned" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="earmarkbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="freezeind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="freezeexpdt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="freezeid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="regioncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bpapproved" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="bpexpirydt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="bpstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bpavailed" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="garnishedbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="accumbook" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="accumavail" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="soadispo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="solicitingofficer" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="referralofficer" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="campaign" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdepositcif" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdeptxjrnl" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txBatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txRefNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txbrrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txoper" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txmode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="slaidNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeeNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="txStatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txStatusDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="creationDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="approvedBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="approvalDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="companyCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="satoCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="previousCompany" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="previousSato" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="outBal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="debit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="credit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="brstn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checktype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txjrnlno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdocchecklist" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="employeeno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="documentCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="seqNo" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="isRequired" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isSubmitted" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="dateSubmitted" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isRequestWaiver" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="dateApproved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isPoa" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="requirementType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requirementGroup" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdocdetails" supportsQuickData="true">
+            <element name="docid" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="dmsid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="pnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="linerefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="signatoryname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="collateralno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="doccategory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="doctype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datereceived" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="docstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatecycle" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="idtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="idno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issuecountry" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issuedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="coveredyear" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datefiledbir" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lineeffectivitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lineexpirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="chassisno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="tctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="suretyno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="fundercifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="loitype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="proofdoctype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateserved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="uploadedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateuploaded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateadded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="incorporationdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="registrationno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="registrationtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofmeeting" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="secsubmitteddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="statussecsubmission" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="loanappno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateofapplication" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="pqtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="otherdoc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdocumentpertransaction" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="documentCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subTypeCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="realEstateCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requirementType" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="requirementGroup" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdocuments" supportsQuickData="true">
+            <element name="documentcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="documentname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbemailformats" supportsQuickData="true">
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="formatname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="recipient" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="groupcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="teamemail" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subject" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbemailparams" supportsQuickData="true">
+            <element name="id" typeRef="com.smslai_eoddb.data.TbemailparamsId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbfeesandcharges" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="productcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subprodcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="chargetype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbfintxchecklist" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txrefmain" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="clearingtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="draweebank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbfintxjrnl" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txref" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txrefmain" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="acctname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="cleartype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="draweebank" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstnno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reasoncode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnoto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="passbook" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ledgerlineno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="override" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminalid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checklateind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="pbookprintind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="hostacceptind" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="errorcorrectind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="bpind" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeoverride" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeoverrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="chargeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="dateapproved" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datereleased" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="daterequest" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="expiry" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuingbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mccheckno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="payee" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="batchid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txoper" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txmode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountnotostatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prevstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbforextx" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txtype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="rate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="rateamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="amounttopay" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="custtype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="custname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="custaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="custcontact" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbfreezeaccount" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="freezedate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="freezeby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="liftdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="liftby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbglentries" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txctr" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txseqno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcurr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamt" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="glline" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="gllegveh" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="glbranch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="glsl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="debit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="credit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="txprod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txsubprod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txlegveh" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txglbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="costc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbglmatrix" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="glline1" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="glline2" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="glparent" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="glchild" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="glbranchSw" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="glcategory" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedBy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateLastUpdated" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbholdamtcheck" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="datehold" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="datereleased" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="holdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="holdreason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="releaseby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="releasereason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbholiday" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="holDate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="holName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tblogs" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="eventdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="currentdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="nextdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="description" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="errordescription" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="uniquekey" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbmanagerscheck" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="payee" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="daterequest" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateapproved" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="datereleased" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="issuingbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mccheckno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="expiry" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="checktype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbmctxjrnl" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="issuingbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="mccheckno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="paymode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txor" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbmerchant" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="merchantcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="merchantname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="opendt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbmiscellaneous" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="payeename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="payeeacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="relrecmode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checktype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="debitacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unitid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbnetamt" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="userbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="businessdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tboutreturn" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txbatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txrefno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkbrstn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checkamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="checkdate" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checknumber" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="checktype" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reason" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tboverride" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="chargeamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="overrideby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbpassbookissuance" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpassbksn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="newpssbksn" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuancetype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="brid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbpasswordbank" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbprocessingdate" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="functionname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="eodcasa" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodloans" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eoddept" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodreadcol" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodreadcom" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodpersla" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodbran" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodposn" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodccard" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodreport" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodcmpy" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eodauto" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="eoddeduct" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="codetableedited" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbprodmatrix" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="prodgroup" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prodcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prodname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="prodsname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minterm" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="maxterm" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maxperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reqinitialdepamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="reqdepfreq" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="reqmonthlydepamt" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="passbookind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="checkbookind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="certtimedepind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="atmind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="soaind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="freqsoaprint" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="posttx" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minbalei" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="baltype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="balcomp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="baseyear" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="inttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="intrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intplan" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="freqintcomp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="freqintpost" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="freqintpayout" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="wtaxrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="docstampind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="pretermplan" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rbmminmainbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="rbmbaltype" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rbmbalcomp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rbmfreqcomp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rbmchrgbelminbal" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="ataind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="maxbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="age" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbproductmatrix" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="productCode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="productName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subTypeCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subTypeName" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rankMin" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="rankMax" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="loanAmtMin" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="loanAmtMax" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="loanAmtInd" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="loanTermMin" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="loanTermMax" typeRef="java.math.BigDecimal" isList="false" allowNull="false"/>
+            <element name="indNetPay" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="indCm1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="indCm2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minTenureCm" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="indPastDue" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="indManyAvail" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="indSameLoan" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="sameLoanPaid" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="procFee" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="indPfdeduct" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="minTenureSla" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="minTenureSm" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="indMinCapcon" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="indMinSavings" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="indOffset" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="wtaxRate" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="paymentCycle" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="intRate1" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intRate2" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="intRate3" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="denominations" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="modeofrelease1" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="modeofrelease2" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="amountforrelease2" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="cmcoveredcapcon" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="cmnotcovercapcon" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="cmtenurerequired" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="postingpriority" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="disabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbproperties" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="smtpIsdisabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="smtpTimeinterval" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="smtpEmailaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpPassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpEmailaddalias" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpHost" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="smtpPort" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rptUrl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rptUsername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="rptPassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbratehistory" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="boardrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="irr" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="pds" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updateddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="buySell" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbrates" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="boardrate" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="irr" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="pds" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updateddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="buySell" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbrole" supportsQuickData="true">
+            <element name="id" typeRef="com.smslai_eoddb.data.TbroleId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbroleaccess" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="module" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="submodule" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="modulelevel" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="page" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbroles" supportsQuickData="true">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbsecurityparams" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="minimumpasswordlength" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maxinvalidattempts" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumspecialchar" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumlowercase" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumuppercase" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="minimumnumber" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maxpasswordage" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="addomain" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="adusername" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="adpassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="securitymessage" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="passwordhistorycount" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="repeatcharacterregex" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="numdaysbeforepasswordexpirewarn" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="validityperiodindays" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="ldapurl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="defaultpassword" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="minimumusernamelength" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="maximumusernamelength" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbsequence" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="year" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sequence" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="product" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbsmtp" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="subject" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="body" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="recipient" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="sender" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="bcc" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="flag" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="datesent" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="appstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="dateadded" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="addedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbspecialinst" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="specialinstcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="specialinstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbsysparam" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txseq" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="seqyy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="businessdt" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="nextbusinessdt" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="casaeod" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbtdcprint" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="tdcno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="issuedt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="matdt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="term" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="interest" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="totalsum" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="status" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbterminal" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="ipaddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminal" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unitid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbtransactioncode" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="servicecharge" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbunit" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="brid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="braddress" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="brstatus" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currbusinessdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="nextbusinessdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="seqno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="sequser" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="seqmerch" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="seqtdc" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="seqoverride" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="seqyy" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbunituser" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unitBalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="limitamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="unitbrid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbuser" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="middlename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastlogondate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastpasswordchange" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isloggedon" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="islocked" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactive" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="issuspended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactivedirectorymember" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattemptscount" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="pwexpirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydateto" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydatefrom" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitytimeto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validitytimefrom" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ischangepwrequired" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="ispwneverexpire" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isdisabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattempip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastlogoutdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastsession" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unitbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="limitamount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="unitbrid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="currency" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="terminatedsessionip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datetimelockedout" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbuseraccess" supportsQuickData="true">
+            <element name="id" typeRef="com.smslai_eoddb.data.TbuseraccessId" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="assigneddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbusermaster" supportsQuickData="true">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isMember" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastIp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastlogondate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastpasswordchange" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isloggedon" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="islocked" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactive" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="issuspended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactivedirectorymember" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattemptscount" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydateto" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydatefrom" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitytimeto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validitytimefrom" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ischangepwrequired" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isdisabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattemptip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastsession" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cfgid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw01" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw03" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw02" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw04" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw05" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw06" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw07" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw08" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw09" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw10" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbusermember" supportsQuickData="true">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="employeeNo" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="firstname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastname" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="isMember" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="unit" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="emailadd" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastIp" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastlogondate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="lastpasswordchange" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="isloggedon" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="islocked" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactive" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="issuspended" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isactivedirectorymember" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattemptscount" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="expirydate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydateto" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitydatefrom" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="validitytimeto" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="validitytimefrom" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="dateupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="ischangepwrequired" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="isdisabled" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
+            <element name="invalidattemptip" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="cfgid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw01" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw02" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw03" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw04" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw05" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw06" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw07" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw08" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw09" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="oldpw10" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="lastsession" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbuserrights" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="qde" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fde" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="bi" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="bir" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="teleci" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="fieldci" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="cireview" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="appraisal" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="appraisalreview" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="evaluation" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="descision" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="documentation" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="booking" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="workflow" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="notes" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.Tbuserroles" supportsQuickData="true">
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+                <exclude>insert</exclude>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbaccessrightsId" name="id" supportsQuickData="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbuseraccessId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbroleId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbemailparamsId" name="id" supportsQuickData="false">
+            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+    </dataobjects>
+</service>

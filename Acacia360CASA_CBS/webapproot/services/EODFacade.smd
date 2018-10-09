@@ -1,0 +1,29 @@
+{
+	"methods": [{
+		"name": "findAllLogsFortheDay",
+		"operationType": null,
+		"parameters": [{
+			"name": "currentbusinessdate",
+			"type": "java.util.Date"
+		}],
+		"returnType": "com.casa.forms.LogsAndModulesForm"
+	}, {
+		"name": "getMainBranch",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "com.gldb.data.Tbunit"
+	}, {
+		"name": "runEOD",
+		"operationType": null,
+		"parameters": [{
+			"name": "module",
+			"type": "int"
+		}, {
+			"name": "branchcodes",
+			"type": "java.lang.String"
+		}],
+		"returnType": "int"
+	}],
+	"serviceType": "JSON-RPC",
+	"serviceURL": "EODFacade.json"
+}

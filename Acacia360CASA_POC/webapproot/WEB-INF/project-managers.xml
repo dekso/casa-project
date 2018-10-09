@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring-0.8.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:cloud="http://schema.cloudfoundry.org/spring" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean class="com.wavemaker.runtime.service.TypeManager" parent="typeManagerBase" scope="singleton" id="typeManager">
+        <property name="types">
+            <map merge="true">
+                <entry key="ADInquiryFacade">
+                    <list/>
+                </entry>
+                <entry key="AccountFacade">
+                    <list>
+                        <value>com.casa.acct.forms.AccountGenericForm</value>
+                        <value>com.casa.acct.forms.AccountMaintenanceForm</value>
+                        <value>com.casa.acct.forms.CheckDeceasedForm</value>
+                        <value>com.casa.user.forms.UserInfoForm</value>
+                        <value>com.casa.acct.forms.InquiryCIFNameList</value>
+                        <value>com.casa.acct.forms.AccountClosureForm</value>
+                        <value>com.casa.acct.forms.PlaceHoldForm</value>
+                        <value>com.casa.acct.forms.TimeDepositCertForm</value>
+                        <value>com.casa.acct.forms.TimeDepositAccountDetailForm</value>
+                        <value>com.casa.acct.forms.TimeDepositListForm</value>
+                        <value>com.casa.acct.forms.AccountClosureFormDetail</value>
+                        <value>com.casa.acct.forms.StopPaymentOrderForm</value>
+                        <value>com.casa.acct.forms.MaturedAccountActionForm</value>
+                    </list>
+                </entry>
+                <entry key="AuthenticationFacade">
+                    <list/>
+                </entry>
+                <entry key="EncryptionFacade">
+                    <list/>
+                </entry>
+                <entry key="FileUploadDownload">
+                    <list>
+                        <value>com.wavemaker.runtime.server.DownloadResponse</value>
+                        <value>FileUploadDownload.WMFile</value>
+                        <value>com.wavemaker.runtime.server.FileUploadResponse</value>
+                        <value>org.springframework.web.multipart.MultipartFile</value>
+                    </list>
+                </entry>
+                <entry key="FinTxFacade">
+                    <list>
+                        <value>com.casa.fintx.forms.AccountInquiryMainForm</value>
+                        <value>com.casa.fintx.forms.InquiryNameList</value>
+                        <value>com.casa.fintx.forms.AccountInquiryForm</value>
+                        <value>com.casa.fintx.forms.AccountInquiryJournalForm</value>
+                        <value>com.casa.fintx.forms.FinGenericForm</value>
+                        <value>com.casa.fintx.forms.CashPositionForm</value>
+                        <value>com.casa.fintx.forms.CashPositionConfirmForm</value>
+                        <value>com.casa.fintx.forms.AccountCheckForm</value>
+                        <value>com.casa.fintx.forms.CashInCashOutForm</value>
+                        <value>com.casa.fintx.forms.OverrideActionForm</value>
+                        <value>com.casa.fintx.forms.OverrideResultForm</value>
+                    </list>
+                </entry>
+                <entry key="MiscTxFacade">
+                    <list>
+                        <value>com.casa.misc.forms.MerchantForm</value>
+                    </list>
+                </entry>
+                <entry key="Report">
+                    <list>
+                        <value>java.util.Date</value>
+                    </list>
+                </entry>
+                <entry key="ReportsFacade">
+                    <list/>
+                </entry>
+                <entry key="SMSLAI_EODDB">
+                    <list>
+                        <value>com.smslai_eoddb.data.Tbaccessrights</value>
+                        <value>com.smslai_eoddb.data.Tbauditevents</value>
+                        <value>com.smslai_eoddb.data.Tbaudittrail</value>
+                        <value>com.smslai_eoddb.data.Tbbatchfile</value>
+                        <value>com.smslai_eoddb.data.Tbbillspayment</value>
+                        <value>com.smslai_eoddb.data.Tbbrfintxjrnl</value>
+                        <value>com.smslai_eoddb.data.Tbbulkfin</value>
+                        <value>com.smslai_eoddb.data.Tbcasafin</value>
+                        <value>com.smslai_eoddb.data.Tbcashposition</value>
+                        <value>com.smslai_eoddb.data.Tbcashpositiondenom</value>
+                        <value>com.smslai_eoddb.data.Tbcbsfintxjrnl</value>
+                        <value>com.smslai_eoddb.data.Tbcheckbook</value>
+                        <value>com.smslai_eoddb.data.Tbchecksforclearing</value>
+                        <value>com.smslai_eoddb.data.Tbcodetable</value>
+                        <value>com.smslai_eoddb.data.Tbdepdetail</value>
+                        <value>com.smslai_eoddb.data.Tbdeposit</value>
+                        <value>com.smslai_eoddb.data.Tbdepositcif</value>
+                        <value>com.smslai_eoddb.data.Tbdeptxjrnl</value>
+                        <value>com.smslai_eoddb.data.Tbdocchecklist</value>
+                        <value>com.smslai_eoddb.data.Tbdocdetails</value>
+                        <value>com.smslai_eoddb.data.Tbdocumentpertransaction</value>
+                        <value>com.smslai_eoddb.data.Tbdocuments</value>
+                        <value>com.smslai_eoddb.data.Tbemailformats</value>
+                        <value>com.smslai_eoddb.data.Tbemailparams</value>
+                        <value>com.smslai_eoddb.data.Tbfeesandcharges</value>
+                        <value>com.smslai_eoddb.data.Tbfintxchecklist</value>
+                        <value>com.smslai_eoddb.data.Tbfintxjrnl</value>
+                        <value>com.smslai_eoddb.data.Tbforextx</value>
+                        <value>com.smslai_eoddb.data.Tbfreezeaccount</value>
+                        <value>com.smslai_eoddb.data.Tbglentries</value>
+                        <value>com.smslai_eoddb.data.Tbglmatrix</value>
+                        <value>com.smslai_eoddb.data.Tbholdamtcheck</value>
+                        <value>com.smslai_eoddb.data.Tbholiday</value>
+                        <value>com.smslai_eoddb.data.Tblogs</value>
+                        <value>com.smslai_eoddb.data.Tbmanagerscheck</value>
+                        <value>com.smslai_eoddb.data.Tbmctxjrnl</value>
+                        <value>com.smslai_eoddb.data.Tbmerchant</value>
+                        <value>com.smslai_eoddb.data.Tbmiscellaneous</value>
+                        <value>com.smslai_eoddb.data.Tbnetamt</value>
+                        <value>com.smslai_eoddb.data.Tboutreturn</value>
+                        <value>com.smslai_eoddb.data.Tboverride</value>
+                        <value>com.smslai_eoddb.data.Tbpassbookissuance</value>
+                        <value>com.smslai_eoddb.data.Tbpasswordbank</value>
+                        <value>com.smslai_eoddb.data.Tbprocessingdate</value>
+                        <value>com.smslai_eoddb.data.Tbprodmatrix</value>
+                        <value>com.smslai_eoddb.data.Tbproductmatrix</value>
+                        <value>com.smslai_eoddb.data.Tbproperties</value>
+                        <value>com.smslai_eoddb.data.Tbratehistory</value>
+                        <value>com.smslai_eoddb.data.Tbrates</value>
+                        <value>com.smslai_eoddb.data.Tbrole</value>
+                        <value>com.smslai_eoddb.data.Tbroleaccess</value>
+                        <value>com.smslai_eoddb.data.Tbroles</value>
+                        <value>com.smslai_eoddb.data.Tbsecurityparams</value>
+                        <value>com.smslai_eoddb.data.Tbsequence</value>
+                        <value>com.smslai_eoddb.data.Tbsmtp</value>
+                        <value>com.smslai_eoddb.data.Tbspecialinst</value>
+                        <value>com.smslai_eoddb.data.Tbsysparam</value>
+                        <value>com.smslai_eoddb.data.Tbtdcprint</value>
+                        <value>com.smslai_eoddb.data.Tbterminal</value>
+                        <value>com.smslai_eoddb.data.Tbtransactioncode</value>
+                        <value>com.smslai_eoddb.data.Tbunit</value>
+                        <value>com.smslai_eoddb.data.Tbunituser</value>
+                        <value>com.smslai_eoddb.data.Tbuser</value>
+                        <value>com.smslai_eoddb.data.Tbuseraccess</value>
+                        <value>com.smslai_eoddb.data.Tbusermaster</value>
+                        <value>com.smslai_eoddb.data.Tbusermember</value>
+                        <value>com.smslai_eoddb.data.Tbuserrights</value>
+                        <value>com.smslai_eoddb.data.Tbuserroles</value>
+                        <value>com.smslai_eoddb.data.TbaccessrightsId</value>
+                        <value>com.smslai_eoddb.data.TbuseraccessId</value>
+                        <value>com.smslai_eoddb.data.TbroleId</value>
+                        <value>com.smslai_eoddb.data.TbemailparamsId</value>
+                    </list>
+                </entry>
+                <entry key="SecurityFacade">
+                    <list>
+                        <value>com.etel.security.forms.TBRoleForm</value>
+                        <value>com.etel.forms.UserForm</value>
+                        <value>com.etel.forms.FormValidation</value>
+                    </list>
+                </entry>
+                <entry key="SigcardFacade">
+                    <list>
+                        <value>com.smslai_eoddb.data.Tbbatchfile</value>
+                    </list>
+                </entry>
+                <entry key="UserAccountFacade">
+                    <list>
+                        <value>com.user.maintenance.form.AccessRights</value>
+                        <value>com.user.maintenance.form.UserEditForm</value>
+                        <value>com.etel.forms.GenericForm</value>
+                        <value>com.user.maintenance.form.MainSubSelectModuleForm</value>
+                        <value>com.user.maintenance.form.UserListForm</value>
+                    </list>
+                </entry>
+                <entry key="UserInfoFacade">
+                    <list>
+                        <value>com.casa.user.forms.UserDetailForm</value>
+                    </list>
+                </entry>
+                <entry key="UtilFacade">
+                    <list>
+                        <value>com.casa.util.forms.ProductMatrixForm</value>
+                        <value>com.casa.util.forms.DescIdForm</value>
+                        <value>com.casa.util.forms.BranchInfoForm</value>
+                    </list>
+                </entry>
+                <entry key="securityService">
+                    <list/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
