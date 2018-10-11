@@ -351,11 +351,11 @@ wire1: ["wm.Wire", {"expression":undefined,"source":"fAcctNo.dataValue","targetP
 }]
 }],
 waitTimer: ["wm.Timer", {"delay":5000}, {"onTimerFire":"waitTimerTimerFire"}],
-svDeposit: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"depositMc","service":"FinTxFacade"}, {"onResult":"svDepositResult"}, {
+svDeposit: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"mcgcDeposit","service":"FinTxFacade"}, {"onResult":"svDepositResult"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
 }],
-input: ["wm.ServiceInput", {"type":"depositMcInputs"}, {}, {
+input: ["wm.ServiceInput", {"type":"mcgcDepositInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"fAmt.dataValue","targetProperty":"data.amount"}, {}],
 wire1: ["wm.Wire", {"expression":"\"2\"","targetProperty":"data.txstatus"}, {}],
@@ -363,7 +363,21 @@ wire2: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","tar
 wire3: ["wm.Wire", {"expression":undefined,"source":"fAcctNo.dataValue","targetProperty":"data.accountno"}, {}],
 wire4: ["wm.Wire", {"expression":undefined,"source":"fChkAcctNo.dataValue","targetProperty":"data.mccheckno"}, {}],
 wire5: ["wm.Wire", {"expression":undefined,"source":"fChkTxdt.dataValue","targetProperty":"data.txdate"}, {}],
-wire6: ["wm.Wire", {"expression":undefined,"source":"app.varUserId.dataValue","targetProperty":"data.txby"}, {}]
+wire6: ["wm.Wire", {"expression":undefined,"source":"app.varUserId.dataValue","targetProperty":"data.txby"}, {}],
+wire7: ["wm.Wire", {"expression":undefined,"source":"app.varUserId.dataValue","targetProperty":"fin.txby"}, {}],
+wire8: ["wm.Wire", {"expression":undefined,"source":"fAmt.dataValue","targetProperty":"fin.amount"}, {}],
+wire9: ["wm.Wire", {"expression":"2","targetProperty":"fin.txoper"}, {}],
+wire10: ["wm.Wire", {"expression":undefined,"source":"fChkAcctNo.dataValue","targetProperty":"fin.mccheckno"}, {}],
+wire11: ["wm.Wire", {"expression":undefined,"source":"app.svBusinessDt.dataValue","targetProperty":"fin.txvaldt"}, {}],
+wire12: ["wm.Wire", {"expression":"\"1\"","targetProperty":"fin.status"}, {}],
+wire13: ["wm.Wire", {"expression":undefined,"source":"fChkAcctNo.dataValue","targetProperty":"fin.checkacctno"}, {}],
+wire14: ["wm.Wire", {"expression":"\"111221\"","targetProperty":"fin.txcode"}, {}],
+wire15: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"fin.unit"}, {}],
+wire17: ["wm.Wire", {"expression":"\"1\"","targetProperty":"fin.txstatus"}, {}],
+wire18: ["wm.Wire", {"expression":undefined,"source":"fChkTxdt.dataValue","targetProperty":"fin.checkdate"}, {}],
+wire19: ["wm.Wire", {"expression":undefined,"source":"fAmt.dataValue","targetProperty":"fin.txamount"}, {}],
+wire20: ["wm.Wire", {"expression":undefined,"source":"fAcctName.dataValue","targetProperty":"fin.acctname"}, {}],
+wire16: ["wm.Wire", {"expression":undefined,"source":"svCheckAccount.accountno","targetProperty":"fin.accountno"}, {}]
 }]
 }]
 }],
@@ -418,31 +432,35 @@ panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","margin":"35,20,1
 panel2: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
 label1: ["wm.Label", {"caption":"Manager's / Gift Check Deposit","padding":"4","styles":{"fontSize":"14px","fontWeight":"bolder","color":"#535050"},"width":"350px"}, {}]
 }],
-panel3: ["wm.Panel", {"height":"212px","horizontalAlign":"left","margin":"10,0,0,3","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-fTxdt: ["wm.Date", {"border":"0","caption":"Transaction Date:","captionSize":"135px","displayValue":"","height":"25px","readonly":true,"width":"320px"}, {}, {
+panel3: ["wm.Panel", {"height":"262px","horizontalAlign":"left","margin":"10,0,0,3","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+fTxdt: ["wm.Date", {"border":"0","caption":"Transaction Date:","captionSize":"135px","displayValue":"","height":"25px","readonly":true,"styles":{},"width":"320px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"app.svBusinessDt.dataValue","targetProperty":"dataValue"}, {}]
 }]
 }],
-fAcctPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-fAcctNo: ["wm.Text", {"border":"0","caption":"Account No:","captionSize":"135px","dataValue":undefined,"displayValue":"","height":"25px","regExp":"^[0-9]+([,.][0-9]+)?$","required":true,"width":"320px"}, {"onfocus":"onFocusField"}],
+fAcctPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+fAcctNo: ["wm.Text", {"border":"0","caption":"Account No:","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","regExp":"^[0-9]+([,.][0-9]+)?$","required":true,"width":"340px"}, {"onfocus":"onFocusField"}],
 btnSearch: ["wm.Button", {"border":"1","caption":"Search","height":"100%","width":"80px"}, {"onclick":"btnSearchClick"}],
 lblResult: ["wm.Label", {"caption":"","padding":"4","styles":{"color":"#060606"}}, {}]
 }],
-fAcctName: ["wm.Text", {"border":"0","caption":"Account Name:","captionSize":"135px","dataValue":undefined,"displayValue":"","height":"25px","readonly":true}, {"onfocus":"onFocusField"}],
-label2: ["wm.Label", {"caption":"Manager's / Gift Check Details","padding":"4","styles":{"color":"#0b0a0a","fontWeight":"bolder"}}, {}],
+fAcctName: ["wm.Text", {"border":"0","caption":"Account Name:","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","readonly":true,"styles":{}}, {"onfocus":"onFocusField"}],
+fCurr: ["wm.Text", {"border":"0","caption":"Currency : ","captionSize":"140px","dataValue":"PHP","displayValue":"PHP","emptyValue":"emptyString","height":"25px","readonly":true,"regExp":"^[0-9]+([,.][0-9]+)?$","required":true,"styles":{},"width":"340px"}, {}],
+spacer1: ["wm.Spacer", {"height":"3px","styles":{},"width":"10px"}, {}],
+lblMCGCDetails: ["wm.Label", {"caption":"Manager's / Gift Check Details","padding":"4","styles":{"color":"#0b0a0a","fontWeight":"bolder"},"width":"100%"}, {}],
+pnlMCGCDetail: ["wm.Panel", {"height":"100px","horizontalAlign":"left","margin":"0,0,0,10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 fChkAcctPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-fChkAcctNo: ["wm.Text", {"border":"0","caption":"MC / GC Account No:","captionSize":"135px","dataValue":undefined,"displayValue":"","height":"25px","regExp":"^[0-9]+([,.][0-9]+)?$","required":true,"styles":{},"width":"320px"}, {}],
+fChkAcctNo: ["wm.Text", {"border":"0","caption":"MC / GC Account No:","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","regExp":"^[0-9]+([,.][0-9]+)?$","required":true,"styles":{},"width":"340px"}, {}],
 btnChkSearch: ["wm.Button", {"border":"1","caption":"Search","height":"100%","showing":false,"styles":{},"width":"80px"}, {"onclick":"btnChkSearchClick"}],
 lblChkResult: ["wm.Label", {"caption":"","padding":"4","styles":{"color":"#060606"}}, {}]
 }],
-fChkTxdt: ["wm.Date", {"border":"0","caption":"Check Date:","captionSize":"135px","dataValue":undefined,"displayValue":"","height":"25px","required":true,"width":"320px"}, {}],
-fAmt: ["wm.Number", {"applyPlacesWhileTyping":true,"border":"0","caption":"Amount:","captionSize":"135px","dataValue":0,"displayValue":"0.00","emptyValue":"zero","height":"25px","minimum":0,"places":2,"required":true,"styles":{"textAlign":"right"},"width":"320px"}, {"onfocus":"onFocusField"}],
+fChkAcctName: ["wm.Text", {"border":"0","caption":"MC / GC Account Name : ","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","readonly":true,"regExp":"^[0-9]+([,.][0-9]+)?$","required":true,"showing":false,"styles":{},"width":"340px"}, {}],
+fChkTxdt: ["wm.Date", {"border":"0","caption":"Check Date:","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","required":true,"styles":{},"width":"340px"}, {}],
+fAmt: ["wm.Number", {"applyPlacesWhileTyping":true,"border":"0","caption":"Amount:","captionSize":"140px","dataValue":0,"displayValue":"0.00","emptyValue":"zero","height":"25px","minimum":0,"places":2,"required":true,"styles":{"textAlign":"right"},"width":"340px"}, {"onfocus":"onFocusField"}]
+}],
 panel4: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
 fwPass: ["wm.RadioButton", {"border":"0","caption":"with Passbook","dataType":"boolean","displayValue":false,"emptyValue":"false","groupValue":true,"height":"25px","showing":false,"width":"180px"}, {}],
 fwoPass: ["wm.RadioButton", {"border":"0","caption":"w/o Passbook","dataType":"boolean","displayValue":true,"emptyValue":"false","groupValue":true,"height":"25px","showing":false,"width":"180px"}, {}]
 }],
-spacer1: ["wm.Spacer", {"height":"3px","width":"10px"}, {}],
 fChkCurr: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Currency:","captionSize":"135px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","dataValue":"PHP","displayField":"id","displayValue":"","height":"25px","showing":false,"width":"210px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svCurrency","targetProperty":"dataSet"}, {}]
@@ -451,7 +469,11 @@ wire: ["wm.Wire", {"expression":undefined,"source":"svCurrency","targetProperty"
 }],
 btnSubmitPanel: ["wm.Panel", {"height":"28px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"200px"}, {}, {
 btnSubmit: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Submit","desktopHeight":"25px","disabled":true,"height":"25px","width":"80px"}, {"onclick":"notifConfirm"}],
-btnSigcard: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"View Sigcard","desktopHeight":"25px","height":"25px","width":"100px"}, {"onclick":"btnSigcardClick"}]
+btnSigcard: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"View Sigcard","desktopHeight":"25px","height":"25px","width":"100px"}, {"onclick":"btnSigcardClick"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"${pnlMCGCDetail.invalid} || ${svCheckAccount.isEmpty}","targetProperty":"disabled"}, {}]
+}]
+}]
 }]
 }]
 }]

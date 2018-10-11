@@ -72,7 +72,8 @@ wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty"
 }],
 input: ["wm.ServiceInput", {"type":"terminalListInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"unitid"}, {}]
+wire: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"unitid"}, {}],
+wire1: ["wm.Wire", {"expression":"2","targetProperty":"isUnused"}, {}]
 }]
 }]
 }],
@@ -106,7 +107,8 @@ dgTerminal: ["wm.DojoGrid", {"columns":[
 {"show":false,"field":"unitid","title":"Unitid","width":"100%","align":"center","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"createdby","title":"Createdby","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Ipaddress: \" + ${ipaddress} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Terminal: \" + ${terminal}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Createdby: \" + ${createdby}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Action: \" + ${wm.runtimeId}.formatCell(\"btn\", ${btn}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n","mobileColumn":true},
-{"show":true,"field":"btn","title":"Action","width":"100px","align":"center","formatFunc":"wm_button_formatter","expression":"\"Delete\"","isCustomField":true}
+{"show":true,"field":"btn","title":"Action","width":"100px","align":"center","formatFunc":"wm_button_formatter","expression":"\"Delete\"","isCustomField":true},
+{"show":false,"field":"userid","title":"Userid","width":"100%","displayType":"Text","align":"left","formatFunc":""}
 ],"dsType":"com.smslai_eoddb.data.Tbterminal","height":"100%","minDesktopHeight":60,"singleClickEdit":true}, {"onGridButtonClick":"dgTerminalGridButtonClick"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svList","targetProperty":"dataSet"}, {}]

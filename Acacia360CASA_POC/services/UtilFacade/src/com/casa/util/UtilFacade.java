@@ -10,6 +10,7 @@ import com.casa.acct.AccountServiceImpl;
 import com.casa.util.forms.BranchInfoForm;
 import com.casa.util.forms.DescIdForm;
 import com.casa.util.forms.ProductMatrixForm;
+import com.smslai_eoddb.data.Tbunit;
 import com.casa.util.UtilService;
 import com.casa.util.UtilServiceImpl;
 import com.smslai_eoddb.data.Tbtransactioncode;
@@ -56,6 +57,11 @@ public class UtilFacade extends JavaServiceSuperClass {
 		return list;
 	}
 
+	public List<Tbunit> getBranchList() {
+		UtilService service = new UtilServiceImpl();
+		return service.getBranchList();
+	}
+	
 	public List<DescIdForm> genCodetable(String codename) {
 		UtilService service = new UtilServiceImpl();
 		List<DescIdForm> list = service.genCodetable(codename);
@@ -95,9 +101,9 @@ public class UtilFacade extends JavaServiceSuperClass {
 		return service.aeTerminal(data);
 	}
 	
-	public List<Tbterminal> terminalList(String unitid) {
+	public List<Tbterminal> terminalList(String unitid, int isUnused, String userid) {
 		UtilService service = new UtilServiceImpl();
-		return service.terminalList(unitid);
+		return service.terminalList(unitid, isUnused, userid);
 	}
 	
 	public String deleteTerminal(int id) {
@@ -120,9 +126,9 @@ public class UtilFacade extends JavaServiceSuperClass {
 		return service.getProductDetail(id);
 	}
 	
-	public List<String> terminalNo() {
+	public int terminalNo(String userid) {
 		UtilService service = new UtilServiceImpl();
-		return service.terminalNo();
+		return service.terminalNo(userid);
 	}
 	public Tbrates getRates(String curr,String buysell){
 		UtilService service = new UtilServiceImpl();

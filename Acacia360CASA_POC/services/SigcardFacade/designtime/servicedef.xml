@@ -29,16 +29,5 @@
         <parameter name="acctno" typeRef="java.lang.String" isList="false"/>
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
-    <dataobjects>
-        <dataobject javaType="com.smslai_eoddb.data.Tbbatchfile" name="Tbbatchfile" supportsQuickData="false">
-            <element name="batchdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
-            <element name="batchfilename" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="batchstatus" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
-            <element name="companycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
-            <element name="originatingbr" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="processedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="uploadedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
-        </dataobject>
-    </dataobjects>
+    <dataobjects/>
 </service>

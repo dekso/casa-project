@@ -79,11 +79,12 @@ public class AccountServiceImpl implements AccountService {
 				AccountCreationForm txform = new AccountCreationForm();
 				txform.setTbdeposit(dep);
 				txform.setCiflist(ciflist);
+				System.out.println(txform.getTbdeposit().getAccountName());
 				String jsonData = mapper.writeValueAsString(txform);
+				System.out.println(jsonData);
 				OutputStream os = con.getOutputStream();
 				os.write(jsonData.getBytes());
 				os.flush();
-				System.out.println();
 				if (con.getResponseCode() != HttpURLConnection.HTTP_ACCEPTED) {
 					form.setResult(0);
 				} else {

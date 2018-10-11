@@ -3,6 +3,7 @@ start: function() {
 this.svUserList.update();
 this.svCurrency.update();
 this.svRole.update();
+this.svBranchList.update();
 },
 "preferredDevice": "desktop",
 btnAddNonADUserClick: function(inSender) {
@@ -18,7 +19,7 @@ svSaveUserResult: function(inSender, inDeprecated) {
 if(inSender.getData().dataValue=="1"){
 this.svUserList.update();
 app.alert("User Creation Successful!");
-this.pnlSetupNewUserLeft.clearData();
+this.pnlSetupNewUserLeft.resetData();
 this.dlgCreateNonADUser.hide();
 }else{
 app.alert("Error in Routine!");
@@ -26,6 +27,7 @@ app.alert("Error in Routine!");
 },
 svEditUserResult: function(inSender, inDeprecated) {
 if(inSender.getData().dataValue=="1"){
+this.svEditTerminal.update();
 this.svUserList.update();
 app.alert("User Update Successful!");
 this.dlgEditUser.hide();
@@ -39,6 +41,27 @@ dojo.hitch(this, function() {
 this.svEditUser.update();
 }),
 dojo.hitch(this, function() {}));
+},
+svEditTerminalResult: function(inSender, inDeprecated) {
+console.log(inSender.getData());
+},
+svSaveTerminalResult: function(inSender, inDeprecated) {
+this.svEditTerminalResult(inSender, inDeprecated);
+},
+svTerminalNoResult: function(inSender, inDeprecated) {
+console.log(inSender.getData());
+},
+svTerminalListResult: function(inSender, inDeprecated) {
+console.log(inSender.getData());
+this.svTerminalNo.update();
+},
+svBranchListResult: function(inSender, inDeprecated) {
+if(app.varRole.getData().dataValue!="secad"){
+this.slcBranch.setDataValue(app.varUnit.getData().dataValue);
+this.slcBranch.setShowing(false);
+//            this.slcBranchEdit.setDataValue(app.varUnit.getData().dataValue);
+//            this.slcBranchEdit.setShowing(false);
+}
 },
 _end: 0
 });
@@ -63,7 +86,6 @@ wire1: ["wm.Wire", {"expression":"0","targetProperty":"user.unitBalance"}, {}],
 wire2: ["wm.Wire", {"expression":undefined,"source":"app.svBusinessDt.dataValue","targetProperty":"user.datecreated"}, {}],
 wire3: ["wm.Wire", {"expression":"false","targetProperty":"user.isactivedirectorymember"}, {}],
 wire4: ["wm.Wire", {"expression":undefined,"source":"fNewValidDateFrom.dataValue","targetProperty":"user.validitydatefrom"}, {}],
-wire5: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"user.unitbrid"}, {}],
 wire6: ["wm.Wire", {"expression":undefined,"source":"fNewValidDateTo.dataValue","targetProperty":"user.validitydateto"}, {}],
 wire7: ["wm.Wire", {"expression":undefined,"source":"fNewPassExpDate.dataValue","targetProperty":"user.pwexpirydate"}, {}],
 wire8: ["wm.Wire", {"expression":undefined,"source":"fNewUsername.dataValue","targetProperty":"user.username"}, {}],
@@ -84,7 +106,8 @@ wire24: ["wm.Wire", {"expression":"0","targetProperty":"user.invalidattemptscoun
 wire25: ["wm.Wire", {"expression":undefined,"source":"fNewChangePass.dataValue","targetProperty":"user.ischangepwrequired"}, {}],
 wire22: ["wm.Wire", {"expression":undefined,"source":"fNewCurrency.selectedItem.id","targetProperty":"user.currency"}, {}],
 wire12: ["wm.Wire", {"expression":undefined,"source":"fNewRole.selectedItem.description","targetProperty":"user.role"}, {}],
-wire26: ["wm.Wire", {"expression":"0","targetProperty":"user.unitbalance"}, {}]
+wire26: ["wm.Wire", {"expression":"0","targetProperty":"user.unitbalance"}, {}],
+wire5: ["wm.Wire", {"expression":undefined,"source":"slcBranch.dataValue","targetProperty":"user.unitbrid"}, {}]
 }]
 }]
 }],
@@ -102,7 +125,7 @@ wire: ["wm.Wire", {"expression":"\"ROLE\"","targetProperty":"codename"}, {}]
 }]
 }]
 }],
-svUserDetail: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"userInfo","service":"UserAccountFacade"}, {}, {
+svUserDetail: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"userInfo","service":"UserAccountFacade"}, {"onResult":"svTerminalList"}, {
 input: ["wm.ServiceInput", {"type":"userInfoInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"grdUserList.selectedItem.id","targetProperty":"id"}, {}]
@@ -129,7 +152,38 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"containerWidget2","targetProperty":"loadingDialog"}, {}]
 }]
 }],
-dlgCreateNonADUser: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar3","containerWidgetId":"","styles":{},"title":"<b>Setup New User","width":"750px"}, {"onClose":"dlgCreateNonADUserClose","onShow":"svGetRoles","onShow1":"svGetLoanGroup","onShow2":"layer4.hide","onShow3":"svGetCompanyListCN","onShow4":"svGetTeamList"}, {
+svTerminalList: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"terminalList","service":"UtilFacade"}, {"onResult":"svTerminalListResult"}, {
+input: ["wm.ServiceInput", {"type":"terminalListInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"unitid"}, {}],
+wire1: ["wm.Wire", {"expression":"3","targetProperty":"isUnused"}, {}],
+wire2: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.userid","targetProperty":"userid"}, {}]
+}]
+}]
+}],
+svTerminalNo: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"terminalNo","service":"UtilFacade"}, {"onResult":"svTerminalNoResult"}, {
+input: ["wm.ServiceInput", {"type":"terminalNoInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.userid","targetProperty":"userid"}, {}]
+}]
+}]
+}],
+svEditTerminal: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"aeTerminal","service":"UtilFacade"}, {"onResult":"svEditTerminalResult"}, {
+input: ["wm.ServiceInput", {"type":"aeTerminalInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"slcTerminal.selectedItem.createdby","targetProperty":"data.createdby"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"slcTerminal.selectedItem.ipaddress","targetProperty":"data.ipaddress"}, {}],
+wire3: ["wm.Wire", {"expression":undefined,"source":"slcTerminal.selectedItem.terminal","targetProperty":"data.terminal"}, {}],
+wire4: ["wm.Wire", {"expression":undefined,"source":"slcTerminal.selectedItem.unitid","targetProperty":"data.unitid"}, {}],
+wire5: ["wm.Wire", {"expression":undefined,"source":"slcTerminal.selectedItem.id","targetProperty":"data.id"}, {}],
+wire2: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.userid","targetProperty":"data.userid"}, {}]
+}]
+}]
+}],
+svBranchList: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getBranchList","service":"UtilFacade"}, {"onResult":"svBranchListResult"}, {
+input: ["wm.ServiceInput", {"type":"getBranchListInputs"}, {}]
+}],
+dlgCreateNonADUser: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar3","containerWidgetId":"","desktopHeight":"500px","height":"500px","styles":{},"title":"<b>Setup New User","width":"1000px"}, {"onClose":"dlgCreateNonADUserClose","onShow":"svGetRoles","onShow1":"svGetLoanGroup","onShow2":"layer4.hide","onShow3":"svGetCompanyListCN","onShow4":"svGetTeamList"}, {
 containerWidget3: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 tabLayers2: ["wm.TabLayers", {"border":"0","styles":{},"transition":"slide"}, {}, {
 layer3: ["wm.Layer", {"border":"1","borderColor":"#dddddd","caption":"Information","horizontalAlign":"left","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"layer4.hide"}, {
@@ -150,29 +204,35 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"${fNewRole.selectedItem.description}==\"teller\"","targetProperty":"showing"}, {}]
 }]
 }],
-fNewCurrency: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Currency:","captionSize":"150px","dataType":"com.casa.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
+fNewCurrency: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Currency:","captionSize":"150px","dataType":"com.casa.util.forms.DescIdForm","dataValue":"PHP","displayField":"description","displayValue":"","height":"25px","showing":false}, {"onchange":"svGetGroupListEDIT"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svCurrency","targetProperty":"dataSet"}, {}]
 }]
 }],
 fNewPassword: ["wm.Text", {"_classes":{"domNode":["sText"]},"border":"0","caption":"Password:","captionSize":"150px","dataValue":undefined,"displayValue":"","formatter":undefined,"height":"25px","invalidMessage":undefined,"password":true,"showing":false,"tooltipDisplayTime":undefined,"width":"400px"}, {}],
-fNewPassExpDate: ["wm.Date", {"border":"0","caption":"Password Expiry Date:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/8/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
+fNewPassExpDate: ["wm.Date", {"border":"0","caption":"Password Expiry Date:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"11/9/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire1: ["wm.Wire", {"expression":"new Date()","targetProperty":"minimum"}, {}],
-wire: ["wm.Wire", {"expression":"//new Date(new Date().getTime() + (86400000*60));\nnew Date(new Date().setDate(new Date().getDate()+ ${svGetSecurityParams.maxpasswordage}))","targetProperty":"dataValue"}, {}]
+wire2: ["wm.Wire", {"expression":undefined,"source":"fNewPassNvrExpire.dataValue","targetProperty":"disabled"}, {}],
+wire: ["wm.Wire", {"expression":"//new Date(new Date().getTime() + (86400000*60));\nnew Date(new Date().setDate(new Date().getDate()+ 30))","targetProperty":"dataValue"}, {}]
 }]
 }],
-fNewValidDateFrom: ["wm.Date", {"border":"0","caption":"Account Validity From:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/8/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
+fNewValidDateFrom: ["wm.Date", {"border":"0","caption":"Account Validity From:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/10/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"new Date();","targetProperty":"dataValue"}, {}],
-wire1: ["wm.Wire", {"expression":undefined,"source":"fNewValidDateTo.dataValue","targetProperty":"maximum"}, {}]
+wire1: ["wm.Wire", {"expression":undefined,"source":"fNewValidDateTo.dataValue","targetProperty":"maximum"}, {}],
+wire: ["wm.Wire", {"expression":"new Date();","targetProperty":"dataValue"}, {}]
 }]
 }],
-fNewValidDateTo: ["wm.Date", {"border":"0","caption":"Account Validity To:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/8/2018","emptyValue":"null","formatter":"Date","height":"25px","minimum":null,"required":true,"styles":{}}, {"onchange":"fNewValidDateToChange"}, {
+fNewValidDateTo: ["wm.Date", {"border":"0","caption":"Account Validity To:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"11/9/2018","emptyValue":"null","formatter":"Date","height":"25px","minimum":null,"required":true,"styles":{}}, {"onchange":"fNewValidDateToChange"}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"//new Date(new Date().getTime() + (86400000*${svGetSecurityParams.maxpasswordage}));\nnew Date(new Date().setDate(new Date().getDate()+ ${svGetSecurityParams.validityperiodindays}))","targetProperty":"dataValue"}, {}]
+wire: ["wm.Wire", {"expression":"//new Date(new Date().getTime() + (86400000*${svGetSecurityParams.maxpasswordage}));\nnew Date(new Date().setDate(new Date().getDate()+ 30))","targetProperty":"dataValue"}, {}]
 }],
 format: ["wm.DateFormatter", {}, {}]
+}],
+slcBranch: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch : ","captionSize":"150px","dataField":"brid","dataType":"com.smslai_eoddb.data.Tbunit","displayField":"brname","displayValue":"","emptyValue":"null","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"svBranchList","targetProperty":"dataSet"}, {}]
+}]
 }]
 }],
 panel23: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"0,0,0,5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
@@ -185,16 +245,20 @@ fNewPassNvrExpire: ["wm.Checkbox", {"border":"0","caption":"Password Never Expir
 }]
 }],
 buttonBar3: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"39px","styles":{}}, {}, {
-btnNewUserSave: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Save","desktopHeight":"28px","height":"28px","margin":"0,0,0,10","styles":{},"width":"90px"}, {"onclick":"svSaveUser"}],
+btnNewUserSave: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Save","desktopHeight":"28px","height":"28px","margin":"0,0,0,10","styles":{},"width":"90px"}, {"onclick":"svSaveUser"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"pnlSetupNewUserLeft.invalid","targetProperty":"disabled"}, {}]
+}]
+}],
 btnNewUserClose: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Close","desktopHeight":"28px","height":"28px","margin":"0,0,0,10","styles":{},"width":"90px"}, {"onclick":"dlgCreateNonADUser.hide"}]
 }]
 }],
-dlgEditUser: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","mobileHeight":"90%","styles":{},"title":"<b>Edit User and Role(s)","width":"800px"}, {"onClose":"dlgEditUserClose","onShow":"dlgEditUserShow","onShow1":"layer1.activate","onShow3":"svGetTeamList"}, {
+dlgEditUser: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar2","containerWidgetId":"containerWidget2","desktopHeight":"500px","height":"500px","mobileHeight":"90%","styles":{},"title":"<b>Edit User and Role(s)","width":"1000px"}, {"onClose":"dlgEditUserClose","onShow":"dlgEditUserShow","onShow1":"layer1.activate","onShow3":"svGetTeamList"}, {
 containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 tabLayers1: ["wm.TabLayers", {"border":"0","transition":"slide"}, {}, {
 layer1: ["wm.Layer", {"border":"1","borderColor":"#dddddd","caption":"Information","horizontalAlign":"left","themeStyleType":"ContentPanel","verticalAlign":"top"}, {}, {
 panel21: ["wm.Panel", {"height":"100%","horizontalAlign":"left","layoutKind":"left-to-right","padding":"5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-panel12: ["wm.Panel", {"height":"100%","horizontalAlign":"right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+panel12: ["wm.Panel", {"height":"100%","horizontalAlign":"right","styles":{},"verticalAlign":"top","width":"400px"}, {}, {
 fEditUsername: ["wm.Text", {"_classes":{"domNode":["sText"]},"border":"0","caption":"Username:","captionSize":"150px","displayValue":"","height":"25px","maxChars":"20","readonly":true}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.username","targetProperty":"dataValue"}, {}]
@@ -251,6 +315,18 @@ wire: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.validitydateto"
 fEditLastPassChange: ["wm.DateTime", {"border":"0","caption":"Last Password Change:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"","emptyValue":"null","formatter":undefined,"height":"25px","openOnClick":false,"readonly":true}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.lastpasswordchange","targetProperty":"dataValue"}, {}]
+}]
+}],
+slcBranchEdit: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch : ","captionSize":"150px","dataField":"brid","dataType":"com.smslai_eoddb.data.Tbunit","displayField":"brname","displayValue":"","emptyValue":"null","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"svBranchList","targetProperty":"dataSet"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.unitbrid","targetProperty":"dataValue"}, {}]
+}]
+}],
+slcTerminal: ["wm.SelectMenu", {"border":"0","caption":"Terminal : ","captionSize":"150px","dataField":"id","dataType":"com.smslai_eoddb.data.Tbterminal","displayField":"terminal","displayValue":"","emptyValue":"null","height":"25px"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"svTerminalList","targetProperty":"dataSet"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"svTerminalNo.dataValue","targetProperty":"dataValue"}, {}]
 }]
 }]
 }],
@@ -347,7 +423,7 @@ btnResetPass: ["wm.Button", {"_classes":{"domNode":["Inverse"]},"border":"1","bo
 btnAdjustValidity: ["wm.Button", {"_classes":{"domNode":["Info"]},"border":"1","borderColor":"#2f96b4","caption":"Adjust Validity Period","desktopHeight":"25px","height":"25px","width":"150px"}, {"onclick":"dialogAccountValidity.show"}],
 btnSaveEditUser: ["wm.Button", {"_classes":{"domNode":["Primary"]},"border":"1","borderColor":"#265d24","caption":"Save","desktopHeight":"25px","height":"25px","width":"100px"}, {"onclick":"btnSaveEditUserClick"}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"panel12.invalid","targetProperty":"disabled"}, {}]
+wire: ["wm.Wire", {"expression":"${panel12.invalid} || !${panel12.isDirty}","targetProperty":"disabled"}, {}]
 }]
 }],
 btnCloseEditUser: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Close","desktopHeight":"25px","height":"25px","padding":"0","styles":{},"width":"100px"}, {"onclick":"dlgEditUser.hide"}]

@@ -16,6 +16,7 @@ import com.etel.common.service.DBServiceImpl;
 import com.etel.printer.PrinterUtil;
 import com.etel.util.HQLUtil;
 import com.etel.utils.UserUtil;
+import com.smslai_eoddb.data.Tbunit;
 import com.smslai_eoddb.data.Tbtransactioncode;
 import com.smslai_eoddb.data.Tbbrfintxjrnl;
 import com.smslai_eoddb.data.Tbdeposit;
@@ -62,11 +63,11 @@ public class UtilServiceImpl implements UtilService {
 			param.put("branch", user.getUnitbrid());
 			if(user.getRole().equals("cashier")) {
 				list = (List<DescIdForm>) dbService.execStoredProc(
-						"SELECT userid AS id, username AS description " + "FROM TBUSER WHERE role = 'cashier'", null, DescIdForm.class, 1, null);
+						"SELECT userid AS id, username AS description " + "FROM TBUSER WHERE role IN ('teller','cashier','csr')", null, DescIdForm.class, 1, null);
 			} else if(user.getRole().equals("teller")) {
 				list = (List<DescIdForm>) dbService.execStoredProc(
-						"SELECT userid AS id, username AS description " + "FROM TBUSER WHERE role IN ('teller','cashier','csr') AND unitbrid =:branch", param, DescIdForm.class, 1, null);
-			}	
+						"SELECT userid AS id, username AS description " + "FROM TBUSER WHERE role IN ('teller') AND unitbrid =:branch", param, DescIdForm.class, 1, null);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -105,6 +106,23 @@ public class UtilServiceImpl implements UtilService {
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Tbunit> getBranchList() {
+		// TODO Auto-generated method stub
+		List<Tbunit> list = new ArrayList<Tbunit>();
+ 		try {
+			list = (List<Tbunit>) dbService.execStoredProc(
+					"SELECT * FROM TBUNIT",
+					null, Tbunit.class, 1, null);
+			System.out.println("list size: "+list.size());
+ 			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	@Override
 	public Date getBusinessdt() {
 		// TODO Auto-generated method stub
@@ -204,6 +222,10 @@ public class UtilServiceImpl implements UtilService {
 				if ((Integer) dbService.execStoredProc(null, null, null, data.getId() == null ? 3 : 2, data) > 0) {
 					result = "1";
 				}
+			}else {
+				if ((Integer) dbService.execStoredProc(null, null, null,3, data) > 0) {
+					result = "1";
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -214,13 +236,24 @@ public class UtilServiceImpl implements UtilService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Tbterminal> terminalList(String unitid) {
+	public List<Tbterminal> terminalList(String unitid, int isUnused, String userid) {
 		// TODO Auto-generated method stub
 		List<Tbterminal> list = new ArrayList<Tbterminal>();
 		try {
 			param.put("unitid", unitid);
-			list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid", param,
-					Tbterminal.class, 1, null);
+			System.out.println(unitid  + "  <<<<<<<< unitid");
+			if(isUnused==1) {
+				list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid AND userid IS NULL", param,
+						Tbterminal.class, 1, null);
+			} else if(isUnused==2) {
+				list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid", param,
+						Tbterminal.class, 1, null);
+			} else {
+				param.put("userid", userid);
+				System.out.println(userid + " <<<<<< UDI");
+				list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid AND (userid IS NULL OR userid =:userid)", param,
+						Tbterminal.class, 1, null);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -326,15 +359,21 @@ public class UtilServiceImpl implements UtilService {
 	}
 
 	@Override
-	public List<String> terminalNo() {
+	public int terminalNo(String userid) {
 		// TODO Auto-generated method stub
+		int id = 0;
 		try { 
-//			List<String> values = new ArrayList<>();
-			
+			param.put("userid", userid);
+			System.out.println(userid +  " <<<<< userid");
+			if((Integer) dbService.execStoredProc("SELECT id FROM TBTERMINAL WHERE userid=:userid", 
+					param, null, 0, null)!=null) {
+				id = (Integer) dbService.execStoredProc("SELECT id FROM TBTERMINAL WHERE userid=:userid", 
+						param, null, 0, null);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return id;
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.smslai_eoddb.data.Tbcodetable;
 import com.smslai_eoddb.data.Tbroleaccess;
+import com.smslai_eoddb.data.Tbterminal;
 import com.smslai_eoddb.data.Tbuser;
 import com.user.maintenance.form.AccessRights;
 import com.user.maintenance.form.MainSubSelectModuleForm;
@@ -31,5 +32,6 @@ public interface UserAccountService {
 	List<UserListForm> userList(String username, String instcode);
 	Tbuser userInfo(int id);
 	String editUser(UserEditForm form);
+	List<Tbterminal> terminalList(String unitid);
 	
 }

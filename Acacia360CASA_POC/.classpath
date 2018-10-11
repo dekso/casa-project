@@ -16,6 +16,7 @@
 	<classpathentry kind="src" path="services/FileUploadDownload/src"/>
 	<classpathentry kind="src" path="services/SigcardFacade/src"/>
 	<classpathentry kind="src" path="services/ReportsFacade/src"/>
+	<classpathentry kind="src" path="services/EODFacade/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/WaveMaker/6.7.0.RELEASE/studio/WEB-INF/lib/annotations-api-6.0.36.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/WaveMaker/6.7.0.RELEASE/studio/WEB-INF/lib/bsh-2.0b4.jar"/>

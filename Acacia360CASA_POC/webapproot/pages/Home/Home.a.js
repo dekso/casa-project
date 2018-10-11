@@ -138,6 +138,14 @@ this.btnOK.setShowing(true);
 this.lgTxtRemarks.clear();
 this.dlgDecline.show();
 },
+svUnitBalance1Result: function(inSender, inDeprecated) {
+console.log(inSender.getData());
+},
+cpDestinationChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+if(this.dlgCashPos.title == "Cash In"){
+this.svUnitBalance1.update();
+}
+},
 _end: 0
 });
 
@@ -241,8 +249,8 @@ wire1: ["wm.Wire", {"expression":"\"Process\"","targetProperty":"OKButtonText"},
 svUnitBalance: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","loadingDialog":"","operation":"getUnitBalance","service":"UserInfoFacade"}, {"onResult":"svUnitBalanceResult"}, {
 input: ["wm.ServiceInput", {"type":"getUnitBalanceInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"[main].svSecurityUser.dataValue","targetProperty":"userid"}, {}],
-wire1: ["wm.Wire", {"expression":undefined,"source":"app.varCurrency.dataValue","targetProperty":"currency"}, {}]
+wire1: ["wm.Wire", {"expression":undefined,"source":"app.varCurrency.dataValue","targetProperty":"currency"}, {}],
+wire: ["wm.Wire", {"expression":undefined,"source":"app.varUserId.dataValue","targetProperty":"userid"}, {}]
 }]
 }]
 }],
@@ -259,6 +267,14 @@ notifConfirm: ["wm.NotificationCall", {"operation":"confirm"}, {"onOk":"notifCon
 input: ["wm.ServiceInput", {"type":"confirmInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"\"Do you wish to proceed?\"","targetProperty":"text"}, {}]
+}]
+}]
+}],
+svUnitBalance1: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","loadingDialog":"","operation":"getUnitBalance","service":"UserInfoFacade"}, {"onResult":"svUnitBalance1Result"}, {
+input: ["wm.ServiceInput", {"type":"getUnitBalanceInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"cpDestination.dataValue","targetProperty":"userid"}, {}],
+wire1: ["wm.Wire", {"expression":undefined,"source":"cpCurrency.dataValue","targetProperty":"currency"}, {}]
 }]
 }]
 }],
@@ -384,12 +400,12 @@ spacer1: ["wm.Spacer", {"height":"20px","width":"15px"}, {}]
 panel7: ["wm.Panel", {"height":"100%","horizontalAlign":"right","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
 label9: ["wm.Label", {"caption":"Insufficient Balance! ","padding":"4","styles":{"color":"#ae0d0d","fontWeight":"bolder"}}, {}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"${txTotalAmt.dataValue} > ${app.varNetCash.dataValue}","targetProperty":"showing"}, {}]
+wire: ["wm.Wire", {"expression":"if(${dlgCashPos.title}==\"Cash In\"){\n    ${txTotalAmt.dataValue} > ${svUnitBalance1.dataValue}\n}else{\n    ${txTotalAmt.dataValue} > ${app.varNetCash.dataValue}\n}","targetProperty":"showing"}, {}]
 }]
 }],
 btnSubmit: ["wm.Button", {"border":"1","caption":"Submit","desktopHeight":"28px","height":"28px","width":"95px"}, {"onclick":"dlgAmtEntry.hide"}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"${txTotalAmt.dataValue} > ${app.varNetCash.dataValue} || ${txTotalAmt.dataValue}==0.00\n","targetProperty":"disabled"}, {}]
+wire: ["wm.Wire", {"expression":"if(${dlgCashPos.title}==\"Cash In\"){\r\n    ${txTotalAmt.dataValue} > ${svUnitBalance1.dataValue} || ${txTotalAmt.dataValue} <= 0\r\n}else{\r\n    ${txTotalAmt.dataValue} > ${app.varNetCash.dataValue} || ${txTotalAmt.dataValue} <= 0\r\n}","targetProperty":"disabled"}, {}]
 }]
 }],
 btnCancel: ["wm.Button", {"border":"1","caption":"Cancel","desktopHeight":"28px","height":"28px","margin":"0,0,0,0","styles":{},"width":"80px"}, {"onclick":"btnCancelClick"}],
@@ -401,7 +417,7 @@ spacer2: ["wm.Spacer", {"height":"20px","width":"15px"}, {}]
 dlgCashPos: ["wm.DesignableDialog", {"border":"1","buttonBarId":"","containerWidgetId":"containerWidget1","desktopHeight":"235px","height":"235px","styles":{},"title":"Cash Out","width":"350px"}, {"onClose":"dlgCashPosClose"}, {
 containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 cicoPanel: ["wm.Panel", {"height":"160px","horizontalAlign":"left","margin":"3,3,5,3","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-cpTxdate: ["wm.Date", {"_classes":{"domNode":["DateN"]},"border":"0","caption":"Transaction Date:","displayValue":"9/18/2018","height":"25px","readonly":true,"width":"300px"}, {}, {
+cpTxdate: ["wm.Date", {"_classes":{"domNode":["DateN"]},"border":"0","caption":"Transaction Date:","displayValue":"10/10/2018","height":"25px","readonly":true,"width":"300px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]
@@ -416,7 +432,7 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"[main].svUserInfo.firstname","targetProperty":"dataValue"}, {}]
 }]
 }],
-cpDestination: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Destination:","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true,"width":"300px"}, {}, {
+cpDestination: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Destination:","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true,"width":"300px"}, {"onchange":"cpDestinationChange"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svUserList","targetProperty":"dataSet"}, {}]
 }]

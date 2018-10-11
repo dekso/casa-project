@@ -11,8 +11,8 @@ var orc1 = 0;
 var orc2 = 0;
 dojo.declare("Main", wm.Page, {
     start: function() {
-        this.svUserInfo.update();
-        this.svMen2.update();
+//        this.svSecurityUser.update();
+//        this.svMen2.update();
 //        this.svMen.update();
         this.app.svBusinessDt.update();
         this.svUserSessionCheck.update();
@@ -51,6 +51,8 @@ dojo.declare("Main", wm.Page, {
 //        if(inSender.getData().role=="boo"){
 //            wm.Page.getPage("BOO_HOME").svGetUnitInfo.update();    
 //        }
+        this.selCurrency.setDataValue("PHP");
+        this.svMen2.update();
 	},
 	    //idle dialog
     YesIdleBtnClick: function(inSender) {
@@ -112,6 +114,7 @@ dojo.declare("Main", wm.Page, {
             var name = this.svMen.getItem(i).getData().modulename;
             var mod = this.svMen.getItem(i).getData().module;
             var count = this.svMen.getItem(i).getData().subcount;
+//            console.log(mod);
             if(count==1){
                 pMenuBar.addChild(new dijit.MenuBarItem({
                 label: name,

@@ -5,6 +5,7 @@ this.svOwnershipType.update();
 this.svProdGroup.update();
 this.svSpecialInstr.update();
 this.svSoaDispo.update();
+this.svDeliveryDispo.update();
 //this.svProdList.update();
 //this.svProductListFull.update();
 this.pnlNewTimeDepAcct.setValue("showing", false);
@@ -76,6 +77,7 @@ this.pnlNewSavDepAcct.setValue("showing", false);
 this.pnlButton.setValue("showing", false);
 this.pnlFileup.setValue("showing", false);
 this.varSigcard.setValue("dataValue", 0);
+this.btnViewSigcard.setDisabled(true);
 this.svCheckMember.setData(null);
 this.varCIFList.clearData();
 //        this.fAccountno.setValue("showing", false);
@@ -336,6 +338,7 @@ dojoFileUploadSuccess: function(inSender, fileList) {
 this.lblUpload.setCaption("<font color='green'>Sigcard Uploaded!");
 this.varSigcard.setValue("dataValue", 1);
 this.submitValidation();
+this.btnViewSigcard.setDisabled(false);
 },
 dojoFileUploadError: function(inSender, inErrorMsg) {
 this.lblUpload.setCaption("<font color='red'>Invalid file format!");
@@ -467,6 +470,14 @@ this.acctSolOfficerFocus(inSender);
 acctChannelFocus: function(inSender) {
 this.acctRefOfficerFocus(inSender);
 },
+svViewSigcardResult: function(inSender, inDeprecated) {
+if(inSender.getData().dataValue=="0"){
+app.alert("Sigcard not found!");
+}else{
+this.ImgSigcard.setSource(inSender.getData().dataValue);
+this.desViewSigcard.show();
+}
+},
 _end: 0
 });
 
@@ -577,7 +588,10 @@ wire18: ["wm.Wire", {"expression":"\"0\"","targetProperty":"dep.alertflag"}, {}]
 wire19: ["wm.Wire", {"expression":undefined,"source":"fSOADispo.selectedItem.id","targetProperty":"dep.soadispo"}, {}],
 wire20: ["wm.Wire", {"expression":undefined,"source":"acctRefOfficer.dataValue","targetProperty":"dep.referralofficer"}, {}],
 wire21: ["wm.Wire", {"expression":undefined,"source":"acctChannel.dataValue","targetProperty":"dep.channel"}, {}],
-wire22: ["wm.Wire", {"expression":undefined,"source":"acctSolOfficer.dataValue","targetProperty":"dep.solicitingofficer"}, {}]
+wire22: ["wm.Wire", {"expression":undefined,"source":"acctSolOfficer.dataValue","targetProperty":"dep.solicitingofficer"}, {}],
+wire23: ["wm.Wire", {"expression":undefined,"source":"fAddressDispo.dataValue","targetProperty":"dep.addressdispo"}, {}],
+wire24: ["wm.Wire", {"expression":undefined,"source":"fDeliveryDispo.dataValue","targetProperty":"dep.deliverydispo"}, {}],
+wire25: ["wm.Wire", {"expression":undefined,"source":"acctChannel.dataValue","targetProperty":"dep.campaign"}, {}]
 }]
 }],
 binding: ["wm.Binding", {}, {}, {
@@ -737,6 +751,20 @@ wire: ["wm.Wire", {"expression":"\"SOADISPOSITION\"","targetProperty":"codename"
 }]
 }]
 }],
+svDeliveryDispo: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"genCodetable","service":"UtilFacade"}, {}, {
+input: ["wm.ServiceInput", {"type":"genCodetableInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"\"DELIVERYDISPO\"","targetProperty":"codename"}, {}]
+}]
+}]
+}],
+svViewSigcard: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"viewSigcard","service":"SigcardFacade"}, {"onResult":"svViewSigcardResult"}, {
+input: ["wm.ServiceInput", {"type":"viewSigcardInputs"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"\"001010000400\"","targetProperty":"acctno"}, {}]
+}]
+}]
+}],
 searchResultDialog: ["wm.DesignableDialog", {"border":"1","buttonBarId":"","containerWidgetId":"containerWidget","title":"Search Result By Name"}, {}, {
 containerWidget: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
 gridResultName: ["wm.DojoGrid", {"_classes":{"domNode":["cDojoGrid"]},"border":"0","columns":[
@@ -778,6 +806,14 @@ buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","de
 btnCloseCIF: ["wm.Button", {"border":"1","caption":"Close","desktopHeight":"30px","height":"30px","margin":"0,0,0,10","styles":{},"width":"100px"}, {"onclick":"btnCloseCIFClick"}]
 }]
 }],
+desViewSigcard: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar1","containerWidgetId":"containerWidget2","title":undefined}, {}, {
+containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+ImgSigcard: ["wm.Picture", {"height":"100%","margin":"0,0,0,0","styles":{},"width":"100%"}, {}]
+}],
+buttonBar1: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","height":"31px"}, {}, {
+btnCloseSigcard: ["wm.Button", {"border":"1","caption":"Close","height":"20px","styles":{},"width":"80px"}, {"onclick":"desViewSigcard.hide"}]
+}]
+}],
 layoutBox1: ["wm.Layout", {"horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"825px"}, {}, {
 panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","margin":"35,40,0,40","styles":{"color":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
 panel2: ["wm.Panel", {"height":"32px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
@@ -809,7 +845,7 @@ wire1: ["wm.Wire", {"expression":undefined,"source":"acctProdType.invalid","targ
 }],
 acctSolOfficer: ["wm.Text", {"border":"0","caption":"Soliciting Officer:","captionSize":"140px","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","required":true,"styles":{},"width":"320px"}, {"onMouseOut":"acctSolOfficerMouseOut","onfocus":"acctSolOfficerFocus"}],
 acctRefOfficer: ["wm.Text", {"border":"0","caption":"Referral Officer:","captionSize":"140px","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","required":true,"styles":{},"width":"320px"}, {"onMouseOut":"acctRefOfficerMouseOut","onfocus":"acctRefOfficerFocus"}],
-acctChannel: ["wm.Text", {"border":"0","caption":"Campaign:","captionSize":"140px","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","required":true,"styles":{},"width":"320px"}, {"onMouseOut":"acctChannelMouseOut","onfocus":"acctChannelFocus"}],
+acctChannel: ["wm.Text", {"border":"0","caption":"Campaign:","captionSize":"140px","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","styles":{},"width":"320px"}, {"onMouseOut":"acctChannelMouseOut","onfocus":"acctChannelFocus"}],
 acctCIFIDPanel: ["wm.Panel", {"height":"28px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"middle","width":"372%"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"acctAcctType.invalid","targetProperty":"disabled"}, {}]
@@ -844,7 +880,7 @@ spacer5: ["wm.Spacer", {"height":"3px","styles":{},"width":"10px"}, {}],
 panel11: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
 btnContinue: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Submit","desktopHeight":"27px","height":"27px","styles":{},"width":"80px"}, {"onclick":"btnContinueClick"}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"${pnlCustDet.invalid} && (${acctCIFID.dataValue}==null||${acctCustFullname.dataValue}==null) && ${acctSolOfficer.invalid} && ${acctRefOfficer.invalid} && ${acctChannel.invalid}","targetProperty":"disabled"}, {}]
+wire: ["wm.Wire", {"expression":"${pnlCustDet.invalid} && (${acctCIFID.dataValue}==null||${acctCustFullname.dataValue}==null) && ${acctSolOfficer.invalid} && ${acctRefOfficer.invalid}","targetProperty":"disabled"}, {}]
 }]
 }],
 btnHome: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Home","desktopHeight":"28px","height":"28px","styles":{},"width":"80px"}, {"onclick":"btnHomeClick"}]
@@ -947,7 +983,7 @@ wire: ["wm.Wire", {"expression":"(${fPlacementAmt.dataValue}+${fTotalInt.dataVal
 }]
 }]
 }],
-pnlNewSavDepAcct: ["wm.Panel", {"height":"227px","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
+pnlNewSavDepAcct: ["wm.Panel", {"height":"285px","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
 fSATxdt: ["wm.Date", {"_classes":{"domNode":["DateN"]},"border":"0","caption":"Transaction Date:","displayValue":"","emptyValue":"null","height":"25px","readonly":true,"width":"315px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"app.svBusinessDt.dataValue","targetProperty":"dataValue"}, {}]
@@ -986,7 +1022,7 @@ wire: ["wm.Wire", {"expression":undefined,"source":"acctProdType.selectedItem.cu
 }],
 pnlCheckRange: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"middle","width":"100%"}, {}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":"${acctProdType.selectedItem.checkbookind}==true","targetProperty":"showing"}, {}]
+wire: ["wm.Wire", {"expression":"//${acctProdType.selectedItem.checkbookind}==true","targetProperty":"showing"}, {}]
 }],
 fSAcheckFrom: ["wm.Text", {"border":"0","caption":"Check Series From:","dataValue":undefined,"displayValue":"","height":"100%","styles":{},"width":"240px"}, {}],
 fSAcheckTo: ["wm.Text", {"border":"0","caption":"To:","captionSize":"30px","dataValue":undefined,"displayValue":"","height":"100%","width":"140px"}, {}],
@@ -996,6 +1032,17 @@ fSOADispo: ["wm.SelectMenu", {"border":"0","caption":"SOA Disposition:","dataFie
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svSoaDispo","targetProperty":"dataSet"}, {}]
 }]
+}],
+fDeliveryDispo: ["wm.SelectMenu", {"border":"0","caption":"Delivery Mode:","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","required":true,"width":"240px"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":undefined,"source":"svDeliveryDispo","targetProperty":"dataSet"}, {}],
+wire1: ["wm.Wire", {"expression":"${fSOADispo.dataValue} == \"D\"","targetProperty":"showing"}, {}]
+}]
+}],
+fAddressDispo: ["wm.Text", {"border":"0","caption":"Address :","dataValue":undefined,"displayValue":"","height":"25px","required":true,"width":"450px"}, {}, {
+binding: ["wm.Binding", {}, {}, {
+wire: ["wm.Wire", {"expression":"${fDeliveryDispo.dataValue} != null","targetProperty":"showing"}, {}]
+}]
 }]
 }],
 fAccountnoPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"750px"}, {}, {
@@ -1003,7 +1050,7 @@ fAccountno: ["wm.Text", {"border":"0","caption":"Account Number:","displayValue"
 btnSearch1: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Search","desktopHeight":"28px","height":"28px","styles":{},"width":"80px"}, {"onclick":"btnSearch1Click"}],
 lblResult: ["wm.Label", {"caption":"","padding":"4","width":"300px"}, {}]
 }],
-pnlFileup: ["wm.Panel", {"height":"37px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"302px"}, {}, {
+pnlFileup: ["wm.Panel", {"height":"37px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"422px"}, {}, {
 dojoFileUpload: ["wm.DojoFileUpload", {"buttonCaption":"Upload Image","height":"28px","operation":"uploadImageFile","useList":false,"width":"100px"}, {"onChange":"dojoFileUploadChange","onError":"dojoFileUploadError","onSuccess":"dojoFileUploadSuccess"}, {
 input: ["wm.ServiceInput", {"type":"uploadImageFileInputs"}, {}]
 }],
@@ -1011,6 +1058,7 @@ lblUpload: ["wm.Label", {"align":"left","caption":"Select file for upload","heig
 }],
 pnlButton: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
 btnSubmit: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Submit","desktopHeight":"28px","height":"28px","styles":{},"width":"80px"}, {"onclick":"btnSubmitClick"}],
+btnViewSigcard: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"View Sigcard","desktopHeight":"28px","disabled":true,"height":"28px","styles":{},"width":"120px"}, {"onclick":"svViewSigcard"}],
 btnCancel: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Cancel","desktopHeight":"28px","height":"28px","styles":{},"width":"80px"}, {"onclick":"btnCancelClick"}]
 }]
 }]

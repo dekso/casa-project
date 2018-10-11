@@ -116,12 +116,12 @@ public class Tbdeposit {
     private BigDecimal garnishedbal;
     private BigDecimal accumbook;
     private BigDecimal accumavail;
-//    private BigDecimal freezeamount;
+    private String soadispo;
     private String solicitingofficer;
     private String referralofficer;
     private String campaign;
-
-    private String soadispo;
+    private String deliverydispo;
+    private String addressdispo;
 
     public Integer getId() {
         return id;
@@ -130,7 +130,7 @@ public class Tbdeposit {
     public void setId(Integer id) {
         this.id = id;
     }
-//ez
+
     public String getProductCode() {
         return productCode;
     }
@@ -859,14 +859,6 @@ public class Tbdeposit {
         this.accumavail = accumavail;
     }
 
-//    public BigDecimal getFreezeamount() {
-//        return freezeamount;
-//    }
-//
-//    public void setFreezeamount(BigDecimal freezeamount) {
-//        this.freezeamount = freezeamount;
-//    }
-
     public String getSoadispo() {
         return soadispo;
     }
@@ -891,11 +883,28 @@ public class Tbdeposit {
         this.referralofficer = referralofficer;
     }
 
-    public String getcampaign() {
+    public String getCampaign() {
         return campaign;
     }
 
-    public void setcampaign(String campaign) {
+    public void setCampaign(String campaign) {
         this.campaign = campaign;
     }
+
+    public String getDeliverydispo() {
+        return deliverydispo;
+    }
+
+    public void setDeliverydispo(String deliverydispo) {
+        this.deliverydispo = deliverydispo;
+    }
+
+    public String getAddressdispo() {
+        return addressdispo;
+    }
+
+    public void setAddressdispo(String addressdispo) {
+        this.addressdispo = addressdispo;
+    }
+
 }

@@ -139,5 +139,13 @@ dojo.declare("Home", wm.Page, {
         this.lgTxtRemarks.clear();
         this.dlgDecline.show();
 	},
+	svUnitBalance1Result: function(inSender, inDeprecated) {
+	  console.log(inSender.getData());
+	},
+  cpDestinationChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+		if(this.dlgCashPos.title == "Cash In"){
+		    this.svUnitBalance1.update();
+        }
+	},
 	_end: 0
 });

@@ -150,7 +150,7 @@ TLR_ACCTBALINQ.widgets = {
 			btnCloseATA: ["wm.Button", {"border":"1","caption":"Close","desktopHeight":"24px","height":"24px","margin":"0,0,0,0","styles":{}}, {"onclick":"btnCloseATAClick"}]
 		}]
 	}],
-	desFloatItems: ["wm.DesignableDialog", {"border":"1","title":"Float Items","width":"740px","containerWidgetId":"containerWidget2","buttonBarId":"buttonBar"}, {}, {
+	desFloatItems: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar1","containerWidgetId":"containerWidget2","title":"Float Items","width":"740px"}, {}, {
 		containerWidget2: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
 			GridFloatItems: ["wm.DojoGrid", {"columns":[
 {"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
@@ -172,7 +172,7 @@ TLR_ACCTBALINQ.widgets = {
 				}]
 			}]
 		}],
-		buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","height":"34px"}, {}, {
+		buttonBar1: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"34px","height":"34px"}, {}, {
 			btnCloseFloatitems: ["wm.Button", {"border":"1","caption":"Close","desktopHeight":"23px","height":"23px","width":"80px"}, {"onclick":"btnCloseFloatitemsClick"}]
 		}]
 	}],
@@ -338,7 +338,7 @@ TLR_ACCTBALINQ.widgets = {
 {"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Transaction Date: \" + ${wm.runtimeId}.formatCell(\"txvaldt\", ${txvaldt}, ${this}, ${wm.rowId}) +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Transaction: \" + ${txcode}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"EC: \" + ${errorcorrect}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Branch Ref No: \" + ${txbrrefno}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Reference No: \" + ${txrefno}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Branch Id: \" + ${unit}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Debit: \" + ${wm.runtimeId}.formatCell(\"debit\", ${debit}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Credit: \" + ${wm.runtimeId}.formatCell(\"credit\", ${credit}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Outbal: \" + ${wm.runtimeId}.formatCell(\"outbal\", ${outbal}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Check No.: \" + ${checkacctno}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Action: \" + ${wm.runtimeId}.formatCell(\"btnEC\", ${btnEC}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n","mobileColumn":true},
 {"show":true,"field":"checkacctno","title":"Check No.","width":"55px","align":"center","formatFunc":"","formatProps":null,"editorProps":null,"mobileColumn":false},
 {"show":true,"field":"btnEC","title":"Action","width":"100px","align":"center","formatFunc":"wm_button_formatter","expression":"if(new Date(app.svBusinessDt.getData().dataValue).toDateString()\n=== new Date(${txvaldt}).toDateString()){\n\t\"Error Correct\"\n}else{\n\t\"\"\n}\n","isCustomField":true,"mobileColumn":false}
-],"height":"100%","localizationStructure":{},"minDesktopHeight":60,"singleClickEdit":true,"styles":{}}, {"onGridButtonClick":"dojoGrid1GridButtonClick","onShow":"dojoGrid1Show"}, {
+],"height":"100%","localizationStructure":{},"minDesktopHeight":60,"singleClickEdit":true,"sortingEnabled":false,"styles":{}}, {"onGridButtonClick":"dojoGrid1GridButtonClick","onShow":"dojoGrid1Show"}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"svSearchAccount.histlist","targetProperty":"dataSet"}, {}]
 						}]

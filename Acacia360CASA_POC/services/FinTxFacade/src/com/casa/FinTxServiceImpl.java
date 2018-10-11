@@ -33,9 +33,12 @@ import com.etel.util.Connection;
 import com.etel.util.HQLUtil;
 import com.etel.util.SequenceGenerator;
 import com.etel.utils.DateTimeUtil;
+import com.etel.utils.UserUtil;
 import com.smslai_eoddb.data.Tbbrfintxjrnl;
 import com.smslai_eoddb.data.Tbcashposition;
 import com.smslai_eoddb.data.Tbcashpositiondenom;
+import com.smslai_eoddb.data.Tbdeposit;
+import com.smslai_eoddb.data.Tbdeptxjrnl;
 import com.smslai_eoddb.data.Tbfintxchecklist;
 import com.smslai_eoddb.data.Tbfintxjrnl;
 import com.smslai_eoddb.data.Tbmanagerscheck;
@@ -732,4 +735,85 @@ public class FinTxServiceImpl implements FinTxService {
 		return result;
 	}
 	
+	@Override
+	public String mcgcDeposit(Tbfintxjrnl fin) {
+		String res = "8";
+		Tbmanagerscheck check = new Tbmanagerscheck();
+		try {
+			param.put("checkacctno", fin.getCheckacctno());
+			check = (Tbmanagerscheck) dbService.execStoredProc(
+					"SELECT * FROM Tbmanagerscheck WHERE mccheckno =:checkacctno", param, Tbmanagerscheck.class, 0, null);
+			if(check == null) {
+				//check not found
+				return "1";
+			}else {
+				if(fin.getTxamount().compareTo(check.getAmount())!=0) {
+					//Invalid amount
+					return "2";
+				}else if(!DateTimeUtil.convertDateToString(fin.getCheckdate(), DateTimeUtil.DATE_FORMAT_MM_DD_YYYY)
+					.equals(DateTimeUtil.convertDateToString(check.getDaterequest(), DateTimeUtil.DATE_FORMAT_MM_DD_YYYY))) {
+					//Invalid Date
+					return "3";
+				}else{
+					//Stale
+					Calendar mDate = Calendar.getInstance();
+					mDate.setTime(check.getDaterequest());
+					Calendar sixMonths = Calendar.getInstance();
+					sixMonths.set(Calendar.MONTH, -6);
+					if(mDate.before(sixMonths)) {
+						return "4";
+					}
+				}
+				if(check.getStatus().equals("3")) {
+					//Negotiated
+					return "5";
+				}
+			}
+			param.put("acctno", fin.getAccountno());
+			param.put("userid", UserUtil.securityService.getUserId());
+			Tbdeposit dep = (Tbdeposit) dbService.executeUniqueHQLQuery("FROM Tbdeposit WHERE accountno=:acctno", param);
+			fin.setTxstatus("2");
+			fin.setTxref((String) dbService.executeUniqueSQLQuery("DECLARE @txrefno VARCHAR(20) " + 
+					"DECLARE @txrefno1 VARCHAR(20) " + 
+					"EXEC SEQGEN_REFNO :userid, @txrefno1 OUTPUT " + 
+					"SELECT @txrefno1", param));
+			fin.setTxrefmain((String) dbService.executeUniqueSQLQuery("DECLARE @txrefno VARCHAR(20) " + 
+						"EXEC SEQGENERATE @txrefno OUTPUT " + 
+						"SELECT @txrefno", param));
+			fin.setTxdate(new Date());
+			if(dbService.save(fin)) {
+				dep.setAccountBalance(dep.getAccountBalance().add(fin.getTxamount()));
+				dep.setMtdcredits(dep.getMtdcredits().add(fin.getTxamount()));
+				dep.setBtdcredits(dep.getBtdcredits().add(fin.getTxamount()));
+				dep.setTotalNoCredits(dep.getTotalNoCredits()+1);
+				dbService.saveOrUpdate(dep);
+				Tbdeptxjrnl jrnl = new Tbdeptxjrnl();
+				jrnl.setTxdate(fin.getTxdate());
+				jrnl.setAccountno(fin.getAccountno());
+				jrnl.setApprovalDate(new Date());
+				jrnl.setApprovedBy(UserUtil.securityService.getUserId());
+				jrnl.setCheckamount(fin.getTxamount());
+				jrnl.setCheckdate(DateTimeUtil.convertDateToString(fin.getCheckdate(), DateTimeUtil.DATE_FORMAT_MM_DD_YYYY));
+				jrnl.setChecknumber(fin.getCheckacctno());
+				jrnl.setCreatedBy(UserUtil.securityService.getUserId());
+				jrnl.setCreationDate(new Date());
+				jrnl.setCredit(jrnl.getCheckamount());
+				jrnl.setDebit(BigDecimal.ZERO);
+				jrnl.setOutBal(dep.getAccountBalance());
+				jrnl.setTxcode(fin.getTxcode());
+				jrnl.setTxStatus("2");
+				jrnl.setTxRefNo(fin.getTxrefmain());
+				jrnl.setTxvaldt(fin.getTxvaldt());
+				dbService.save(jrnl);
+				check.setStatus("3");
+				dbService.saveOrUpdate(check);
+				return "0";
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return "8";
+		}
+		return res;
+	}
 }

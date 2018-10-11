@@ -63,14 +63,14 @@ public class CustomerRelationServiceImpl implements CustomerRelationService {
                 for(int i = 0;i<chkSeries.length;i++){
                     System.out.println(chkSeries[i]);
                 }
-                Tbcheckbook tbcheckbook = new Tbcheckbook();
-                tbcheckbook.setCheckbkaccountno(accountCreationForm.getTbdeposit().getAccountNo());
-                tbcheckbook.setCheckbookno(chkSeries.length>1?"":chkSeries[2]);
-                tbcheckbook.setEndchkno(Integer.valueOf(chkSeries[1]));
-                tbcheckbook.setStatus(1);
-                tbcheckbook.setStartchkno(Integer.valueOf(chkSeries[0]));
-                tbcheckbook.setUnit(accountCreationForm.getTbdeposit().getUnit());
-                customerRelationService.checkbookIssuance(tbcheckbook);
+//                Tbcheckbook tbcheckbook = new Tbcheckbook();
+//                tbcheckbook.setCheckbkaccountno(accountCreationForm.getTbdeposit().getAccountNo());
+//                tbcheckbook.setCheckbookno(chkSeries.length>1?"":chkSeries[2]);
+//                tbcheckbook.setEndchkno(Integer.valueOf(chkSeries[1]));
+//                tbcheckbook.setStatus(1);
+//                tbcheckbook.setStartchkno(Integer.valueOf(chkSeries[0]));
+//                tbcheckbook.setUnit(accountCreationForm.getTbdeposit().getUnit());
+//                customerRelationService.checkbookIssuance(tbcheckbook);
             }
             System.out.println(">>>>>>>>>>>>>>>>>>>>>>>.");
             form.setResult(casaCustomerRelRepository.accountCreationInit(accountCreationForm.getTbdeposit().getAccountNo()));

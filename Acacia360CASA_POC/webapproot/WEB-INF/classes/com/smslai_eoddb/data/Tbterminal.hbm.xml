@@ -17,5 +17,8 @@
         <property name="createdby" type="string">
             <column name="createdby" length="50"/>
         </property>
+        <property name="userid" type="string">
+            <column name="userid" length="25"/>
+        </property>
     </class>
 </hibernate-mapping>

@@ -2159,6 +2159,33 @@ wm.types = {
 			"liveService": false,
 			"service": "FinTxFacade"
 		},
+		"com.casa.forms.LogsAndModulesForm": {
+			"fields": {
+				"eodForm": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "com.casa.forms.EODModulesForm"
+				},
+				"logList": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": true,
+					"noChange": [],
+					"required": true,
+					"type": "com.smslai_eoddb.data.Tblogs"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "EODFacade"
+		},
 		"com.casa.misc.forms.MerchantForm": {
 			"fields": {
 				"merchantacctno": {
@@ -2861,12 +2888,12 @@ wm.types = {
 			"fields": {
 				"batchdate": {
 					"exclude": [],
-					"fieldOrder": 0,
+					"fieldOrder": 3,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.util.Date"
 				},
 				"batchfilename": {
@@ -2876,7 +2903,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
 				"batchstatus": {
@@ -2886,26 +2913,26 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.Integer"
 				},
 				"companycode": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"id": {
 					"exclude": [],
 					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
 					"required": true,
 					"type": "java.lang.Integer"
 				},
@@ -2916,7 +2943,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
 				"processedby": {
@@ -2926,7 +2953,7 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
 				"uploadedby": {
@@ -2936,13 +2963,13 @@ wm.types = {
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
-			"liveService": false,
-			"service": "SigcardFacade"
+			"liveService": true,
+			"service": "SMSLAI_EODDB"
 		},
 		"com.smslai_eoddb.data.Tbbillspayment": {
 			"fields": {
@@ -6023,6 +6050,16 @@ wm.types = {
 					"required": false,
 					"type": "java.math.BigDecimal"
 				},
+				"addressdispo": {
+					"exclude": [],
+					"fieldOrder": 97,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"alertflag": {
 					"exclude": [],
 					"fieldOrder": 48,
@@ -6202,6 +6239,16 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.lang.Integer"
+				},
+				"deliverydispo": {
+					"exclude": [],
+					"fieldOrder": 96,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
 				},
 				"dispoflag": {
 					"exclude": [],
@@ -7915,6 +7962,103 @@ wm.types = {
 			"internal": false,
 			"liveService": true,
 			"service": "SMSLAI_EODDB"
+		},
+		"com.smslai_eoddb.data.Tbdocsperproduct": {
+			"fields": {
+				"createdby": {
+					"exclude": [],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"datecreated": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"documentcode": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"documentname": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"lastupdated": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.util.Date"
+				},
+				"producttype": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"remarks": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"updatedby": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": false,
+			"service": "UtilFacade"
 		},
 		"com.smslai_eoddb.data.Tbdocumentpertransaction": {
 			"fields": {
@@ -11053,6 +11197,46 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.Boolean"
 				},
+				"dormancytermno": {
+					"exclude": [],
+					"fieldOrder": 45,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"dormancytermperiod": {
+					"exclude": [],
+					"fieldOrder": 46,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"escheattermno": {
+					"exclude": [],
+					"fieldOrder": 47,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"escheattermperiod": {
+					"exclude": [],
+					"fieldOrder": 48,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"freqintcomp": {
 					"exclude": [],
 					"fieldOrder": 27,
@@ -11102,6 +11286,26 @@ wm.types = {
 					"noChange": ["delete", "read", "update"],
 					"required": true,
 					"type": "java.lang.Integer"
+				},
+				"inactivetermno": {
+					"exclude": [],
+					"fieldOrder": 49,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"inactivetermperiod": {
+					"exclude": [],
+					"fieldOrder": 50,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
 				},
 				"instcode": {
 					"exclude": [],
@@ -12961,6 +13165,16 @@ wm.types = {
 				"unitid": {
 					"exclude": [],
 					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"userid": {
+					"exclude": [],
+					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -15414,7 +15628,7 @@ dojo.declare("Acacia360CASA_POC", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha31", 
+	"projectSubVersion": "Alpha33", 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": "nothing", 
 	"studioVersion": "6.7.0.RELEASE", 
