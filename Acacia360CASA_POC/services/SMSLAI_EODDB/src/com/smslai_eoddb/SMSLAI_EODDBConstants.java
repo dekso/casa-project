@@ -5,7 +5,7 @@ package com.smslai_eoddb;
 
 /**
  *  Query names for service "SMSLAI_EODDB"
- *  10/09/2018 13:55:32
+ *  10/10/2018 15:54:06
  * 
  */
 public class SMSLAI_EODDBConstants {

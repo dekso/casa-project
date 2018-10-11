@@ -18,6 +18,7 @@ import com.mongodb.DB;
 import com.smslai_eoddb.data.Tbcodetable;
 import com.smslai_eoddb.data.Tbnetamt;
 import com.smslai_eoddb.data.Tbroleaccess;
+import com.smslai_eoddb.data.Tbterminal;
 import com.smslai_eoddb.data.Tbuser;
 import com.sun.jersey.core.impl.provider.entity.XMLJAXBElementProvider.General;
 import com.user.maintenance.form.AccessRights;
@@ -107,12 +108,12 @@ public class UserAccountServiceImpl implements UserAccountService {
 					+ "tb.modulelevel AS level, tb.page AS page "
 					+ "FROM TBROLEACCESS tb WHERE tb.modulelevel!=1 AND tb.role=:role", 
 					param, AccessRights.class, 1, null);
-			System.out.println("List sub : " +list.size());
+//			System.out.println("List sub : " +list.size());
 			tmplist.addAll(list);
 			list = new ArrayList<AccessRights>();
 			for(AccessRights row: tmplist) {
 				for(String page: pageList) {
-					if(row.getPage().equals(page)) {
+					if(row.getPage()==null || row.getPage().equals(page)) {
 						list.add(row);
 					}
 				}
@@ -228,6 +229,22 @@ public class UserAccountServiceImpl implements UserAccountService {
 		return list;
 	}
 
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Tbterminal> terminalList(String unitid) {
+		// TODO Auto-generated method stub
+		List<Tbterminal> list = new ArrayList<Tbterminal>();
+		try {
+			param.put("unitid", unitid);
+			list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid", param,
+					Tbterminal.class, 1, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Tbcodetable> subMod() {

@@ -137,6 +137,14 @@
 		}],
 		"returnType": "java.lang.String"
 	}, {
+		"name": "mcgcDeposit",
+		"operationType": null,
+		"parameters": [{
+			"name": "fin",
+			"type": "com.smslai_eoddb.data.Tbfintxjrnl"
+		}],
+		"returnType": "java.lang.String"
+	}, {
 		"name": "overrideTransaction",
 		"operationType": null,
 		"parameters": [{

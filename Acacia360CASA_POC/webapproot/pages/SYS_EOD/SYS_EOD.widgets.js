@@ -1,77 +1,117 @@
 SYS_EOD.widgets = {
 	varCheckType: ["wm.Variable", {"isList":true,"json":"[{\"name\":\"MC\",\"dataValue\":\"1\"},{\"name\":\"GC\",\"dataValue\":\"0\"}]","type":"EntryData"}, {}],
-	svCheckAccountPurchasor: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"checkAcct","service":"FinTxFacade"}, {"onResult":"svCheckAccountPurchasorResult"}, {
-		input: ["wm.ServiceInput", {"type":"checkAcctInputs"}, {}, {
+	svFindAllLogs: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"findAllLogsFortheDay","service":"EODFacade"}, {"onResult":"svFindAllLogsResult"}, {
+		input: ["wm.ServiceInput", {"type":"findAllLogsFortheDayInputs"}, {}, {
+			binding: ["wm.Binding", {}, {}, {
+				wire: ["wm.Wire", {"expression":undefined,"source":"txtPayableTo.dataValue","targetProperty":"accountno"}, {}],
+				wire1: ["wm.Wire", {"expression":undefined,"source":"txtPayableTo.dataValue","targetProperty":"acctno"}, {}],
+				wire2: ["wm.Wire", {"expression":undefined,"source":"svGetBusinessDate.currbusinessdate","targetProperty":"currentbusinessdate"}, {}]
+			}]
+		}],
+		binding: ["wm.Binding", {}, {}, {
+			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
+		}]
+	}],
+	svRunEOD: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"runEOD","service":"EODFacade"}, {"onResult":"svRunEODResult"}, {
+		input: ["wm.ServiceInput", {"type":"runEODInputs"}, {}, {
 			binding: ["wm.Binding", {}, {}, {
 				wire: ["wm.Wire", {"expression":undefined,"source":"txtAccountNo.dataValue","targetProperty":"accountno"}, {}],
 				wire1: ["wm.Wire", {"expression":undefined,"source":"txtAccountNo.dataValue","targetProperty":"acctno"}, {}]
 			}]
 		}],
 		binding: ["wm.Binding", {}, {}, {
-			wire: ["wm.Wire", {"expression":undefined,"source":"txtAccountNo","targetProperty":"loadingDialog"}, {}]
+			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
 		}]
 	}],
-	svCheckAccountPayableTo: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"checkAcct","service":"FinTxFacade"}, {"onResult":"svCheckAccountPayableToResult"}, {
-		input: ["wm.ServiceInput", {"type":"checkAcctInputs"}, {}, {
-			binding: ["wm.Binding", {}, {}, {
-				wire: ["wm.Wire", {"expression":undefined,"source":"txtPayableTo.dataValue","targetProperty":"accountno"}, {}],
-				wire1: ["wm.Wire", {"expression":undefined,"source":"txtPayableTo.dataValue","targetProperty":"acctno"}, {}]
-			}]
-		}],
-		binding: ["wm.Binding", {}, {}, {
-			wire: ["wm.Wire", {"expression":undefined,"source":"txtPayableTo","targetProperty":"loadingDialog"}, {}]
-		}]
-	}],
-	svGetTxcode: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getTxinfo","service":"FinTxFacade"}, {"onResult":"svGetTxcodeResult"}, {
-		input: ["wm.ServiceInput", {"type":"getTxinfoInputs"}, {}, {
-			binding: ["wm.Binding", {}, {}, {
-				wire: ["wm.Wire", {"expression":"\"MC / GC Purchase\"","targetProperty":"txname"}, {}]
-			}]
-		}]
-	}],
-	svSave: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"requestMc","service":"FinTxFacade"}, {}, {
+	svGetBusinessDate: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getMainBranch","service":"EODFacade"}, {"onResult":"svFindAllLogs"}, {
 		binding: ["wm.Binding", {}, {}, {
 			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
 		}],
-		input: ["wm.ServiceInput", {"type":"requestMcInputs"}, {}]
+		input: ["wm.ServiceInput", {"type":"getMainBranchInputs"}, {}]
+	}],
+	svGetListofBranches: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getBranchList","service":"UtilFacade"}, {}, {
+		binding: ["wm.Binding", {}, {}, {
+			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
+		}],
+		input: ["wm.ServiceInput", {"type":"getBranchListInputs"}, {}]
+	}],
+	dlgListOfBranches: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar","containerWidgetId":"containerWidget","desktopHeight":"350px","height":"350px","styles":{},"title":"Branches","width":"400px"}, {}, {
+		containerWidget: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
+			lblSelectedItems1: ["wm.Label", {"caption":"<b>Select branches to exclude from clearing.","padding":"4","singleLine":false,"styles":{"fontSize":"11px"},"width":"100%"}, {}],
+			gridBranches: ["wm.DojoGrid", {"columns":[
+{"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"brid","title":"Brid","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"brname","title":"brname","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"braddress","title":"Braddress","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"brstatus","title":"Brstatus","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"currency","title":"Currency","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"currbusinessdate","title":"Currbusinessdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"nextbusinessdate","title":"Nextbusinessdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"seqno","title":"Seqno","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"sequser","title":"Sequser","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"seqmerch","title":"Seqmerch","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"seqtdc","title":"Seqtdc","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"seqoverride","title":"Seqoverride","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"seqyy","title":"Seqyy","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"updatedby","title":"Updatedby","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"instcode","title":"Instcode","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Brname: \" + ${brname} +\n\"</div>\"\n\n","mobileColumn":true}
+],"dsType":"com.gldb.data.Tbunit","localizationStructure":{},"minDesktopHeight":60,"noHeader":true,"selectionMode":"checkbox","singleClickEdit":true}, {"onDeselect":"gridBranchesSelect","onSelect":"gridBranchesSelect"}, {
+				binding: ["wm.Binding", {}, {}, {
+					wire: ["wm.Wire", {"expression":undefined,"source":"svGetListofBranches","targetProperty":"dataSet"}, {}]
+				}]
+			}],
+			lblSelectedItems: ["wm.Label", {"caption":"<b>Selected Items : ","height":"100%","padding":"4","singleLine":false,"styles":{"fontSize":"11px"},"width":"100%"}, {}]
+		}],
+		buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","height":"31px"}, {}, {
+			btnCancel: ["wm.Button", {"border":"1","caption":"Cancel","height":"20px"}, {"onclick":"dlgListOfBranches.hide"}],
+			btnDone: ["wm.Button", {"border":"1","caption":"Done","height":"20px"}, {"onclick":"btnDoneClick"}]
+		}]
 	}],
 	layoutBox1: ["wm.Layout", {"horizontalAlign":"left","styles":{},"verticalAlign":"top"}, {}, {
-		panel1: ["wm.Panel", {"height":"100%","horizontalAlign":"left","margin":"35,20,10,40","styles":{"color":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
-			panel2: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
-				lblTitle: ["wm.Label", {"caption":"MC / GC Purchase","padding":"4","styles":{"fontSize":"14px","fontWeight":"bolder","color":"#535050"},"width":"350px"}, {}]
+		pnlContainer: ["wm.Panel", {"height":"100%","horizontalAlign":"left","margin":"35,20,10,40","styles":{"color":"#ffffff"},"verticalAlign":"top","width":"100%"}, {}, {
+			onlTitle: ["wm.Panel", {"height":"30px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{"fontWeight":"bolder","color":"#ffffff"},"verticalAlign":"middle","width":"100%"}, {}, {
+				lblTitle: ["wm.Label", {"caption":"End of Day Process","padding":"4","styles":{"fontSize":"14px","fontWeight":"bolder","color":"#535050"},"width":"350px"}, {}]
 			}],
-			panel3: ["wm.Panel", {"height":"244px","horizontalAlign":"left","margin":"10,0,0,3","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-				radioButton1Panel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
-					rBtnMC: ["wm.RadioButton", {"border":"0","caption":"MC","captionSize":"30px","displayValue":"","groupValue":true,"height":"25px","width":"80px"}, {}],
-					rBtnGC: ["wm.RadioButton", {"border":"0","caption":"GC","captionSize":"30px","displayValue":"true","groupValue":true,"height":"25px","width":"80px"}, {}]
-				}],
-				lblPurchasor: ["wm.Label", {"caption":"Purchasor : ","padding":"3","styles":{"color":"#353535","fontSize":"11px","fontWeight":"bolder"}}, {}],
-				pnlPurchasor: ["wm.Panel", {"height":"60px","horizontalAlign":"left","padding":"0,0,0,10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-					txtAccountName: ["wm.Text", {"border":"0","caption":"Name : ","captionSize":"125px","dataValue":undefined,"displayValue":"","height":"25px","readonly":true,"styles":{},"width":"600px"}, {"onfocus":"onFocusField"}],
-					txtAccountNoPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"590px"}, {}, {
-						txtAccountNo: ["wm.Text", {"border":"0","caption":"Account Number : ","captionSize":"125px","dataValue":undefined,"displayValue":"","height":"100%","styles":{},"width":"310px"}, {"onfocus":"onFocusField"}],
-						btnSearchPurchasor: ["wm.Button", {"border":"1","caption":"Search","height":"100%","margin":"0,0,0,10","styles":{},"width":"80px"}, {"onclick":"svCheckAccountPurchasor"}],
-						lblResultPurchasor: ["wm.Label", {"caption":"","padding":"4","styles":{"color":"#060606"}}, {}]
-					}]
-				}],
-				fAcctPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"695px"}, {}, {
-					txtPayableTo: ["wm.Text", {"border":"0","caption":"Payable To : ","captionSize":"135px","dataValue":undefined,"displayValue":"","height":"25px","styles":{},"width":"320px"}, {"onfocus":"onFocusField"}],
-					btnSearchPayableTo: ["wm.Button", {"border":"1","caption":"Search","height":"100%","margin":"0,0,0,10","styles":{},"width":"80px"}, {"onclick":"svCheckAccountPayableTo"}],
-					lblResultPayableTo: ["wm.Label", {"caption":"","padding":"4","styles":{"color":"#060606"}}, {}]
-				}],
-				slcPurpose: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Purpose : ","captionSize":"135px","dataSet":"","dataType":"com.casa.util.forms.DescIdForm","displayValue":"","emptyValue":"null","height":"25px","showing":false,"styles":{},"width":"320px"}, {}],
-				txtAmount: ["wm.Number", {"applyPlacesWhileTyping":true,"border":"0","caption":"Amount:","captionSize":"135px","dataValue":0,"displayValue":"0.00","emptyValue":"zero","height":"25px","minimum":0,"places":2,"required":true,"styles":{},"width":"320px"}, {"onfocus":"onFocusField"}],
-				txtServiceCharge: ["wm.Number", {"applyPlacesWhileTyping":true,"border":"0","caption":"Service Charge : ","captionSize":"135px","dataValue":0,"displayValue":"0.00","emptyValue":"zero","height":"25px","minimum":0,"places":2,"readonly":true,"required":true,"styles":{"textAlign":"right"},"width":"320px"}, {"onfocus":"onFocusField"}],
-				txtMCGCNumber: ["wm.Text", {"border":"0","caption":"MC / GC Number : ","captionSize":"135px","dataValue":undefined,"displayValue":"","height":"25px","mobileHeight":"25%","required":true,"styles":{},"width":"320px"}, {"onfocus":"onFocusField"}]
-			}],
-			btnSubmitPanel: ["wm.Panel", {"height":"28px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"620px"}, {}, {
-				btnSubmit: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Submit","desktopHeight":"25px","height":"25px","width":"80px"}, {"onclick":"svCheckDep"}, {
+			spacer5: ["wm.Spacer", {"height":"10px","styles":{},"width":"100%"}, {}],
+			pnlBusinessDate: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"100%"}, {}, {
+				dtCurrentBusinessDate: ["wm.Date", {"border":"0","caption":"Current Business Date : ","captionSize":"150px","displayValue":"","height":"25px","readonly":true,"width":"300px"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
-						wire: ["wm.Wire", {"expression":"${panel3.invalid};\n${txtAmount.dataValue}<=0.00;\n${txtMCGCNumber.invalid}","targetProperty":"disabled"}, {}]
+						wire: ["wm.Wire", {"expression":undefined,"source":"svGetBusinessDate.currbusinessdate","targetProperty":"dataValue"}, {}]
 					}]
 				}],
-				btnCancel: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Cancel","desktopHeight":"25px","height":"25px","width":"90px"}, {"onclick":"btnCancelClick"}],
-				btnHome: ["wm.Button", {"_classes":{"domNode":["SubmitButton"]},"border":"1","caption":"Home","desktopHeight":"25px","height":"25px","width":"100px"}, {"onclick":"btnHomeClick"}]
+				spacer4: ["wm.Spacer", {"height":"10px","styles":{},"width":"50px"}, {}],
+				dtNextBusinessDate: ["wm.Date", {"border":"0","caption":"Next Business Date : ","captionSize":"150px","displayValue":"","height":"25px","readonly":true,"width":"300px"}, {}, {
+					binding: ["wm.Binding", {}, {}, {
+						wire: ["wm.Wire", {"expression":undefined,"source":"svGetBusinessDate.nextbusinessdate","targetProperty":"dataValue"}, {}]
+					}]
+				}]
+			}],
+			spacer1: ["wm.Spacer", {"height":"10px","styles":{},"width":"100%"}, {}],
+			lblTitle1: ["wm.Label", {"caption":"List of Modules","padding":"4","styles":{"fontSize":"13px","fontWeight":"bolder","color":"#535050"},"width":"350px"}, {}],
+			spacer2: ["wm.Spacer", {"height":"10px","styles":{},"width":"100%"}, {}],
+			pnlBtnBar: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","margin":"0,0,0,10","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
+				btnRollDown: ["wm.Button", {"border":"1","caption":"Roll Down","desktopHeight":"25px","disabled":true,"height":"25px","styles":{"fontWeight":"bolder","fontSize":"12px"},"width":"120px"}, {"onclick":"btnClick"}],
+				btnPCHC: ["wm.Button", {"border":"1","caption":"PCHC Clearing","desktopHeight":"25px","disabled":true,"height":"25px","styles":{"fontWeight":"bolder","fontSize":"12px"},"width":"120px"}, {"onclick":"btnClick"}],
+				btnBatch: ["wm.Button", {"border":"1","caption":"Batch Processing","desktopHeight":"25px","disabled":true,"height":"25px","styles":{"fontWeight":"bolder","fontSize":"12px"},"width":"120px"}, {"onclick":"btnClick"}],
+				btnEOD: ["wm.Button", {"border":"1","caption":"End of Day","desktopHeight":"25px","disabled":true,"height":"25px","styles":{"fontWeight":"bolder","fontSize":"12px"},"width":"120px"}, {"onclick":"btnClick"}]
+			}],
+			spacer3: ["wm.Spacer", {"height":"10px","styles":{},"width":"100%"}, {}],
+			gridLogs: ["wm.DojoGrid", {"columns":[
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"<center>Module: \" + ${modulename} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Timestamp: \" + ${wm.runtimeId}.formatCell(\"eventdate\", ${eventdate}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"<center>Description: \" + ${description}\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"modulename","title":"<center>Module","width":"200px","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"eventname","title":"Eventname","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"eventdate","title":"Timestamp","width":"100px","align":"center","formatFunc":"wm_date_formatter","formatProps":{"useLocalTime":true,"dateType":"date and time"},"mobileColumn":false},
+{"show":false,"field":"currentdate","title":"Currentdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":false,"field":"nextdate","title":"Nextdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
+{"show":true,"field":"description","title":"<center>Description","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"errordescription","title":"Errordescription","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
+{"show":false,"field":"uniquekey","title":"Uniquekey","width":"100%","align":"left","formatFunc":"","mobileColumn":false}
+],"height":"100%","minDesktopHeight":60,"singleClickEdit":true,"styles":{}}, {}, {
+				binding: ["wm.Binding", {}, {}, {
+					wire: ["wm.Wire", {"expression":undefined,"source":"svFindAllLogs.logList","targetProperty":"dataSet"}, {}]
+				}]
 			}]
 		}]
 	}]

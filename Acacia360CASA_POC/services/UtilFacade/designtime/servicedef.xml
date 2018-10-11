@@ -36,6 +36,9 @@
     <operation name="getBrInfo">
         <return typeRef="com.casa.util.forms.BranchInfoForm" isList="false"/>
     </operation>
+    <operation name="getBranchList">
+        <return typeRef="com.smslai_eoddb.data.Tbunit" isList="true"/>
+    </operation>
     <operation name="getBusinessdt">
         <return typeRef="java.util.Date" isList="false"/>
     </operation>
@@ -81,10 +84,13 @@
     </operation>
     <operation name="terminalList">
         <parameter name="unitid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isUnused" typeRef="int" isList="false"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.smslai_eoddb.data.Tbterminal" isList="true"/>
     </operation>
     <operation name="terminalNo">
-        <return typeRef="java.lang.String" isList="true"/>
+        <parameter name="userid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="int" isList="false"/>
     </operation>
     <operation name="updateBr">
         <parameter name="brstat" typeRef="java.lang.String" isList="false"/>
@@ -96,6 +102,17 @@
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
     <dataobjects>
+        <dataobject javaType="com.smslai_eoddb.data.Tbdocsperproduct" name="Tbdocsperproduct" supportsQuickData="false">
+            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="documentcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="documentname" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
+            <element name="producttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
         <dataobject javaType="com.casa.util.forms.ProductMatrixForm" name="ProductMatrixForm" supportsQuickData="false">
             <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>

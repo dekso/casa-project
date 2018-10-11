@@ -67,6 +67,10 @@
         <parameter name="data" typeRef="com.smslai_eoddb.data.Tboverride" isList="false"/>
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
+    <operation name="mcgcDeposit">
+        <parameter name="fin" typeRef="com.smslai_eoddb.data.Tbfintxjrnl" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
     <operation name="overrideTransaction">
         <parameter name="txrefno" typeRef="java.lang.String" isList="false"/>
         <parameter name="username" typeRef="java.lang.String" isList="false"/>

@@ -137,5 +137,23 @@
         <property name="age" type="integer">
             <column name="age"/>
         </property>
+        <property name="dormancytermno" type="integer">
+            <column name="dormancytermno"/>
+        </property>
+        <property name="dormancytermperiod" type="string">
+            <column name="dormancytermperiod" length="5"/>
+        </property>
+        <property name="escheattermno" type="integer">
+            <column name="escheattermno"/>
+        </property>
+        <property name="escheattermperiod" type="string">
+            <column name="escheattermperiod" length="5"/>
+        </property>
+        <property name="inactivetermno" type="integer">
+            <column name="inactivetermno"/>
+        </property>
+        <property name="inactivetermperiod" type="string">
+            <column name="inactivetermperiod" length="5"/>
+        </property>
     </class>
 </hibernate-mapping>

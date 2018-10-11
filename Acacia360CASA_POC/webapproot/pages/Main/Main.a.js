@@ -11,8 +11,8 @@ var orc1 = 0;
 var orc2 = 0;
 dojo.declare("Main", wm.Page, {
 start: function() {
-this.svUserInfo.update();
-this.svMen2.update();
+//        this.svSecurityUser.update();
+//        this.svMen2.update();
 //        this.svMen.update();
 this.app.svBusinessDt.update();
 this.svUserSessionCheck.update();
@@ -50,6 +50,8 @@ this.overrideTimer.stopTimer();
 //        if(inSender.getData().role=="boo"){
 //            wm.Page.getPage("BOO_HOME").svGetUnitInfo.update();
 //        }
+this.selCurrency.setDataValue("PHP");
+this.svMen2.update();
 },
 //idle dialog
 YesIdleBtnClick: function(inSender) {
@@ -111,6 +113,7 @@ var pSubMenu = new dijit.Menu({});
 var name = this.svMen.getItem(i).getData().modulename;
 var mod = this.svMen.getItem(i).getData().module;
 var count = this.svMen.getItem(i).getData().subcount;
+//            console.log(mod);
 if(count==1){
 pMenuBar.addChild(new dijit.MenuBarItem({
 label: name,
@@ -240,7 +243,7 @@ wire: ["wm.Wire", {"expression":undefined,"source":"svSecurityUser.dataValue","t
 }]
 }]
 }],
-svSecurityUser: ["wm.ServiceVariable", {"autoUpdate":true,"inFlightBehavior":"executeLast","operation":"getUserId","service":"securityService","startUpdate":true}, {"onResult":"svUserInfo","onResult1":"svUnitBalance"}, {
+svSecurityUser: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getUserId","service":"securityService"}, {"onResult":"svUserInfo"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
 }],
@@ -276,7 +279,7 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
 }]
 }],
-svCurrency: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"genCodetable","service":"UtilFacade"}, {"onResult":"svCurrencyResult"}, {
+svCurrency: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"genCodetable","service":"UtilFacade"}, {"onResult":"svSecurityUser"}, {
 input: ["wm.ServiceInput", {"type":"genCodetableInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"\"CURR\"","targetProperty":"codename"}, {}]
@@ -286,8 +289,8 @@ wire: ["wm.Wire", {"expression":"\"CURR\"","targetProperty":"codename"}, {}]
 svUnitBalance: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getUnitBalance","service":"UserInfoFacade"}, {"onResult":"svUnitBalanceResult"}, {
 input: ["wm.ServiceInput", {"type":"getUnitBalanceInputs"}, {}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"svSecurityUser.dataValue","targetProperty":"userid"}, {}],
-wire1: ["wm.Wire", {"expression":undefined,"source":"selCurrency.selectedItem.id","targetProperty":"currency"}, {}]
+wire1: ["wm.Wire", {"expression":undefined,"source":"selCurrency.selectedItem.id","targetProperty":"currency"}, {}],
+wire: ["wm.Wire", {"expression":undefined,"source":"svSecurityUser.dataValue","targetProperty":"userid"}, {}]
 }]
 }]
 }],
@@ -380,8 +383,7 @@ panel8: ["wm.Panel", {"height":"25px","horizontalAlign":"right","layoutKind":"le
 label6: ["wm.Label", {"caption":"Currency : ","padding":"4","styles":{"color":"#ffffff","fontWeight":"bolder"},"width":"60%"}, {}],
 selCurrency: ["wm.SelectMenu", {"_classes":{"domNode":["selMenuWhite"]},"border":"0","caption":undefined,"captionSize":"80px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"id","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","styles":{"fontWeight":"bolder","color":"#ffffff"},"width":"70px"}, {"onchange":"selCurrencyChange"}, {
 binding: ["wm.Binding", {}, {}, {
-wire: ["wm.Wire", {"expression":undefined,"source":"svCurrency","targetProperty":"dataSet"}, {}],
-wire1: ["wm.Wire", {"expression":"\"PHP\"","targetProperty":"dataValue"}, {}]
+wire: ["wm.Wire", {"expression":undefined,"source":"svCurrency","targetProperty":"dataSet"}, {}]
 }]
 }]
 }],
@@ -407,7 +409,7 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"\"Business Date : \"+${app.svBusinessDt.dataValue}","targetProperty":"caption"}, {}]
 }]
 }],
-mainDate: ["wm.DateTime", {"border":"0","caption":"Business Date : ","captionSize":"60px","dateMode":"Date","displayValue":"10/9/2018","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
+mainDate: ["wm.DateTime", {"border":"0","caption":"Business Date : ","captionSize":"60px","dateMode":"Date","displayValue":"10/11/2018","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]
@@ -429,12 +431,12 @@ wire: ["wm.Wire", {"expression":"\"Welcome: \" +${svUserInfo.firstname} ","targe
 logoutbutton: ["wm.Button", {"_classes":{"domNode":["Warning","logoutbutton"]},"border":"0","borderColor":"#f89406","caption":"<c>Logout","desktopHeight":"25px","height":"25px","imageList":undefined,"margin":"0","styles":{}}, {"onclick":"logoutbuttonClick"}]
 }],
 mainDatePanel1: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/9/2018 01:56 PM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
+mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/11/2018 11:24 AM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]
 }],
-TransactionDt: ["wm.Date", {"_classes":{"domNode":["DtCommon"]},"border":"0","caption":"Transaction Date:","captionSize":"100px","displayValue":"10/9/2018","height":"25px","margin":"0,0,0,5","padding":"0","readonly":true,"styles":{}}, {}, {
+TransactionDt: ["wm.Date", {"_classes":{"domNode":["DtCommon"]},"border":"0","caption":"Transaction Date:","captionSize":"100px","displayValue":"10/11/2018","height":"25px","margin":"0,0,0,5","padding":"0","readonly":true,"styles":{}}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]

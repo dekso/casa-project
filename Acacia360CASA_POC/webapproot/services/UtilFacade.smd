@@ -72,6 +72,11 @@
 		"parameters": null,
 		"returnType": "com.casa.util.forms.BranchInfoForm"
 	}, {
+		"name": "getBranchList",
+		"operationType": null,
+		"parameters": null,
+		"returnType": "[com.smslai_eoddb.data.Tbunit]"
+	}, {
 		"name": "getBusinessdt",
 		"operationType": null,
 		"parameters": null,
@@ -158,13 +163,22 @@
 		"parameters": [{
 			"name": "unitid",
 			"type": "java.lang.String"
+		}, {
+			"name": "isUnused",
+			"type": "int"
+		}, {
+			"name": "userid",
+			"type": "java.lang.String"
 		}],
 		"returnType": "[com.smslai_eoddb.data.Tbterminal]"
 	}, {
 		"name": "terminalNo",
 		"operationType": null,
-		"parameters": null,
-		"returnType": "[java.lang.String]"
+		"parameters": [{
+			"name": "userid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "int"
 	}, {
 		"name": "updateBr",
 		"operationType": null,

@@ -573,6 +573,8 @@
             <element name="solicitingofficer" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="referralofficer" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="campaign" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="deliverydispo" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="addressdispo" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbdepositcif" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1289,6 +1291,12 @@
             <element name="ataind" typeRef="java.lang.Boolean" isList="false" allowNull="true"/>
             <element name="maxbalance" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
             <element name="age" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dormancytermno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="dormancytermperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="escheattermno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="escheattermperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="inactivetermno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="inactivetermperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbproductmatrix" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1575,6 +1583,7 @@
             <element name="terminal" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="unitid" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbtransactioncode" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1844,26 +1853,6 @@
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.TbaccessrightsId" name="id" supportsQuickData="false">
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.TbuseraccessId" name="id" supportsQuickData="false">
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -1893,26 +1882,6 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.TbroleId" name="id" supportsQuickData="false">
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.TbemailparamsId" name="id" supportsQuickData="false">
             <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -1933,6 +1902,46 @@
                 <noChange>update</noChange>
             </element>
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbroleId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbaccessrightsId" name="id" supportsQuickData="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>

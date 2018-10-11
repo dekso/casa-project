@@ -5,6 +5,7 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
         this.svProdGroup.update();
         this.svSpecialInstr.update();
         this.svSoaDispo.update();
+        this.svDeliveryDispo.update();
         //this.svProdList.update();
         //this.svProductListFull.update();
         this.pnlNewTimeDepAcct.setValue("showing", false);
@@ -77,6 +78,7 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
         this.pnlButton.setValue("showing", false);
         this.pnlFileup.setValue("showing", false);
         this.varSigcard.setValue("dataValue", 0);
+        this.btnViewSigcard.setDisabled(true);
         this.svCheckMember.setData(null);
         this.varCIFList.clearData();
 //        this.fAccountno.setValue("showing", false);
@@ -345,6 +347,7 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
         this.lblUpload.setCaption("<font color='green'>Sigcard Uploaded!");
         this.varSigcard.setValue("dataValue", 1);
         this.submitValidation();
+        this.btnViewSigcard.setDisabled(false);
     },
     dojoFileUploadError: function(inSender, inErrorMsg) {
         this.lblUpload.setCaption("<font color='red'>Invalid file format!");
@@ -470,14 +473,24 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
 		this.btnAddCIF.click();
 	},
 	
-  acctSolOfficerFocus: function(inSender) {
+    acctSolOfficerFocus: function(inSender) {
 	  this.acctCIFIDFocus(inSender);
 	},
-  acctRefOfficerFocus: function(inSender) {
+    acctRefOfficerFocus: function(inSender) {
 	  this.acctSolOfficerFocus(inSender);
 	},
-  acctChannelFocus: function(inSender) {
+    acctChannelFocus: function(inSender) {
 	  this.acctRefOfficerFocus(inSender);
 	},
-  _end: 0
+
+
+	svViewSigcardResult: function(inSender, inDeprecated) {
+		if(inSender.getData().dataValue=="0"){
+            app.alert("Sigcard not found!");    
+    	}else{
+            this.ImgSigcard.setSource(inSender.getData().dataValue);
+            this.desViewSigcard.show();
+		}
+	},
+	_end: 0
 });

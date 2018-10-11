@@ -26,6 +26,11 @@
                 <entry key="AuthenticationFacade">
                     <list/>
                 </entry>
+                <entry key="EODFacade">
+                    <list>
+                        <value>com.casa.forms.LogsAndModulesForm</value>
+                    </list>
+                </entry>
                 <entry key="EncryptionFacade">
                     <list/>
                 </entry>
@@ -135,10 +140,10 @@
                         <value>com.smslai_eoddb.data.Tbusermember</value>
                         <value>com.smslai_eoddb.data.Tbuserrights</value>
                         <value>com.smslai_eoddb.data.Tbuserroles</value>
-                        <value>com.smslai_eoddb.data.TbaccessrightsId</value>
                         <value>com.smslai_eoddb.data.TbuseraccessId</value>
-                        <value>com.smslai_eoddb.data.TbroleId</value>
                         <value>com.smslai_eoddb.data.TbemailparamsId</value>
+                        <value>com.smslai_eoddb.data.TbroleId</value>
+                        <value>com.smslai_eoddb.data.TbaccessrightsId</value>
                     </list>
                 </entry>
                 <entry key="SecurityFacade">
@@ -149,9 +154,7 @@
                     </list>
                 </entry>
                 <entry key="SigcardFacade">
-                    <list>
-                        <value>com.smslai_eoddb.data.Tbbatchfile</value>
-                    </list>
+                    <list/>
                 </entry>
                 <entry key="UserAccountFacade">
                     <list>
@@ -169,6 +172,7 @@
                 </entry>
                 <entry key="UtilFacade">
                     <list>
+                        <value>com.smslai_eoddb.data.Tbdocsperproduct</value>
                         <value>com.casa.util.forms.ProductMatrixForm</value>
                         <value>com.casa.util.forms.DescIdForm</value>
                         <value>com.casa.util.forms.BranchInfoForm</value>

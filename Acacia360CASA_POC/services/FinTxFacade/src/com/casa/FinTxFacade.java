@@ -197,5 +197,8 @@ public class FinTxFacade extends JavaServiceSuperClass {
 		FinTxService service = new FinTxServiceImpl();
 		return service.saveBuySellFx(brjrnl);
 	}
-	
+	public String mcgcDeposit(Tbfintxjrnl fin) {
+		FinTxService service = new FinTxServiceImpl();
+		return service.mcgcDeposit(fin);
+	}
 }

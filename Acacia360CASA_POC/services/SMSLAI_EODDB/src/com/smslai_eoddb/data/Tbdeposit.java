@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbdeposit
- *  10/08/2018 17:30:12
+ *  10/10/2018 15:49:33
  * 
  */
 public class Tbdeposit {
@@ -108,6 +108,8 @@ public class Tbdeposit {
     private String solicitingofficer;
     private String referralofficer;
     private String campaign;
+    private String deliverydispo;
+    private String addressdispo;
 
     public Integer getId() {
         return id;
@@ -875,6 +877,22 @@ public class Tbdeposit {
 
     public void setCampaign(String campaign) {
         this.campaign = campaign;
+    }
+
+    public String getDeliverydispo() {
+        return deliverydispo;
+    }
+
+    public void setDeliverydispo(String deliverydispo) {
+        this.deliverydispo = deliverydispo;
+    }
+
+    public String getAddressdispo() {
+        return addressdispo;
+    }
+
+    public void setAddressdispo(String addressdispo) {
+        this.addressdispo = addressdispo;
     }
 
 }

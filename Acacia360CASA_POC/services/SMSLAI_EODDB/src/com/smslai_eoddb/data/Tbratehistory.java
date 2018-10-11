@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbratehistory
- *  10/08/2018 17:30:13
+ *  10/10/2018 15:49:33
  * 
  */
 public class Tbratehistory {

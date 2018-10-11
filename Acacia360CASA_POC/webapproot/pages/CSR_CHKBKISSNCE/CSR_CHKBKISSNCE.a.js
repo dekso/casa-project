@@ -30,14 +30,17 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"data.unit"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"app.varUserId.dataValue","targetProperty":"data.releasedby"}, {}],
 wire2: ["wm.Wire", {"expression":"1","targetProperty":"data.status"}, {}],
-wire3: ["wm.Wire", {"expression":undefined,"source":"acctRecvdBy.dataValue","targetProperty":"data.receivedby"}, {}],
-wire4: ["wm.Wire", {"expression":undefined,"source":"acctStrtChkNo.dataValue","targetProperty":"data.startchkno"}, {}],
-wire5: ["wm.Wire", {"expression":undefined,"source":"acctEndChkNo.dataValue","targetProperty":"data.endchkno"}, {}],
 wire6: ["wm.Wire", {"expression":undefined,"source":"acctNo.dataValue","targetProperty":"data.accountno"}, {}],
+wire5: ["wm.Wire", {"expression":undefined,"source":"acctEndChkNo.dataValue","targetProperty":"data.endchkno"}, {}],
 wire7: ["wm.Wire", {"expression":undefined,"source":"chkBkNo.dataValue","targetProperty":"data.checkbookno"}, {}],
+wire4: ["wm.Wire", {"expression":undefined,"source":"acctStrtChkNo.dataValue","targetProperty":"data.startchkno"}, {}],
+wire3: ["wm.Wire", {"expression":undefined,"source":"acctRecvdBy.dataValue","targetProperty":"data.receivedby"}, {}],
 wire8: ["wm.Wire", {"expression":undefined,"source":"acctNo.dataValue","targetProperty":"data.checkbkaccountno"}, {}]
 }]
 }]
+}],
+serviceVariable1: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast"}, {}, {
+input: ["wm.ServiceInput", {"type":"Inputs"}, {}]
 }],
 searchResultDialog: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar","containerWidgetId":"containerWidget","title":"Search Result"}, {}, {
 containerWidget: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}],

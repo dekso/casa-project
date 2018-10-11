@@ -12,7 +12,7 @@ dojo.declare("Acacia360CASA_POC", wm.Application, {
 	"name": "", 
 	"phoneGapLoginPage": "Login", 
 	"phoneMain": "", 
-	"projectSubVersion": "Alpha32", 
+	"projectSubVersion": "Alpha33", 
 	"projectVersion": 1, 
 	"sessionExpirationHandler": "nothing", 
 	"studioVersion": "6.7.0.RELEASE", 

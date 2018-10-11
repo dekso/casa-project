@@ -3,6 +3,7 @@
     <import resource="classpath:ADInquiryFacade.spring.xml"/>
     <import resource="classpath:AccountFacade.spring.xml"/>
     <import resource="classpath:AuthenticationFacade.spring.xml"/>
+    <import resource="classpath:EODFacade.spring.xml"/>
     <import resource="classpath:EncryptionFacade.spring.xml"/>
     <import resource="classpath:FileUploadDownload.spring.xml"/>
     <import resource="classpath:FinTxFacade.spring.xml"/>

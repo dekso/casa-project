@@ -13,6 +13,7 @@ import com.smslai_eoddb.data.Tbprodmatrix;
 import com.smslai_eoddb.data.Tbrates;
 import com.smslai_eoddb.data.Tbterminal;
 import com.smslai_eoddb.data.Tbtransactioncode;
+import com.smslai_eoddb.data.Tbunit;
 
 public interface UtilService {
 	
@@ -26,12 +27,12 @@ public interface UtilService {
 	String updateBr(String brstat);
 
 	String aeTerminal(Tbterminal data);
-	List<Tbterminal> terminalList(String unitid);
+	List<Tbterminal> terminalList(String unitid, int isUnused, String userid);
 	String deleteTerminal(int id);
 	List<ProductMatrixForm> productList();
 	String aeProduct(Tbprodmatrix input);
 	Tbprodmatrix getProductDetail(int id);
-	List<String> terminalNo();
+	int terminalNo(String userid);
 	Integer printDocSlip(String txrefno);
 	Integer printPassbook(String txrefno);
 	Tbrates getRates(String curr,String buysell);
@@ -44,5 +45,7 @@ public interface UtilService {
 	String addOrupdateDocsperProd(Tbdocsperproduct docs);
 	List<Tbtransactioncode> getListTxcode(String search);
 	String addOrUpdateTxcode(Tbtransactioncode code);
+	List<Tbunit> getBranchList();
+	
 	
 }

@@ -60,20 +60,13 @@ public class Tbprodmatrix {
     private Boolean ataind;
     private BigDecimal maxbalance;
     private Integer age;
+    private Integer dormancytermno;
+    private String dormancytermperiod;
+    private Integer escheattermno;
+    private String escheattermperiod;
+    private Integer inactivetermno;
+    private String inactivetermperiod;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumns({
-//            @JoinColumn(updatable = false, insertable = false, name="prodcode", referencedColumnName="SubProductCode"),
-//            @JoinColumn(updatable = false, insertable = false, name="prodgroup", referencedColumnName="ProductCode")
-//    })
-//    private Tbdeposit tbdeposit;
-//    public Tbdeposit getTbdeposit() {
-//        return tbdeposit;
-//    }
-//
-//    public void setTbdeposit(Tbdeposit tbdeposit) {
-//        this.tbdeposit = tbdeposit;
-//    }
     public Integer getId() {
         return id;
     }
@@ -433,4 +426,53 @@ public class Tbprodmatrix {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public Integer getDormancytermno() {
+        return dormancytermno;
+    }
+
+    public void setDormancytermno(Integer dormancytermno) {
+        this.dormancytermno = dormancytermno;
+    }
+
+    public String getDormancytermperiod() {
+        return dormancytermperiod;
+    }
+
+    public void setDormancytermperiod(String dormancytermperiod) {
+        this.dormancytermperiod = dormancytermperiod;
+    }
+
+    public Integer getEscheattermno() {
+        return escheattermno;
+    }
+
+    public void setEscheattermno(Integer escheattermno) {
+        this.escheattermno = escheattermno;
+    }
+
+    public String getEscheattermperiod() {
+        return escheattermperiod;
+    }
+
+    public void setEscheattermperiod(String escheattermperiod) {
+        this.escheattermperiod = escheattermperiod;
+    }
+
+    public Integer getInactivetermno() {
+        return inactivetermno;
+    }
+
+    public void setInactivetermno(Integer inactivetermno) {
+        this.inactivetermno = inactivetermno;
+    }
+
+    public String getInactivetermperiod() {
+        return inactivetermperiod;
+    }
+
+    public void setInactivetermperiod(String inactivetermperiod) {
+        this.inactivetermperiod = inactivetermperiod;
+    }
+
 }
