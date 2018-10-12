@@ -30,6 +30,7 @@
     </operation>
     <operation name="checkMemberNoName">
         <parameter name="name" typeRef="java.lang.String" isList="false"/>
+        <parameter name="custtype" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.casa.acct.forms.InquiryCIFNameList" isList="true"/>
     </operation>
     <operation name="checkMishandled">
@@ -168,6 +169,7 @@
         </dataobject>
         <dataobject javaType="com.casa.acct.forms.InquiryCIFNameList" name="InquiryCIFNameList" supportsQuickData="false">
             <element name="cifno" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="custtype" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="name" typeRef="java.lang.String" isList="false" allowNull="false"/>
         </dataobject>
         <dataobject javaType="com.casa.acct.forms.AccountClosureForm" name="AccountClosureForm" supportsQuickData="false">

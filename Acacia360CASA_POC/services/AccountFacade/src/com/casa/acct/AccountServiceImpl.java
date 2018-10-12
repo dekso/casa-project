@@ -676,13 +676,14 @@ public class AccountServiceImpl implements AccountService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<InquiryCIFNameList> checkMemberNoName(String name) {
+	public List<InquiryCIFNameList> checkMemberNoName(String name,String custtype) {
 		// TODO Auto-generated method stub
 		List<InquiryCIFNameList> list = null;
 		try {
 			param.put("name", "%" + name + "%");
+			param.put("custtype", custtype);
 			list = (List<InquiryCIFNameList>) dbService.execStoredProc(
-					"SELECT main.fullname AS name, cifno FROM CIFSPBBDB.dbo.TBCIFMAIN main WHERE main.fullname LIKE :name AND main.cifstatus='3'",
+					"SELECT main.fullname AS name, cifno,customertype AS custtype FROM CIFSPBBDB.dbo.TBCIFMAIN main WHERE main.fullname LIKE :name AND main.cifstatus='3' AND customertype=:custtype",
 					param, InquiryCIFNameList.class, 1, null);
 		} catch (Exception e) {
 			e.printStackTrace();

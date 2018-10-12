@@ -51,6 +51,14 @@
 		}],
 		"returnType": "java.lang.String"
 	}, {
+		"name": "checkBrid",
+		"operationType": null,
+		"parameters": [{
+			"name": "brid",
+			"type": "java.lang.String"
+		}],
+		"returnType": "java.lang.String"
+	}, {
 		"name": "genCodetable",
 		"operationType": null,
 		"parameters": [{

@@ -47,7 +47,7 @@ public interface AccountService {
 	AccountGenericForm rolloverTimeDepositAccount(Tbdeposit dep);
 	
 	UserInfoForm checkMemberNo(String memberno);
-	List<InquiryCIFNameList> checkMemberNoName(String name);
+	List<InquiryCIFNameList> checkMemberNoName(String name, String custtype);
 	
 	Integer acctAlertOff(String accountno);
 	String getControlno(String accountno);

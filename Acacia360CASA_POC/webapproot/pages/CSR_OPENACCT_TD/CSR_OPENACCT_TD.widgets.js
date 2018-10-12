@@ -26,7 +26,7 @@ CSR_OPENACCT_TD.widgets = {
 	notifCreateSuccess: ["wm.NotificationCall", {}, {"onOk":"notifCreateSuccessOk"}, {
 		input: ["wm.ServiceInput", {"type":"alertInputs"}, {}]
 	}],
-	svProductListFull: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getProdList","service":"AccountFacade"}, {}, {
+	svProductListFull: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getProdList","service":"AccountFacade"}, {"onResult":"svProductListFullResult"}, {
 		input: ["wm.ServiceInput", {"type":"getProdListInputs"}, {}, {
 			binding: ["wm.Binding", {}, {}, {
 				wire: ["wm.Wire", {"expression":undefined,"source":"acctProdGroup.dataValue","targetProperty":"prodgroup"}, {}]
@@ -119,7 +119,8 @@ CSR_OPENACCT_TD.widgets = {
 		input: ["wm.ServiceInput", {"type":"checkMemberNoNameInputs"}, {}, {
 			binding: ["wm.Binding", {}, {}, {
 				wire: ["wm.Wire", {"expression":undefined,"source":"acctCIFID.dataValue","targetProperty":"memberno"}, {}],
-				wire1: ["wm.Wire", {"expression":undefined,"source":"acctCustFullname.dataValue","targetProperty":"name"}, {}]
+				wire1: ["wm.Wire", {"expression":undefined,"source":"acctCustFullname.dataValue","targetProperty":"name"}, {}],
+				wire2: ["wm.Wire", {"expression":undefined,"source":"acctProdType.selectedItem.customertype","targetProperty":"custtype"}, {}]
 			}]
 		}]
 	}],
@@ -288,7 +289,8 @@ CSR_OPENACCT_TD.widgets = {
 {"show":true,"field":"cifno","title":"Cifno","width":"100%","align":"left","formatFunc":"","formatProps":null,"editorProps":null,"mobileColumn":false},
 {"show":true,"field":"name","title":"Name","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":true,"field":"btn","title":"Action","width":"100px","align":"center","formatFunc":"wm_button_formatter","editorProps":null,"expression":"\"Select\"","isCustomField":true,"mobileColumn":false},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Cifno: \" + ${cifno} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Name: \" + ${name}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Action: \" + ${wm.runtimeId}.formatCell(\"btn\", ${btn}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n","mobileColumn":true}
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Cifno: \" + ${cifno} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Name: \" + ${name}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Action: \" + ${wm.runtimeId}.formatCell(\"btn\", ${btn}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n","mobileColumn":true},
+{"show":false,"field":"custtype","title":"Custtype","width":"100%","displayType":"Java.lang.String","align":"left","formatFunc":""}
 ],"height":"100%","localizationStructure":{},"margin":"0,0,5,0","minDesktopHeight":60,"singleClickEdit":true,"styles":{}}, {"onGridButtonClick":"gridResultNameGridButtonClick"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"varSearchResult","targetProperty":"dataSet"}, {}]

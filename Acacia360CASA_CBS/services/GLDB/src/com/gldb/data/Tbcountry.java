@@ -5,7 +5,7 @@ package com.gldb.data;
 
 /**
  *  GLDB.Tbcountry
- *  09/29/2018 15:22:55
+ *  10/11/2018 14:29:34
  * 
  */
 public class Tbcountry {

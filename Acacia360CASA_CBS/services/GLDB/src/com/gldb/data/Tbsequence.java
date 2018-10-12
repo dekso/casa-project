@@ -5,7 +5,7 @@ package com.gldb.data;
 
 /**
  *  GLDB.Tbsequence
- *  10/08/2018 20:01:50
+ *  10/11/2018 14:29:34
  * 
  */
 public class Tbsequence {

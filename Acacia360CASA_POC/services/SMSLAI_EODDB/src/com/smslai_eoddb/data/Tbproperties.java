@@ -5,7 +5,7 @@ package com.smslai_eoddb.data;
 
 /**
  *  SMSLAI_EODDB.Tbproperties
- *  10/10/2018 15:49:33
+ *  10/11/2018 13:34:39
  * 
  */
 public class Tbproperties {

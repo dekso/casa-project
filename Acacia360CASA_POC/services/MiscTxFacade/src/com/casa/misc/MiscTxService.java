@@ -7,6 +7,7 @@ import com.smslai_eoddb.data.Tbbillspayment;
 import com.smslai_eoddb.data.Tbcheckbook;
 import com.smslai_eoddb.data.Tbmerchant;
 import com.smslai_eoddb.data.Tbmiscellaneous;
+import com.smslai_eoddb.data.Tbpassbookissuance;
 
 public interface MiscTxService {
 	
@@ -16,5 +17,6 @@ public interface MiscTxService {
 	String addMerchant(Tbmerchant merch);
 	
 	String checkbookIssuance(Tbcheckbook data);
+	String passbookIssuance(Tbpassbookissuance pbissuance);
 
 }

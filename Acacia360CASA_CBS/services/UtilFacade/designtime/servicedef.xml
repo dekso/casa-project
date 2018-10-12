@@ -25,6 +25,10 @@
         <parameter name="merchant" typeRef="com.gldb.data.Tbmerchant" isList="false"/>
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
+    <operation name="checkBrid">
+        <parameter name="brid" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
     <operation name="genCodetable">
         <parameter name="codename" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.etel.util.forms.DescIdForm" isList="true"/>

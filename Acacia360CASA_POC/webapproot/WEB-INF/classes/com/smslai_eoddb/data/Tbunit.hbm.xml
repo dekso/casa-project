@@ -50,5 +50,17 @@
         <property name="instcode" type="string">
             <column name="instcode" length="10"/>
         </property>
+        <property name="region" type="string">
+            <column name="region" length="50"/>
+        </property>
+        <property name="areacode" type="string">
+            <column name="areacode" length="20"/>
+        </property>
+        <property name="mcacctno" type="string">
+            <column name="mcacctno" length="20"/>
+        </property>
+        <property name="gcacctno" type="string">
+            <column name="gcacctno" length="20"/>
+        </property>
     </class>
 </hibernate-mapping>

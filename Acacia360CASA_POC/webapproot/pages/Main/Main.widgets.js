@@ -150,7 +150,7 @@ Main.widgets = {
 			panel7: ["wm.Panel", {"height":"52px","horizontalAlign":"right","styles":{},"verticalAlign":"top","width":"170px"}, {}, {
 				panel8: ["wm.Panel", {"height":"25px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 					label6: ["wm.Label", {"caption":"Currency : ","padding":"4","styles":{"color":"#ffffff","fontWeight":"bolder"},"width":"60%"}, {}],
-					selCurrency: ["wm.SelectMenu", {"_classes":{"domNode":["selMenuWhite"]},"border":"0","caption":undefined,"captionSize":"80px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"id","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","styles":{"fontWeight":"bolder","color":"#ffffff"},"width":"70px"}, {"onchange":"selCurrencyChange"}, {
+					selCurrency: ["wm.SelectMenu", {"_classes":{"domNode":["selMenuWhite"]},"border":"0","caption":undefined,"captionSize":"80px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","dataValue":undefined,"displayField":"id","displayValue":"","emptyValue":"null","height":"25px","margin":"0,0,0,0","styles":{"fontWeight":"bolder","color":"#ffffff"},"width":"70px"}, {"onchange":"selCurrencyChange"}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"svCurrency","targetProperty":"dataSet"}, {}]
 						}]
@@ -200,7 +200,7 @@ Main.widgets = {
 					logoutbutton: ["wm.Button", {"_classes":{"domNode":["Warning","logoutbutton"]},"border":"0","borderColor":"#f89406","caption":"<c>Logout","desktopHeight":"25px","height":"25px","imageList":undefined,"margin":"0","styles":{}}, {"onclick":"logoutbuttonClick"}]
 				}],
 				mainDatePanel1: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-					mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/11/2018 11:24 AM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
+					mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/11/2018 05:33 PM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 						}]

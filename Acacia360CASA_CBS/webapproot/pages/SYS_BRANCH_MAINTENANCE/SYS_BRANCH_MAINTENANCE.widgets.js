@@ -54,15 +54,25 @@ SYS_BRANCH_MAINTENANCE.widgets = {
 			}]
 		}]
 	}],
+	svCheckBrid: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"checkBrid","service":"UtilFacade"}, {"onResult":"svCheckBridResult"}, {
+		input: ["wm.ServiceInput", {"type":"checkBridInputs"}, {}, {
+			binding: ["wm.Binding", {}, {}, {
+				wire: ["wm.Wire", {"expression":undefined,"source":"txtBrid.dataValue","targetProperty":"brid"}, {}]
+			}]
+		}]
+	}],
 	desBranchSetup: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar","containerWidgetId":"containerWidget","desktopHeight":"320px","height":"320px","styles":{},"title":undefined,"width":"500px"}, {}, {
 		containerWidget: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","verticalAlign":"top","width":"100%"}, {}, {
-			formPanel1: ["wm.FormPanel", {"height":"100%"}, {}, {
-				txtBrid: ["wm.Text", {"border":"0","caption":"Branch ID:","captionSize":"150px","displayValue":"","height":"25px","width":"450px"}, {}, {
+			txtBridPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"460px"}, {}, {
+				txtBrid: ["wm.Text", {"border":"0","caption":"Branch ID:","captionSize":"150px","displayValue":"","height":"25px"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"BranchGrid.selectedItem.brid","targetProperty":"dataValue"}, {}]
 					}]
 				}],
-				txtBrname: ["wm.Text", {"border":"0","caption":"Branch Name:","captionSize":"150px","displayValue":"","height":"25px","width":"450px"}, {}, {
+				button1: ["wm.Button", {"border":"1","caption":"Check BRID","desktopHeight":"25px","height":"25px","width":"90px"}, {"onclick":"svCheckBrid"}]
+			}],
+			formPanel1: ["wm.FormPanel", {"disabled":true,"height":"100%"}, {}, {
+				txtBrname: ["wm.Text", {"border":"0","caption":"Branch Name:","captionSize":"150px","displayValue":"","height":"25px","required":true,"width":"450px"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"BranchGrid.selectedItem.brname","targetProperty":"dataValue"}, {}]
 					}]
@@ -103,12 +113,12 @@ SYS_BRANCH_MAINTENANCE.widgets = {
 						wire1: ["wm.Wire", {"expression":undefined,"source":"BranchGrid.selectedItem.nextbusinessdate","targetProperty":"dataValue"}, {}]
 					}]
 				}],
-				txtMCacctno: ["wm.Text", {"border":"0","caption":"MC Account No.:","captionSize":"150px","displayValue":"","height":"25px","width":"450px"}, {}, {
+				txtMCacctno: ["wm.Text", {"border":"0","caption":"MC Account No.:","captionSize":"150px","displayValue":"","height":"25px","required":true,"width":"450px"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"BranchGrid.selectedItem.mcacctno","targetProperty":"dataValue"}, {}]
 					}]
 				}],
-				txtGCacctno: ["wm.Text", {"border":"0","caption":"GC Account No.:","captionSize":"150px","displayValue":"","height":"25px","width":"450px"}, {}, {
+				txtGCacctno: ["wm.Text", {"border":"0","caption":"GC Account No.:","captionSize":"150px","displayValue":"","height":"25px","required":true,"width":"450px"}, {}, {
 					binding: ["wm.Binding", {}, {}, {
 						wire: ["wm.Wire", {"expression":undefined,"source":"BranchGrid.selectedItem.gcacctno","targetProperty":"dataValue"}, {}]
 					}]
@@ -118,7 +128,8 @@ SYS_BRANCH_MAINTENANCE.widgets = {
 		buttonBar: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","height":"31px"}, {}, {
 			btnSave: ["wm.Button", {"border":"1","caption":"Save","height":"20px","width":"80px"}, {"onclick":"notiAdd"}, {
 				binding: ["wm.Binding", {}, {}, {
-					wire: ["wm.Wire", {"expression":"${BranchGrid.emptySelection}","targetProperty":"showing"}, {}]
+					wire: ["wm.Wire", {"expression":"${BranchGrid.emptySelection}","targetProperty":"showing"}, {}],
+					wire1: ["wm.Wire", {"expression":"${txtBrname.invalid} || ${txtMCacctno.invalid} || ${txtGCacctno.invalid}","targetProperty":"disabled"}, {}]
 				}]
 			}],
 			btnUpdate: ["wm.Button", {"border":"1","caption":"Update","height":"20px","width":"80px"}, {"onclick":"notiUpdate"}, {

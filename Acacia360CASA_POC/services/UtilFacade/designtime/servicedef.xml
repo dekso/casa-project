@@ -102,17 +102,6 @@
         <return typeRef="java.lang.String" isList="false"/>
     </operation>
     <dataobjects>
-        <dataobject javaType="com.smslai_eoddb.data.Tbdocsperproduct" name="Tbdocsperproduct" supportsQuickData="false">
-            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="false"/>
-            <element name="documentcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="documentname" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
-            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="false"/>
-            <element name="producttype" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="false"/>
-            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="false"/>
-        </dataobject>
         <dataobject javaType="com.casa.util.forms.ProductMatrixForm" name="ProductMatrixForm" supportsQuickData="false">
             <element name="currency" typeRef="java.lang.String" isList="false" allowNull="false"/>
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>

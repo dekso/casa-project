@@ -8,6 +8,7 @@ import com.smslai_eoddb.data.Tbcheckbook;
 //import com.smslai_eoddb.data.Tbcheckbooklist;
 import com.smslai_eoddb.data.Tbmerchant;
 import com.smslai_eoddb.data.Tbmiscellaneous;
+import com.smslai_eoddb.data.Tbpassbookissuance;
 import com.wavemaker.runtime.javaservice.JavaServiceSuperClass;
 import com.wavemaker.runtime.service.annotations.ExposeToClient;
 
@@ -53,6 +54,10 @@ public class MiscTxFacade extends JavaServiceSuperClass {
 	public String checkbookIssuance(Tbcheckbook data) {
 		MiscTxService miscService = new MiscTxServiceImpl();
 		return miscService.checkbookIssuance(data);
+	}
+	public String passbookIssuance(Tbpassbookissuance pbissuance){
+		return miscService.passbookIssuance(pbissuance);
+		
 	}
 	
 }

@@ -5,7 +5,7 @@ package com.smslai_eoddb.data;
 
 /**
  *  SMSLAI_EODDB.Tbterminal
- *  10/10/2018 15:49:33
+ *  10/11/2018 13:34:38
  * 
  */
 public class Tbterminal {
@@ -15,7 +15,6 @@ public class Tbterminal {
     private String terminal;
     private String unitid;
     private String createdby;
-    private String userid;
 
     public Integer getId() {
         return id;
@@ -55,14 +54,6 @@ public class Tbterminal {
 
     public void setCreatedby(String createdby) {
         this.createdby = createdby;
-    }
-
-    public String getUserid() {
-        return userid;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
     }
 
 }

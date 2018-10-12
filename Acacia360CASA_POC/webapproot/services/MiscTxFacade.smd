@@ -36,6 +36,14 @@
 		"operationType": null,
 		"parameters": null,
 		"returnType": "[com.casa.misc.forms.MerchantForm]"
+	}, {
+		"name": "passbookIssuance",
+		"operationType": null,
+		"parameters": [{
+			"name": "pbissuance",
+			"type": "com.smslai_eoddb.data.Tbpassbookissuance"
+		}],
+		"returnType": "java.lang.String"
 	}],
 	"serviceType": "JSON-RPC",
 	"serviceURL": "MiscTxFacade.json"

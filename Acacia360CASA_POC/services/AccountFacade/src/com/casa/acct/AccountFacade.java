@@ -165,9 +165,9 @@ public class AccountFacade extends JavaServiceSuperClass {
 		return service.checkMemberNo(memberno);
 	}
 	
-	public List<InquiryCIFNameList> checkMemberNoName(String name) {
+	public List<InquiryCIFNameList> checkMemberNoName(String name,String custtype) {
 		AccountService service = new AccountServiceImpl();
-		return service.checkMemberNoName(name);
+		return service.checkMemberNoName(name,custtype);
 	}
 	
 	public Tbprodmatrix getProductDetail(String prodcode, String subprodcode) {

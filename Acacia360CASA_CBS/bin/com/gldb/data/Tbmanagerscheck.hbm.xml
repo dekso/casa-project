@@ -17,8 +17,8 @@
         <property name="daterequest" type="timestamp">
             <column name="daterequest" length="23"/>
         </property>
-        <property name="status" type="integer">
-            <column name="status"/>
+        <property name="status" type="string">
+            <column name="status" length="3"/>
         </property>
         <property name="dateapproved" type="timestamp">
             <column name="dateapproved" length="23"/>
@@ -29,11 +29,14 @@
         <property name="issuingbr" type="string">
             <column name="issuingbr" length="20"/>
         </property>
-        <property name="mccheckno" type="integer">
-            <column name="mccheckno"/>
+        <property name="mccheckno" type="string">
+            <column name="mccheckno" length="50"/>
         </property>
         <property name="expiry" type="timestamp">
             <column name="expiry" length="23"/>
+        </property>
+        <property name="checktype" type="string">
+            <column name="checktype" length="3"/>
         </property>
     </class>
 </hibernate-mapping>

@@ -31,4 +31,5 @@ public interface UtilService {
 	String addOrupdateMerchant(Tbmerchant merchant);
 	List<Tbfeesandcharges> getListFeesandCharges();
 	String addOrupdateFees(Tbfeesandcharges fees);
+	String checkBrid(String brid);
 }

@@ -5,65 +5,56 @@
             <column name="id"/>
             <generator class="identity"/>
         </id>
+        <property name="txBatch" type="string">
+            <column name="TxBatch" length="4"/>
+        </property>
         <property name="txdate" type="timestamp">
             <column name="Txdate" length="23" not-null="true"/>
         </property>
-        <property name="accountno" type="string">
-            <column name="accountno"/>
+        <property name="txRefNo" type="string">
+            <column name="TxRefNo" length="10"/>
         </property>
         <property name="txcode" type="string">
-            <column name="txcode" length="6"/>
+            <column name="Txcode" length="3"/>
         </property>
-        <property name="txctr" type="integer">
-            <column name="txctr"/>
-        </property>
-        <property name="txseqno" type="string">
-            <column name="txseqno" length="20"/>
-        </property>
-        <property name="txcurr" type="string">
-            <column name="txcurr" length="3"/>
-        </property>
-        <property name="txamt" type="double">
-            <column name="txamt" precision="53"/>
-        </property>
-        <property name="glline" type="string">
-            <column name="glline" length="7"/>
-        </property>
-        <property name="gllegveh" type="string">
-            <column name="gllegveh" length="5"/>
-        </property>
-        <property name="glbranch" type="string">
-            <column name="glbranch" length="5"/>
-        </property>
-        <property name="glsl" type="string">
-            <column name="glsl" length="15"/>
-        </property>
-        <property name="debit" type="big_decimal">
-            <column name="debit" precision="16"/>
-        </property>
-        <property name="credit" type="big_decimal">
-            <column name="credit" precision="16"/>
-        </property>
-        <property name="txprod" type="string">
-            <column name="txprod" length="5"/>
-        </property>
-        <property name="txsubprod" type="string">
-            <column name="txsubprod" length="5"/>
+        <property name="txoper" type="string">
+            <column name="Txoper" length="1"/>
         </property>
         <property name="txvaldt" type="timestamp">
-            <column name="txvaldt" length="23"/>
+            <column name="Txvaldt" length="23"/>
         </property>
-        <property name="txlegveh" type="string">
-            <column name="txlegveh" length="5"/>
+        <property name="employeeNo" type="integer">
+            <column name="EmployeeNo"/>
         </property>
-        <property name="txbr" type="string">
-            <column name="txbr" length="5"/>
+        <property name="accountno" type="string">
+            <column name="Accountno" length="12"/>
         </property>
-        <property name="txglbr" type="string">
-            <column name="txglbr" length="5"/>
+        <property name="txAmount" type="big_decimal">
+            <column name="TxAmount" precision="11"/>
         </property>
-        <property name="costc" type="string">
-            <column name="costc" length="10"/>
+        <property name="companyCode" type="string">
+            <column name="CompanyCode" length="3"/>
+        </property>
+        <property name="satoCode" type="string">
+            <column name="SatoCode" length="3"/>
+        </property>
+        <property name="glbranch" type="string">
+            <column name="GLBRANCH" length="4"/>
+        </property>
+        <property name="glcodeParent" type="string">
+            <column name="GLCODE_PARENT" length="25"/>
+        </property>
+        <property name="glcodeChild" type="string">
+            <column name="GLCODE_CHILD" length="25"/>
+        </property>
+        <property name="gloper" type="string">
+            <column name="GLOPER" length="1"/>
+        </property>
+        <property name="gldebit" type="big_decimal">
+            <column name="GLDEBIT" precision="11"/>
+        </property>
+        <property name="glcredit" type="big_decimal">
+            <column name="GLCREDIT" precision="11"/>
         </property>
     </class>
 </hibernate-mapping>

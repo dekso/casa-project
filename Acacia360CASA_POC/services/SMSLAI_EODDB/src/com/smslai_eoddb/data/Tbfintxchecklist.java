@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 /**
  *  SMSLAI_EODDB.Tbfintxchecklist
- *  10/10/2018 15:49:34
+ *  10/11/2018 13:34:38
  * 
  */
 public class Tbfintxchecklist {

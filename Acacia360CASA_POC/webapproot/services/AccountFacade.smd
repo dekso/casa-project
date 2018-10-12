@@ -61,6 +61,9 @@
 		"parameters": [{
 			"name": "name",
 			"type": "java.lang.String"
+		}, {
+			"name": "custtype",
+			"type": "java.lang.String"
 		}],
 		"returnType": "[com.casa.acct.forms.InquiryCIFNameList]"
 	}, {

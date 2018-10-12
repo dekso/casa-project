@@ -169,8 +169,16 @@ SYSAD_PRODUCT_SETUP.widgets = {
 								wire: ["wm.Wire", {"expression":"if(${svProdDetail.isEmpty}){\r\n    0.00\r\n}else{\r\n    ${svProdDetail.reqinitialdepamt}\r\n}","targetProperty":"dataValue"}, {}]
 							}]
 						}],
-						fMaxBalance: ["wm.Number", {"border":"0","caption":"Maximum Balance","captionSize":"165px","dataValue":0,"displayValue":"0.00","emptyValue":"zero","height":"25px","places":2,"styles":{},"width":"280px"}, {}],
-						fAge: ["wm.Text", {"border":"0","caption":"Age:","captionSize":"165px","dataValue":undefined,"displayValue":"","height":"25px","width":"250px"}, {}],
+						fMaxBalance: ["wm.Number", {"border":"0","caption":"Maximum Balance","captionSize":"165px","displayValue":"","emptyValue":"zero","height":"25px","places":2,"styles":{},"width":"280px"}, {}, {
+							binding: ["wm.Binding", {}, {}, {
+								wire: ["wm.Wire", {"expression":undefined,"source":"svProdDetail.maxbalance","targetProperty":"dataValue"}, {}]
+							}]
+						}],
+						fAge: ["wm.Text", {"border":"0","caption":"Age:","captionSize":"165px","displayValue":"","height":"25px","width":"250px"}, {}, {
+							binding: ["wm.Binding", {}, {}, {
+								wire: ["wm.Wire", {"expression":undefined,"source":"svProdDetail.age","targetProperty":"dataValue"}, {}]
+							}]
+						}],
 						label3: ["wm.Label", {"caption":"Product Attributes","padding":"4","styles":{"color":"#535050","fontWeight":"bolder"},"width":"100%"}, {}],
 						fDormancyPanel: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","verticalAlign":"top","width":"352px"}, {}, {
 							fDormancyNo: ["wm.Number", {"border":"0","caption":"Dormancy Term Req / Period:","captionSize":"165px","displayValue":"","height":"25px","width":"250px"}, {}, {
@@ -352,8 +360,8 @@ SYSAD_PRODUCT_SETUP.widgets = {
 						}],
 						fIntPlan: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Interest Plan","captionSize":"170px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","styles":{},"width":"300px"}, {}, {
 							binding: ["wm.Binding", {}, {}, {
-								wire1: ["wm.Wire", {"expression":undefined,"source":"svProdDetail.inttype","targetProperty":"dataValue"}, {}],
-								wire: ["wm.Wire", {"expression":undefined,"source":"codeIntPlan","targetProperty":"dataSet"}, {}]
+								wire: ["wm.Wire", {"expression":undefined,"source":"codeIntPlan","targetProperty":"dataSet"}, {}],
+								wire1: ["wm.Wire", {"expression":undefined,"source":"svProdDetail.intplan","targetProperty":"dataValue"}, {}]
 							}]
 						}],
 						selFreqIntComp: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Frequency of Int Computation","captionSize":"170px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","width":"300px"}, {}, {

@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbdocdetails
- *  10/10/2018 15:49:34
+ *  10/11/2018 13:34:39
  * 
  */
 public class Tbdocdetails {

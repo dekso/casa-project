@@ -536,9 +536,19 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
-				"name": {
+				"custtype": {
 					"exclude": [],
 					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"name": {
+					"exclude": [],
+					"fieldOrder": 2,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -5102,6 +5112,103 @@ wm.types = {
 			"liveService": true,
 			"service": "SMSLAI_EODDB"
 		},
+		"com.smslai_eoddb.data.Tbcountry": {
+			"fields": {
+				"areacode": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"areadesc": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"city": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"code": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"country": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"countrycode": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"postalcode": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"stateprovince": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "SMSLAI_EODDB"
+		},
 		"com.smslai_eoddb.data.Tbdepdetail": {
 			"fields": {
 				"accountno": {
@@ -7738,98 +7845,98 @@ wm.types = {
 			"fields": {
 				"createdby": {
 					"exclude": [],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"datecreated": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
-				},
-				"documentcode": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"documentname": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"id": {
-					"exclude": [],
 					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
-					"type": "java.lang.Integer"
+					"required": false,
+					"type": "java.lang.String"
 				},
-				"lastupdated": {
+				"datecreated": {
 					"exclude": [],
 					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.util.Date"
 				},
-				"producttype": {
+				"documentcode": {
 					"exclude": [],
-					"fieldOrder": 6,
+					"fieldOrder": 1,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
-				"remarks": {
+				"documentname": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"lastupdated": {
 					"exclude": [],
 					"fieldOrder": 7,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"producttype": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
 					"type": "java.lang.String"
 				},
-				"updatedby": {
+				"remarks": {
 					"exclude": [],
 					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"updatedby": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
 					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
-			"liveService": false,
-			"service": "UtilFacade"
+			"liveService": true,
+			"service": "SMSLAI_EODDB"
 		},
 		"com.smslai_eoddb.data.Tbdocumentpertransaction": {
 			"fields": {
@@ -9055,7 +9162,7 @@ wm.types = {
 			"fields": {
 				"accountno": {
 					"exclude": [],
-					"fieldOrder": 2,
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9063,37 +9170,7 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"costc": {
-					"exclude": [],
-					"fieldOrder": 20,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"credit": {
-					"exclude": [],
-					"fieldOrder": 13,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"debit": {
-					"exclude": [],
-					"fieldOrder": 12,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"glbranch": {
+				"companyCode": {
 					"exclude": [],
 					"fieldOrder": 10,
 					"fieldSubType": null,
@@ -9103,9 +9180,19 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"gllegveh": {
+				"employeeNo": {
 					"exclude": [],
-					"fieldOrder": 9,
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"glbranch": {
+					"exclude": [],
+					"fieldOrder": 12,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9113,9 +9200,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"glline": {
+				"glcodeChild": {
 					"exclude": [],
-					"fieldOrder": 8,
+					"fieldOrder": 14,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9123,9 +9210,39 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"glsl": {
+				"glcodeParent": {
 					"exclude": [],
-					"fieldOrder": 11,
+					"fieldOrder": 13,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"glcredit": {
+					"exclude": [],
+					"fieldOrder": 17,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.math.BigDecimal"
+				},
+				"gldebit": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.math.BigDecimal"
+				},
+				"gloper": {
+					"exclude": [],
+					"fieldOrder": 15,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9143,19 +9260,9 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
-				"txamt": {
+				"satoCode": {
 					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Double"
-				},
-				"txbr": {
-					"exclude": [],
-					"fieldOrder": 18,
+					"fieldOrder": 11,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9163,7 +9270,27 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"txcode": {
+				"txAmount": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.math.BigDecimal"
+				},
+				"txBatch": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"txRefNo": {
 					"exclude": [],
 					"fieldOrder": 3,
 					"fieldSubType": null,
@@ -9173,19 +9300,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"txctr": {
+				"txcode": {
 					"exclude": [],
 					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"txcurr": {
-					"exclude": [],
-					"fieldOrder": 6,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9195,7 +9312,7 @@ wm.types = {
 				},
 				"txdate": {
 					"exclude": [],
-					"fieldOrder": 1,
+					"fieldOrder": 2,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9203,37 +9320,7 @@ wm.types = {
 					"required": true,
 					"type": "java.util.Date"
 				},
-				"txglbr": {
-					"exclude": [],
-					"fieldOrder": 19,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"txlegveh": {
-					"exclude": [],
-					"fieldOrder": 17,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"txprod": {
-					"exclude": [],
-					"fieldOrder": 14,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"txseqno": {
+				"txoper": {
 					"exclude": [],
 					"fieldOrder": 5,
 					"fieldSubType": null,
@@ -9243,19 +9330,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"txsubprod": {
-					"exclude": [],
-					"fieldOrder": 15,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
 				"txvaldt": {
 					"exclude": [],
-					"fieldOrder": 16,
+					"fieldOrder": 6,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -10951,6 +11028,16 @@ wm.types = {
 				"currency": {
 					"exclude": [],
 					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"customertype": {
+					"exclude": [],
+					"fieldOrder": 51,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -12942,16 +13029,6 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.lang.String"
-				},
-				"userid": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
@@ -13007,6 +13084,16 @@ wm.types = {
 		},
 		"com.smslai_eoddb.data.Tbunit": {
 			"fields": {
+				"areacode": {
+					"exclude": [],
+					"fieldOrder": 17,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"braddress": {
 					"exclude": [],
 					"fieldOrder": 3,
@@ -13067,6 +13154,16 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
+				"gcacctno": {
+					"exclude": [],
+					"fieldOrder": 19,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"id": {
 					"exclude": ["insert"],
 					"fieldOrder": 0,
@@ -13087,6 +13184,16 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
+				"mcacctno": {
+					"exclude": [],
+					"fieldOrder": 18,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"nextbusinessdate": {
 					"exclude": [],
 					"fieldOrder": 7,
@@ -13096,6 +13203,16 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.util.Date"
+				},
+				"region": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
 				},
 				"seqmerch": {
 					"exclude": [],

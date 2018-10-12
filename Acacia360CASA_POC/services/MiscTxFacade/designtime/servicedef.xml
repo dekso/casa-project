@@ -19,6 +19,10 @@
     <operation name="getMerchantList">
         <return typeRef="com.casa.misc.forms.MerchantForm" isList="true"/>
     </operation>
+    <operation name="passbookIssuance">
+        <parameter name="pbissuance" typeRef="com.smslai_eoddb.data.Tbpassbookissuance" isList="false"/>
+        <return typeRef="java.lang.String" isList="false"/>
+    </operation>
     <dataobjects>
         <dataobject javaType="com.casa.misc.forms.MerchantForm" name="MerchantForm" supportsQuickData="false">
             <element name="merchantacctno" typeRef="java.lang.String" isList="false" allowNull="false"/>

@@ -765,9 +765,19 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.String"
 				},
-				"name": {
+				"custtype": {
 					"exclude": [],
 					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": true,
+					"type": "java.lang.String"
+				},
+				"name": {
+					"exclude": [],
+					"fieldOrder": 2,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -5331,6 +5341,103 @@ wm.types = {
 			"liveService": true,
 			"service": "SMSLAI_EODDB"
 		},
+		"com.smslai_eoddb.data.Tbcountry": {
+			"fields": {
+				"areacode": {
+					"exclude": [],
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"areadesc": {
+					"exclude": [],
+					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"city": {
+					"exclude": [],
+					"fieldOrder": 4,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"code": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"country": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"countrycode": {
+					"exclude": [],
+					"fieldOrder": 8,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"postalcode": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"stateprovince": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				}
+			},
+			"internal": false,
+			"liveService": true,
+			"service": "SMSLAI_EODDB"
+		},
 		"com.smslai_eoddb.data.Tbdepdetail": {
 			"fields": {
 				"accountno": {
@@ -7967,98 +8074,98 @@ wm.types = {
 			"fields": {
 				"createdby": {
 					"exclude": [],
-					"fieldOrder": 0,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"datecreated": {
-					"exclude": [],
-					"fieldOrder": 1,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.util.Date"
-				},
-				"documentcode": {
-					"exclude": [],
-					"fieldOrder": 2,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"documentname": {
-					"exclude": [],
-					"fieldOrder": 3,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": true,
-					"type": "java.lang.String"
-				},
-				"id": {
-					"exclude": [],
 					"fieldOrder": 4,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
-					"type": "java.lang.Integer"
+					"required": false,
+					"type": "java.lang.String"
 				},
-				"lastupdated": {
+				"datecreated": {
 					"exclude": [],
 					"fieldOrder": 5,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.util.Date"
 				},
-				"producttype": {
+				"documentcode": {
 					"exclude": [],
-					"fieldOrder": 6,
+					"fieldOrder": 1,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
 					"type": "java.lang.String"
 				},
-				"remarks": {
+				"documentname": {
+					"exclude": [],
+					"fieldOrder": 2,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"id": {
+					"exclude": ["insert"],
+					"fieldOrder": 0,
+					"fieldSubType": null,
+					"include": ["delete", "read", "update"],
+					"isList": false,
+					"noChange": ["delete", "read", "update"],
+					"required": true,
+					"type": "java.lang.Integer"
+				},
+				"lastupdated": {
 					"exclude": [],
 					"fieldOrder": 7,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
+					"type": "java.util.Date"
+				},
+				"producttype": {
+					"exclude": [],
+					"fieldOrder": 3,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
 					"type": "java.lang.String"
 				},
-				"updatedby": {
+				"remarks": {
 					"exclude": [],
 					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
 					"noChange": [],
-					"required": true,
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"updatedby": {
+					"exclude": [],
+					"fieldOrder": 6,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
 					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
-			"liveService": false,
-			"service": "UtilFacade"
+			"liveService": true,
+			"service": "SMSLAI_EODDB"
 		},
 		"com.smslai_eoddb.data.Tbdocumentpertransaction": {
 			"fields": {
@@ -9284,7 +9391,7 @@ wm.types = {
 			"fields": {
 				"accountno": {
 					"exclude": [],
-					"fieldOrder": 2,
+					"fieldOrder": 8,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9292,37 +9399,7 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"costc": {
-					"exclude": [],
-					"fieldOrder": 20,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"credit": {
-					"exclude": [],
-					"fieldOrder": 13,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"debit": {
-					"exclude": [],
-					"fieldOrder": 12,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.math.BigDecimal"
-				},
-				"glbranch": {
+				"companyCode": {
 					"exclude": [],
 					"fieldOrder": 10,
 					"fieldSubType": null,
@@ -9332,9 +9409,19 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"gllegveh": {
+				"employeeNo": {
 					"exclude": [],
-					"fieldOrder": 9,
+					"fieldOrder": 7,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.Integer"
+				},
+				"glbranch": {
+					"exclude": [],
+					"fieldOrder": 12,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9342,9 +9429,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"glline": {
+				"glcodeChild": {
 					"exclude": [],
-					"fieldOrder": 8,
+					"fieldOrder": 14,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9352,9 +9439,39 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"glsl": {
+				"glcodeParent": {
 					"exclude": [],
-					"fieldOrder": 11,
+					"fieldOrder": 13,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"glcredit": {
+					"exclude": [],
+					"fieldOrder": 17,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.math.BigDecimal"
+				},
+				"gldebit": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.math.BigDecimal"
+				},
+				"gloper": {
+					"exclude": [],
+					"fieldOrder": 15,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9372,19 +9489,9 @@ wm.types = {
 					"required": true,
 					"type": "java.lang.Integer"
 				},
-				"txamt": {
+				"satoCode": {
 					"exclude": [],
-					"fieldOrder": 7,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Double"
-				},
-				"txbr": {
-					"exclude": [],
-					"fieldOrder": 18,
+					"fieldOrder": 11,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9392,7 +9499,27 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"txcode": {
+				"txAmount": {
+					"exclude": [],
+					"fieldOrder": 9,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.math.BigDecimal"
+				},
+				"txBatch": {
+					"exclude": [],
+					"fieldOrder": 1,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"txRefNo": {
 					"exclude": [],
 					"fieldOrder": 3,
 					"fieldSubType": null,
@@ -9402,19 +9529,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"txctr": {
+				"txcode": {
 					"exclude": [],
 					"fieldOrder": 4,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.Integer"
-				},
-				"txcurr": {
-					"exclude": [],
-					"fieldOrder": 6,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9424,7 +9541,7 @@ wm.types = {
 				},
 				"txdate": {
 					"exclude": [],
-					"fieldOrder": 1,
+					"fieldOrder": 2,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -9432,37 +9549,7 @@ wm.types = {
 					"required": true,
 					"type": "java.util.Date"
 				},
-				"txglbr": {
-					"exclude": [],
-					"fieldOrder": 19,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"txlegveh": {
-					"exclude": [],
-					"fieldOrder": 17,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"txprod": {
-					"exclude": [],
-					"fieldOrder": 14,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
-				"txseqno": {
+				"txoper": {
 					"exclude": [],
 					"fieldOrder": 5,
 					"fieldSubType": null,
@@ -9472,19 +9559,9 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
-				"txsubprod": {
-					"exclude": [],
-					"fieldOrder": 15,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
-				},
 				"txvaldt": {
 					"exclude": [],
-					"fieldOrder": 16,
+					"fieldOrder": 6,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -11180,6 +11257,16 @@ wm.types = {
 				"currency": {
 					"exclude": [],
 					"fieldOrder": 5,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
+				"customertype": {
+					"exclude": [],
+					"fieldOrder": 51,
 					"fieldSubType": null,
 					"include": [],
 					"isList": false,
@@ -13171,16 +13258,6 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.lang.String"
-				},
-				"userid": {
-					"exclude": [],
-					"fieldOrder": 5,
-					"fieldSubType": null,
-					"include": [],
-					"isList": false,
-					"noChange": [],
-					"required": false,
-					"type": "java.lang.String"
 				}
 			},
 			"internal": false,
@@ -13236,6 +13313,16 @@ wm.types = {
 		},
 		"com.smslai_eoddb.data.Tbunit": {
 			"fields": {
+				"areacode": {
+					"exclude": [],
+					"fieldOrder": 17,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"braddress": {
 					"exclude": [],
 					"fieldOrder": 3,
@@ -13296,6 +13383,16 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
+				"gcacctno": {
+					"exclude": [],
+					"fieldOrder": 19,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"id": {
 					"exclude": ["insert"],
 					"fieldOrder": 0,
@@ -13316,6 +13413,16 @@ wm.types = {
 					"required": false,
 					"type": "java.lang.String"
 				},
+				"mcacctno": {
+					"exclude": [],
+					"fieldOrder": 18,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
+				},
 				"nextbusinessdate": {
 					"exclude": [],
 					"fieldOrder": 7,
@@ -13325,6 +13432,16 @@ wm.types = {
 					"noChange": [],
 					"required": false,
 					"type": "java.util.Date"
+				},
+				"region": {
+					"exclude": [],
+					"fieldOrder": 16,
+					"fieldSubType": null,
+					"include": [],
+					"isList": false,
+					"noChange": [],
+					"required": false,
+					"type": "java.lang.String"
 				},
 				"seqmerch": {
 					"exclude": [],
@@ -15614,6 +15731,7 @@ wm.types = {
 };
 wm.Application.themeData['common.themes.AcaciaGreen'] = {"wm.Button":{"desktopHeight":"20px","margin":"0,10,0,0","borderColor":"#bbbbbb","width":"70px","padding":"0,0,0,0","mobileHeight":"20px"},"wm.ToggleButton":{"desktopHeight":"20px","margin":"0,10,0,0","borderColor":"#bbbbbb","width":"70px","padding":"0,0,0,0","mobileHeight":"20px"},"wm.PopupMenuButton":{"desktopHeight":"20px","margin":"0,10,0,0","borderColor":"#bbbbbb","width":"70px","padding":"0,0,0,0","mobileHeight":"20px"},"wm.TabLayers":{"borderColor":"#dddddd","border":0,"clientBorder":"1","clientBorderColor":"#dddddd","headerHeight":"20px","mobileHeaderHeight":"10px","headerWidth":undefined,"margin":"0"},"wm.AccordionLayers":{"border":0,"borderColor":"#ffffff","clientBorder":"1","clientBorderColor":"#e5e5e5","captionHeight":"30px","captionBorder":1,"captionBorderColor":"#e5e5e5","margin":"5","arrowsOnLeft":true},"wm.FancyPanel":{"innerBorder":"1","borderColor":"#95a695","labelHeight":"20"},"wm.Text":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.LargeTextArea":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Number":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Currency":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.SelectMenu":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Lookup":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.FilteringLookup":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Date":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Time":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.DateTime":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Checkbox":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.RadioButton":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.RichText":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.CheckboxSet":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.RadioSet":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.ListSet":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.Slider":{"mobileHeight":"40px","width":"100%","borderColor":"#c1c1c1","border":0,"desktopHeight":"25px","captionAlign":"left","editorBorder":true,"margin":"0","captionSize":"130px"},"wm.AppRoot":{"borderColor":"#e6e6e6"},"wm.DojoGrid":{"border":"1","borderColor":"#d1d1d1","margin":"0"},"wm.List":{"border":"1","borderColor":"#d1d1d1","margin":"0"},"wm.dijit.ProgressBar":{"borderColor":"#e6e6e6","border":0,"desktopHeight":"24px","mobileHeight":"24px","margin":"0","padding":"0","width":"20px"},"wm.Bevel":{"borderColor":"#949494","bevelSize":"3","border":0},"wm.Splitter":{"borderColor":"#949494","bevelSize":"3","border":0},"wm.dijit.Calendar":{"desktopHeight":"260px","borderColor":"#e6e6e6"},"wm.Toast":{"border":"1","borderColor":"#e6e6e6"},"wm.ButtonBarPanel":{"padding":"5,5,5,0"},"wm.Dialog":{"borderColor":"#999999","titleBarButtonsOnRight":true,"titlebarHeight":"30","titlebarBorderColor":"#eeeeee","titlebarBorder":"0,0,1,0","mobileTitlebarHeight":"30","border":1},"wm.PageDialog":{"borderColor":"#999999","titleBarButtonsOnRight":true,"titlebarHeight":"30","titlebarBorderColor":"#eeeeee","titlebarBorder":"0,0,1,0","mobileTitlebarHeight":"30","border":1},"wm.GenericDialog":{"borderColor":"#999999","titleBarButtonsOnRight":true,"titlebarHeight":"30","titlebarBorderColor":"#eeeeee","titlebarBorder":"0,0,1,0","mobileTitlebarHeight":"30","border":1},"wm.DesignableDialog":{"borderColor":"#999999","titleBarButtonsOnRight":true,"titlebarHeight":"30","titlebarBorderColor":"#eeeeee","titlebarBorder":"0,0,1,0","mobileTitlebarHeight":"30","border":1},"wm.DojoMenu":{"border":0,"desktopHeight":"32px","borderColor":"#cccccc","padding":"0"},"wm.Dashboard":{"borderColor":"#e6e6e6"},"wm.ToggleButtonPanel":{},"wm.Panel":{}};
 wm.componentList['example.GoogleOrgChart'] = ['wm.base.widget.Composite','common.packages.example.GoogleOrgChart'];
+wm.componentList['wm.Template'] = ['wm.base.widget.Composite','common.packages.test.Acacia360LOS_SIT_02062018AAATestPage'];
 dojo.declare("Acacia360CASA_POC", wm.Application, {
 	"disableDirtyEditorTracking": false, 
 	"eventDelay": 0, 

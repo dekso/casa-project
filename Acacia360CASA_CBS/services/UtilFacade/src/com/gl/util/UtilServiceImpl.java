@@ -300,7 +300,7 @@ public class UtilServiceImpl implements UtilService {
 		// TODO Auto-generated method stub
 		List<Tbunit> list = new ArrayList<Tbunit>();
 		try {
-			list = (List<Tbunit>)dbService.execSQLQueryTransformer("SELECT * FROM Tbunit", null, Tbunit.class, 1);
+			list = (List<Tbunit>)dbService.execStoredProc("SELECT * FROM Tbunit", null, Tbunit.class, 1, null);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -391,6 +391,29 @@ public class UtilServiceImpl implements UtilService {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		return flag;
+	}
+
+	@Override
+	public String checkBrid(String brid) {
+		// TODO Auto-generated method stub
+		// 1 = existing  0 = does not exist
+		String flag = "failed";
+		try {
+			param.put("brid", brid);
+			System.out.println("brid: " +brid);
+			 Tbunit unit= (Tbunit)dbService.execStoredProc("SELECT * FROM Tbunit WHERE brid=:brid", param, Tbunit.class, 0, null);
+			if(unit != null){
+				flag = "1";
+			}else{
+				flag = "0";
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 		return flag;
 	}
 

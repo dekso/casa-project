@@ -111,5 +111,9 @@ public class UtilFacade extends JavaServiceSuperClass {
     	UtilService service = new UtilServiceImpl();
     	return service.addOrupdateFees(fees);
     }
+    public String checkBrid(String brid){
+    	UtilService service = new UtilServiceImpl();
+    	return service.checkBrid(brid);
+    }
 
 }

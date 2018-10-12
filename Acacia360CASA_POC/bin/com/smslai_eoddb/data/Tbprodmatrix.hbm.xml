@@ -155,5 +155,8 @@
         <property name="inactivetermperiod" type="string">
             <column name="inactivetermperiod" length="5"/>
         </property>
+        <property name="customertype" type="string">
+            <column name="customertype" length="5"/>
+        </property>
     </class>
 </hibernate-mapping>

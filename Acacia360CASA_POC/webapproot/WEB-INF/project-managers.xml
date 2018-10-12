@@ -86,12 +86,14 @@
                         <value>com.smslai_eoddb.data.Tbcheckbook</value>
                         <value>com.smslai_eoddb.data.Tbchecksforclearing</value>
                         <value>com.smslai_eoddb.data.Tbcodetable</value>
+                        <value>com.smslai_eoddb.data.Tbcountry</value>
                         <value>com.smslai_eoddb.data.Tbdepdetail</value>
                         <value>com.smslai_eoddb.data.Tbdeposit</value>
                         <value>com.smslai_eoddb.data.Tbdepositcif</value>
                         <value>com.smslai_eoddb.data.Tbdeptxjrnl</value>
                         <value>com.smslai_eoddb.data.Tbdocchecklist</value>
                         <value>com.smslai_eoddb.data.Tbdocdetails</value>
+                        <value>com.smslai_eoddb.data.Tbdocsperproduct</value>
                         <value>com.smslai_eoddb.data.Tbdocumentpertransaction</value>
                         <value>com.smslai_eoddb.data.Tbdocuments</value>
                         <value>com.smslai_eoddb.data.Tbemailformats</value>
@@ -140,10 +142,10 @@
                         <value>com.smslai_eoddb.data.Tbusermember</value>
                         <value>com.smslai_eoddb.data.Tbuserrights</value>
                         <value>com.smslai_eoddb.data.Tbuserroles</value>
-                        <value>com.smslai_eoddb.data.TbuseraccessId</value>
-                        <value>com.smslai_eoddb.data.TbemailparamsId</value>
-                        <value>com.smslai_eoddb.data.TbroleId</value>
                         <value>com.smslai_eoddb.data.TbaccessrightsId</value>
+                        <value>com.smslai_eoddb.data.TbemailparamsId</value>
+                        <value>com.smslai_eoddb.data.TbuseraccessId</value>
+                        <value>com.smslai_eoddb.data.TbroleId</value>
                     </list>
                 </entry>
                 <entry key="SecurityFacade">
@@ -172,7 +174,6 @@
                 </entry>
                 <entry key="UtilFacade">
                     <list>
-                        <value>com.smslai_eoddb.data.Tbdocsperproduct</value>
                         <value>com.casa.util.forms.ProductMatrixForm</value>
                         <value>com.casa.util.forms.DescIdForm</value>
                         <value>com.casa.util.forms.BranchInfoForm</value>

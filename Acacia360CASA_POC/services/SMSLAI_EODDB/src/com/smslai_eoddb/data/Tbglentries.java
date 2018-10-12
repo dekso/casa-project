@@ -7,32 +7,29 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbglentries
- *  10/10/2018 15:49:33
+ *  10/11/2018 13:34:38
  * 
  */
 public class Tbglentries {
 
     private Integer id;
+    private String txBatch;
     private Date txdate;
-    private String accountno;
+    private String txRefNo;
     private String txcode;
-    private Integer txctr;
-    private String txseqno;
-    private String txcurr;
-    private Double txamt;
-    private String glline;
-    private String gllegveh;
-    private String glbranch;
-    private String glsl;
-    private BigDecimal debit;
-    private BigDecimal credit;
-    private String txprod;
-    private String txsubprod;
+    private String txoper;
     private Date txvaldt;
-    private String txlegveh;
-    private String txbr;
-    private String txglbr;
-    private String costc;
+    private Integer employeeNo;
+    private String accountno;
+    private BigDecimal txAmount;
+    private String companyCode;
+    private String satoCode;
+    private String glbranch;
+    private String glcodeParent;
+    private String glcodeChild;
+    private String gloper;
+    private BigDecimal gldebit;
+    private BigDecimal glcredit;
 
     public Integer getId() {
         return id;
@@ -40,6 +37,14 @@ public class Tbglentries {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getTxBatch() {
+        return txBatch;
+    }
+
+    public void setTxBatch(String txBatch) {
+        this.txBatch = txBatch;
     }
 
     public Date getTxdate() {
@@ -50,12 +55,12 @@ public class Tbglentries {
         this.txdate = txdate;
     }
 
-    public String getAccountno() {
-        return accountno;
+    public String getTxRefNo() {
+        return txRefNo;
     }
 
-    public void setAccountno(String accountno) {
-        this.accountno = accountno;
+    public void setTxRefNo(String txRefNo) {
+        this.txRefNo = txRefNo;
     }
 
     public String getTxcode() {
@@ -66,100 +71,12 @@ public class Tbglentries {
         this.txcode = txcode;
     }
 
-    public Integer getTxctr() {
-        return txctr;
+    public String getTxoper() {
+        return txoper;
     }
 
-    public void setTxctr(Integer txctr) {
-        this.txctr = txctr;
-    }
-
-    public String getTxseqno() {
-        return txseqno;
-    }
-
-    public void setTxseqno(String txseqno) {
-        this.txseqno = txseqno;
-    }
-
-    public String getTxcurr() {
-        return txcurr;
-    }
-
-    public void setTxcurr(String txcurr) {
-        this.txcurr = txcurr;
-    }
-
-    public Double getTxamt() {
-        return txamt;
-    }
-
-    public void setTxamt(Double txamt) {
-        this.txamt = txamt;
-    }
-
-    public String getGlline() {
-        return glline;
-    }
-
-    public void setGlline(String glline) {
-        this.glline = glline;
-    }
-
-    public String getGllegveh() {
-        return gllegveh;
-    }
-
-    public void setGllegveh(String gllegveh) {
-        this.gllegveh = gllegveh;
-    }
-
-    public String getGlbranch() {
-        return glbranch;
-    }
-
-    public void setGlbranch(String glbranch) {
-        this.glbranch = glbranch;
-    }
-
-    public String getGlsl() {
-        return glsl;
-    }
-
-    public void setGlsl(String glsl) {
-        this.glsl = glsl;
-    }
-
-    public BigDecimal getDebit() {
-        return debit;
-    }
-
-    public void setDebit(BigDecimal debit) {
-        this.debit = debit;
-    }
-
-    public BigDecimal getCredit() {
-        return credit;
-    }
-
-    public void setCredit(BigDecimal credit) {
-        this.credit = credit;
-    }
-
-    public String getTxprod() {
-        return txprod;
-    }
-
-    public void setTxprod(String txprod) {
-        this.txprod = txprod;
-    }
-
-    public String getTxsubprod() {
-        return txsubprod;
-    }
-
-    public void setTxsubprod(String txsubprod) {
-        this.txsubprod = txsubprod;
+    public void setTxoper(String txoper) {
+        this.txoper = txoper;
     }
 
     public Date getTxvaldt() {
@@ -170,36 +87,92 @@ public class Tbglentries {
         this.txvaldt = txvaldt;
     }
 
-    public String getTxlegveh() {
-        return txlegveh;
+    public Integer getEmployeeNo() {
+        return employeeNo;
     }
 
-    public void setTxlegveh(String txlegveh) {
-        this.txlegveh = txlegveh;
+    public void setEmployeeNo(Integer employeeNo) {
+        this.employeeNo = employeeNo;
     }
 
-    public String getTxbr() {
-        return txbr;
+    public String getAccountno() {
+        return accountno;
     }
 
-    public void setTxbr(String txbr) {
-        this.txbr = txbr;
+    public void setAccountno(String accountno) {
+        this.accountno = accountno;
     }
 
-    public String getTxglbr() {
-        return txglbr;
+    public BigDecimal getTxAmount() {
+        return txAmount;
     }
 
-    public void setTxglbr(String txglbr) {
-        this.txglbr = txglbr;
+    public void setTxAmount(BigDecimal txAmount) {
+        this.txAmount = txAmount;
     }
 
-    public String getCostc() {
-        return costc;
+    public String getCompanyCode() {
+        return companyCode;
     }
 
-    public void setCostc(String costc) {
-        this.costc = costc;
+    public void setCompanyCode(String companyCode) {
+        this.companyCode = companyCode;
+    }
+
+    public String getSatoCode() {
+        return satoCode;
+    }
+
+    public void setSatoCode(String satoCode) {
+        this.satoCode = satoCode;
+    }
+
+    public String getGlbranch() {
+        return glbranch;
+    }
+
+    public void setGlbranch(String glbranch) {
+        this.glbranch = glbranch;
+    }
+
+    public String getGlcodeParent() {
+        return glcodeParent;
+    }
+
+    public void setGlcodeParent(String glcodeParent) {
+        this.glcodeParent = glcodeParent;
+    }
+
+    public String getGlcodeChild() {
+        return glcodeChild;
+    }
+
+    public void setGlcodeChild(String glcodeChild) {
+        this.glcodeChild = glcodeChild;
+    }
+
+    public String getGloper() {
+        return gloper;
+    }
+
+    public void setGloper(String gloper) {
+        this.gloper = gloper;
+    }
+
+    public BigDecimal getGldebit() {
+        return gldebit;
+    }
+
+    public void setGldebit(BigDecimal gldebit) {
+        this.gldebit = gldebit;
+    }
+
+    public BigDecimal getGlcredit() {
+        return glcredit;
+    }
+
+    public void setGlcredit(BigDecimal glcredit) {
+        this.glcredit = glcredit;
     }
 
 }

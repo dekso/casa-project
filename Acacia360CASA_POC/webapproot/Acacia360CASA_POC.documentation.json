@@ -2,6 +2,8 @@
 	"__metaData": {
 		"service_invalid_AuthenticationFacade": false, 
 		"service_invalid_EODFacade": false, 
-		"service_invalid_AccountFacade": false
+		"service_invalid_AccountFacade": false, 
+		"service_invalid_UserAccountFacade": false, 
+		"service_invalid_MiscTxFacade": false
 	}
 }

@@ -290,5 +290,11 @@
         <property name="campaign" type="string">
             <column name="campaign" length="100"/>
         </property>
+        <property name="deliverydispo" type="string">
+            <column name="deliverydispo" length="5"/>
+        </property>
+        <property name="addressdispo" type="string">
+            <column name="addressdispo" length="300"/>
+        </property>
     </class>
 </hibernate-mapping>

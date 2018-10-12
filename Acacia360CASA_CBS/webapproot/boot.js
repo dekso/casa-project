@@ -30,7 +30,7 @@ if (location.search.indexOf("dojo.locale=") != -1) {
 wm = window["wm"] || {};
 wm.version = '6.7.0.RELEASE';
 
-//wm.isMobile = navigator.userAgent.match(/mobile|android/i) || "onorientationchange" in window || navigator.msMaxTouchPoints > 0;
+wm.isMobile = navigator.userAgent.match(/mobile|android/i) || "onorientationchange" in window || navigator.msMaxTouchPoints > 0;
 if (location.search.match(/(\?|\&)wmmobile=(.)/)) {
     wm.device = location.search.match(/(\?|\&)wmmobile=([^&]*)/)[2] || "desktop";
     wm.device = wm.device.replace(/\&.*$/,"");

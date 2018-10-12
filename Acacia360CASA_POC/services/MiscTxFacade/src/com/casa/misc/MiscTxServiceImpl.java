@@ -21,6 +21,7 @@ import com.smslai_eoddb.data.Tbbillspayment;
 import com.smslai_eoddb.data.Tbcheckbook;
 import com.smslai_eoddb.data.Tbmerchant;
 import com.smslai_eoddb.data.Tbmiscellaneous;
+import com.smslai_eoddb.data.Tbpassbookissuance;
 import com.wavemaker.runtime.RuntimeAccess;
 import com.wavemaker.runtime.security.SecurityService;
 
@@ -145,6 +146,55 @@ public class MiscTxServiceImpl implements MiscTxService {
 			result = "999";
 		}
 		return result;
+	}
+
+	@Override
+	public String passbookIssuance(Tbpassbookissuance pbissuance) {
+		// TODO Auto-generated method stub
+		String flag = "failed";
+		try {
+			param.put("acctno", pbissuance.getAccountno());
+			System.out.println("pb acctno: " +pbissuance.getAccountno());
+			Tbpassbookissuance pb = (Tbpassbookissuance) dbService.execStoredProc(
+					"SELECT * FROM Tbpassbookissuance WHERE accountno=:acctno", param, Tbpassbookissuance.class, 0,
+					null);
+			
+			param.put("newpbsn", pbissuance.getNewpssbksn());
+			Tbpassbookissuance pb1 = (Tbpassbookissuance) dbService.execStoredProc(
+					"SELECT * FROM Tbpassbookissuance WHERE newpssbksn=:newpbsn OR oldpassbksn=:newpbsn", param, Tbpassbookissuance.class, 0,
+					null);
+
+			if(pb != null){
+				System.out.println("pb not null");
+				System.out.println("pb newpssbksn: " +pb.getNewpssbksn()+ " pb oldpssbksn: "+pb.getOldpassbksn());
+				if (pbissuance.getNewpssbksn() != pb.getNewpssbksn()
+						&& pbissuance.getNewpssbksn() != pb.getOldpassbksn() ) {
+					if(pb1 == null){
+						System.out.println("pb1 null");
+						if(dbService.saveOrUpdate(pbissuance)){
+							flag = "success";
+						}
+					}else{
+						flag = "exist";
+					}
+	
+				}
+			
+			}else{
+				if(pb1 == null){
+					System.out.println("pb null");
+					if(dbService.save(pbissuance)){
+						flag = "success";
+					}
+				}else{
+					flag = "exist";
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return flag;
 	}
 
 }

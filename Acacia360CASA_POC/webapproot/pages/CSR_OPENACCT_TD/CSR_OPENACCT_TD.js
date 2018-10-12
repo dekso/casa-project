@@ -230,6 +230,7 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
         this.fAcctName.clear();
     },
     svCheckMemberListResult: function(inSender, inDeprecated) {
+        console.log(inSender);
         this.searchResultDialog.show();
         this.varSearchResult.setValue("dataSet", inSender.getData());
     },
@@ -491,6 +492,9 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
             this.ImgSigcard.setSource(inSender.getData().dataValue);
             this.desViewSigcard.show();
 		}
+	},
+	svProductListFullResult: function(inSender, inDeprecated) {
+		console.log(inSender);
 	},
 	_end: 0
 });
