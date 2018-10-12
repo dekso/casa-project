@@ -14,7 +14,10 @@ TLR_FX_CASHWDRW.widgets = {
 				wire: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"jrnl.unit"}, {}],
 				wire8: ["wm.Wire", {"expression":undefined,"source":"app.varInstcode.dataValue","targetProperty":"jrnl.instcode"}, {}],
 				wire9: ["wm.Wire", {"expression":undefined,"source":"fAcctName.dataValue","targetProperty":"jrnl.acctname"}, {}],
-				wire5: ["wm.Wire", {"expression":undefined,"source":"fCurr.dataValue","targetProperty":"jrnl.currency"}, {}]
+				wire5: ["wm.Wire", {"expression":undefined,"source":"fCurr.dataValue","targetProperty":"jrnl.currency"}, {}],
+				wire10: ["wm.Wire", {"expression":undefined,"source":"charge.dataValue","targetProperty":"jrnl.chargeoverride"}, {}],
+				wire11: ["wm.Wire", {"expression":undefined,"source":"chargeby.dataValue","targetProperty":"jrnl.chargeoverrideby"}, {}],
+				wire12: ["wm.Wire", {"expression":undefined,"source":"chargeamt.dataValue","targetProperty":"jrnl.chargeamount"}, {}]
 			}]
 		}]
 	}],
@@ -158,6 +161,10 @@ TLR_FX_CASHWDRW.widgets = {
 			}]
 		}]
 	}],
+	chargeamt: ["wm.Variable", {"type":"NumberData"}, {}],
+	chargeby: ["wm.Variable", {"type":"StringData"}, {}],
+	charge: ["wm.Variable", {"type":"NumberData"}, {}],
+	varInterBranch: ["wm.Variable", {"type":"NumberData"}, {}],
 	dlgOverride: ["wm.DesignableDialog", {"border":"1","buttonBarId":"","containerWidgetId":"containerWidget","desktopHeight":"135px","height":"135px","noEscape":true,"title":"Override Transaction","width":"440px"}, {}, {
 		containerWidget: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"right","padding":"5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 			pnlOverride: ["wm.Panel", {"height":"61px","horizontalAlign":"left","verticalAlign":"top","width":"100%"}, {}, {
@@ -259,12 +266,12 @@ TLR_FX_CASHWDRW.widgets = {
 							wire: ["wm.Wire", {"expression":undefined,"source":"varCheck","targetProperty":"dataSet"}, {}]
 						}]
 					}],
-					fwPass: ["wm.RadioButton", {"border":"0","caption":"with Passbook","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","width":"180px"}, {}],
-					fwoPass: ["wm.RadioButton", {"border":"0","caption":"w/o Passbook","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","styles":{},"width":"180px"}, {}]
+					fwPass: ["wm.RadioButton", {"border":"0","caption":"with Passbook","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","width":"180px"}, {}],
+					fwoPass: ["wm.RadioButton", {"border":"0","caption":"w/o Passbook","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","styles":{},"width":"180px"}, {}]
 				}],
 				panel10: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
-					fwCheck: ["wm.RadioButton", {"border":"0","caption":"with Checkbook","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","showing":false,"startChecked":true,"width":"180px"}, {}],
-					fwoCheck: ["wm.RadioButton", {"border":"0","caption":"w/o Checkbook","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","showing":false,"styles":{},"width":"180px"}, {}],
+					fwCheck: ["wm.RadioButton", {"border":"0","caption":"with Checkbook","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","showing":false,"startChecked":true,"width":"180px"}, {}],
+					fwoCheck: ["wm.RadioButton", {"border":"0","caption":"w/o Checkbook","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","showing":false,"styles":{},"width":"180px"}, {}],
 					fwCheckbook: ["wm.RadioSet", {"border":"0","caption":"with Checkbook","dataField":"dataValue","dataType":"EntryData","dataValue":undefined,"displayField":"name","displayValue":"","editorBorder":false,"height":"25px","showing":false,"styles":{},"width":"160px"}, {"onchange":"fwCheckbookChange"}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"varCheck","targetProperty":"dataSet"}, {}]
@@ -272,8 +279,8 @@ TLR_FX_CASHWDRW.widgets = {
 					}]
 				}],
 				panel11: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
-					fwSoa: ["wm.RadioButton", {"border":"0","caption":"with SOA","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","showing":false,"width":"180px"}, {}],
-					fwoSoa: ["wm.RadioButton", {"border":"0","caption":"w/o SOA","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","showing":false,"styles":{},"width":"180px"}, {}],
+					fwSoa: ["wm.RadioButton", {"border":"0","caption":"with SOA","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","showing":false,"width":"180px"}, {}],
+					fwoSoa: ["wm.RadioButton", {"border":"0","caption":"w/o SOA","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","showing":false,"styles":{},"width":"180px"}, {}],
 					fwStatementOfAcct: ["wm.RadioSet", {"border":"0","caption":"with SOA","dataField":"dataValue","dataType":"EntryData","dataValue":undefined,"displayField":"name","displayValue":"","editorBorder":false,"height":"25px","styles":{},"width":"160px"}, {"onchange":"fwStatementOfAcctChange"}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"varCheck","targetProperty":"dataSet"}, {}]
@@ -281,8 +288,8 @@ TLR_FX_CASHWDRW.widgets = {
 					}]
 				}],
 				panel12: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","showing":false,"verticalAlign":"top","width":"100%"}, {}, {
-					fwCTD: ["wm.RadioButton", {"border":"0","caption":"with CTD","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","showing":false,"width":"180px"}, {}],
-					fwoCTD: ["wm.RadioButton", {"border":"0","caption":"w/o CTD","checkedValue":"1","displayValue":"","groupValue":"WAR","height":"25px","showing":false,"styles":{},"width":"180px"}, {}],
+					fwCTD: ["wm.RadioButton", {"border":"0","caption":"with CTD","checkedValue":"1","displayValue":"","groupValue":"1","height":"25px","showing":false,"width":"180px"}, {}],
+					fwoCTD: ["wm.RadioButton", {"border":"0","caption":"w/o CTD","checkedValue":"1","displayValue":"1","groupValue":"1","height":"25px","showing":false,"styles":{},"width":"180px"}, {}],
 					fwCertTimeDep: ["wm.RadioSet", {"border":"0","caption":"with CTD","dataField":"dataValue","dataType":"EntryData","dataValue":undefined,"displayField":"name","displayValue":"","editorBorder":false,"height":"25px","styles":{},"width":"160px"}, {"onchange":"fwCertTimeDepChange"}, {
 						binding: ["wm.Binding", {}, {}, {
 							wire: ["wm.Wire", {"expression":undefined,"source":"varCheck","targetProperty":"dataSet"}, {}]

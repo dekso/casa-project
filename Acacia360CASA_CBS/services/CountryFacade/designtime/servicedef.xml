@@ -33,5 +33,16 @@
             <element name="listOfPostalCode" typeRef="com.gldb.data.Tbcountry" isList="true" allowNull="false"/>
             <element name="listOfStateByCountry" typeRef="com.gldb.data.Tbcountry" isList="true" allowNull="false"/>
         </dataobject>
+        <dataobject javaType="com.gldb.data.Tbcountry" name="Tbcountry" supportsQuickData="false">
+            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="areadesc" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="code" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="country" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="countrycode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="postalcode" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="stateprovince" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
     </dataobjects>
 </service>

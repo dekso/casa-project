@@ -56,7 +56,7 @@ SYS_EOD.widgets = {
 {"show":false,"field":"updatedby","title":"Updatedby","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"instcode","title":"Instcode","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Brname: \" + ${brname} +\n\"</div>\"\n\n","mobileColumn":true}
-],"dsType":"com.gldb.data.Tbunit","minDesktopHeight":60,"noHeader":true,"selectionMode":"checkbox","singleClickEdit":true}, {"onSelect":"gridBranchesSelect","onDeselect":"gridBranchesSelect"}, {
+],"dsType":"com.gldb.data.Tbunit","minDesktopHeight":60,"noHeader":true,"selectionMode":"checkbox","singleClickEdit":true}, {"onDeselect":"gridBranchesSelect","onSelect":"gridBranchesSelect"}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"svGetListofBranches","targetProperty":"dataSet"}, {}]
 				}]
@@ -99,15 +99,15 @@ SYS_EOD.widgets = {
 			spacer3: ["wm.Spacer", {"height":"10px","styles":{},"width":"100%"}, {}],
 			gridLogs: ["wm.DojoGrid", {"columns":[
 {"show":false,"field":"id","title":"Id","width":"80px","align":"right","formatFunc":"","mobileColumn":false},
-{"show":true,"field":"modulename","title":"<center>Module","width":"300px","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"eventname","title":"Eventname","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":true,"field":"eventdate","title":"Timestamp","width":"100px","align":"center","formatFunc":"wm_date_formatter","formatProps":{"useLocalTime":true,"dateType":"date and time"},"mobileColumn":false},
+{"show":true,"field":"eventdate","title":"Timestamp","width":"100px","align":"center","formatFunc":"wm_date_formatter","formatProps":{"useLocalTime":true,"dateType":"date and time"},"editorProps":null,"mobileColumn":false},
+{"show":true,"field":"modulename","title":"<center>Module","width":"250px","align":"left","formatFunc":"","mobileColumn":false},
+{"show":true,"field":"eventname","title":"Event","width":"100px","align":"center","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"currentdate","title":"Currentdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
 {"show":false,"field":"nextdate","title":"Nextdate","width":"80px","align":"left","formatFunc":"wm_date_formatter","mobileColumn":false},
 {"show":true,"field":"description","title":"<center>Description","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"errordescription","title":"Errordescription","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
 {"show":false,"field":"uniquekey","title":"Uniquekey","width":"100%","align":"left","formatFunc":"","mobileColumn":false},
-{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"<center>Module: \" + ${modulename} +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Timestamp: \" + ${wm.runtimeId}.formatCell(\"eventdate\", ${eventdate}, ${this}, ${wm.rowId})\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"<center>Description: \" + ${description}\n + \"</div>\"\n\n","mobileColumn":true}
+{"show":false,"field":"PHONE COLUMN","title":"-","width":"100%","align":"left","expression":"\"<div class='MobileRowTitle'>\" +\n\"Timestamp: \" + ${wm.runtimeId}.formatCell(\"eventdate\", ${eventdate}, ${this}, ${wm.rowId}) +\n\"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"<center>Module: \" + ${modulename}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"Event: \" + ${eventname}\n + \"</div>\"\n\n+ \"<div class='MobileRow'>\" +\n\"<center>Description: \" + ${description}\n + \"</div>\"\n\n","mobileColumn":true}
 ],"dsType":"com.gldb.data.Tblogs","height":"100%","minDesktopHeight":60,"singleClickEdit":true,"styles":{}}, {}, {
 				binding: ["wm.Binding", {}, {}, {
 					wire: ["wm.Wire", {"expression":undefined,"source":"svFindAllLogs.logList","targetProperty":"dataSet"}, {}]

@@ -1,9 +1,10 @@
 dojo.declare("SYSAD_USER_MAINTENANCE", wm.Page, {
 	start: function() {
 	    this.svUserList.update();
-        this.svBranch.update();
+        this.svBranchList.update();
         this.svRole.update();
         this.svDepartment.update();
+        this.svTerminalList.update();
 	},
 	"preferredDevice": "desktop",
 
@@ -20,7 +21,7 @@ dojo.declare("SYSAD_USER_MAINTENANCE", wm.Page, {
 		if(inSender.getData().dataValue=="1"){
             this.svUserList.update();
             app.alert("User Creation Successful!");
-            this.pnlSetupNewUserLeft.clearData();
+            this.pnlSetupNewUserLeft.resetData();
             this.dlgCreateNonADUser.hide();
 		}else{
             app.alert("Error in Routine!");
@@ -42,5 +43,17 @@ dojo.declare("SYSAD_USER_MAINTENANCE", wm.Page, {
         }),
         dojo.hitch(this, function() {}));
 	},
-	_end: 0
+	svBranchListResult: function(inSender, inDeprecated) {
+		if(app.varRole.getData().dataValue!="secad"){
+		    this.slcBranch.setDataValue(app.varUnit.getData().dataValue);
+            this.slcBranch.setShowing(false);
+        }
+	},
+	svTerminalListResult: function(inSender, inDeprecated) {
+	  this.svBranchListResult(inSender, inDeprecated);
+	},
+  svBranchList1Result: function(inSender, inDeprecated) {
+	  this.svBranchListResult(inSender, inDeprecated);
+	},
+  _end: 0
 });

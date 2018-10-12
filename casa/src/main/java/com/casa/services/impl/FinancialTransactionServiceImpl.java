@@ -110,6 +110,8 @@ public class FinancialTransactionServiceImpl implements FinancialTransactionServ
                 if (proceed) {
                     transactForm.getJrnl().setTxrefmain(utilRepository.generateSequence());
                     transactForm.getJrnl().setStatus(tbdep.getAccountStatus());
+                    System.out.println(transactForm.getJrnl().getChargeamount()  + " camt");
+                    System.out.println(transactForm.getJrnl().getChargeoverrideby()  + " camt");
                     tbfintxjrnlJPARepository.save(transactForm.getJrnl());
                     if (transactForm.getJrnl().getTxcode().equals("111212")) {
                         for (Tbfintxchecklist chkdata : transactForm.getChecklist()) {

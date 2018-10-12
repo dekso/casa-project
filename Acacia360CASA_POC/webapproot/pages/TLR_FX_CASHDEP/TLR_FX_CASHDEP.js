@@ -22,7 +22,13 @@ dojo.declare("TLR_FX_CASHDEP", wm.Page, {
 //            this.lblResult.setCaption("");
             app.alert("Transaction Successful!");
             this.button1.setDisabled(true);
-		}else if(inSender.getData().result=="3"){   
+            this.dlgOverride.hide();
+            this.dlgCharge.hide();
+		}else if(inSender.getData().result=="3"){
+            this.varInterBranch.clearData();
+            this.chargeamt.clearData();
+            this.charge.clearData();
+            this.chargeby.clearData();
             app.confirm("Posting Restriction : " +inSender.getData().posttxdesc
 			+"<br/>Override Transaction?", false, 
                   dojo.hitch(this, function() {
@@ -150,6 +156,7 @@ dojo.declare("TLR_FX_CASHDEP", wm.Page, {
 		}
 	},
 	btnProceedWaiveClick: function(inSender) {
+        this.varInterBranch.setValue("dataValue",1);
 		this.dlgOverride.show();
         this.varOverride.setValue("dataValue",1);
 	},
@@ -158,7 +165,14 @@ dojo.declare("TLR_FX_CASHDEP", wm.Page, {
 	},
 
 	btnOverrideClick: function(inSender) {
-		this.svOverride.update();
+        if(this.varInterBranch.getData().dataValue==1){
+            this.chargeamt.setValue("dataValue",this.svTransInfo.getData().servicecharge);
+            this.charge.setValue("dataValue",1);
+            this.chargeby.setValue("dataValue",this.overrideUsername.getDataValue());
+            this.svCashDep.update();
+        }else{
+            this.svOverride.update();
+        }
 	},
 	svTransInfoResult: function(inSender, inDeprecated) {
 		if(inSender.getData().txcode == '110111'){

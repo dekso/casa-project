@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  GLDB.Tbbillspayment
- *  10/08/2018 20:01:50
+ *  10/09/2018 18:35:32
  * 
  */
 public class Tbbillspayment {

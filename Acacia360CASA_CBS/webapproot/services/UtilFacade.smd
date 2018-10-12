@@ -120,6 +120,17 @@
 			"type": "java.lang.String"
 		}],
 		"returnType": "[com.gldb.data.Tbcodetable]"
+	}, {
+		"name": "terminalList",
+		"operationType": null,
+		"parameters": [{
+			"name": "unitid",
+			"type": "java.lang.String"
+		}, {
+			"name": "isUnused",
+			"type": "int"
+		}],
+		"returnType": "[com.gldb.data.Tbterminal]"
 	}],
 	"serviceType": "JSON-RPC",
 	"serviceURL": "UtilFacade.json"

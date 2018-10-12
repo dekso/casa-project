@@ -431,7 +431,7 @@ wire: ["wm.Wire", {"expression":"\"Welcome: \" +${svUserInfo.firstname} ","targe
 logoutbutton: ["wm.Button", {"_classes":{"domNode":["Warning","logoutbutton"]},"border":"0","borderColor":"#f89406","caption":"<c>Logout","desktopHeight":"25px","height":"25px","imageList":undefined,"margin":"0","styles":{}}, {"onclick":"logoutbuttonClick"}]
 }],
 mainDatePanel1: ["wm.Panel", {"height":"25px","horizontalAlign":"left","layoutKind":"left-to-right","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
-mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/11/2018 11:24 AM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
+mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/11/2018 01:53 PM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]

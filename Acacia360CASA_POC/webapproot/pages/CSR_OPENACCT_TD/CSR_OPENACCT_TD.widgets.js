@@ -354,7 +354,7 @@ CSR_OPENACCT_TD.widgets = {
 								wire1: ["wm.Wire", {"expression":"${acctProdGroup.dataValue}==null","targetProperty":"disabled"}, {}]
 							}]
 						}],
-						acctAcctType: ["wm.SelectMenu", {"border":"0","caption":"Account Type:","captionSize":"140px","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","required":true,"width":"320px"}, {"onchange":"acctAcctTypeChange"}, {
+						acctAcctType: ["wm.SelectMenu", {"border":"0","caption":"Account Type:","captionSize":"140px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","required":true,"width":"320px"}, {"onchange":"acctAcctTypeChange"}, {
 							binding: ["wm.Binding", {}, {}, {
 								wire: ["wm.Wire", {"expression":undefined,"source":"svOwnershipType","targetProperty":"dataSet"}, {}],
 								wire1: ["wm.Wire", {"expression":undefined,"source":"acctProdType.invalid","targetProperty":"disabled"}, {}]
@@ -385,7 +385,7 @@ CSR_OPENACCT_TD.widgets = {
 								}]
 							}]
 						}],
-						acctCIFIDMulti: ["wm.Panel", {"height":"130px","horizontalAlign":"left","styles":{},"verticalAlign":"middle","width":"372%"}, {}, {
+						acctCIFIDMulti: ["wm.Panel", {"height":"80px","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"372%"}, {}, {
 							fAcctFullname: ["wm.Text", {"border":"0","caption":"Account Name:","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","readonly":true}, {}],
 							btnCIFList: ["wm.Button", {"border":"1","caption":"View CIF List","desktopHeight":"28px","height":"28px","width":"111px"}, {"onclick":"btnCIFListClick"}, {
 								binding: ["wm.Binding", {}, {}, {

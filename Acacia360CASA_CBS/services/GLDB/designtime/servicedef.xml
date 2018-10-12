@@ -1575,6 +1575,7 @@
             <element name="terminal" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="unitid" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.gldb.data.Tbtransactioncode" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1844,35 +1845,6 @@
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.gldb.data.TbemailparamsId" name="id" supportsQuickData="false">
-            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.gldb.data.TbroleId" name="id" supportsQuickData="false">
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -1933,6 +1905,35 @@
                 <noChange>update</noChange>
             </element>
             <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.gldb.data.TbemailparamsId" name="id" supportsQuickData="false">
+            <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="emailcode" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>

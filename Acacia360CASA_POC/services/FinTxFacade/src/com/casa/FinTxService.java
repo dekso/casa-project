@@ -50,5 +50,6 @@ public interface FinTxService {
 	String depositMc(Tbmctxjrnl data);
 	String saveBuySellFx(Tbbrfintxjrnl brjrnl);
 	String mcgcDeposit(Tbfintxjrnl fin);
+	String encashMc(Tbmctxjrnl data);
 
 }

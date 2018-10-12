@@ -5,7 +5,7 @@ package com.gldb.data;
 
 /**
  *  GLDB.Tbsecurityparams
- *  10/08/2018 20:01:50
+ *  10/09/2018 18:35:31
  * 
  */
 public class Tbsecurityparams {

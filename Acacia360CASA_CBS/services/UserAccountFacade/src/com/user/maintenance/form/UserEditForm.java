@@ -17,7 +17,7 @@ public class UserEditForm {
 	private boolean locked;
 	private String updatedby;
 	private Date dtupdated;
-	
+	private String branch;
 	
 	public int getId() {
 		return id;
@@ -90,6 +90,12 @@ public class UserEditForm {
 	}
 	public void setDtupdated(Date dtupdated) {
 		this.dtupdated = dtupdated;
+	}
+	public String getBranch() {
+		return branch;
+	}
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 	
 }

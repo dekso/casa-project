@@ -63,6 +63,11 @@
         <parameter name="codename" typeRef="java.lang.String" isList="false"/>
         <return typeRef="com.gldb.data.Tbcodetable" isList="true"/>
     </operation>
+    <operation name="terminalList">
+        <parameter name="unitid" typeRef="java.lang.String" isList="false"/>
+        <parameter name="isUnused" typeRef="int" isList="false"/>
+        <return typeRef="com.gldb.data.Tbterminal" isList="true"/>
+    </operation>
     <dataobjects>
         <dataobject javaType="com.etel.util.forms.DescIdForm" name="DescIdForm" supportsQuickData="false">
             <element name="description" typeRef="java.lang.String" isList="false" allowNull="false"/>

@@ -207,7 +207,7 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"\"Business Date : \"+${app.svBusinessDt.dataValue}","targetProperty":"caption"}, {}]
 }]
 }],
-mainDate: ["wm.DateTime", {"border":"0","caption":"Business Date : ","captionSize":"60px","dateMode":"Date","displayValue":"10/8/2018","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
+mainDate: ["wm.DateTime", {"border":"0","caption":"Business Date : ","captionSize":"60px","dateMode":"Date","displayValue":"10/11/2018","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]
@@ -234,7 +234,7 @@ binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"\"&nbsp;Today is : \"+ ${mainDate.displayValue}","targetProperty":"caption"}, {}]
 }]
 }],
-mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/8/2018 08:01 PM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
+mainDate1: ["wm.DateTime", {"border":"0","caption":"Today is: ","captionSize":"60px","displayValue":"10/11/2018 01:28 PM","height":"25px","readonly":true,"showing":false,"styles":{},"width":"201px"}, {}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":"new Date()","targetProperty":"dataValue"}, {}]
 }]

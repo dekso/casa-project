@@ -364,12 +364,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 					if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(UserUtil.sha1(password))) {
 						
 						//Added - Aug 18,2017 - Kevin
-						Integer count = (Integer)dbService.executeUniqueSQLQuery("SELECT COUNT(*) FROM Tbuser WHERE isactive='true'", null);
-						if(count > UserUtil.maxNumberOfUserAccount){
-							form.setFlag("invalid");
-							form.setErrorMessage("The maximum number of licensed users has been reached. Please contact the Security Administrator.");
-							return form;
-						}
+//						Integer count = (Integer)dbService.executeUniqueSQLQuery("SELECT COUNT(*) FROM Tbuser WHERE isactive='true'", null);
+//						if(count > UserUtil.maxNumberOfUserAccount){
+//							form.setFlag("invalid");
+//							form.setErrorMessage("The maximum number of licensed users has been reached. Please contact the Security Administrator.");
+//							return form;
+//						} ced
 						
 						//if isdisabled
 						if (user.getIsdisabled()!=null && user.getIsdisabled()) {
@@ -438,12 +438,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 					//if Correct Credentials
 					if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(UserUtil.sha1(password))) {
 						//Added - Aug 18,2017 - Kevin
-						Integer count = (Integer)dbService.executeUniqueSQLQuery("SELECT COUNT(*) FROM Tbuser WHERE isactive='true'", null);
-						if(count > UserUtil.maxNumberOfUserAccount){
-							form.setFlag("invalid");
-							form.setErrorMessage("The maximum number of active licensed users has been reached. Please contact the Security Administrator.");
-							return form;
-						}
+//						Integer count = (Integer)dbService.executeUniqueSQLQuery("SELECT COUNT(*) FROM Tbuser WHERE isactive='true'", null);
+//						if(count > UserUtil.maxNumberOfUserAccount){
+//							form.setFlag("invalid");
+//							form.setErrorMessage("The maximum number of active licensed users has been reached. Please contact the Security Administrator.");
+//							return form;
+//						} ced
 						//if isdisabled
 						if (user.getIsdisabled()!=null && user.getIsdisabled()) {
 							form.setFlag("invalid");

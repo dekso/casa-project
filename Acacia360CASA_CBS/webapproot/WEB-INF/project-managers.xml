@@ -19,6 +19,7 @@
                 <entry key="CountryFacade">
                     <list>
                         <value>com.etel.country.forms.AddressForm</value>
+                        <value>com.gldb.data.Tbcountry</value>
                     </list>
                 </entry>
                 <entry key="EODFacade">
@@ -116,10 +117,10 @@
                         <value>com.gldb.data.Tbusermember</value>
                         <value>com.gldb.data.Tbuserrights</value>
                         <value>com.gldb.data.Tbuserroles</value>
-                        <value>com.gldb.data.TbemailparamsId</value>
                         <value>com.gldb.data.TbroleId</value>
                         <value>com.gldb.data.TbuseraccessId</value>
                         <value>com.gldb.data.TbaccessrightsId</value>
+                        <value>com.gldb.data.TbemailparamsId</value>
                     </list>
                 </entry>
                 <entry key="RateManagementFacade">

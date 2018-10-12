@@ -5,7 +5,7 @@ package com.gldb.data;
 
 /**
  *  GLDB.Tbterminal
- *  10/08/2018 20:01:50
+ *  10/09/2018 18:35:31
  * 
  */
 public class Tbterminal {
@@ -15,6 +15,7 @@ public class Tbterminal {
     private String terminal;
     private String unitid;
     private String createdby;
+    private String userid;
 
     public Integer getId() {
         return id;
@@ -54,6 +55,14 @@ public class Tbterminal {
 
     public void setCreatedby(String createdby) {
         this.createdby = createdby;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
 }
