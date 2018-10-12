@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  GLDB.Tbunit
- *  10/11/2018 14:29:34
+ *  10/09/2018 18:35:32
  * 
  */
 public class Tbunit {
@@ -27,10 +27,6 @@ public class Tbunit {
     private String seqyy;
     private String updatedby;
     private String instcode;
-    private String region;
-    private String areacode;
-    private String mcacctno;
-    private String gcacctno;
 
     public Integer getId() {
         return id;
@@ -158,38 +154,6 @@ public class Tbunit {
 
     public void setInstcode(String instcode) {
         this.instcode = instcode;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getAreacode() {
-        return areacode;
-    }
-
-    public void setAreacode(String areacode) {
-        this.areacode = areacode;
-    }
-
-    public String getMcacctno() {
-        return mcacctno;
-    }
-
-    public void setMcacctno(String mcacctno) {
-        this.mcacctno = mcacctno;
-    }
-
-    public String getGcacctno() {
-        return gcacctno;
-    }
-
-    public void setGcacctno(String gcacctno) {
-        this.gcacctno = gcacctno;
     }
 
 }

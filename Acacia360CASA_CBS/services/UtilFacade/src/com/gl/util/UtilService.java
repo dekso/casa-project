@@ -32,4 +32,5 @@ public interface UtilService {
 	List<Tbfeesandcharges> getListFeesandCharges();
 	String addOrupdateFees(Tbfeesandcharges fees);
 	String checkBrid(String brid);
+	List<Tbterminal> terminalList(String unitid, int isUnused);
 }

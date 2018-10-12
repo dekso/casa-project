@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.gldb.data.Tbcodetable;
 import com.gldb.data.Tbroleaccess;
+import com.gldb.data.Tbterminal;
 import com.gldb.data.Tbuser;
 import com.user.maintenance.form.AccessRights;
 import com.user.maintenance.form.MainSubSelectModuleForm;

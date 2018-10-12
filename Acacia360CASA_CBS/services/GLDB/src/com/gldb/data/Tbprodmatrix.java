@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  GLDB.Tbprodmatrix
- *  10/11/2018 14:29:34
+ *  10/09/2018 18:35:32
  * 
  */
 public class Tbprodmatrix {
@@ -57,13 +57,6 @@ public class Tbprodmatrix {
     private Boolean ataind;
     private BigDecimal maxbalance;
     private Integer age;
-    private Integer dormancytermno;
-    private String dormancytermperiod;
-    private Integer escheattermno;
-    private String escheattermperiod;
-    private Integer inactivetermno;
-    private String inactivetermperiod;
-    private String customertype;
 
     public Integer getId() {
         return id;
@@ -423,62 +416,6 @@ public class Tbprodmatrix {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public Integer getDormancytermno() {
-        return dormancytermno;
-    }
-
-    public void setDormancytermno(Integer dormancytermno) {
-        this.dormancytermno = dormancytermno;
-    }
-
-    public String getDormancytermperiod() {
-        return dormancytermperiod;
-    }
-
-    public void setDormancytermperiod(String dormancytermperiod) {
-        this.dormancytermperiod = dormancytermperiod;
-    }
-
-    public Integer getEscheattermno() {
-        return escheattermno;
-    }
-
-    public void setEscheattermno(Integer escheattermno) {
-        this.escheattermno = escheattermno;
-    }
-
-    public String getEscheattermperiod() {
-        return escheattermperiod;
-    }
-
-    public void setEscheattermperiod(String escheattermperiod) {
-        this.escheattermperiod = escheattermperiod;
-    }
-
-    public Integer getInactivetermno() {
-        return inactivetermno;
-    }
-
-    public void setInactivetermno(Integer inactivetermno) {
-        this.inactivetermno = inactivetermno;
-    }
-
-    public String getInactivetermperiod() {
-        return inactivetermperiod;
-    }
-
-    public void setInactivetermperiod(String inactivetermperiod) {
-        this.inactivetermperiod = inactivetermperiod;
-    }
-
-    public String getCustomertype() {
-        return customertype;
-    }
-
-    public void setCustomertype(String customertype) {
-        this.customertype = customertype;
     }
 
 }

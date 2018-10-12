@@ -14,7 +14,10 @@ TLR_FX_CASHDEP.widgets = {
 				wire9: ["wm.Wire", {"expression":undefined,"source":"app.varInstcode.dataValue","targetProperty":"jrnl.instcode"}, {}],
 				wire6: ["wm.Wire", {"expression":undefined,"source":"app.svBusinessDt.dataValue","targetProperty":"jrnl.txdate"}, {}],
 				wire: ["wm.Wire", {"expression":undefined,"source":"fAcctNo.dataValue","targetProperty":"jrnl.accountno"}, {}],
-				wire4: ["wm.Wire", {"expression":undefined,"source":"fAcctName.dataValue","targetProperty":"jrnl.acctname"}, {}]
+				wire4: ["wm.Wire", {"expression":undefined,"source":"fAcctName.dataValue","targetProperty":"jrnl.acctname"}, {}],
+				wire11: ["wm.Wire", {"expression":undefined,"source":"chargeby.dataValue","targetProperty":"jrnl.chargeoverrideby"}, {}],
+				wire10: ["wm.Wire", {"expression":undefined,"source":"chargeamt.dataValue","targetProperty":"jrnl.chargeamount"}, {}],
+				wire12: ["wm.Wire", {"expression":undefined,"source":"charge.dataValue","targetProperty":"jrnl.chargeoverride"}, {}]
 			}]
 		}]
 	}],
@@ -111,6 +114,10 @@ TLR_FX_CASHDEP.widgets = {
 			}]
 		}]
 	}],
+	varInterBranch: ["wm.Variable", {"type":"NumberData"}, {}],
+	chargeamt: ["wm.Variable", {"type":"NumberData"}, {}],
+	chargeby: ["wm.Variable", {"type":"StringData"}, {}],
+	charge: ["wm.Variable", {"type":"NumberData"}, {}],
 	dlgCharge: ["wm.DesignableDialog", {"border":"1","buttonBarId":"","containerWidgetId":"","desktopHeight":"110px","height":"110px","title":"Interbranch Service Charge","width":"350px"}, {}, {
 		containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 			fServiceAmt: ["wm.Number", {"border":"0","caption":"Service Charge:","displayValue":"","emptyValue":"zero","height":"25px","places":2,"readonly":true}, {}, {
@@ -120,7 +127,7 @@ TLR_FX_CASHDEP.widgets = {
 			}],
 			panel7: ["wm.Panel", {"height":"37px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{},"verticalAlign":"middle","width":"100%"}, {}, {
 				btnProceedWaive: ["wm.Button", {"border":"1","caption":"Proceed Waive","desktopHeight":"25px","height":"25px","width":"110px"}, {"onclick":"btnProceedWaiveClick"}],
-				btnProceedCollect: ["wm.Button", {"border":"1","caption":"Proceed Collect","desktopHeight":"25px","height":"25px","width":"110px"}, {}],
+				btnProceedCollect: ["wm.Button", {"border":"1","caption":"Proceed Collect","desktopHeight":"25px","height":"25px","width":"110px"}, {"onclick":"btnProceedWaiveClick"}],
 				btnChargeCancel: ["wm.Button", {"border":"1","caption":"Cancel","desktopHeight":"25px","height":"25px","margin":"0,0,0,0","styles":{},"width":"100px"}, {"onclick":"dlgCharge.hide"}]
 			}]
 		}]

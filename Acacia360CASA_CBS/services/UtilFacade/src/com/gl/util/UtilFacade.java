@@ -6,11 +6,14 @@ import java.util.List;
 import com.gldb.data.Tbholiday;
 import com.gldb.data.Tbmerchant;
 import com.gldb.data.Tbtransactioncode;
+import com.gl.util.UtilService;
+import com.gl.util.UtilServiceImpl;
 import com.etel.util.forms.DescIdForm;
 import com.gl.util.forms.CodetableForm;
 import com.gldb.data.Tbcodetable;
 import com.gldb.data.Tbfeesandcharges;
 import com.gldb.data.Tbunit;
+import com.gldb.data.Tbterminal;
 import com.wavemaker.runtime.javaservice.JavaServiceSuperClass;
 import com.wavemaker.runtime.service.annotations.ExposeToClient;
 
@@ -99,6 +102,10 @@ public class UtilFacade extends JavaServiceSuperClass {
     	UtilService service = new UtilServiceImpl();
     	return service.getListMerchant();
     }
+	public List<Tbterminal> terminalList(String unitid, int isUnused) {
+		UtilService service = new UtilServiceImpl();
+		return service.terminalList(unitid, isUnused);
+	}
     public String addOrupdateMerchant(Tbmerchant merchant){
     	UtilService service = new UtilServiceImpl();
     	return service.addOrupdateMerchant(merchant);

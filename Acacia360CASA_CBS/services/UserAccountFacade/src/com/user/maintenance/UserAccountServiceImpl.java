@@ -1,6 +1,7 @@
 package com.user.maintenance;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -14,8 +15,10 @@ import com.etel.util.HQLUtil;
 import com.etel.util.SequenceGenerator;
 import com.etel.utils.UserUtil;
 import com.mongodb.DB;
+import com.gldb.data.Tbnetamt;
 import com.gldb.data.Tbcodetable;
 import com.gldb.data.Tbroleaccess;
+import com.gldb.data.Tbterminal;
 import com.gldb.data.Tbuser;
 import com.sun.jersey.core.impl.provider.entity.XMLJAXBElementProvider.General;
 import com.user.maintenance.form.AccessRights;
@@ -109,7 +112,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 			list = new ArrayList<AccessRights>();
 			for(AccessRights row: tmplist) {
 				for(String page: pageList) {
-					if(row.getPage().equals(page)) {
+					if(row.getPage()==null || row.getPage().equals(page)) {
 						list.add(row);
 					}
 				}
@@ -299,7 +302,22 @@ public class UserAccountServiceImpl implements UserAccountService {
 			user.setUserid(SequenceGenerator.generateUserSequence(user.getUnitbrid(), user.getInstcode()));
 			if ((Integer) dbService.execStoredProc(null, null, null, 3, user) > 0)
 			{
-				result = "1";
+//				if (user.getRole().equals("teller") || user.getRole().equals("cashier")) {
+					List<String> currlist = (List<String>) dbService.execStoredProc(
+							"SELECT codevalue FROM TBCODETABLE WHERE codename='CURR' ", null, null, 1, null);
+					System.out.println("CURRENCY COUNT "+currlist.size());
+					for (String currency : currlist) {
+						Tbnetamt record = new Tbnetamt();
+						record.setUserbalance(BigDecimal.ZERO);
+						record.setCurrency(currency);
+						record.setUserid(user.getUserid());
+						record.setBusinessdate(user.getDatecreated());
+						dbService.execStoredProc(null, null, null, 3, record);
+					}
+					result = "1";
+//				} else {
+//					result = "1";
+//				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -365,9 +383,10 @@ public class UserAccountServiceImpl implements UserAccountService {
 			param.put("limit", form.getTellerslimit());
 			param.put("updtby", form.getUpdatedby());
 			param.put("dtupdt", new Date());
+			param.put("brid", form.getBranch());
 			if ((Integer) dbService.execStoredProc("UPDATE TBUSER SET firstname=:fname, middlename=:mname, lastname=:lname, "
 					+ "emailadd=:email, ispwneverexpire=:pwnvrexp, isactive=:active, islocked=:locked, issuspended=:suspended, "
-					+ "limitamount=:limit, updatedby=:updtby, dateupdated=:dtupdt WHERE id=:id", param, null, 2, null) > 0) 
+					+ "limitamount=:limit, updatedby=:updtby, dateupdated=:dtupdt,unitbrid=:brid WHERE id=:id", param, null, 2, null) > 0) 
 			{
 				result = "1";
 			}
@@ -392,5 +411,4 @@ public class UserAccountServiceImpl implements UserAccountService {
 		}
 		return form;
 	}
-
 }

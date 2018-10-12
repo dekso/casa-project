@@ -816,4 +816,55 @@ public class FinTxServiceImpl implements FinTxService {
 		}
 		return res;
 	}
+	@Override
+	public String encashMc(Tbmctxjrnl data) {
+		// TODO Auto-generated method stub
+//		mc status
+//			1 = pending
+//			2 = issued
+//			3 = negotiated
+		String result = "";
+		Tbmanagerscheck mCheck = new Tbmanagerscheck();
+		try {
+			data.setTxdate(new Date());
+			data.setTxstatus("2");
+			param.put("mccheckno", data.getMccheckno());
+			mCheck = (Tbmanagerscheck) dbService.execStoredProc("SELECT * FROM Tbmanagerscheck WHERE mccheckno =:mccheckno", param
+					, Tbmanagerscheck.class, 0, null);
+			if(mCheck == null) {
+				//check not found
+				return "1";
+			}else {
+				if(data.getAmount().compareTo(mCheck.getAmount())!=0) {
+					//Invalid amount
+					return "2";
+				}else if(!DateTimeUtil.convertDateToString(data.getTxdate(), DateTimeUtil.DATE_FORMAT_MM_DD_YYYY)
+					.equals(DateTimeUtil.convertDateToString(mCheck.getDaterequest(), DateTimeUtil.DATE_FORMAT_MM_DD_YYYY))) {
+					//Invalid Date
+					return "3";
+				}else{
+					//Stale
+					Calendar mDate = Calendar.getInstance();
+					mDate.setTime(mCheck.getDaterequest());
+					Calendar sixMonths = Calendar.getInstance();
+					sixMonths.set(Calendar.MONTH, -6);
+					if(mDate.before(sixMonths)) {
+						return "4";
+					}
+				}
+				if(mCheck.getStatus().equals("3")) {
+					//Negotiated
+					return "5";
+				}
+			}
+			dbService.save(data);
+			mCheck.setStatus("3");
+			dbService.saveOrUpdate(mCheck);
+			return "0";
+		} catch (Exception e) {
+			result = "5";
+			e.printStackTrace();
+		}
+		return result;
+	}
 }

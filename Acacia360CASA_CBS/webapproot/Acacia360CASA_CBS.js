@@ -44,7 +44,12 @@ dojo.declare("Acacia360CASA_CBS", wm.Application, {
 				wire: ["wm.Wire", {"expression":undefined,"source":"[main].svUserInfo.role","targetProperty":"dataSet.dataValue"}, {}]
 			}]
 		}], 
-		varUnit: ["wm.Variable", {"type":"StringData"}, {}], 
+		varUnit: ["wm.Variable", {"type":"StringData"}, {}, {
+			binding: ["wm.Binding", {}, {}, {
+				wire: ["wm.Wire", {"expression":undefined,"source":"[main].svUserInfo.brid","targetProperty":"dataSet"}, {}],
+				wire1: ["wm.Wire", {"expression":undefined,"source":"[main].svUserInfo.brid","targetProperty":"dataSet.dataValue"}, {}]
+			}]
+		}], 
 		varUserId: ["wm.Variable", {"type":"StringData"}, {}, {
 			binding: ["wm.Binding", {}, {}, {
 				wire: ["wm.Wire", {"expression":undefined,"source":"[main].svSecurityUser.dataValue","targetProperty":"dataSet.dataValue"}, {}]

@@ -28,6 +28,7 @@ public class CASAFinController {
     @PutMapping("/override")
     public ResponseEntity overrideTransaction(@RequestBody HashMap<String, Object> data) {
         HttpHeaders responseHeader = new HttpHeaders();
+        System.out.println(data.get("txrefno").toString() + " <<< >>> " + data.get("userid").toString());
         Integer result = finTxService.overrideTransaction(data.get("txrefno").toString(), data.get("userid").toString());
         if (result == null || result == 0) {
             responseHeader.set("Override Transaction : ", "Rejected");

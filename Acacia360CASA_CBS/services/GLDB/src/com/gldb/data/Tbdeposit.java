@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  GLDB.Tbdeposit
- *  10/11/2018 14:29:34
+ *  10/09/2018 18:35:31
  * 
  */
 public class Tbdeposit {
@@ -108,8 +108,6 @@ public class Tbdeposit {
     private String solicitingofficer;
     private String referralofficer;
     private String campaign;
-    private String deliverydispo;
-    private String addressdispo;
 
     public Integer getId() {
         return id;
@@ -877,22 +875,6 @@ public class Tbdeposit {
 
     public void setCampaign(String campaign) {
         this.campaign = campaign;
-    }
-
-    public String getDeliverydispo() {
-        return deliverydispo;
-    }
-
-    public void setDeliverydispo(String deliverydispo) {
-        this.deliverydispo = deliverydispo;
-    }
-
-    public String getAddressdispo() {
-        return addressdispo;
-    }
-
-    public void setAddressdispo(String addressdispo) {
-        this.addressdispo = addressdispo;
     }
 
 }

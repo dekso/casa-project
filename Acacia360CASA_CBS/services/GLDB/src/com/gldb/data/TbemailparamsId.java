@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *  GLDB.TbemailparamsId
- *  10/11/2018 14:29:34
+ *  10/09/2018 18:35:32
  * 
  */
 public class TbemailparamsId

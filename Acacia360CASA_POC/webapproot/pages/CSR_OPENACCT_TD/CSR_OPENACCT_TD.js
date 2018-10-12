@@ -326,6 +326,8 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
         this.fAcctFullname.setDataValue(acctname);
     },
     acctAcctTypeChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+        this.varCIFList.clearData();
+        this.acctCIFIDPanel.clearData();
         if (this.svCheckMember.getData() != null) {
             //            console.log("1>>");
             if (inDataValue == "0") {
@@ -337,11 +339,11 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
             }
         }
         this.acctfull();
-        if (this.acctAcctType.getDataValue() > 0) {
-            this.acctCIFIDMulti.setHeight(62);
-        } else {
-            this.acctCIFIDMulti.setHeight(32);
-        }
+//        if (this.acctAcctType.getDataValue() > 0) {
+//            this.acctCIFIDMulti.setHeight(62);
+//        } else {
+//            this.acctCIFIDMulti.setHeight(32);
+//        }
     },
 
     dojoFileUploadSuccess: function(inSender, fileList) {
@@ -367,7 +369,9 @@ dojo.declare("CSR_OPENACCT_TD", wm.Page, {
         }
     },
     btnAddCIFClick: function(inSender) {
+//        console.log(this.acctAcctType.getDataValue().id);
         if (this.acctAcctType.getDataValue() == 0) {
+            this.fAcctFullname.clear();
             this.varCIFList.clearData();
         }
         var chk = true;

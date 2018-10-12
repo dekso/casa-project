@@ -318,6 +318,8 @@ acctname = acctname + " " + this.acctAcctType.getDisplayValue() + " " + this.var
 this.fAcctFullname.setDataValue(acctname);
 },
 acctAcctTypeChange: function(inSender, inDisplayValue, inDataValue, inSetByCode) {
+this.varCIFList.clearData();
+this.acctCIFIDPanel.clearData();
 if (this.svCheckMember.getData() != null) {
 //            console.log("1>>");
 if (inDataValue == "0") {
@@ -329,11 +331,11 @@ this.acctfull();
 }
 }
 this.acctfull();
-if (this.acctAcctType.getDataValue() > 0) {
-this.acctCIFIDMulti.setHeight(62);
-} else {
-this.acctCIFIDMulti.setHeight(32);
-}
+//        if (this.acctAcctType.getDataValue() > 0) {
+//            this.acctCIFIDMulti.setHeight(62);
+//        } else {
+//            this.acctCIFIDMulti.setHeight(32);
+//        }
 },
 dojoFileUploadSuccess: function(inSender, fileList) {
 this.lblUpload.setCaption("<font color='green'>Sigcard Uploaded!");
@@ -357,7 +359,9 @@ this.submitTD();
 }
 },
 btnAddCIFClick: function(inSender) {
+//        console.log(this.acctAcctType.getDataValue().id);
 if (this.acctAcctType.getDataValue() == 0) {
+this.fAcctFullname.clear();
 this.varCIFList.clearData();
 }
 var chk = true;
@@ -843,7 +847,7 @@ wire: ["wm.Wire", {"expression":undefined,"source":"svProductListFull","targetPr
 wire1: ["wm.Wire", {"expression":"${acctProdGroup.dataValue}==null","targetProperty":"disabled"}, {}]
 }]
 }],
-acctAcctType: ["wm.SelectMenu", {"border":"0","caption":"Account Type:","captionSize":"140px","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","required":true,"width":"320px"}, {"onchange":"acctAcctTypeChange"}, {
+acctAcctType: ["wm.SelectMenu", {"border":"0","caption":"Account Type:","captionSize":"140px","dataField":"id","dataType":"com.casa.util.forms.DescIdForm","displayField":"description","displayValue":"","emptyValue":"null","height":"25px","required":true,"width":"320px"}, {"onchange":"acctAcctTypeChange"}, {
 binding: ["wm.Binding", {}, {}, {
 wire: ["wm.Wire", {"expression":undefined,"source":"svOwnershipType","targetProperty":"dataSet"}, {}],
 wire1: ["wm.Wire", {"expression":undefined,"source":"acctProdType.invalid","targetProperty":"disabled"}, {}]
@@ -874,7 +878,7 @@ wire1: ["wm.Wire", {"expression":"if(${acctAcctType.dataValue} > 0){\n    \"Add 
 }]
 }]
 }],
-acctCIFIDMulti: ["wm.Panel", {"height":"130px","horizontalAlign":"left","styles":{},"verticalAlign":"middle","width":"372%"}, {}, {
+acctCIFIDMulti: ["wm.Panel", {"height":"80px","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"372%"}, {}, {
 fAcctFullname: ["wm.Text", {"border":"0","caption":"Account Name:","captionSize":"140px","dataValue":undefined,"displayValue":"","height":"25px","readonly":true}, {}],
 btnCIFList: ["wm.Button", {"border":"1","caption":"View CIF List","desktopHeight":"28px","height":"28px","width":"111px"}, {"onclick":"btnCIFListClick"}, {
 binding: ["wm.Binding", {}, {}, {

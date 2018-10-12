@@ -20,7 +20,13 @@ app.alert("Account No. doesn't exist!");
 //            this.lblResult.setCaption("");
 app.alert("Transaction Successful!");
 this.button1.setDisabled(true);
+this.dlgOverride.hide();
+this.dlgCharge.hide();
 }else if(inSender.getData().result=="3"){
+this.varInterBranch.clearData();
+this.chargeamt.clearData();
+this.charge.clearData();
+this.chargeby.clearData();
 app.confirm("Posting Restriction : " +inSender.getData().posttxdesc
 +"<br/>Override Transaction?", false,
 dojo.hitch(this, function() {
@@ -146,13 +152,21 @@ this.svCashDep.update();
 }
 },
 btnProceedWaiveClick: function(inSender) {
+this.varInterBranch.setValue("dataValue",1);
 this.dlgOverride.show();
 this.varOverride.setValue("dataValue",1);
 },
 btnReqORClick: function(inSender) {
 },
 btnOverrideClick: function(inSender) {
+if(this.varInterBranch.getData().dataValue==1){
+this.chargeamt.setValue("dataValue",this.svTransInfo.getData().servicecharge);
+this.charge.setValue("dataValue",1);
+this.chargeby.setValue("dataValue",this.overrideUsername.getDataValue());
+this.svCashDep.update();
+}else{
 this.svOverride.update();
+}
 },
 svTransInfoResult: function(inSender, inDeprecated) {
 if(inSender.getData().txcode == '110111'){
@@ -207,7 +221,10 @@ wire8: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","tar
 wire9: ["wm.Wire", {"expression":undefined,"source":"app.varInstcode.dataValue","targetProperty":"jrnl.instcode"}, {}],
 wire6: ["wm.Wire", {"expression":undefined,"source":"app.svBusinessDt.dataValue","targetProperty":"jrnl.txdate"}, {}],
 wire: ["wm.Wire", {"expression":undefined,"source":"fAcctNo.dataValue","targetProperty":"jrnl.accountno"}, {}],
-wire4: ["wm.Wire", {"expression":undefined,"source":"fAcctName.dataValue","targetProperty":"jrnl.acctname"}, {}]
+wire4: ["wm.Wire", {"expression":undefined,"source":"fAcctName.dataValue","targetProperty":"jrnl.acctname"}, {}],
+wire11: ["wm.Wire", {"expression":undefined,"source":"chargeby.dataValue","targetProperty":"jrnl.chargeoverrideby"}, {}],
+wire10: ["wm.Wire", {"expression":undefined,"source":"chargeamt.dataValue","targetProperty":"jrnl.chargeamount"}, {}],
+wire12: ["wm.Wire", {"expression":undefined,"source":"charge.dataValue","targetProperty":"jrnl.chargeoverride"}, {}]
 }]
 }]
 }],
@@ -304,6 +321,10 @@ wire: ["wm.Wire", {"expression":undefined,"source":"fAcctNo.dataValue","targetPr
 }]
 }]
 }],
+varInterBranch: ["wm.Variable", {"type":"NumberData"}, {}],
+chargeamt: ["wm.Variable", {"type":"NumberData"}, {}],
+chargeby: ["wm.Variable", {"type":"StringData"}, {}],
+charge: ["wm.Variable", {"type":"NumberData"}, {}],
 dlgCharge: ["wm.DesignableDialog", {"border":"1","buttonBarId":"","containerWidgetId":"","desktopHeight":"110px","height":"110px","title":"Interbranch Service Charge","width":"350px"}, {}, {
 containerWidget1: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","padding":"5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 fServiceAmt: ["wm.Number", {"border":"0","caption":"Service Charge:","displayValue":"","emptyValue":"zero","height":"25px","places":2,"readonly":true}, {}, {
@@ -313,7 +334,7 @@ wire: ["wm.Wire", {"expression":undefined,"source":"svTransInfo.servicecharge","
 }],
 panel7: ["wm.Panel", {"height":"37px","horizontalAlign":"right","layoutKind":"left-to-right","styles":{},"verticalAlign":"middle","width":"100%"}, {}, {
 btnProceedWaive: ["wm.Button", {"border":"1","caption":"Proceed Waive","desktopHeight":"25px","height":"25px","width":"110px"}, {"onclick":"btnProceedWaiveClick"}],
-btnProceedCollect: ["wm.Button", {"border":"1","caption":"Proceed Collect","desktopHeight":"25px","height":"25px","width":"110px"}, {}],
+btnProceedCollect: ["wm.Button", {"border":"1","caption":"Proceed Collect","desktopHeight":"25px","height":"25px","width":"110px"}, {"onclick":"btnProceedWaiveClick"}],
 btnChargeCancel: ["wm.Button", {"border":"1","caption":"Cancel","desktopHeight":"25px","height":"25px","margin":"0,0,0,0","styles":{},"width":"100px"}, {"onclick":"dlgCharge.hide"}]
 }]
 }]

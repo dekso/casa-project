@@ -39,8 +39,8 @@ SYSAD_USER_MAINTENANCE.widgets = {
 				wire12: ["wm.Wire", {"expression":undefined,"source":"fNewRole.selectedItem.description","targetProperty":"user.role"}, {}],
 				wire26: ["wm.Wire", {"expression":"0","targetProperty":"user.unitbalance"}, {}],
 				wire27: ["wm.Wire", {"expression":"1","targetProperty":"user.sequence"}, {}],
-				wire5: ["wm.Wire", {"expression":undefined,"source":"fNewBranch.dataValue","targetProperty":"user.unitbrid"}, {}],
-				wire22: ["wm.Wire", {"expression":undefined,"source":"fNewDepartment.dataValue","targetProperty":"user.depid"}, {}]
+				wire22: ["wm.Wire", {"expression":undefined,"source":"fNewDepartment.dataValue","targetProperty":"user.depid"}, {}],
+				wire5: ["wm.Wire", {"expression":undefined,"source":"slcBranch.dataValue","targetProperty":"user.unitbrid"}, {}]
 			}]
 		}]
 	}],
@@ -78,21 +78,39 @@ SYSAD_USER_MAINTENANCE.widgets = {
 			wire: ["wm.Wire", {"expression":undefined,"source":"containerWidget2","targetProperty":"loadingDialog"}, {}]
 		}]
 	}],
-	svBranch: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"genCodetable","service":"UtilFacade"}, {}, {
-		input: ["wm.ServiceInput", {"type":"genCodetableInputs"}, {}, {
-			binding: ["wm.Binding", {}, {}, {
-				wire: ["wm.Wire", {"expression":"\"BRANCH\"","targetProperty":"codename"}, {}]
-			}]
-		}]
-	}],
 	svDepartment: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"genCodetable","service":"UtilFacade"}, {}, {
 		input: ["wm.ServiceInput", {"type":"genCodetableInputs"}, {}, {
 			binding: ["wm.Binding", {}, {}, {
 				wire: ["wm.Wire", {"expression":"\"DEPARTMENT\"","targetProperty":"codename"}, {}]
 			}]
+		}],
+		binding: ["wm.Binding", {}, {}, {
+			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
 		}]
 	}],
-	dlgCreateNonADUser: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar3","containerWidgetId":"","styles":{},"title":"<b>Setup New User","width":"750px"}, {"onClose":"dlgCreateNonADUserClose","onShow":"svGetRoles","onShow1":"svGetLoanGroup","onShow2":"layer4.hide","onShow3":"svGetCompanyListCN","onShow4":"svGetTeamList"}, {
+	svBranchList: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"getBranchList","service":"UtilFacade"}, {"onResult":"svBranchListResult"}, {
+		input: ["wm.ServiceInput", {"type":"getBranchListInputs"}, {}, {
+			binding: ["wm.Binding", {}, {}, {
+				wire: ["wm.Wire", {"expression":"\"BRANCH\"","targetProperty":"codename"}, {}]
+			}]
+		}],
+		binding: ["wm.Binding", {}, {}, {
+			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
+		}]
+	}],
+	svTerminalList: ["wm.ServiceVariable", {"inFlightBehavior":"executeLast","operation":"terminalList","service":"UtilFacade"}, {"onResult":"svTerminalListResult"}, {
+		input: ["wm.ServiceInput", {"type":"terminalListInputs"}, {}, {
+			binding: ["wm.Binding", {}, {}, {
+				wire: ["wm.Wire", {"expression":"\"BRANCH\"","targetProperty":"codename"}, {}],
+				wire1: ["wm.Wire", {"expression":undefined,"source":"app.varUnit.dataValue","targetProperty":"unitid"}, {}],
+				wire2: ["wm.Wire", {"expression":"1","targetProperty":"isUnused"}, {}]
+			}]
+		}],
+		binding: ["wm.Binding", {}, {}, {
+			wire: ["wm.Wire", {"expression":undefined,"source":"layoutBox1","targetProperty":"loadingDialog"}, {}]
+		}]
+	}],
+	dlgCreateNonADUser: ["wm.DesignableDialog", {"border":"1","buttonBarId":"buttonBar3","containerWidgetId":"","desktopHeight":"500px","height":"500px","styles":{},"title":"<b>Setup New User","width":"90%"}, {"onClose":"dlgCreateNonADUserClose","onShow":"svGetRoles","onShow1":"svGetLoanGroup","onShow2":"layer4.hide","onShow3":"svGetCompanyListCN","onShow4":"svGetTeamList"}, {
 		containerWidget3: ["wm.Container", {"_classes":{"domNode":["wmdialogcontainer","MainContent"]},"autoScroll":true,"height":"100%","horizontalAlign":"left","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
 			tabLayers2: ["wm.TabLayers", {"border":"0","styles":{},"transition":"slide"}, {}, {
 				layer3: ["wm.Layer", {"border":"1","borderColor":"#dddddd","caption":"Information","horizontalAlign":"left","styles":{},"themeStyleType":"ContentPanel","verticalAlign":"top"}, {"onShow":"layer4.hide"}, {
@@ -108,9 +126,14 @@ SYSAD_USER_MAINTENANCE.widgets = {
 									wire: ["wm.Wire", {"expression":undefined,"source":"svRole","targetProperty":"dataSet"}, {}]
 								}]
 							}],
-							fNewBranch: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch:","captionSize":"150px","dataField":"id","dataType":"com.etel.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
+							fNewBranch: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch:","captionSize":"150px","dataField":"id","dataType":"com.gldb.data.Tbunit","dataValue":undefined,"displayField":"braddress","displayValue":"","height":"25px","showing":false,"styles":{}}, {"onchange":"svGetGroupListEDIT"}, {
 								binding: ["wm.Binding", {}, {}, {
-									wire: ["wm.Wire", {"expression":undefined,"source":"svBranch","targetProperty":"dataSet"}, {}]
+									wire: ["wm.Wire", {"expression":undefined,"source":"svBranchList","targetProperty":"dataSet"}, {}]
+								}]
+							}],
+							slcBranch: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch:","captionSize":"150px","dataField":"brid","dataType":"com.gldb.data.Tbunit","dataValue":undefined,"displayField":"brname","displayValue":"","height":"25px","required":true,"width":"400px"}, {}, {
+								binding: ["wm.Binding", {}, {}, {
+									wire: ["wm.Wire", {"expression":undefined,"source":"svBranchList","targetProperty":"dataSet"}, {}]
 								}]
 							}],
 							fNewDepartment: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Department:","captionSize":"150px","dataField":"id","dataType":"com.etel.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
@@ -119,23 +142,28 @@ SYSAD_USER_MAINTENANCE.widgets = {
 								}]
 							}],
 							fNewPassword: ["wm.Text", {"_classes":{"domNode":["sText"]},"border":"0","caption":"Password:","captionSize":"150px","dataValue":undefined,"displayValue":"","formatter":undefined,"height":"25px","invalidMessage":undefined,"password":true,"showing":false,"tooltipDisplayTime":undefined,"width":"400px"}, {}],
-							fNewPassExpDate: ["wm.Date", {"border":"0","caption":"Password Expiry Date:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"9/1/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
+							fNewPassExpDate: ["wm.Date", {"border":"0","caption":"Password Expiry Date:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/9/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire1: ["wm.Wire", {"expression":"new Date()","targetProperty":"minimum"}, {}],
 									wire: ["wm.Wire", {"expression":"//new Date(new Date().getTime() + (86400000*60));\nnew Date(new Date().setDate(new Date().getDate()+ ${svGetSecurityParams.maxpasswordage}))","targetProperty":"dataValue"}, {}]
 								}]
 							}],
-							fNewValidDateFrom: ["wm.Date", {"border":"0","caption":"Account Validity From:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"9/1/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
+							fNewValidDateFrom: ["wm.Date", {"border":"0","caption":"Account Validity From:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/9/2018","emptyValue":"null","formatter":undefined,"height":"25px","required":true}, {}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"expression":"new Date();","targetProperty":"dataValue"}, {}],
 									wire1: ["wm.Wire", {"expression":undefined,"source":"fNewValidDateTo.dataValue","targetProperty":"maximum"}, {}]
 								}]
 							}],
-							fNewValidDateTo: ["wm.Date", {"border":"0","caption":"Account Validity To:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"9/1/2018","emptyValue":"null","formatter":"Date","height":"25px","minimum":null,"required":true,"styles":{}}, {"onchange":"fNewValidDateToChange"}, {
+							fNewValidDateTo: ["wm.Date", {"border":"0","caption":"Account Validity To:","captionSize":"150px","datePattern":"M/d/yyyy","displayValue":"10/9/2018","emptyValue":"null","formatter":"Date","height":"25px","minimum":null,"required":true,"styles":{}}, {"onchange":"fNewValidDateToChange"}, {
 								binding: ["wm.Binding", {}, {}, {
 									wire: ["wm.Wire", {"expression":"//new Date(new Date().getTime() + (86400000*${svGetSecurityParams.maxpasswordage}));\nnew Date(new Date().setDate(new Date().getDate()+ ${svGetSecurityParams.validityperiodindays}))","targetProperty":"dataValue"}, {}]
 								}],
 								format: ["wm.DateFormatter", {}, {}]
+							}],
+							slcTerminal: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Terminal:","captionSize":"150px","dataField":"id","dataType":"com.gldb.data.Tbterminal","dataValue":undefined,"displayField":"terminal","displayValue":"","emptyValue":"null","height":"25px","required":true,"width":"400px"}, {}, {
+								binding: ["wm.Binding", {}, {}, {
+									wire: ["wm.Wire", {"expression":undefined,"source":"svTerminalList","targetProperty":"dataSet"}, {}]
+								}]
 							}]
 						}],
 						panel23: ["wm.Panel", {"height":"100%","horizontalAlign":"left","padding":"0,0,0,5","styles":{},"verticalAlign":"top","width":"100%"}, {}, {
@@ -148,7 +176,11 @@ SYSAD_USER_MAINTENANCE.widgets = {
 			}]
 		}],
 		buttonBar3: ["wm.ButtonBarPanel", {"border":"1,0,0,0","borderColor":"#eeeeee","desktopHeight":"60px","height":"39px","styles":{}}, {}, {
-			btnNewUserSave: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Save","desktopHeight":"28px","height":"28px","margin":"0,0,0,10","styles":{},"width":"90px"}, {"onclick":"svSaveUser"}],
+			btnNewUserSave: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Save","desktopHeight":"28px","height":"28px","margin":"0,0,0,10","styles":{},"width":"90px"}, {"onclick":"svSaveUser"}, {
+				binding: ["wm.Binding", {}, {}, {
+					wire: ["wm.Wire", {"expression":undefined,"source":"pnlSetupNewUser.invalid","targetProperty":"disabled"}, {}]
+				}]
+			}],
 			btnNewUserClose: ["wm.Button", {"_classes":{"domNode":["dButton"]},"border":"1","caption":"Close","desktopHeight":"28px","height":"28px","margin":"0,0,0,10","styles":{},"width":"90px"}, {"onclick":"dlgCreateNonADUser.hide"}]
 		}]
 	}],
@@ -188,9 +220,9 @@ SYSAD_USER_MAINTENANCE.widgets = {
 									wire: ["wm.Wire", {"expression":undefined,"source":"svUserDetail.role","targetProperty":"dataValue"}, {}]
 								}]
 							}],
-							fEditBranch: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch:","captionSize":"150px","dataField":"id","dataType":"com.etel.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
+							fEditBranch: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Branch:","captionSize":"150px","dataField":"id","dataType":"com.gldb.data.Tbunit","dataValue":undefined,"displayField":"braddress","displayValue":"","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {
 								binding: ["wm.Binding", {}, {}, {
-									wire: ["wm.Wire", {"expression":undefined,"source":"svBranch","targetProperty":"dataSet"}, {}]
+									wire: ["wm.Wire", {"expression":undefined,"source":"svBranchList","targetProperty":"dataSet"}, {}]
 								}]
 							}],
 							fEditDepartment: ["wm.SelectMenu", {"_classes":{"domNode":["selectMenu"]},"border":"0","caption":"Department:","captionSize":"150px","dataField":"id","dataType":"com.etel.util.forms.DescIdForm","dataValue":undefined,"displayField":"description","displayValue":"","height":"25px","required":true}, {"onchange":"svGetGroupListEDIT"}, {

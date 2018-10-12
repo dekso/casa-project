@@ -232,9 +232,12 @@ dojo.declare("TLR_FX_CASHWDRW", wm.Page, {
 	btnProceedWaiveClick: function(inSender) {
         console.log(this.app.varUserId.getData().dataValue);
         console.log(this.svTransInfo.getData().servicecharge);
-		this.svCashWithdraw.input.setValue("chargeoverrideby", this.app.varUserId.getData().dataValue);
-        this.svCashWithdraw.input.setValue("chargeamount", this.svTransInfo.getData().servicecharge);
+//		this.svCashWithdraw.input.setValue("chargeoverrideby", this.app.varUserId.getData().dataValue);
+//        this.svCashWithdraw.input.setValue("chargeamount", this.svTransInfo.getData().servicecharge);
         //this.dlgCharge.hide();
+        this.chargeamt.setValue("dataValue",this.svTransInfo.getData().servicecharge);
+        this.charge.setValue("dataValue",1);
+        this.chargeby.setValue("dataValue",this.overrideUsername.getDataValue());
         app.confirm("Are you sure you want to waive charges?", false, 
                   dojo.hitch(this, function() {
                      this.dlgCharge.hide();
@@ -246,7 +249,23 @@ dojo.declare("TLR_FX_CASHWDRW", wm.Page, {
                     }));
 	},
 	btnProceedCollectClick: function(inSender) {
-//		this.app.
+        console.log(this.app.varUserId.getData().dataValue);
+        console.log(this.svTransInfo.getData().servicecharge);
+//    	this.svCashWithdraw.input.setValue("chargeoverrideby", this.app.varUserId.getData().dataValue);
+//        this.svCashWithdraw.input.setValue("chargeamount", this.svTransInfo.getData().servicecharge);
+        //this.dlgCharge.hide();
+        this.chargeamt.setValue("dataValue",this.svTransInfo.getData().servicecharge);
+        this.charge.setValue("dataValue",1);
+        this.chargeby.setValue("dataValue",this.overrideUsername.getDataValue());
+        app.confirm("Are you sure you want to collect charges?", false, 
+                  dojo.hitch(this, function() {
+                     this.dlgCharge.hide();
+                     console.log(this.svCashWithdraw.input.getData().chargeoverrideby);
+                     this.svCashWithdraw.update();
+                    }),
+                  dojo.hitch(this, function() {
+//                     this.dlgCharge.hide();  
+                    }));
         
 	},
 	btnVerifiedSigcardClick: function(inSender) {

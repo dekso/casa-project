@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 10/11/2018 14:29:19
+<!-- Generated 10/09/2018 18:35:24
 
 Configuration for 'GLDB' database service
 
@@ -149,9 +149,7 @@ Configuration for 'GLDB' database service
 <value>com/gldb/data/Tbforextx.hbm.xml</value>
 <value>com/gldb/data/Tbusermaster.hbm.xml</value>
 <value>com/gldb/data/Tbsysparam.hbm.xml</value>
-<value>com/gldb/data/Tbdocsperproduct.hbm.xml</value>
 <value>com/gldb/data/Tboutreturn.hbm.xml</value>
-<value>com/gldb/data/Tbcountry.hbm.xml</value>
 <value>com/gldb/data/Tbsmtp.hbm.xml</value>
 <value>com/gldb/data/Tbrates.hbm.xml</value>
 <value>com/gldb/data/Tbdeptxjrnl.hbm.xml</value>

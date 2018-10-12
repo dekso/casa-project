@@ -63,14 +63,12 @@
                         <value>com.gldb.data.Tbcheckbook</value>
                         <value>com.gldb.data.Tbchecksforclearing</value>
                         <value>com.gldb.data.Tbcodetable</value>
-                        <value>com.gldb.data.Tbcountry</value>
                         <value>com.gldb.data.Tbdepdetail</value>
                         <value>com.gldb.data.Tbdeposit</value>
                         <value>com.gldb.data.Tbdepositcif</value>
                         <value>com.gldb.data.Tbdeptxjrnl</value>
                         <value>com.gldb.data.Tbdocchecklist</value>
                         <value>com.gldb.data.Tbdocdetails</value>
-                        <value>com.gldb.data.Tbdocsperproduct</value>
                         <value>com.gldb.data.Tbdocumentpertransaction</value>
                         <value>com.gldb.data.Tbdocuments</value>
                         <value>com.gldb.data.Tbemailformats</value>
@@ -119,10 +117,10 @@
                         <value>com.gldb.data.Tbusermember</value>
                         <value>com.gldb.data.Tbuserrights</value>
                         <value>com.gldb.data.Tbuserroles</value>
-                        <value>com.gldb.data.TbemailparamsId</value>
-                        <value>com.gldb.data.TbaccessrightsId</value>
-                        <value>com.gldb.data.TbuseraccessId</value>
                         <value>com.gldb.data.TbroleId</value>
+                        <value>com.gldb.data.TbuseraccessId</value>
+                        <value>com.gldb.data.TbaccessrightsId</value>
+                        <value>com.gldb.data.TbemailparamsId</value>
                     </list>
                 </entry>
                 <entry key="RateManagementFacade">

@@ -17,6 +17,7 @@ import com.gl.util.forms.CodetableForm;
 import com.gldb.data.Tbcodetable;
 import com.gldb.data.Tbfeesandcharges;
 import com.gldb.data.Tbunit;
+import com.gldb.data.Tbterminal;
 import com.wavemaker.runtime.RuntimeAccess;
 import com.wavemaker.runtime.security.SecurityService;
 
@@ -230,6 +231,27 @@ public class UtilServiceImpl implements UtilService {
 		return flag;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Tbterminal> terminalList(String unitid, int isUnused) {
+		// TODO Auto-generated method stub
+		List<Tbterminal> list = new ArrayList<Tbterminal>();
+		try {
+			param.put("unitid", unitid);
+			if(isUnused==1) {
+				list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid AND userid IS NULL", param,
+						Tbterminal.class, 1, null);
+			} else {
+				list = (List<Tbterminal>) dbService.execStoredProc("SELECT * FROM TBTERMINAL WHERE unitid=:unitid", param,
+						Tbterminal.class, 1, null);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<CodetableForm> getListofCodesPerCodename(String codename) {
