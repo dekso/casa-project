@@ -397,25 +397,6 @@
             <element name="desc1" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="desc2" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.Tbcountry" supportsQuickData="true">
-            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-                <exclude>insert</exclude>
-            </element>
-            <element name="code" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="country" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="stateprovince" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="city" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="areadesc" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="postalcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="countrycode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-        </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbdepdetail" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
                 <require>delete</require>
@@ -735,25 +716,6 @@
             <element name="pqtype" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="otherdoc" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.Tbdocsperproduct" supportsQuickData="true">
-            <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-                <exclude>insert</exclude>
-            </element>
-            <element name="documentcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="documentname" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="producttype" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="datecreated" typeRef="java.util.Date" isList="false" allowNull="true"/>
-            <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="lastupdated" typeRef="java.util.Date" isList="false" allowNull="true"/>
-            <element name="remarks" typeRef="java.lang.String" isList="false" allowNull="true"/>
-        </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbdocumentpertransaction" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
                 <require>delete</require>
@@ -966,23 +928,26 @@
                 <noChange>update</noChange>
                 <exclude>insert</exclude>
             </element>
-            <element name="txBatch" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="txdate" typeRef="java.util.Date" isList="false" allowNull="false"/>
-            <element name="txRefNo" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="txoper" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
-            <element name="employeeNo" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
             <element name="accountno" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="txAmount" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
-            <element name="companyCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="satoCode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txctr" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
+            <element name="txseqno" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txcurr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txamt" typeRef="java.lang.Double" isList="false" allowNull="true"/>
+            <element name="glline" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="gllegveh" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="glbranch" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="glcodeParent" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="glcodeChild" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="gloper" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="gldebit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
-            <element name="glcredit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="glsl" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="debit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="credit" typeRef="java.math.BigDecimal" isList="false" allowNull="true"/>
+            <element name="txprod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txsubprod" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txvaldt" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="txlegveh" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="txglbr" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="costc" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbglmatrix" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1332,7 +1297,6 @@
             <element name="escheattermperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="inactivetermno" typeRef="java.lang.Integer" isList="false" allowNull="true"/>
             <element name="inactivetermperiod" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="customertype" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbproductmatrix" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1619,6 +1583,7 @@
             <element name="terminal" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="unitid" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="createdby" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="userid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbtransactioncode" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1659,10 +1624,6 @@
             <element name="seqyy" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="updatedby" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="instcode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="region" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="areacode" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="mcacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
-            <element name="gcacctno" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.Tbunituser" supportsQuickData="true">
             <element name="id" typeRef="java.lang.Integer" isList="false" allowNull="false">
@@ -1892,26 +1853,6 @@
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.TbaccessrightsId" name="id" supportsQuickData="false">
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.TbemailparamsId" name="id" supportsQuickData="false">
             <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -1961,6 +1902,26 @@
                 <noChange>update</noChange>
             </element>
             <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbaccessrightsId" name="id" supportsQuickData="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>

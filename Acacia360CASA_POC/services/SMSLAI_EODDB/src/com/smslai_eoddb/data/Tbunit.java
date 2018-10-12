@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbunit
- *  10/11/2018 13:34:39
+ *  10/12/2018 12:49:05
  * 
  */
 public class Tbunit {
@@ -27,10 +27,6 @@ public class Tbunit {
     private String seqyy;
     private String updatedby;
     private String instcode;
-    private String region;
-    private String areacode;
-    private String mcacctno;
-    private String gcacctno;
 
     public Integer getId() {
         return id;
@@ -158,38 +154,6 @@ public class Tbunit {
 
     public void setInstcode(String instcode) {
         this.instcode = instcode;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getAreacode() {
-        return areacode;
-    }
-
-    public void setAreacode(String areacode) {
-        this.areacode = areacode;
-    }
-
-    public String getMcacctno() {
-        return mcacctno;
-    }
-
-    public void setMcacctno(String mcacctno) {
-        this.mcacctno = mcacctno;
-    }
-
-    public String getGcacctno() {
-        return gcacctno;
-    }
-
-    public void setGcacctno(String gcacctno) {
-        this.gcacctno = gcacctno;
     }
 
 }

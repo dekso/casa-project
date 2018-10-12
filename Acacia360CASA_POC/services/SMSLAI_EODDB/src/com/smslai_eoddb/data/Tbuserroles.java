@@ -5,7 +5,7 @@ package com.smslai_eoddb.data;
 
 /**
  *  SMSLAI_EODDB.Tbuserroles
- *  10/11/2018 13:34:39
+ *  10/12/2018 12:49:06
  * 
  */
 public class Tbuserroles {

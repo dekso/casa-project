@@ -2,144 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37a25516-2799-40e6-82ed-5928c9ef5ad1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/resources/printtemp/DailyTrialBalance2302718325387422628.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/resources/sigcard_dir/0001010/001010000275.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/resources/tempdir/Capture.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/Acacia360CASA_CBS.documentation.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/Acacia360CASA_POC.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/GLDB.properties" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/GLDB.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/GLDB.spring.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/GLDB.spring.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbcheckbook.ql.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbcheckbook.ql.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbdocuments.hbm.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbdocuments.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbmanagerscheck.hbm.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbmanagerscheck.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbmctxjrnl.hbm.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbmctxjrnl.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbterminal.hbm.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/bin/com/gldb/data/Tbterminal.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/AuthenticationFacade/src/com/etel/facade/AuthenticationServiceImpl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/AuthenticationFacade/src/com/etel/facade/AuthenticationServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/CountryFacade/designtime/servicedef.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/CountryFacade/designtime/servicedef.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/designtime/servicedef.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/designtime/servicedef.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/GLDB.properties" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/GLDB.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/GLDB.spring.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/GLDB.spring.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/GLDB.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/GLDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/GLDBConstants.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/GLDBConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbaccessrights.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbaccessrights.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbaccessrightsId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbaccessrightsId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbauditevents.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbauditevents.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbaudittrail.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbaudittrail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbatchfile.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbatchfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbillspayment.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbillspayment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbrfintxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbrfintxjrnl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbulkfin.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbbulkfin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcasafin.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcasafin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcashposition.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcashposition.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcashpositiondenom.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcashpositiondenom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcbsfintxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcbsfintxjrnl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcheckbook.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcheckbook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcheckbook.ql.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcheckbook.ql.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbchecksforclearing.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbchecksforclearing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcodetable.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbcodetable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdepdetail.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdepdetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdeposit.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdeposit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdepositcif.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdepositcif.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdeptxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdeptxjrnl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocchecklist.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocchecklist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocdetails.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocdetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocumentpertransaction.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocumentpertransaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocuments.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbdocuments.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbemailformats.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbemailformats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbemailparams.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbemailparams.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbemailparamsId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbemailparamsId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfeesandcharges.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfeesandcharges.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfintxchecklist.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfintxchecklist.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfintxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfintxjrnl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbforextx.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbforextx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfreezeaccount.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbfreezeaccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbglentries.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbglentries.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbglmatrix.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbglmatrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbholdamtcheck.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbholdamtcheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbholiday.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbholiday.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tblogs.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tblogs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmanagerscheck.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmanagerscheck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmctxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmctxjrnl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmerchant.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmerchant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmiscellaneous.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbmiscellaneous.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbnetamt.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbnetamt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tboutreturn.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tboutreturn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tboverride.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tboverride.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbpassbookissuance.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbpassbookissuance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbpasswordbank.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbpasswordbank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbprocessingdate.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbprocessingdate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbprodmatrix.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbprodmatrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbproductmatrix.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbproductmatrix.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbproperties.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbproperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbratehistory.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbratehistory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbrates.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbrates.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbrole.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbrole.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbroleId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbroleId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbroleaccess.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbroleaccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbroles.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbroles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsecurityparams.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsecurityparams.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsequence.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsequence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsmtp.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsmtp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbspecialinst.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbspecialinst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsysparam.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbsysparam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbtdcprint.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbtdcprint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbterminal.hbm.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbterminal.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbterminal.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbterminal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbtransactioncode.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbtransactioncode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbunit.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbunit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbunituser.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbunituser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuser.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuseraccess.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuseraccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbuseraccessId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/TbuseraccessId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbusermaster.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbusermaster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbusermember.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbusermember.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuserrights.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuserrights.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuserroles.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/GLDB/src/com/gldb/data/Tbuserroles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UserAccountFacade/src/com/user/maintenance/UserAccountService.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UserAccountFacade/src/com/user/maintenance/UserAccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UserAccountFacade/src/com/user/maintenance/UserAccountServiceImpl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UserAccountFacade/src/com/user/maintenance/UserAccountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UserAccountFacade/src/com/user/maintenance/form/UserEditForm.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UserAccountFacade/src/com/user/maintenance/form/UserEditForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/designtime/servicedef.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/designtime/servicedef.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/src/com/gl/util/UtilFacade.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/src/com/gl/util/UtilFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/src/com/gl/util/UtilService.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/src/com/gl/util/UtilService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/src/com/gl/util/UtilServiceImpl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/services/UtilFacade/src/com/gl/util/UtilServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/Acacia360CASA_CBS.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/Acacia360CASA_CBS.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/application.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/application.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/GLDB.properties" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/GLDB.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/GLDB.spring.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/GLDB.spring.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/com/gldb/data/Tbcheckbook.ql.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/com/gldb/data/Tbcheckbook.ql.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/com/gldb/data/Tbterminal.hbm.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/classes/com/gldb/data/Tbterminal.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/project-managers.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/WEB-INF/project-managers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/Main/Main.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/Main/Main.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/Main/Main.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/Main/Main.widgets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYSAD_USER_MAINTENANCE/SYSAD_USER_MAINTENANCE.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYSAD_USER_MAINTENANCE/SYSAD_USER_MAINTENANCE.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYSAD_USER_MAINTENANCE/SYSAD_USER_MAINTENANCE.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYSAD_USER_MAINTENANCE/SYSAD_USER_MAINTENANCE.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYSAD_USER_MAINTENANCE/SYSAD_USER_MAINTENANCE.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYSAD_USER_MAINTENANCE/SYSAD_USER_MAINTENANCE.widgets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYS_EOD/SYS_EOD.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYS_EOD/SYS_EOD.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYS_EOD/SYS_EOD.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/pages/SYS_EOD/SYS_EOD.widgets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/project.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/project.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/services/UtilFacade.smd" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/services/UtilFacade.smd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/timestamp.txt" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/timestamp.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/types.js" afterPath="$PROJECT_DIR$/Acacia360CASA_CBS/webapproot/types.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/FinTxFacade/src/com/casa/FinTxService.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/FinTxFacade/src/com/casa/FinTxService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/FinTxFacade/src/com/casa/FinTxServiceImpl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/FinTxFacade/src/com/casa/FinTxServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/CSR_OPENACCT_TD/CSR_OPENACCT_TD.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/CSR_OPENACCT_TD/CSR_OPENACCT_TD.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/CSR_OPENACCT_TD/CSR_OPENACCT_TD.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/CSR_OPENACCT_TD/CSR_OPENACCT_TD.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/CSR_OPENACCT_TD/CSR_OPENACCT_TD.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/CSR_OPENACCT_TD/CSR_OPENACCT_TD.widgets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/designtime/servicedef.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/designtime/servicedef.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/SMSLAI_EODDB.properties" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/SMSLAI_EODDB.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/SMSLAI_EODDB.spring.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/SMSLAI_EODDB.spring.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/SMSLAI_EODDB.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/SMSLAI_EODDB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/SMSLAI_EODDBConstants.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/SMSLAI_EODDBConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbaccessrights.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbaccessrights.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbaccessrightsId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbaccessrightsId.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbauditevents.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbauditevents.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbaudittrail.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbaudittrail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbatchfile.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbatchfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbillspayment.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbillspayment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbrfintxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbrfintxjrnl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbulkfin.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbbulkfin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcasafin.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcasafin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcashposition.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcashposition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcashpositiondenom.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcashpositiondenom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcbsfintxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcbsfintxjrnl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcheckbook.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcheckbook.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbchecksforclearing.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbchecksforclearing.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcodetable.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbcodetable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdepdetail.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdepdetail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdeposit.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdeposit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdepositcif.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdepositcif.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdeptxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdeptxjrnl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocchecklist.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocchecklist.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocdetails.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocdetails.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocumentpertransaction.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocumentpertransaction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocuments.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbdocuments.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbemailformats.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbemailformats.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbemailparams.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbemailparams.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbemailparamsId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbemailparamsId.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfeesandcharges.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfeesandcharges.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfintxchecklist.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfintxchecklist.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfintxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfintxjrnl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbforextx.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbforextx.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfreezeaccount.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbfreezeaccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbglentries.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbglentries.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbglmatrix.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbglmatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbholdamtcheck.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbholdamtcheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbholiday.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbholiday.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tblogs.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tblogs.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmanagerscheck.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmanagerscheck.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmctxjrnl.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmctxjrnl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmerchant.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmerchant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmiscellaneous.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmiscellaneous.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmiscellaneous.ql.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbmiscellaneous.ql.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbnetamt.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbnetamt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tboutreturn.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tboutreturn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tboverride.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tboverride.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbpassbookissuance.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbpassbookissuance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbpasswordbank.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbpasswordbank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbprocessingdate.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbprocessingdate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbprodmatrix.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbprodmatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbproductmatrix.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbproductmatrix.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbproperties.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbproperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbratehistory.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbratehistory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbrates.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbrates.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbrole.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbrole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbroleId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbroleId.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbroleaccess.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbroleaccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbroles.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbroles.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsecurityparams.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsecurityparams.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsequence.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsequence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsmtp.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsmtp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbspecialinst.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbspecialinst.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsysparam.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbsysparam.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbtdcprint.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbtdcprint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbterminal.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbterminal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbtransactioncode.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbtransactioncode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbunit.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbunit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbunituser.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbunituser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuser.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuseraccess.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuseraccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbuseraccessId.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/TbuseraccessId.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbusermaster.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbusermaster.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbusermember.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbusermember.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuserrights.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuserrights.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuserroles.java" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/services/SMSLAI_EODDB/src/com/smslai_eoddb/data/Tbuserroles.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/classes/SMSLAI_EODDB.properties" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/classes/SMSLAI_EODDB.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/classes/SMSLAI_EODDB.spring.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/classes/SMSLAI_EODDB.spring.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/classes/com/smslai_eoddb/data/Tbmiscellaneous.ql.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/classes/com/smslai_eoddb/data/Tbmiscellaneous.ql.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/project-managers.xml" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/WEB-INF/project-managers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/Main/Main.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/Main/Main.a.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/Main/Main.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/Main/Main.widgets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHDEP/TLR_FX_CASHDEP.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHDEP/TLR_FX_CASHDEP.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHDEP/TLR_FX_CASHDEP.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHDEP/TLR_FX_CASHDEP.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHDEP/TLR_FX_CASHDEP.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHDEP/TLR_FX_CASHDEP.widgets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHWDRW/TLR_FX_CASHWDRW.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHWDRW/TLR_FX_CASHWDRW.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHWDRW/TLR_FX_CASHWDRW.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHWDRW/TLR_FX_CASHWDRW.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHWDRW/TLR_FX_CASHWDRW.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_CASHWDRW/TLR_FX_CASHWDRW.widgets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_MGRCHKENC/TLR_FX_MGRCHKENC.a.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_MGRCHKENC/TLR_FX_MGRCHKENC.a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_MGRCHKENC/TLR_FX_MGRCHKENC.widgets.js" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/pages/TLR_FX_MGRCHKENC/TLR_FX_MGRCHKENC.widgets.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/timestamp.txt" afterPath="$PROJECT_DIR$/Acacia360CASA_POC/webapproot/timestamp.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/casa/.idea/workspace.xml" afterPath="$PROJECT_DIR$/casa/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/casa/src/main/java/com/casa/controller/CASAFinController.java" afterPath="$PROJECT_DIR$/casa/src/main/java/com/casa/controller/CASAFinController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/casa/src/main/java/com/casa/services/impl/FinancialTransactionServiceImpl.java" afterPath="$PROJECT_DIR$/casa/src/main/java/com/casa/services/impl/FinancialTransactionServiceImpl.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -175,7 +124,7 @@
       </map>
     </option>
     <push-targets>
-      <push-target-info target-remote="origin" target-branch="ced" repo="$PROJECT_DIR$" source="ced" />
+      <push-target-info target-remote="origin" target-branch="master" repo="$PROJECT_DIR$" source="ced" />
     </push-targets>
   </component>
   <component name="GradleLocalSettings">
@@ -681,12 +630,20 @@
       <workItem from="1539069961668" duration="8711000" />
       <workItem from="1539158877740" duration="35000" />
       <workItem from="1539229339912" duration="199000" />
-      <workItem from="1539315511389" duration="701000" />
+      <workItem from="1539315511389" duration="1637000" />
     </task>
+    <task id="LOCAL-00001" summary="ced 10122018">
+      <created>1539316909626</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539316909626</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9646000" />
+    <option name="totallyTimeSpent" value="10582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="748" extended-state="6" />
@@ -726,6 +683,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ced 10122018" />
+    <option name="LAST_COMMIT_MESSAGE" value="ced 10122018" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

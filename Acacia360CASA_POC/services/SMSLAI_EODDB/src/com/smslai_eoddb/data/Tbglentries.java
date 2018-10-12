@@ -7,29 +7,32 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbglentries
- *  10/11/2018 13:34:38
+ *  10/12/2018 12:49:06
  * 
  */
 public class Tbglentries {
 
     private Integer id;
-    private String txBatch;
     private Date txdate;
-    private String txRefNo;
-    private String txcode;
-    private String txoper;
-    private Date txvaldt;
-    private Integer employeeNo;
     private String accountno;
-    private BigDecimal txAmount;
-    private String companyCode;
-    private String satoCode;
+    private String txcode;
+    private Integer txctr;
+    private String txseqno;
+    private String txcurr;
+    private Double txamt;
+    private String glline;
+    private String gllegveh;
     private String glbranch;
-    private String glcodeParent;
-    private String glcodeChild;
-    private String gloper;
-    private BigDecimal gldebit;
-    private BigDecimal glcredit;
+    private String glsl;
+    private BigDecimal debit;
+    private BigDecimal credit;
+    private String txprod;
+    private String txsubprod;
+    private Date txvaldt;
+    private String txlegveh;
+    private String txbr;
+    private String txglbr;
+    private String costc;
 
     public Integer getId() {
         return id;
@@ -37,14 +40,6 @@ public class Tbglentries {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getTxBatch() {
-        return txBatch;
-    }
-
-    public void setTxBatch(String txBatch) {
-        this.txBatch = txBatch;
     }
 
     public Date getTxdate() {
@@ -55,12 +50,12 @@ public class Tbglentries {
         this.txdate = txdate;
     }
 
-    public String getTxRefNo() {
-        return txRefNo;
+    public String getAccountno() {
+        return accountno;
     }
 
-    public void setTxRefNo(String txRefNo) {
-        this.txRefNo = txRefNo;
+    public void setAccountno(String accountno) {
+        this.accountno = accountno;
     }
 
     public String getTxcode() {
@@ -71,60 +66,52 @@ public class Tbglentries {
         this.txcode = txcode;
     }
 
-    public String getTxoper() {
-        return txoper;
+    public Integer getTxctr() {
+        return txctr;
     }
 
-    public void setTxoper(String txoper) {
-        this.txoper = txoper;
+    public void setTxctr(Integer txctr) {
+        this.txctr = txctr;
     }
 
-    public Date getTxvaldt() {
-        return txvaldt;
+    public String getTxseqno() {
+        return txseqno;
     }
 
-    public void setTxvaldt(Date txvaldt) {
-        this.txvaldt = txvaldt;
+    public void setTxseqno(String txseqno) {
+        this.txseqno = txseqno;
     }
 
-    public Integer getEmployeeNo() {
-        return employeeNo;
+    public String getTxcurr() {
+        return txcurr;
     }
 
-    public void setEmployeeNo(Integer employeeNo) {
-        this.employeeNo = employeeNo;
+    public void setTxcurr(String txcurr) {
+        this.txcurr = txcurr;
     }
 
-    public String getAccountno() {
-        return accountno;
+    public Double getTxamt() {
+        return txamt;
     }
 
-    public void setAccountno(String accountno) {
-        this.accountno = accountno;
+    public void setTxamt(Double txamt) {
+        this.txamt = txamt;
     }
 
-    public BigDecimal getTxAmount() {
-        return txAmount;
+    public String getGlline() {
+        return glline;
     }
 
-    public void setTxAmount(BigDecimal txAmount) {
-        this.txAmount = txAmount;
+    public void setGlline(String glline) {
+        this.glline = glline;
     }
 
-    public String getCompanyCode() {
-        return companyCode;
+    public String getGllegveh() {
+        return gllegveh;
     }
 
-    public void setCompanyCode(String companyCode) {
-        this.companyCode = companyCode;
-    }
-
-    public String getSatoCode() {
-        return satoCode;
-    }
-
-    public void setSatoCode(String satoCode) {
-        this.satoCode = satoCode;
+    public void setGllegveh(String gllegveh) {
+        this.gllegveh = gllegveh;
     }
 
     public String getGlbranch() {
@@ -135,44 +122,84 @@ public class Tbglentries {
         this.glbranch = glbranch;
     }
 
-    public String getGlcodeParent() {
-        return glcodeParent;
+    public String getGlsl() {
+        return glsl;
     }
 
-    public void setGlcodeParent(String glcodeParent) {
-        this.glcodeParent = glcodeParent;
+    public void setGlsl(String glsl) {
+        this.glsl = glsl;
     }
 
-    public String getGlcodeChild() {
-        return glcodeChild;
+    public BigDecimal getDebit() {
+        return debit;
     }
 
-    public void setGlcodeChild(String glcodeChild) {
-        this.glcodeChild = glcodeChild;
+    public void setDebit(BigDecimal debit) {
+        this.debit = debit;
     }
 
-    public String getGloper() {
-        return gloper;
+    public BigDecimal getCredit() {
+        return credit;
     }
 
-    public void setGloper(String gloper) {
-        this.gloper = gloper;
+    public void setCredit(BigDecimal credit) {
+        this.credit = credit;
     }
 
-    public BigDecimal getGldebit() {
-        return gldebit;
+    public String getTxprod() {
+        return txprod;
     }
 
-    public void setGldebit(BigDecimal gldebit) {
-        this.gldebit = gldebit;
+    public void setTxprod(String txprod) {
+        this.txprod = txprod;
     }
 
-    public BigDecimal getGlcredit() {
-        return glcredit;
+    public String getTxsubprod() {
+        return txsubprod;
     }
 
-    public void setGlcredit(BigDecimal glcredit) {
-        this.glcredit = glcredit;
+    public void setTxsubprod(String txsubprod) {
+        this.txsubprod = txsubprod;
+    }
+
+    public Date getTxvaldt() {
+        return txvaldt;
+    }
+
+    public void setTxvaldt(Date txvaldt) {
+        this.txvaldt = txvaldt;
+    }
+
+    public String getTxlegveh() {
+        return txlegveh;
+    }
+
+    public void setTxlegveh(String txlegveh) {
+        this.txlegveh = txlegveh;
+    }
+
+    public String getTxbr() {
+        return txbr;
+    }
+
+    public void setTxbr(String txbr) {
+        this.txbr = txbr;
+    }
+
+    public String getTxglbr() {
+        return txglbr;
+    }
+
+    public void setTxglbr(String txglbr) {
+        this.txglbr = txglbr;
+    }
+
+    public String getCostc() {
+        return costc;
+    }
+
+    public void setCostc(String costc) {
+        this.costc = costc;
     }
 
 }

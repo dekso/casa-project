@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Generated 10/11/2018 13:34:16
+<!-- Generated 10/12/2018 12:48:53
 
 Configuration for 'SMSLAI_EODDB' database service
 
@@ -91,8 +91,8 @@ Configuration for 'SMSLAI_EODDB' database service
             <list>
 
 <value>com/smslai_eoddb/data/Tbmiscellaneous.hbm.xml</value>
-<value>com/smslai_eoddb/data/Tbcbsfintxjrnl.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbemailparams.hbm.xml</value>
+<value>com/smslai_eoddb/data/Tbcbsfintxjrnl.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbglmatrix.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbdeptxjrnl.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbunit.hbm.xml</value>
@@ -131,7 +131,6 @@ Configuration for 'SMSLAI_EODDB' database service
 <value>com/smslai_eoddb/data/Tbsequence.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbfintxjrnl.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbrole.hbm.xml</value>
-<value>com/smslai_eoddb/data/Tbcountry.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tboutreturn.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbusermaster.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbmerchant.hbm.xml</value>
@@ -154,7 +153,6 @@ Configuration for 'SMSLAI_EODDB' database service
 <value>com/smslai_eoddb/data/Tbspecialinst.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbbatchfile.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbchecksforclearing.hbm.xml</value>
-<value>com/smslai_eoddb/data/Tbdocsperproduct.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbbrfintxjrnl.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbbulkfin.hbm.xml</value>
 <value>com/smslai_eoddb/data/Tbratehistory.hbm.xml</value>
