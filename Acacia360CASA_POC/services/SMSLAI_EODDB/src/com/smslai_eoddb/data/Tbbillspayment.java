@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  *  SMSLAI_EODDB.Tbbillspayment
- *  10/10/2018 15:49:33
+ *  10/12/2018 12:49:06
  * 
  */
 public class Tbbillspayment {

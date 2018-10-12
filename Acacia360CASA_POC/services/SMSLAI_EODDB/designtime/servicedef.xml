@@ -1853,35 +1853,6 @@
             <element name="username" typeRef="java.lang.String" isList="false" allowNull="true"/>
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="true"/>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.TbuseraccessId" name="id" supportsQuickData="false">
-            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
-                <require>delete</require>
-                <require>read</require>
-                <require>update</require>
-                <require>insert</require>
-                <noChange>delete</noChange>
-                <noChange>read</noChange>
-                <noChange>update</noChange>
-            </element>
-        </dataobject>
         <dataobject javaType="com.smslai_eoddb.data.TbemailparamsId" name="id" supportsQuickData="false">
             <element name="emailtype" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
@@ -1911,7 +1882,16 @@
                 <noChange>update</noChange>
             </element>
         </dataobject>
-        <dataobject javaType="com.smslai_eoddb.data.TbroleId" name="id" supportsQuickData="false">
+        <dataobject javaType="com.smslai_eoddb.data.TbuseraccessId" name="id" supportsQuickData="false">
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
             <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
@@ -1921,7 +1901,7 @@
                 <noChange>read</noChange>
                 <noChange>update</noChange>
             </element>
-            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
+            <element name="accessname" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>
@@ -1942,6 +1922,26 @@
                 <noChange>update</noChange>
             </element>
             <element name="modulename" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+        </dataobject>
+        <dataobject javaType="com.smslai_eoddb.data.TbroleId" name="id" supportsQuickData="false">
+            <element name="roleid" typeRef="java.lang.String" isList="false" allowNull="false">
+                <require>delete</require>
+                <require>read</require>
+                <require>update</require>
+                <require>insert</require>
+                <noChange>delete</noChange>
+                <noChange>read</noChange>
+                <noChange>update</noChange>
+            </element>
+            <element name="rolename" typeRef="java.lang.String" isList="false" allowNull="false">
                 <require>delete</require>
                 <require>read</require>
                 <require>update</require>

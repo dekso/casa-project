@@ -140,10 +140,10 @@
                         <value>com.smslai_eoddb.data.Tbusermember</value>
                         <value>com.smslai_eoddb.data.Tbuserrights</value>
                         <value>com.smslai_eoddb.data.Tbuserroles</value>
-                        <value>com.smslai_eoddb.data.TbuseraccessId</value>
                         <value>com.smslai_eoddb.data.TbemailparamsId</value>
-                        <value>com.smslai_eoddb.data.TbroleId</value>
+                        <value>com.smslai_eoddb.data.TbuseraccessId</value>
                         <value>com.smslai_eoddb.data.TbaccessrightsId</value>
+                        <value>com.smslai_eoddb.data.TbroleId</value>
                     </list>
                 </entry>
                 <entry key="SecurityFacade">
